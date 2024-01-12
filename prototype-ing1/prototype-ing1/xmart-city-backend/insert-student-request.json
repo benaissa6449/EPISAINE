@@ -1,0 +1,11 @@
+{
+  "request" : {
+    "request_id" : "807fe4fc-71b9-4d25-b39f-09628e03a4bc",
+    "request_order" : "INSERT_STUDENT",
+    "request_body"  : {
+      "student_name" : "GIRO",
+      "student_1stname" : "Gilles",
+      "student_group" : "FIZA"
+    }
+  }
+}
