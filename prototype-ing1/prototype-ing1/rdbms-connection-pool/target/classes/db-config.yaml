@@ -1,6 +1,0 @@
-databaseName: "ezip-ing1"
-host: "172.168.1.206"
-port: 5432
-username : "pgil"
-password: "ezipspirit"
-poolSize: 1
