@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xmart-city-backend</artifactId>
+    <artifactId>xmart-zity-backend</artifactId>
 
     <build>
         <plugins>
@@ -26,12 +26,30 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
+
+            <!-- exec maven plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>java</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                    <mainClass>edu.ezip.ing1.pds.backend.MainBackendServer</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
     <dependencies>

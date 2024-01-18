@@ -15,7 +15,9 @@
         <module>xmart-insert-client</module>
         <module>xmart-city-client-commons</module>
         <module>xmart-select-client</module>
-        <module>rdbms-connection-pool</module>
         <module>logging-utils</module>
+        <module>rdbms-connection-pool</module>
     </modules>
+
+
 </project>

@@ -14,8 +14,10 @@
 
     <build>
         <plugins>
+            <!-- maven assembly plugin -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -27,12 +29,30 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
+
+            <!-- exec maven plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>java</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                    <mainClass>edu.ezip.ing1.pds.client.MainSelectClient</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
     <dependencies>
