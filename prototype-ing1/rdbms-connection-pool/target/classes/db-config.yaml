@@ -1,6 +1,6 @@
-databaseName: "ezip-ing1"
-host: "172.168.1.206"
+databaseName: "Episaine"
+host: "172.31.249.120"
 port: 5432
-username : "pgil"
-password: "ezipspirit"
+username : "episaine"
+password: "episaine"
 poolSize: 1

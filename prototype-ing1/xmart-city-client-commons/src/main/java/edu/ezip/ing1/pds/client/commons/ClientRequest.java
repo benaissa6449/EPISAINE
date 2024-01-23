@@ -88,7 +88,7 @@ public abstract class ClientRequest<N,S> implements Runnable {
         }
     }
 
-    public abstract  S readResult(final String body) throws IOException;
+    public abstract S readResult(final String body) throws IOException;
 
     public void join() throws InterruptedException {
         self.join();

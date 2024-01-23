@@ -18,6 +18,4 @@
         <module>logging-utils</module>
         <module>rdbms-connection-pool</module>
     </modules>
-
-
 </project>
