@@ -91,9 +91,6 @@ public class MainSelectClient {
         try{
             Response res = xmartCityService.dispatch(request, connection);
             String[] s = res.getResponseBody().split("\n");
-            for (String l : s) {
-                System.out.println(l);
-            }
             resList = new ArrayList<String>(Arrays.asList(s));
         }
         catch(Exception e){
