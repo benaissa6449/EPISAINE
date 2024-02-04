@@ -60,7 +60,7 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     while (res.next()) {
-                        response.setResponseBody(res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
+                        response.setResponseBody(response.getResponseBody() + res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
                     }
                     break;
                 case "INSERT_STUDENT" :
