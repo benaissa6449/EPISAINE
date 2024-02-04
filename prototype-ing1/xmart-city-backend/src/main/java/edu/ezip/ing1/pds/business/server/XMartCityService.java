@@ -60,7 +60,12 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     while (res.next()) {
-                        response.setResponseBody(response.getResponseBody() + res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
+                        if (response.getResponseBody() == null) {
+                            response.setResponseBody(res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
+                        }
+                        else {
+                            response.setResponseBody(response.getResponseBody() + res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
+                        }
                     }
                     break;
                 case "INSERT_STUDENT" :
@@ -84,10 +89,10 @@ public class XMartCityService {
     private static Student stringToStudent(String s){
         String[] stringArray = s.split("\n");
         
-        String name = stringArray[1].substring(stringArray[1].indexOf(":") + 3,stringArray[1].lastIndexOf("\"") );
-        String firstname = stringArray[2].substring(stringArray[2].indexOf(":") + 3,stringArray[2].lastIndexOf("\"") );
-        String group = stringArray[3].substring(stringArray[3].indexOf(":") + 3,stringArray[3].lastIndexOf("\"") );
-
+        String name = stringArray[1].split("\"")[1];
+        String firstname = stringArray[2].split("\"")[1];
+        String[] grpArray = stringArray[3].split(" ");
+        String group = grpArray[grpArray.length -1];
         Student student = new Student(name, firstname, group);
         return student;
     }

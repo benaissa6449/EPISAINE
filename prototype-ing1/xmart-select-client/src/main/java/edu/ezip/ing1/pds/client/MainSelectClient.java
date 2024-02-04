@@ -91,6 +91,9 @@ public class MainSelectClient {
         try{
             Response res = xmartCityService.dispatch(request, connection);
             String[] s = res.getResponseBody().split("\n");
+            for (String l : s) {
+                System.out.println(l);
+            }
             resList = new ArrayList<String>(Arrays.asList(s));
         }
         catch(Exception e){
@@ -103,8 +106,8 @@ public class MainSelectClient {
         Students students = new Students();
         for (String s : l) {
             String name = s.substring(0, s.indexOf(","));
-            String firstname = s.substring(s.indexOf(","), s.indexOf(";"));
-            String group = s.substring(s.indexOf(";"), s.length());
+            String firstname = s.substring(s.indexOf(",")+1, s.indexOf(";"));
+            String group = s.substring(s.indexOf(";")+1, s.length());
             Student student = new Student(name,firstname,group);
             students.add(student);
         }
