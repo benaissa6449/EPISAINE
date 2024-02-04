@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>smart-city-by-ezip</artifactId>
+        <artifactId>prototype-ing1</artifactId>
         <groupId>edu.ezip.ing1.pds</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -43,9 +43,9 @@
                   </execution>
                 </executions>
                 <configuration>
-                    <mainClass>edu.ezip.ing1.pds.client.MainSelectClient</mainClass>
+                  <mainClass>edu.ezip.ing1.pds.client.MainSelectClient</mainClass>
                 </configuration>
-            </plugin>
+              </plugin>
         </plugins>
     </build>
 
@@ -56,7 +56,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -99,6 +98,11 @@
             <version>0.3.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>edu.ezip.ing1.pds</groupId>
+            <artifactId>xmart-city-backend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+      
     </dependencies>
-
 </project>

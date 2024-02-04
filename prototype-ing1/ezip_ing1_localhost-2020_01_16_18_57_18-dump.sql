@@ -5,23 +5,23 @@
 -- Dumped from database version 12.1 (Ubuntu 12.1-1.pgdg19.10+1)
 -- Dumped by pg_dump version 12.1 (Ubuntu 12.1-1.pgdg19.10+1)
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
+    SET statement_timeout = 0;
+    SET lock_timeout = 0;
+    SET idle_in_transaction_session_timeout = 0;
+    SET client_encoding = 'UTF8';
+    SET standard_conforming_strings = on;
+    SELECT pg_catalog.set_config('search_path', '', false);
+    SET check_function_bodies = false;
+    SET xmloption = content;
+    SET client_min_messages = warning;
+    SET row_security = off;
 
-SET default_tablespace = '';
+    SET default_tablespace = '';
 
-SET default_table_access_method = heap;
+    SET default_table_access_method = heap;
 
 --
--- Name: students; Type: TABLE; Schema: ezip-ing1; Owner: pgil
+-- Name: students; Type: TABLE; Schema: ezip-ing1; Owner: episaine
 --
 
 CREATE TABLE "ezip-ing1".students (
@@ -32,10 +32,10 @@ CREATE TABLE "ezip-ing1".students (
 );
 
 
-ALTER TABLE "ezip-ing1".students OWNER TO pgil;
+ALTER TABLE "ezip-ing1".students OWNER TO episaine;
 
 --
--- Name: students_id_seq; Type: SEQUENCE; Schema: ezip-ing1; Owner: pgil
+-- Name: students_id_seq; Type: SEQUENCE; Schema: ezip-ing1; Owner: episaine
 --
 
 CREATE SEQUENCE "ezip-ing1".students_id_seq
@@ -46,24 +46,24 @@ CREATE SEQUENCE "ezip-ing1".students_id_seq
     CACHE 1;
 
 
-ALTER TABLE "ezip-ing1".students_id_seq OWNER TO pgil;
+ALTER TABLE "ezip-ing1".students_id_seq OWNER TO episaine;
 
 --
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: ezip-ing1; Owner: pgil
+-- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: ezip-ing1; Owner: episaine
 --
 
 ALTER SEQUENCE "ezip-ing1".students_id_seq OWNED BY "ezip-ing1".students.id;
 
 
 --
--- Name: students id; Type: DEFAULT; Schema: ezip-ing1; Owner: pgil
+-- Name: students id; Type: DEFAULT; Schema: ezip-ing1; Owner: episaine
 --
 
 ALTER TABLE ONLY "ezip-ing1".students ALTER COLUMN id SET DEFAULT nextval('"ezip-ing1".students_id_seq'::regclass);
 
 
 --
--- Data for Name: students; Type: TABLE DATA; Schema: ezip-ing1; Owner: pgil
+-- Data for Name: students; Type: TABLE DATA; Schema: ezip-ing1; Owner: episaine
 --
 
 COPY "ezip-ing1".students (name, firstname, id, "group") FROM stdin;
@@ -72,14 +72,14 @@ MYNAME	Myfirstname	401	FISA-B
 
 
 --
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: ezip-ing1; Owner: pgil
+-- Name: students_id_seq; Type: SEQUENCE SET; Schema: ezip-ing1; Owner: episaine
 --
 
 SELECT pg_catalog.setval('"ezip-ing1".students_id_seq', 443, true);
 
 
 --
--- Name: students students_pk; Type: CONSTRAINT; Schema: ezip-ing1; Owner: pgil
+-- Name: students students_pk; Type: CONSTRAINT; Schema: ezip-ing1; Owner: episaine
 --
 
 ALTER TABLE ONLY "ezip-ing1".students
@@ -87,10 +87,8 @@ ALTER TABLE ONLY "ezip-ing1".students
 
 
 --
--- Name: students_id_uindex; Type: INDEX; Schema: ezip-ing1; Owner: pgil
+-- Name: students_id_uindex; Type: INDEX; Schema: ezip-ing1; Owner: episaine
 --
-
-CREATE UNIQUE INDEX students_id_uindex ON "ezip-ing1".students USING btree (id);
 
 
 --

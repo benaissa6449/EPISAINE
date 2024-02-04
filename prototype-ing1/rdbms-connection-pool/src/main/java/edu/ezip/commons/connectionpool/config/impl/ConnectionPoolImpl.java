@@ -37,13 +37,14 @@ public class ConnectionPoolImpl {
         final StringBuffer letsBuildUrl = new StringBuffer();
         letsBuildUrl.append(jdbc).append(":")
                 .append(dbEditor).append("://")
-                .append(config.getHost()).append("/")
+                .append(config.getHost())
+                .append("/")
                 .append(config.getDatabaseName()).append("?")
                 .append("user=").append(config.getUsername()).append("&")
                 .append("password=").append(config.getPassword()).append("&")
                 .append("ssl=false");
         logger.debug("URL = {}", (this.url = letsBuildUrl.toString()));
-
+        
         initConnections();
         showConnections();
         // To terminate : terminatePool();

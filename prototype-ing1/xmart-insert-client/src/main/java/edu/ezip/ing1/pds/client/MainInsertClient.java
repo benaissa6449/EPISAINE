@@ -2,8 +2,11 @@ package edu.ezip.ing1.pds.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+
+import edu.ezip.commons.connectionpool.config.impl.ConnectionPoolImpl;
 import edu.ezip.ing1.pds.business.dto.Student;
 import edu.ezip.ing1.pds.business.dto.Students;
+import edu.ezip.ing1.pds.business.server.XMartCityService;
 import edu.ezip.ing1.pds.client.commons.ClientRequest;
 import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
@@ -15,6 +18,7 @@ import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -29,13 +33,19 @@ public class MainInsertClient {
     private static final Deque<ClientRequest> clientRequests = new ArrayDeque<ClientRequest>();
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
-
+        
         final Students guys = ConfigLoader.loadConfig(Students.class, studentsToBeInserted);
         final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
+        
         logger.trace("Students loaded : {}", guys.toString());
         logger.debug("Load Network config file : {}", networkConfig.toString());
 
         int birthdate = 0;
+
+        XMartCityService xmartCityService = XMartCityService.getInstance();
+        ConnectionPoolImpl connectionPoolImpl = ConnectionPoolImpl.getInstance("postgresql");
+        Connection connection = connectionPoolImpl.get();
+
         for(final Student guy : guys.getStudents()) {
             final ObjectMapper objectMapper = new ObjectMapper();
             final String jsonifiedGuy = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(guy);
@@ -52,8 +62,11 @@ public class MainInsertClient {
                                                                         networkConfig,
                                                                         birthdate++, request, guy, requestBytes);
             clientRequests.push(clientRequest);
+            try{xmartCityService.dispatch(request, connection);}
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
-
         while (!clientRequests.isEmpty()) {
             final ClientRequest clientRequest = clientRequests.pop();
             clientRequest.join();
