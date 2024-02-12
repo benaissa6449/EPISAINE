@@ -61,11 +61,6 @@ public class MainInsertClient {
             final InsertStudentsClientRequest clientRequest = new InsertStudentsClientRequest (
                                                                         networkConfig,
                                                                         birthdate++, request, guy, requestBytes);
-            clientRequests.push(clientRequest);
-            try{xmartCityService.dispatch(request, connection);}
-            catch(Exception e){
-                e.printStackTrace();
-            }
         }
         while (!clientRequests.isEmpty()) {
             final ClientRequest clientRequest = clientRequests.pop();

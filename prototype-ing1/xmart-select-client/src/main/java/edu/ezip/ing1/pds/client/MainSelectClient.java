@@ -61,17 +61,13 @@ public class MainSelectClient {
                                                                     birthdate++, request, null, requestBytes);
         clientRequests.push(clientRequest);
 
-        XMartCityService xmartCityService = XMartCityService.getInstance();
-        ConnectionPoolImpl connectionPoolImpl = ConnectionPoolImpl.getInstance("postgresql");
-        Connection connection = connectionPoolImpl.get();
-        
         while (!clientRequests.isEmpty()) {
             final ClientRequest joinedClientRequest = clientRequests.pop();
             joinedClientRequest.join();
             logger.debug("Thread {} complete.", joinedClientRequest.getThreadName());
-            //final Students students = (Students) joinedClientRequest.getResult();
             try {
-            final Students students = arrayToStudents(getResp(request,xmartCityService,connection));
+            final Students students = (Students) joinedClientRequest.getResult();
+            //final Students students = arrayToStudents(getResp(request,xmartCityService,connection));
             final AsciiTable asciiTable = new AsciiTable();
             for (final Student student : students.getStudents()) {
                 asciiTable.addRule();
@@ -84,30 +80,5 @@ public class MainSelectClient {
                 e.printStackTrace();
             }
         }
-    }
-
-    private static ArrayList<String> getResp(Request request, XMartCityService xmartCityService, Connection connection) {
-        ArrayList<String> resList = new ArrayList<String>();
-        try{
-            Response res = xmartCityService.dispatch(request, connection);
-            String[] s = res.getResponseBody().split("\n");
-            resList = new ArrayList<String>(Arrays.asList(s));
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        return resList;
-    }
-
-    private static Students arrayToStudents(ArrayList<String> l) {
-        Students students = new Students();
-        for (String s : l) {
-            String name = s.substring(0, s.indexOf(","));
-            String firstname = s.substring(s.indexOf(",")+1, s.indexOf(";"));
-            String group = s.substring(s.indexOf(";")+1, s.length());
-            Student student = new Student(name,firstname,group);
-            students.add(student);
-        }
-        return students;
     }
 }

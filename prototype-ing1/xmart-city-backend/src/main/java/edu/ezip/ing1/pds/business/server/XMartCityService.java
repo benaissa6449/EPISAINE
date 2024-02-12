@@ -50,32 +50,36 @@ public class XMartCityService {
         PreparedStatement pstmt;
         Statement stmt;
         ResultSet res;
-        
+        ObjectMapper mapper;
         try {
-            Class.forName("org.postgresql.Driver");
             switch (request.getRequestOrder()) {
                 case "SELECT_ALL_STUDENTS":
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.SELECT_ALL_STUDENTS.query);
+                    Students students = new Students();
+                    while (res.next()) {
+                        Student student = new Student().build(res);
+                        students.add(student);
+                    }
+                    mapper = new ObjectMapper();
+
                     response = new Response();
                     response.setRequestId(request.getRequestId());
-                    while (res.next()) {
-                        if (response.getResponseBody() == null) {
-                            response.setResponseBody(res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
-                        }
-                        else {
-                            response.setResponseBody(response.getResponseBody() + res.getString(1) + "," + res.getString(2) + ";" + res.getString(3) + "\n");
-                        }
-                    }
-                    break;
+                    response.setResponseBody(mapper.writeValueAsString(students));
+
                 case "INSERT_STUDENT" :
+                    mapper = new ObjectMapper();
+                    Student student = mapper.readValue(request.getRequestBody(), Student.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_STUDENT.query);
-                    Student student = stringToStudent(request.getRequestBody());
                     pstmt.setString(1, student.getName());
-                    pstmt.setString(2,student.getFirstname());
-                    pstmt.setString(3,student.getGroup());
-                    pstmt.executeUpdate();
-                    break;
+                    pstmt.setString(2, student.getFirstname());
+                    pstmt.setString(3, student.getGroup());
+                    int rows = pstmt.executeUpdate();
+
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody("{\"student_id\": " + rows + " }");
+
                 default:
                     break;
             }
@@ -84,16 +88,5 @@ public class XMartCityService {
             e.printStackTrace();
         }
         return response;
-    }
-
-    private static Student stringToStudent(String s){
-        String[] stringArray = s.split("\n");
-        
-        String name = stringArray[1].split("\"")[1];
-        String firstname = stringArray[2].split("\"")[1];
-        String[] grpArray = stringArray[3].split(" ");
-        String group = grpArray[grpArray.length -1];
-        Student student = new Student(name, firstname, group);
-        return student;
     }
 }
