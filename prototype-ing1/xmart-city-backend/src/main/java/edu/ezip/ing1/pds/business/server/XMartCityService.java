@@ -66,7 +66,8 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(students));
-
+                    break;
+                    
                 case "INSERT_STUDENT" :
                     mapper = new ObjectMapper();
                     Student student = mapper.readValue(request.getRequestBody(), Student.class);
@@ -79,6 +80,7 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody("{\"student_id\": " + rows + " }");
+                    break;
 
                 default:
                     break;
