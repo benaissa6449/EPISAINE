@@ -53,7 +53,7 @@ public class XMartCityService {
         ObjectMapper mapper;
         try {
             switch (request.getRequestOrder()) {
-                case "SELECT_ALL_CLIENTS":
+                case "SELECT_ALL_STUDENTS":
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.SELECT_ALL_STUDENTS.query);
                     Students students = new Students();

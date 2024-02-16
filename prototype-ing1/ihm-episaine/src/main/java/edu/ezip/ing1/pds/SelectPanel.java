@@ -50,7 +50,13 @@ public class SelectPanel extends JPanel implements ActionListener {
         columnHeaderPanel.setBackground(Color.WHITE);
         columnHeaderPanel.setLayout(new GridLayout(1,3));
 
-        // Nom de chaque colonne
+        columnHeaderPanel.add(new JLabel("First Name"));
+        columnHeaderPanel.add(new JLabel("Name"));
+        columnHeaderPanel.add(new JLabel("Group"));
+
+        selectScrollPane.setColumnHeaderView(columnHeaderPanel);
+        /*
+        // Nom de chaque colonne pour la table cliente
         columnHeaderPanel.add(new JLabel("ID"));
         columnHeaderPanel.add(new JLabel("Nom"));
         columnHeaderPanel.add(new JLabel("Prénom"));
@@ -66,7 +72,7 @@ public class SelectPanel extends JPanel implements ActionListener {
         
         // set column header
         selectScrollPane.setColumnHeaderView(columnHeaderPanel);
-
+        */
         // dimension du select scroll pane
         selectScrollPane.setBounds(new Rectangle(500,400));
 

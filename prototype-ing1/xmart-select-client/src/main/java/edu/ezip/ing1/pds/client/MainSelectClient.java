@@ -35,7 +35,7 @@ public class MainSelectClient {
     private final static String LoggingLabel = "I n s e r t e r - C l i e n t";
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
-    private static final String requestOrder = "SELECT_ALL_CLIENTS";
+    private static final String requestOrder = "SELECT_ALL_STUDENTS";
     private static final Deque<ClientRequest> clientRequests = new ArrayDeque<ClientRequest>();
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
