@@ -3,10 +3,8 @@ package edu.ezip.ing1.pds.client;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import edu.ezip.commons.connectionpool.config.impl.ConnectionPoolImpl;
 import edu.ezip.ing1.pds.business.dto.Student;
 import edu.ezip.ing1.pds.business.dto.Students;
-import edu.ezip.ing1.pds.business.server.XMartCityService;
 import edu.ezip.ing1.pds.client.commons.ClientRequest;
 import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
@@ -41,10 +39,6 @@ public class MainInsertClient {
         logger.debug("Load Network config file : {}", networkConfig.toString());
 
         int birthdate = 0;
-
-        XMartCityService xmartCityService = XMartCityService.getInstance();
-        ConnectionPoolImpl connectionPoolImpl = ConnectionPoolImpl.getInstance("postgresql");
-        Connection connection = connectionPoolImpl.get();
 
         for(final Student guy : guys.getStudents()) {
             final ObjectMapper objectMapper = new ObjectMapper();

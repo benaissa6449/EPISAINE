@@ -4,10 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import de.vandermeer.asciitable.AsciiTable;
 import edu.ezip.commons.LoggingUtils;
-import edu.ezip.commons.connectionpool.config.impl.ConnectionPoolImpl;
 import edu.ezip.ing1.pds.business.dto.Student;
 import edu.ezip.ing1.pds.business.dto.Students;
-import edu.ezip.ing1.pds.business.server.XMartCityService;
 import edu.ezip.ing1.pds.client.commons.ClientRequest;
 import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
@@ -37,7 +35,7 @@ public class MainSelectClient {
     private final static String LoggingLabel = "I n s e r t e r - C l i e n t";
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
-    private static final String requestOrder = "SELECT_ALL_STUDENTS";
+    private static final String requestOrder = "SELECT_ALL_CLIENTS";
     private static final Deque<ClientRequest> clientRequests = new ArrayDeque<ClientRequest>();
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
@@ -48,10 +46,10 @@ public class MainSelectClient {
         int birthdate = 0;
         final ObjectMapper objectMapper = new ObjectMapper();
 
-        final String requestId = UUID.randomUUID().toString();  // ID random pour requestId
+        final String requestId = UUID.randomUUID().toString();
         final Request request = new Request();
-        request.setRequestId(requestId);                        // On associe a la request son Id
-        request.setRequestOrder(requestOrder);                  // Order de la request, ici "SELECT_ALL_STUDENTS"
+        request.setRequestId(requestId);
+        request.setRequestOrder(requestOrder);
 
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         final byte [] requestBytes = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(request);
@@ -74,6 +72,9 @@ public class MainSelectClient {
                 asciiTable.addRow(student.getFirstname(), student.getName(), student.getGroup());
             }
             asciiTable.addRule();
+            
+            SelectAsciiTable.setAsciiTable(asciiTable);
+            
             logger.debug("\n{}\n", asciiTable.render());
             }
             catch(Exception e) {

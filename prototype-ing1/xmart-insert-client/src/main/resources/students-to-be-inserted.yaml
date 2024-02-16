@@ -1,13 +1,4 @@
 students :
-  - name : "AGRouH"
-    firstname: "Hiba"
-    group: ING1
-  - name: "ADILI"
-    firstname: "Anas"
-    group: ING1
-  - name : "ERRAI"
-    firstname : "Aya"
-    group: ING1
-  - name : "BELKADHI"
-    firstname : "aziz"
-    group: ING1
+  - name : "nonn"
+    firstname : "ouii"
+    group : ok
