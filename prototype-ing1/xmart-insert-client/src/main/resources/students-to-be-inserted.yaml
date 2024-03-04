@@ -1,4 +1,10 @@
 students :
-  - name : "nonn"
-    firstname : "ouii"
-    group : ok
+  - name : "tttt"
+    firstname : "test"
+    group : in1
+  - name : "tttt"
+    firstname : "test"
+    group : in1
+  - name : "tttt"
+    firstname : "test"
+    group : in1

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ../xmart-insert-client
+cd ../episaine-insert-client
 mvn compile
 mvn exec:java

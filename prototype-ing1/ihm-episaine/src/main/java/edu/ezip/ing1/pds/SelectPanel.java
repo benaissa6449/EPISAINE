@@ -1,28 +1,20 @@
 package edu.ezip.ing1.pds;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.concurrent.Flow;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
-import de.vandermeer.asciitable.AsciiTable;
 import edu.ezip.ing1.pds.client.MainSelectClient;
-import edu.ezip.ing1.pds.client.SelectAsciiTable;;
+import edu.ezip.ing1.pds.client.StringAsciiTable;;
 
 public class SelectPanel extends JPanel implements ActionListener {
-
-    private static AsciiTable asciiTable;
-    private static JTextArea selectJTextAreaVar;
-
-    public void setAsciiTable(AsciiTable asciiTableVar) {asciiTable = asciiTableVar;}
+    private static DefaultTableModel defaultTableModel;
+    private static JTable table;
 
     public SelectPanel() {
         // parametre du panel
@@ -32,53 +24,30 @@ public class SelectPanel extends JPanel implements ActionListener {
         add(selectButton()); // ajout du bouton a la frame
     }
 
-    private static JScrollPane selectTextArea() {        
-        // creation jtextarea
-        JTextArea selectJTextArea = new JTextArea(20,70);
-        selectJTextArea.setEditable(false);
-        selectJTextArea.setFocusable(false);
-        selectJTextArea.setFont(new Font("Consolas", Font.PLAIN, 12));
-        selectJTextAreaVar = selectJTextArea;
+    private static JScrollPane selectTextArea() {
+        defaultTableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+            return false;
+    }
+        };    
+        table = new JTable(defaultTableModel);
+        table.setPreferredScrollableViewportSize(new Dimension(600,400));
+        table.setFillsViewportHeight(true);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        // creation jscrollpane
-        JScrollPane selectScrollPane = new JScrollPane(selectJTextArea);
-        selectScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        // creation jscrollpane -- settings
+        JScrollPane selectScrollPane = new JScrollPane(table);
+        selectScrollPane.setPreferredSize(new Dimension(600,400));
+        selectScrollPane.setBackground(Color.WHITE);
         selectScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-
-        // jpanel pour le header du jscrollpane
-        JPanel columnHeaderPanel = new JPanel();
-        columnHeaderPanel.setBackground(Color.WHITE);
-        columnHeaderPanel.setLayout(new GridLayout(1,3));
-
-        columnHeaderPanel.add(new JLabel("First Name"));
-        columnHeaderPanel.add(new JLabel("Name"));
-        columnHeaderPanel.add(new JLabel("Group"));
-
-        selectScrollPane.setColumnHeaderView(columnHeaderPanel);
-        /*
-        // Nom de chaque colonne pour la table cliente
-        columnHeaderPanel.add(new JLabel("ID"));
-        columnHeaderPanel.add(new JLabel("Nom"));
-        columnHeaderPanel.add(new JLabel("Prénom"));
-        columnHeaderPanel.add(new JLabel("Date de naissance"));
-        columnHeaderPanel.add(new JLabel("Poids (en kg)"));
-        columnHeaderPanel.add(new JLabel("Genre"));
-        columnHeaderPanel.add(new JLabel("Taille"));
-        columnHeaderPanel.add(new JLabel("Numéro de téléphone"));
-        columnHeaderPanel.add(new JLabel("Mail"));
-        columnHeaderPanel.add(new JLabel("Ville"));
-        columnHeaderPanel.add(new JLabel("Code postal"));
-        columnHeaderPanel.add(new JLabel("Adresse")); 
-        
-        // set column header
-        selectScrollPane.setColumnHeaderView(columnHeaderPanel);
-        */
-        // dimension du select scroll pane
-        selectScrollPane.setBounds(new Rectangle(500,400));
+        selectScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         return selectScrollPane;
     }
 
+    // creer le bouton
     private JButton selectButton() {
         // creation jbutton
         JButton selectJButton = new JButton("SELECT_ALL_CLIENT");
@@ -90,8 +59,32 @@ public class SelectPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             MainSelectClient.main(new String[0]);
-            asciiTable = SelectAsciiTable.getAsciiTable();
-            selectJTextAreaVar.setText(asciiTable.render());
+            String[][] clientMatrix = StringAsciiTable.getMatrix();
+            defaultTableModel.setRowCount(0);
+            
+            // nom de chaque colonne
+            String[] tableHeader = {"ID", "Nom", "Prénom", "Date de naissance", "Poids (en kg)", "Genre", "Taille", "Numéro de téléphone", "Mail", "Ville", "Code postal", "Adresse"}; 
+            defaultTableModel.setColumnIdentifiers(tableHeader);
+            
+            // ajout du contenu de la table ligne par ligne
+            for (String client[] : clientMatrix) {
+                defaultTableModel.addRow(client);
+            }
+            // ajustement de la largeur de chaque colonne
+            for (int i = 0; i < table.getColumnCount(); i++) {
+                int width = 0;
+                for (int j = 0; j < table.getRowCount(); j++) {
+                    int tempWidth = table.getValueAt(j, i).toString().length();
+                    if (tempWidth > width) {
+                        width = tempWidth;
+                    }
+                }
+                int headerTempWidth = defaultTableModel.getColumnName(i).toString().length();
+                if (headerTempWidth > width) {
+                    width = headerTempWidth;
+                }
+                table.getColumnModel().getColumn(i).setPreferredWidth(width*10);
+            }
         }
         catch(Exception ex){
             ex.getMessage();

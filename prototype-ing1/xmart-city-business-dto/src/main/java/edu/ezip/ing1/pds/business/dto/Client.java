@@ -8,150 +8,151 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@JsonRootName(value = "student")
+@JsonRootName(value = "client")
 public class Client {
-    private String id;
-    private String nom;
-    private String prenom;
-    private String datedenaissance;
-    private String poids;
-    private String genre;
-    private String taille;
-    private String numerotelephone;
-    private String mail;
-    private String ville;
-    private String adresse;
-    private String codepostal;
+    private  String ID_Clients;
+    private  String Nom_Client;
+    private  String Prenom_Client;
+    private  String Date_de_naissance_Client;
+    private  String Poids;
+    private  String Genre;
+    private  String Taille;
+    private  String Numero_de_telephone_Client;
+    private  String Mail_Client;
+    private  String Ville;
+    private  String Adresse;
+    private  String Code_Postal_;
 
     public Client() {
     }
     public final Client build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResulset(resultSet, "name", "firstname","group");
+        setFieldsFromResulset(resultSet, "ID_Clients", "Nom_Client", "Prenom_Client", "Date_de_naissance_Client", "Poids", "Genre", "Taille", "Numero_de_telephone_Client", "Mail_Client", "Ville", "Adresse", "Code_Postal_");
         return this;
     }
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, id, nom, prenom, datedenaissance, poids, genre, taille, numerotelephone, mail, ville, adresse, codepostal);
+        return buildPreparedStatement(preparedStatement, ID_Clients, Nom_Client, Prenom_Client, Date_de_naissance_Client, Poids, Genre, Taille, Numero_de_telephone_Client, Mail_Client, Ville, Adresse, Code_Postal_);
     }
-    public Client(String id, String nom, String prenom, String datedenaissance, String poids, String genre, String taille, String numerotelephone, String mail, String ville, String adresse, String codepostal) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.datedenaissance = datedenaissance;
-        this.poids = poids;
-        this.genre = genre;
-        this.taille = taille;
-        this.numerotelephone = numerotelephone;
-        this.mail = mail;
-        this.ville = ville;
-        this.adresse = adresse;
-        this.codepostal = codepostal;
+    public Client(String ID_Clients, String Nom_Client, String Prenom_Client, String Date_de_naissance_Client, String Poids, String Genre, String Taille, String Numero_de_telephone_Client, String Mail_Client, String Ville, String Adresse, String Code_Postal_) {
+        this.ID_Clients = ID_Clients;
+        this.Nom_Client = Nom_Client;
+        this.Prenom_Client = Prenom_Client;
+        this.Date_de_naissance_Client = Date_de_naissance_Client;
+        this.Poids = Poids;
+        this.Genre = Genre;
+        this.Taille = Taille;
+        this.Numero_de_telephone_Client = Numero_de_telephone_Client;
+        this.Mail_Client = Mail_Client;
+        this.Ville = Ville;
+        this.Adresse = Adresse;
+        this.Code_Postal_ = Code_Postal_;
     }
 
     // Setter
-    public void setId(String id) {
-        this.id = id;
+    @JsonProperty("Id_Clients")
+    public void setId_Clients(String ID_Clients) {
+        this.ID_Clients = ID_Clients;
     }
-
-    public void setNom(String nom) {
-        this.nom = nom;
+    @JsonProperty("Nom_Client")
+    public void setNom_Client(String Nom_Client) {
+        this.Nom_Client = Nom_Client;
     }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    @JsonProperty("Prenom_Client")
+    public void setPrenom_Client(String Prenom_Client) {
+        this.Prenom_Client = Prenom_Client;
     }
-
-    public void setDatedenaissance(String datedenaissance) {
-        this.datedenaissance = datedenaissance;
+    @JsonProperty("Date_de_naissance_Client")
+    public void setDate_de_naissance_Client(String Date_de_naissance_Client) {
+        this.Date_de_naissance_Client = Date_de_naissance_Client;
     }
-
-    public void setPoids(String poids) {
-        this.poids = poids;
+    @JsonProperty("Poids")
+    public void setPoids(String Poids) {
+        this.Poids = Poids;
     }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
+    @JsonProperty("Genre")
+    public void setGenre(String Genre) {
+        this.Genre = Genre;
     }
-
-    public void setTaille(String taille) {
-        this.taille = taille;
+    @JsonProperty("Taille")
+    public void setTaille(String Taille) {
+        this.Taille = Taille;
     }
-
-    public void setNumerotelephone(String numerotelephone) {
-        this.numerotelephone = numerotelephone;
+    @JsonProperty("Numero_de_telephone_Client")
+    public void setNumero_de_telephone_Client(String Numero_de_telephone_Client) {
+        this.Numero_de_telephone_Client = Numero_de_telephone_Client;
     }
-
-    public void setMail(String mail) {
-        this.mail = mail;
+    @JsonProperty("Mail_Client")
+    public void setMail_Client(String Mail_Client) {
+        this.Mail_Client = Mail_Client;
     }
-
-    public void setVille(String ville) {
-        this.ville = ville;
+    @JsonProperty("Ville")
+    public void setVille(String Ville) {
+        this.Ville = Ville;
     }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    @JsonProperty("Adresse")
+    public void setAdresse(String Adresse) {
+        this.Adresse = Adresse;
     }
-
-    public void setCodepostal(String codepostal) {
-        this.codepostal = codepostal;
+    @JsonProperty("Code_Postal_")
+    public void setCode_Postal_(String Code_Postal_) {
+        this.Code_Postal_ = Code_Postal_;
     }
 
     // Getter
-    public String getId() {
-        return id;
+    public String getId_Clients() {
+        return ID_Clients;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNom_Client() {
+        return Nom_Client;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getPrenom_Client() {
+        return Prenom_Client;
     }
 
-    public String getDatedenaissance() {
-        return datedenaissance;
+    public String getDate_de_naissance_Client() {
+        return Date_de_naissance_Client;
     }
 
     public String getPoids() {
-        return poids;
+        return Poids;
     }
 
     public String getGenre() {
-        return genre;
+        return Genre;
     }
 
     public String getTaille() {
-        return taille;
+        return Taille;
     }
 
-    public String getNumerotelephone() {
-        return numerotelephone;
+    public String getNumero_de_telephone_Client() {
+        return Numero_de_telephone_Client;
     }
 
-    public String getMail() {
-        return mail;
+    public String getMail_Client() {
+        return Mail_Client;
     }
 
     public String getVille() {
-        return ville;
+        return Ville;
     }
 
     public String getAdresse() {
-        return adresse;
+        return Adresse;
     }
 
-    public String getCodepostal() {
-        return codepostal;
+    public String getCode_Postal_() {
+        return Code_Postal_;
     }
 
     private void setFieldsFromResulset(final ResultSet resultSet, final String ... fieldNames )
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         for(final String fieldName : fieldNames ) {
             final Field field = this.getClass().getDeclaredField(fieldName);
-            field.set(this, resultSet.getObject(fieldName));
+            field.set(this, resultSet.getObject(fieldName).toString());
         }
     }
     private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final String ... fieldNames )
@@ -166,18 +167,18 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "id='" + id + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", date de naissance='" + datedenaissance + '\'' +
-                ", poids='" + poids + '\'' +
-                ", genre='" + genre + '\'' +
-                ", taille='" + taille + '\'' +
-                ", numero de telephone='" + numerotelephone + '\'' +
-                ", mail='" + mail + '\'' +
-                ", ville='" + ville + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", code postal='" + codepostal + '\'' +
+                "ID_Client='" + ID_Clients + '\'' +
+                ", Nom_Client='" + Nom_Client + '\'' +
+                ", Prenom_Client='" + Prenom_Client + '\'' +
+                ", Date_de_naissance_Client='" + Date_de_naissance_Client + '\'' +
+                ", Poids='" + Poids + '\'' +
+                ", Genre='" + Genre + '\'' +
+                ", Taille='" + Taille + '\'' +
+                ", Numero_de_telephone_Client='" + Numero_de_telephone_Client + '\'' +
+                ", Mail_Client='" + Mail_Client + '\'' +
+                ", Ville='" + Ville + '\'' +
+                ", Adresse='" + Adresse + '\'' +
+                ", Code_Postal_='" + Code_Postal_ + '\'' +
                 '}';
     }
 }

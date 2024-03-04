@@ -40,7 +40,7 @@ public class MainSelectClient {
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
 
-        final NetworkConfig networkConfig = ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile); // Fichier contenant l'ip et le port de la BDD
+        final NetworkConfig networkConfig = ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         logger.debug("Load Network config file : {}", networkConfig.toString());
 
         int birthdate = 0;
@@ -65,7 +65,6 @@ public class MainSelectClient {
             logger.debug("Thread {} complete.", joinedClientRequest.getThreadName());
             try {
             final Students students = (Students) joinedClientRequest.getResult();
-            //final Students students = arrayToStudents(getResp(request,xmartCityService,connection));
             final AsciiTable asciiTable = new AsciiTable();
             for (final Student student : students.getStudents()) {
                 asciiTable.addRule();

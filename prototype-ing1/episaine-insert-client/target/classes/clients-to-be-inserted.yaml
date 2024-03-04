@@ -1,0 +1,12 @@
+clients :
+  - Nom_Client : "e"
+    Prenom_Client : "e"
+    Date_de_naissance_Client : "e"
+    Poids : "ee"
+    Genre : "e"
+    Taille : "e"
+    Numero_de_telephone_Client : "e"
+    Mail_Client : "ee"
+    Ville : "e"
+    Adresse : "e"
+    Code_Postal_ : "e"

@@ -11,11 +11,13 @@
         <module>xmart-city-backend</module>
         <module>xmart-city-commons</module>
         <module>xmart-city-business-dto</module>
-        <module>xmart-insert-client</module>
         <module>xmart-city-client-commons</module>
+        <module>xmart-insert-client</module>
         <module>xmart-select-client</module>
         <module>logging-utils</module>
         <module>rdbms-connection-pool</module>
         <module>ihm-episaine</module>
+        <module>episaine-select-client</module>
+        <module>episaine-insert-client</module>
     </modules>
 </project>

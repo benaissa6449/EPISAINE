@@ -14,7 +14,6 @@ public class Student {
     private  String firstname;
     private  String group;
 
-
     public Student() {
     }
     public final Student build(final ResultSet resultSet)

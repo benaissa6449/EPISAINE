@@ -1,97 +1,209 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 12.1 (Ubuntu 12.1-1.pgdg19.10+1)
--- Dumped by pg_dump version 12.1 (Ubuntu 12.1-1.pgdg19.10+1)
-
-    SET statement_timeout = 0;
-    SET lock_timeout = 0;
-    SET idle_in_transaction_session_timeout = 0;
-    SET client_encoding = 'UTF8';
-    SET standard_conforming_strings = on;
-    SELECT pg_catalog.set_config('search_path', '', false);
-    SET check_function_bodies = false;
-    SET xmloption = content;
-    SET client_min_messages = warning;
-    SET row_security = off;
-
-    SET default_tablespace = '';
-
-    SET default_table_access_method = heap;
-
---
--- Name: students; Type: TABLE; Schema: ezip-ing1; Owner: episaine
---
-
-CREATE TABLE "ezip-ing1".students (
-    name character varying(64) NOT NULL,
-    firstname character varying(64) NOT NULL,
-    id integer NOT NULL,
-    "group" character varying(8) NOT NULL
+-- Table GrandeSurface
+CREATE TABLE "episaine-schema".GrandeSurface(
+   ID_GS INT,
+   Intitule VARCHAR(50) NOT NULL,
+   Ville VARCHAR(50) NOT NULL,
+   Adresse_GS VARCHAR(50) NOT NULL,
+   Ville_GS VARCHAR(50),
+   Code_Postal_GS VARCHAR(50) NOT NULL,
+   PRIMARY KEY(ID_GS)
 );
 
+ALTER TABLE "episaine-schema".GrandeSurface OWNER TO episaine;
 
-ALTER TABLE "ezip-ing1".students OWNER TO episaine;
-
---
--- Name: students_id_seq; Type: SEQUENCE; Schema: ezip-ing1; Owner: episaine
---
-
-CREATE SEQUENCE "ezip-ing1".students_id_seq
+CREATE SEQUENCE "episaine-schema".gs_id
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
 
+ALTER TABLE "episaine-schema".gs_id OWNER TO episaine;
+   
+ALTER SEQUENCE "episaine-schema".gs_id OWNED BY "episaine-schema".GrandeSurface.ID_GS;
 
-ALTER TABLE "ezip-ing1".students_id_seq OWNER TO episaine;
+-- Table UtilisateurGrandeSurface
+CREATE TABLE "episaine-schema".UtilisateurGrandeSurface(
+   ID_UserGS INT,
+   Nom_User VARCHAR(50) NOT NULL,
+   Prenom_User VARCHAR(50) NOT NULL,
+   Poste_User VARCHAR(50),
+   ID_GS INT NOT NULL,
+   DateEmbauche DATE,
+   PRIMARY KEY(ID_UserGS),
+   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS)
+);
 
---
--- Name: students_id_seq; Type: SEQUENCE OWNED BY; Schema: ezip-ing1; Owner: episaine
---
+ALTER TABLE "episaine-schema".UtilisateurGrandeSurface OWNER TO episaine;
 
-ALTER SEQUENCE "ezip-ing1".students_id_seq OWNED BY "ezip-ing1".students.id;
+CREATE SEQUENCE "episaine-schema".u_gs_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+   
+ALTER TABLE "episaine-schema".u_gs_id OWNER TO episaine;
 
+ALTER SEQUENCE "episaine-schema".u_gs_id OWNED BY "episaine-schema".UtilisateurGrandeSurface.ID_UserGS;
 
---
--- Name: students id; Type: DEFAULT; Schema: ezip-ing1; Owner: episaine
---
+-- Table Produits
+CREATE TABLE "episaine-schema".Produits(
+   ID_Produits INT,
+   Nom_Produit VARCHAR(50) NOT NULL,
+   Prix DECIMAL(10,2) NOT NULL,
+   Regime VARCHAR(50) NOT NULL,
+   Rayon VARCHAR(50) NOT NULL,
+   Calorie INT NOT NULL,
+   DateExpiration DATE NOT NULL,
+   Quantite_Produit INT,
+   Stock INT,
+   ID_GS INT NOT NULL, 
+   PRIMARY KEY(ID_Produits),
+   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS) 
+);
 
-ALTER TABLE ONLY "ezip-ing1".students ALTER COLUMN id SET DEFAULT nextval('"ezip-ing1".students_id_seq'::regclass);
+ALTER TABLE "episaine-schema".Produits OWNER TO episaine;
 
+CREATE SEQUENCE "episaine-schema".p_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+   
+ALTER TABLE "episaine-schema".p_id OWNER TO episaine;
 
---
--- Data for Name: students; Type: TABLE DATA; Schema: ezip-ing1; Owner: episaine
---
+ALTER SEQUENCE "episaine-schema".p_id OWNED BY "episaine-schema".Produits.ID_Produits;
 
-COPY "ezip-ing1".students (name, firstname, id, "group") FROM stdin;
-MYNAME	Myfirstname	401	FISA-B
-\.
+-- Relation Vend entre les tables Produits et GrandeSurface
+-- Le but est de lier les produits et les grandes surfaces
+--CREATE INDEX idx_produits ON Produits(ID_Produits, ID_GS);
 
+CREATE TABLE "episaine-schema".Vend(
+   ID_Produits INT,
+   ID_GS INT,
+   QuantiteVendue INT,
+   PRIMARY KEY(ID_Produits, ID_GS),  
+   FOREIGN KEY(ID_Produits) REFERENCES "episaine-schema".Produits(ID_Produits),
+   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS)
+);
 
---
--- Name: students_id_seq; Type: SEQUENCE SET; Schema: ezip-ing1; Owner: episaine
---
+ALTER TABLE "episaine-schema".Vend OWNER TO episaine;
 
-SELECT pg_catalog.setval('"ezip-ing1".students_id_seq', 443, true);
+-- Table Nutritionnistes 
+CREATE TABLE "episaine-schema".Nutritionnistes(
+   ID_Nutritioniste INT,
+   Nom_N VARCHAR(50) NOT NULL,
+   Prenom_N VARCHAR(50),
+   Numero_de_telephone_N VARCHAR(20), -- Changement de INT à VARCHAR(20)
+   Mail_N VARCHAR(50),
+   PRIMARY KEY(ID_Nutritioniste)
+);
 
+ALTER TABLE "episaine-schema".Nutritionnistes OWNER TO episaine;
 
---
--- Name: students students_pk; Type: CONSTRAINT; Schema: ezip-ing1; Owner: episaine
---
+CREATE SEQUENCE "episaine-schema".n_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+    
+ALTER TABLE "episaine-schema".n_id OWNER TO episaine;
+   
+ALTER SEQUENCE "episaine-schema".n_id OWNED BY "episaine-schema".Nutritionnistes.ID_Nutritioniste;
 
-ALTER TABLE ONLY "ezip-ing1".students
-    ADD CONSTRAINT students_pk PRIMARY KEY (id);
+-- Table Recettes   
+CREATE TABLE "episaine-schema".Recettes(
+   ID_Recettes INT,
+   Nom_Recette VARCHAR(100) NOT NULL, 
+   Nombre_de_Calories INT NOT NULL,
+   Ingredients VARCHAR(255), 
+   Instructions VARCHAR(255),
+   RegimeAlimentaire VARCHAR(50),
+   ID_Nutritioniste INT NOT NULL,
+   PRIMARY KEY(ID_Recettes),
+   FOREIGN KEY(ID_Nutritioniste) REFERENCES "episaine-schema".Nutritionnistes(ID_Nutritioniste),
+   CHECK (RegimeAlimentaire IN ('normale', 'cétogène', 'végétarien', 'carnivore', 'pescétarien', 'végétalien', 'sans gluten', 'sans lactose', 'halal', 'cashér', 'paléo', 'sans sucre ajouté', 'régime méditerranéen'))
+);
 
+ALTER TABLE "episaine-schema".Recettes OWNER TO episaine;
 
---
--- Name: students_id_uindex; Type: INDEX; Schema: ezip-ing1; Owner: episaine
---
+CREATE SEQUENCE "episaine-schema".r_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
+ALTER TABLE "episaine-schema".r_id OWNER TO episaine;
+   
+ALTER SEQUENCE "episaine-schema".r_id OWNED BY "episaine-schema".Recettes.ID_Recettes;
 
---
--- PostgreSQL database dump complete
---
+-- Relation EstComposéDe entre les tables Produits et Recettes (un produit peut être dans plusieurs recettes)
+CREATE TABLE "episaine-schema".EstComposeDe(
+   ID_Produits INT,
+   ID_Recettes INT,
+   Quantite INT,
+   PRIMARY KEY(ID_Produits, ID_Recettes),
+   FOREIGN KEY(ID_Produits) REFERENCES "episaine-schema".Produits(ID_Produits),
+   FOREIGN KEY(ID_Recettes) REFERENCES "episaine-schema".Recettes(ID_Recettes)
+);
 
+ALTER TABLE "episaine-schema".EstComposeDe OWNER TO episaine;
+
+-- Table Client 
+CREATE TABLE "episaine-schema".Clients(
+   ID_Clients INT,
+   Nom_Client VARCHAR(50) NOT NULL,
+   Prenom_Client VARCHAR(50) NOT NULL,
+   Date_de_naissance_Client DATE NOT NULL,
+   Poids DECIMAL(5,2) NOT NULL, 
+   Genre VARCHAR(10) NOT NULL,
+   Taille INT NOT NULL,
+   Numero_de_telephone_Client VARCHAR(20) NOT NULL,
+   Mail_Client VARCHAR(50) NOT NULL,
+   Ville VARCHAR(50) NOT NULL,
+   Adresse VARCHAR(50) NOT NULL,
+   Code_Postal_ VARCHAR(50),
+   PRIMARY KEY(ID_Clients),
+   CHECK (Genre IN ('Homme', 'Femme')) 
+);
+
+ALTER TABLE "episaine-schema".Clients OWNER TO episaine;
+
+CREATE SEQUENCE "episaine-schema".c_id
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+    
+ALTER TABLE "episaine-schema".c_id OWNER TO episaine;
+   
+ALTER SEQUENCE "episaine-schema".c_id OWNED BY "episaine-schema".Clients.ID_Clients;
+
+-- Table Informations 
+CREATE TABLE "episaine-schema".Informations(
+   ID_Clients INT,
+   But VARCHAR(50),
+   Allergie VARCHAR(50) NOT NULL,
+   NbDeRepas INT,
+   PRIMARY KEY(ID_Clients),
+   FOREIGN KEY(ID_Clients) REFERENCES "episaine-schema".Clients(ID_Clients),
+   CHECK (But IN ('perte de poids','gain de poids','maintien de poids'))
+);
+
+ALTER TABLE "episaine-schema".Informations OWNER TO episaine;
+
+-- Relation genere entre les tables Clients et Recettes
+CREATE TABLE "episaine-schema".genere(
+   ID_Clients INT,
+   ID_Recettes INT,
+   PRIMARY KEY(ID_Clients, ID_Recettes),
+   FOREIGN KEY(ID_Clients) REFERENCES "episaine-schema".Informations(ID_Clients),
+   FOREIGN KEY(ID_Recettes) REFERENCES "episaine-schema".Recettes(ID_Recettes)
+);
+
+ALTER TABLE "episaine-schema".genere OWNER TO episaine;
