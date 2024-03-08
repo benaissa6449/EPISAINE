@@ -21,10 +21,10 @@ public class XMartCityService {
 
     private enum Queries {
         SELECT_ALL_STUDENTS("SELECT t.name, t.firstname, t.group FROM \"ezip-ing1\".students t"),
-        SELECT_ALL_CLIENTS("SELECT t.ID_Clients, t.Nom_Client, t.Prenom_Client, t.Date_de_naissance_Client, t.Poids, t.Genre, t.Taille, t.Numero_de_telephone_Client, t.Mail_Client, t.Ville, t.Adresse, t.Code_Postal_ FROM \"episaine-schema\".clients t"),
+        SELECT_ALL_CLIENTS("SELECT t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
 
         INSERT_STUDENT("INSERT into \"ezip-ing1\".students (\"name\", \"firstname\", \"group\") values (?, ?, ?)"),
-        INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"Nom_Client\", \"Prenom_Client\", \"Date_de_naissance_Client\", \"Poids\", \"Genre\", \"Taille\", \"Numero_de_telephone_Client\", \"Mail_Client\", \"Ville\", \"Adresse\", \"Code_postal_\") values (?,?,?,?,?,?,?,?,?,?,?)");
+        INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)");
         private final String query;
 
         private Queries(final String query) {
@@ -104,10 +104,10 @@ public class XMartCityService {
                 case "INSERT_CLIENT" : 
                     mapper = new ObjectMapper();
                     Client client = mapper.readValue(request.getRequestBody(), Client.class);
-                    pstmt = connection.prepareStatement(Queries.INSERT_STUDENT.query);
-                    pstmt.setString(1, client.getNom_Client());
-                    pstmt.setString(2, client.getPrenom_Client());
-                    Date date = Date.valueOf(client.getDate_de_naissance_Client());
+                    pstmt = connection.prepareStatement(Queries.INSERT_CLIENT.query);
+                    pstmt.setString(1, client.getNomClient());
+                    pstmt.setString(2, client.getPrenomClient());
+                    Date date = Date.valueOf(client.getDateDeNaissanceClient());
                     pstmt.setDate(3, date);
                     pstmt.setBigDecimal(4, new BigDecimal(client.getPoids()));
                     pstmt.setString(5, client.getGenre());
@@ -116,12 +116,12 @@ public class XMartCityService {
                     pstmt.setString(8, client.getMail_Client());
                     pstmt.setString(9, client.getVille());
                     pstmt.setString(10, client.getAdresse());
-                    pstmt.setString(11, client.getCode_Postal_());
+                    pstmt.setString(11, client.getCode_Postal());
                     rows = pstmt.executeUpdate();
 
                     response = new Response();
                     response.setRequestId(request.getRequestId());
-                    response.setResponseBody("{\"client_id\": " + rows + " }");
+                    response.setResponseBody("{\"id_client\": " + rows + " }");
                     break;
 
                 default:

@@ -58,28 +58,27 @@ public class MainSelectClient {
             final Clients clients = (Clients) joinedClientRequest.getResult();
             final AsciiTable asciiTable = new AsciiTable();
             ArrayList<String[]> clientList = new ArrayList<>();
-            for (final Client client: clients.getClients()) {
+            for (final Client client : clients.getClients()) {
                 // TODO : trouver une méthode moins barbare pour faire ça
-                String[] clientLine = new String[12];
-                clientLine[0] = client.getId_Clients();
-                clientLine[1] = client.getNom_Client();
-                clientLine[2] = client.getPrenom_Client();
-                clientLine[3] = client.getDate_de_naissance_Client();
-                clientLine[4] = client.getPoids();
-                clientLine[5] = client.getGenre();
-                clientLine[6] = client.getTaille();
-                clientLine[7] = client.getNumero_de_telephone_Client();
-                clientLine[8] = client.getMail_Client();
-                clientLine[9] = client.getVille();
-                clientLine[10] = client.getAdresse();
-                clientLine[11] = client.getCode_Postal_();
+                String[] clientLine = new String[11];
+                clientLine[0] = client.getNomClient();
+                clientLine[1] = client.getPrenomClient();
+                clientLine[2] = client.getDateDeNaissanceClient();
+                clientLine[3] = client.getPoids();
+                clientLine[4] = client.getGenre();
+                clientLine[5] = client.getTaille();
+                clientLine[6] = client.getNumero_de_telephone_Client();
+                clientLine[7] = client.getMail_Client();
+                clientLine[8] = client.getVille();
+                clientLine[9] = client.getAdresse();
+                clientLine[10] = client.getCode_Postal();
 
                 clientList.add(clientLine);
 
                 asciiTable.addRule();
-                asciiTable.addRow(client.getId_Clients(), client.getNom_Client(), client.getPrenom_Client(), client.getDate_de_naissance_Client(), 
+                asciiTable.addRow(client.getNomClient(), client.getPrenomClient(), client.getDateDeNaissanceClient(), 
                                   client.getPoids(), client.getGenre(), client.getTaille(), client.getNumero_de_telephone_Client(),
-                                  client.getMail_Client(), client.getVille(), client.getAdresse(), client.getCode_Postal_());
+                                  client.getMail_Client(), client.getVille(), client.getAdresse(), client.getCode_Postal());
             }
             asciiTable.addRule();
             

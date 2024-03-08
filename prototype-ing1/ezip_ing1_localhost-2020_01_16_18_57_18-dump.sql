@@ -1,209 +1,143 @@
--- Table GrandeSurface
-CREATE TABLE "episaine-schema".GrandeSurface(
-   ID_GS INT,
-   Intitule VARCHAR(50) NOT NULL,
-   Ville VARCHAR(50) NOT NULL,
-   Adresse_GS VARCHAR(50) NOT NULL,
-   Ville_GS VARCHAR(50),
-   Code_Postal_GS VARCHAR(50) NOT NULL,
+-- Table grandeSurface
+CREATE TABLE "episaine-schema".grandeSurface(
+   id_GS serial,
+   intitule VARCHAR(50) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
+   adresse_GS VARCHAR(50) NOT NULL,
+   ville_GS VARCHAR(50),
+   code_Postal_GS VARCHAR(50) NOT NULL,
    PRIMARY KEY(ID_GS)
 );
 
-ALTER TABLE "episaine-schema".GrandeSurface OWNER TO episaine;
+ALTER TABLE "episaine-schema".grandeSurface OWNER TO episaine;
 
-CREATE SEQUENCE "episaine-schema".gs_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER TABLE "episaine-schema".gs_id OWNER TO episaine;
-   
-ALTER SEQUENCE "episaine-schema".gs_id OWNED BY "episaine-schema".GrandeSurface.ID_GS;
 
 -- Table UtilisateurGrandeSurface
-CREATE TABLE "episaine-schema".UtilisateurGrandeSurface(
-   ID_UserGS INT,
-   Nom_User VARCHAR(50) NOT NULL,
-   Prenom_User VARCHAR(50) NOT NULL,
-   Poste_User VARCHAR(50),
-   ID_GS INT NOT NULL,
-   DateEmbauche DATE,
-   PRIMARY KEY(ID_UserGS),
-   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS)
+CREATE TABLE "episaine-schema".utilisateurGrandeSurface(
+   id_UserGS serial,
+   nom_User VARCHAR(50) NOT NULL,
+   prenom_User VARCHAR(50) NOT NULL,
+   poste_User VARCHAR(50),
+   id_GS serial NOT NULL,
+   dateEmbauche DATE,
+   PRIMARY KEY(id_UserGS),
+   FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS)
 );
 
-ALTER TABLE "episaine-schema".UtilisateurGrandeSurface OWNER TO episaine;
-
-CREATE SEQUENCE "episaine-schema".u_gs_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-   
-ALTER TABLE "episaine-schema".u_gs_id OWNER TO episaine;
-
-ALTER SEQUENCE "episaine-schema".u_gs_id OWNED BY "episaine-schema".UtilisateurGrandeSurface.ID_UserGS;
+ALTER TABLE "episaine-schema".utilisateurGrandeSurface OWNER TO episaine;
 
 -- Table Produits
-CREATE TABLE "episaine-schema".Produits(
-   ID_Produits INT,
-   Nom_Produit VARCHAR(50) NOT NULL,
-   Prix DECIMAL(10,2) NOT NULL,
-   Regime VARCHAR(50) NOT NULL,
-   Rayon VARCHAR(50) NOT NULL,
-   Calorie INT NOT NULL,
-   DateExpiration DATE NOT NULL,
-   Quantite_Produit INT,
-   Stock INT,
-   ID_GS INT NOT NULL, 
-   PRIMARY KEY(ID_Produits),
-   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS) 
+CREATE TABLE "episaine-schema".produits(
+   iD_Produits serial,
+   nom_Produit VARCHAR(50) NOT NULL,
+   prix DECIMAL(10,2) NOT NULL,
+   regime VARCHAR(50) NOT NULL,
+   rayon VARCHAR(50) NOT NULL,
+   calorie INT NOT NULL,
+   dateExpiration DATE NOT NULL,
+   quantite_Produit INT,
+   stock INT,
+   id_GS serial NOT NULL, 
+   PRIMARY KEY(id_Produits),
+   FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS) 
 );
 
 ALTER TABLE "episaine-schema".Produits OWNER TO episaine;
 
-CREATE SEQUENCE "episaine-schema".p_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-   
-ALTER TABLE "episaine-schema".p_id OWNER TO episaine;
-
-ALTER SEQUENCE "episaine-schema".p_id OWNED BY "episaine-schema".Produits.ID_Produits;
-
--- Relation Vend entre les tables Produits et GrandeSurface
+-- Relation Vend entre les tables Produits et grandeSurface
 -- Le but est de lier les produits et les grandes surfaces
 --CREATE INDEX idx_produits ON Produits(ID_Produits, ID_GS);
 
-CREATE TABLE "episaine-schema".Vend(
-   ID_Produits INT,
-   ID_GS INT,
-   QuantiteVendue INT,
-   PRIMARY KEY(ID_Produits, ID_GS),  
-   FOREIGN KEY(ID_Produits) REFERENCES "episaine-schema".Produits(ID_Produits),
-   FOREIGN KEY(ID_GS) REFERENCES "episaine-schema".GrandeSurface(ID_GS)
+CREATE TABLE "episaine-schema".vend(
+   id_Produits INT,
+   id_GS INT,
+   quantiteVendue INT,
+   PRIMARY KEY(id_Produits, id_GS),  
+   FOREIGN KEY(id_Produits) REFERENCES "episaine-schema".Produits(id_Produits),
+   FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS)
 );
 
-ALTER TABLE "episaine-schema".Vend OWNER TO episaine;
+ALTER TABLE "episaine-schema".vend OWNER TO episaine;
 
 -- Table Nutritionnistes 
-CREATE TABLE "episaine-schema".Nutritionnistes(
-   ID_Nutritioniste INT,
-   Nom_N VARCHAR(50) NOT NULL,
-   Prenom_N VARCHAR(50),
-   Numero_de_telephone_N VARCHAR(20), -- Changement de INT à VARCHAR(20)
-   Mail_N VARCHAR(50),
-   PRIMARY KEY(ID_Nutritioniste)
+CREATE TABLE "episaine-schema".nutritionnistes(
+   id_Nutritioniste serial,
+   nom_N VARCHAR(50) NOT NULL,
+   prenom_N VARCHAR(50),
+   numero_de_telephone_N VARCHAR(20), -- Changement de INT à VARCHAR(20)
+   mail_N VARCHAR(50),
+   PRIMARY KEY(id_Nutritioniste)
 );
 
-ALTER TABLE "episaine-schema".Nutritionnistes OWNER TO episaine;
-
-CREATE SEQUENCE "episaine-schema".n_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-    
-ALTER TABLE "episaine-schema".n_id OWNER TO episaine;
-   
-ALTER SEQUENCE "episaine-schema".n_id OWNED BY "episaine-schema".Nutritionnistes.ID_Nutritioniste;
+ALTER TABLE "episaine-schema".nutritionnistes OWNER TO episaine;
 
 -- Table Recettes   
-CREATE TABLE "episaine-schema".Recettes(
-   ID_Recettes INT,
-   Nom_Recette VARCHAR(100) NOT NULL, 
-   Nombre_de_Calories INT NOT NULL,
-   Ingredients VARCHAR(255), 
-   Instructions VARCHAR(255),
-   RegimeAlimentaire VARCHAR(50),
-   ID_Nutritioniste INT NOT NULL,
-   PRIMARY KEY(ID_Recettes),
-   FOREIGN KEY(ID_Nutritioniste) REFERENCES "episaine-schema".Nutritionnistes(ID_Nutritioniste),
-   CHECK (RegimeAlimentaire IN ('normale', 'cétogène', 'végétarien', 'carnivore', 'pescétarien', 'végétalien', 'sans gluten', 'sans lactose', 'halal', 'cashér', 'paléo', 'sans sucre ajouté', 'régime méditerranéen'))
+CREATE TABLE "episaine-schema".recettes(
+   id_Recette serial,
+   nom_Recette VARCHAR(100) NOT NULL, 
+   nombre_de_Calories INT NOT NULL,
+   ingredients VARCHAR(255), 
+   instructions VARCHAR(255),
+   regimeAlimentaire VARCHAR(50),
+   id_Nutritioniste serial NOT NULL,
+   PRIMARY KEY(id_Recette),
+   FOREIGN KEY(id_Nutritioniste) REFERENCES "episaine-schema".nutritionnistes(id_Nutritioniste),
+   CHECK (regimeAlimentaire IN ('normale', 'cétogène', 'végétarien', 'carnivore', 'pescétarien', 'végétalien', 'sans gluten', 'sans lactose', 'halal', 'cashér', 'paléo', 'sans sucre ajouté', 'régime méditerranéen'))
 );
 
-ALTER TABLE "episaine-schema".Recettes OWNER TO episaine;
-
-CREATE SEQUENCE "episaine-schema".r_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER TABLE "episaine-schema".r_id OWNER TO episaine;
-   
-ALTER SEQUENCE "episaine-schema".r_id OWNED BY "episaine-schema".Recettes.ID_Recettes;
+ALTER TABLE "episaine-schema".recettes OWNER TO episaine;
 
 -- Relation EstComposéDe entre les tables Produits et Recettes (un produit peut être dans plusieurs recettes)
-CREATE TABLE "episaine-schema".EstComposeDe(
-   ID_Produits INT,
-   ID_Recettes INT,
-   Quantite INT,
-   PRIMARY KEY(ID_Produits, ID_Recettes),
-   FOREIGN KEY(ID_Produits) REFERENCES "episaine-schema".Produits(ID_Produits),
-   FOREIGN KEY(ID_Recettes) REFERENCES "episaine-schema".Recettes(ID_Recettes)
+CREATE TABLE "episaine-schema".estComposeDe(
+   id_Produits serial,
+   id_Recettes serial,
+   quantite INT,
+   PRIMARY KEY(id_Produits, id_Recettes),
+   FOREIGN KEY(id_Produits) REFERENCES "episaine-schema".produits(id_Produits),
+   FOREIGN KEY(id_Recettes) REFERENCES "episaine-schema".recettes(id_Recettes)
 );
 
-ALTER TABLE "episaine-schema".EstComposeDe OWNER TO episaine;
+ALTER TABLE "episaine-schema".estComposeDe OWNER TO episaine;
 
 -- Table Client 
-CREATE TABLE "episaine-schema".Clients(
-   ID_Clients INT,
-   Nom_Client VARCHAR(50) NOT NULL,
-   Prenom_Client VARCHAR(50) NOT NULL,
-   Date_de_naissance_Client DATE NOT NULL,
-   Poids DECIMAL(5,2) NOT NULL, 
-   Genre VARCHAR(10) NOT NULL,
-   Taille INT NOT NULL,
-   Numero_de_telephone_Client VARCHAR(20) NOT NULL,
-   Mail_Client VARCHAR(50) NOT NULL,
-   Ville VARCHAR(50) NOT NULL,
-   Adresse VARCHAR(50) NOT NULL,
-   Code_Postal_ VARCHAR(50),
-   PRIMARY KEY(ID_Clients),
-   CHECK (Genre IN ('Homme', 'Femme')) 
+CREATE TABLE "episaine-schema".clients(
+   id_Client serial,
+   nom_Client VARCHAR(50) NOT NULL,
+   prenom_Client VARCHAR(50) NOT NULL,
+   date_de_naissance_Client DATE NOT NULL,
+   poids DECIMAL(5,2) NOT NULL, 
+   genre VARCHAR(10) NOT NULL,
+   taille INT NOT NULL,
+   numero_de_telephone_Client VARCHAR(20) NOT NULL,
+   mail_Client VARCHAR(50) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
+   adresse VARCHAR(50) NOT NULL,
+   code_Postal VARCHAR(50),
+   PRIMARY KEY(id_Client),
+   CHECK (genre IN ('Homme', 'Femme')) 
 );
 
-ALTER TABLE "episaine-schema".Clients OWNER TO episaine;
-
-CREATE SEQUENCE "episaine-schema".c_id
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-    
-ALTER TABLE "episaine-schema".c_id OWNER TO episaine;
-   
-ALTER SEQUENCE "episaine-schema".c_id OWNED BY "episaine-schema".Clients.ID_Clients;
-
+ALTER TABLE "episaine-schema".clients OWNER TO episaine;
 -- Table Informations 
-CREATE TABLE "episaine-schema".Informations(
-   ID_Clients INT,
-   But VARCHAR(50),
-   Allergie VARCHAR(50) NOT NULL,
-   NbDeRepas INT,
-   PRIMARY KEY(ID_Clients),
-   FOREIGN KEY(ID_Clients) REFERENCES "episaine-schema".Clients(ID_Clients),
-   CHECK (But IN ('perte de poids','gain de poids','maintien de poids'))
+CREATE TABLE "episaine-schema".informations(
+   id_Client serial,
+   but VARCHAR(50),
+   allergie VARCHAR(50) NOT NULL,
+   nbDeRepas INT,
+   PRIMARY KEY(id_Client),
+   FOREIGN KEY(id_Client) REFERENCES "episaine-schema".clients(id_Client),
+   CHECK (but IN ('perte de poids','gain de poids','maintien de poids'))
 );
 
-ALTER TABLE "episaine-schema".Informations OWNER TO episaine;
+ALTER TABLE "episaine-schema".informations OWNER TO episaine;
 
 -- Relation genere entre les tables Clients et Recettes
 CREATE TABLE "episaine-schema".genere(
-   ID_Clients INT,
-   ID_Recettes INT,
-   PRIMARY KEY(ID_Clients, ID_Recettes),
-   FOREIGN KEY(ID_Clients) REFERENCES "episaine-schema".Informations(ID_Clients),
-   FOREIGN KEY(ID_Recettes) REFERENCES "episaine-schema".Recettes(ID_Recettes)
+   id_Client serial,
+   id_Recette serial,
+   PRIMARY KEY(id_Client, id_Recette),
+   FOREIGN KEY(id_Client) REFERENCES "episaine-schema".informations(id_Client),
+   FOREIGN KEY(id_Recette) REFERENCES "episaine-schema".recettes(id_Recette)
 );
 
 ALTER TABLE "episaine-schema".genere OWNER TO episaine;

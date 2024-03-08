@@ -1,5 +1,4 @@
 package edu.ezip.ing1.pds.business.dto;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -16,6 +15,7 @@ public class Clients {
         return clients;
     }
 
+    @JsonProperty("clients")
     public void setClients(Set<Client> clients) {
         this.clients = clients;
     }

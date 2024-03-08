@@ -10,142 +10,132 @@ import java.sql.SQLException;
 
 @JsonRootName(value = "client")
 public class Client {
-    private  String ID_Clients;
-    private  String Nom_Client;
-    private  String Prenom_Client;
-    private  String Date_de_naissance_Client;
-    private  String Poids;
-    private  String Genre;
-    private  String Taille;
-    private  String Numero_de_telephone_Client;
-    private  String Mail_Client;
-    private  String Ville;
-    private  String Adresse;
-    private  String Code_Postal_;
+    private String nom_Client;
+    private String prenom_Client;
+    private String date_de_naissance_Client;
+    private String poids;
+    private String genre;
+    private String taille;
+    private String numero_de_telephone_Client;
+    private String mail_Client;
+    private String ville;
+    private String adresse;
+    private String code_Postal;
 
     public Client() {
     }
     public final Client build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResulset(resultSet, "ID_Clients", "Nom_Client", "Prenom_Client", "Date_de_naissance_Client", "Poids", "Genre", "Taille", "Numero_de_telephone_Client", "Mail_Client", "Ville", "Adresse", "Code_Postal_");
+        setFieldsFromResulset(resultSet,"nom_Client", "prenom_Client", "date_de_naissance_Client", "poids", "genre", "taille", "numero_de_telephone_Client", "mail_Client", "ville", "adresse", "code_Postal");
         return this;
     }
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, ID_Clients, Nom_Client, Prenom_Client, Date_de_naissance_Client, Poids, Genre, Taille, Numero_de_telephone_Client, Mail_Client, Ville, Adresse, Code_Postal_);
+        return buildPreparedStatement(preparedStatement, nom_Client, prenom_Client, date_de_naissance_Client, poids, genre, taille, numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal);
     }
-    public Client(String ID_Clients, String Nom_Client, String Prenom_Client, String Date_de_naissance_Client, String Poids, String Genre, String Taille, String Numero_de_telephone_Client, String Mail_Client, String Ville, String Adresse, String Code_Postal_) {
-        this.ID_Clients = ID_Clients;
-        this.Nom_Client = Nom_Client;
-        this.Prenom_Client = Prenom_Client;
-        this.Date_de_naissance_Client = Date_de_naissance_Client;
-        this.Poids = Poids;
-        this.Genre = Genre;
-        this.Taille = Taille;
-        this.Numero_de_telephone_Client = Numero_de_telephone_Client;
-        this.Mail_Client = Mail_Client;
-        this.Ville = Ville;
-        this.Adresse = Adresse;
-        this.Code_Postal_ = Code_Postal_;
+    
+
+    public Client(String nom_Client, String prenom_Client, String date_de_naissance_Client, String poids, String genre, String taille, String numero_de_telephone_Client, String mail_Client, String ville, String adresse, String code_Postal) {
+        this.nom_Client = nom_Client;
+        this.prenom_Client = prenom_Client;
+        this.date_de_naissance_Client = date_de_naissance_Client;
+        this.poids = poids;
+        this.genre = genre;
+        this.taille = taille;
+        this.numero_de_telephone_Client = numero_de_telephone_Client;
+        this.mail_Client = mail_Client;
+        this.ville = ville;
+        this.adresse = adresse;
+        this.code_Postal = code_Postal;
     }
 
-    // Setter
-    @JsonProperty("Id_Clients")
-    public void setId_Clients(String ID_Clients) {
-        this.ID_Clients = ID_Clients;
-    }
-    @JsonProperty("Nom_Client")
-    public void setNom_Client(String Nom_Client) {
-        this.Nom_Client = Nom_Client;
-    }
-    @JsonProperty("Prenom_Client")
-    public void setPrenom_Client(String Prenom_Client) {
-        this.Prenom_Client = Prenom_Client;
-    }
-    @JsonProperty("Date_de_naissance_Client")
-    public void setDate_de_naissance_Client(String Date_de_naissance_Client) {
-        this.Date_de_naissance_Client = Date_de_naissance_Client;
-    }
-    @JsonProperty("Poids")
-    public void setPoids(String Poids) {
-        this.Poids = Poids;
-    }
-    @JsonProperty("Genre")
-    public void setGenre(String Genre) {
-        this.Genre = Genre;
-    }
-    @JsonProperty("Taille")
-    public void setTaille(String Taille) {
-        this.Taille = Taille;
-    }
-    @JsonProperty("Numero_de_telephone_Client")
-    public void setNumero_de_telephone_Client(String Numero_de_telephone_Client) {
-        this.Numero_de_telephone_Client = Numero_de_telephone_Client;
-    }
-    @JsonProperty("Mail_Client")
-    public void setMail_Client(String Mail_Client) {
-        this.Mail_Client = Mail_Client;
-    }
-    @JsonProperty("Ville")
-    public void setVille(String Ville) {
-        this.Ville = Ville;
-    }
-    @JsonProperty("Adresse")
-    public void setAdresse(String Adresse) {
-        this.Adresse = Adresse;
-    }
-    @JsonProperty("Code_Postal_")
-    public void setCode_Postal_(String Code_Postal_) {
-        this.Code_Postal_ = Code_Postal_;
+    public String getNomClient() {
+        return nom_Client;
     }
 
-    // Getter
-    public String getId_Clients() {
-        return ID_Clients;
+    public String getPrenomClient() {
+        return prenom_Client;
     }
 
-    public String getNom_Client() {
-        return Nom_Client;
-    }
-
-    public String getPrenom_Client() {
-        return Prenom_Client;
-    }
-
-    public String getDate_de_naissance_Client() {
-        return Date_de_naissance_Client;
+    public String getDateDeNaissanceClient() {
+        return date_de_naissance_Client;
     }
 
     public String getPoids() {
-        return Poids;
+        return poids;
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public String getTaille() {
-        return Taille;
+        return taille;
     }
 
     public String getNumero_de_telephone_Client() {
-        return Numero_de_telephone_Client;
+        return numero_de_telephone_Client;
     }
 
     public String getMail_Client() {
-        return Mail_Client;
+        return mail_Client;
     }
 
     public String getVille() {
-        return Ville;
+        return ville;
     }
 
     public String getAdresse() {
-        return Adresse;
+        return adresse;
     }
 
-    public String getCode_Postal_() {
-        return Code_Postal_;
+    public String getCode_Postal() {
+        return code_Postal;
+    }
+
+    @JsonProperty("Nom_Client")
+    public void setnomClient(String nom_Client) {
+        this.nom_Client = nom_Client;
+    }
+    @JsonProperty("Prenom_Client")
+    public void setprenomClient(String prenom_Client) {
+        this.prenom_Client = prenom_Client;
+    }
+    @JsonProperty("Date_de_naissance_Client")
+    public void setdateDeNaissanceClient(String date_de_naissance_Client) {
+        this.date_de_naissance_Client = date_de_naissance_Client;
+    }
+    @JsonProperty("Poids")
+    public void setPoids(String poids) {
+        this.poids = poids;
+    }
+    @JsonProperty("Genre")
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    @JsonProperty("Taille")
+    public void setTaille(String taille) {
+        this.taille = taille;
+    }
+    @JsonProperty("Numero_de_telephone_Client")
+    public void setNumero_de_telephone_Client(String numero_de_telephone_Client) {
+        this.numero_de_telephone_Client = numero_de_telephone_Client;
+    }
+    @JsonProperty("Mail_Client")
+    public void setMail_Client(String mail_Client) {
+        this.mail_Client = mail_Client;
+    }
+    @JsonProperty("Ville")
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+    @JsonProperty("Adresse")
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+    @JsonProperty("Code_Postal")
+    public void setCode_Postal(String code_Postal) {
+        this.code_Postal = code_Postal;
     }
 
     private void setFieldsFromResulset(final ResultSet resultSet, final String ... fieldNames )
@@ -155,10 +145,11 @@ public class Client {
             field.set(this, resultSet.getObject(fieldName).toString());
         }
     }
-    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final String ... fieldNames )
+    
+    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final String ... fieldNames)
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         int ix = 0;
-        for(final String fieldName : fieldNames ) {
+        for(final String fieldName : fieldNames) {
             preparedStatement.setString(++ix, fieldName);
         }
         return preparedStatement;
@@ -167,18 +158,17 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "ID_Client='" + ID_Clients + '\'' +
-                ", Nom_Client='" + Nom_Client + '\'' +
-                ", Prenom_Client='" + Prenom_Client + '\'' +
-                ", Date_de_naissance_Client='" + Date_de_naissance_Client + '\'' +
-                ", Poids='" + Poids + '\'' +
-                ", Genre='" + Genre + '\'' +
-                ", Taille='" + Taille + '\'' +
-                ", Numero_de_telephone_Client='" + Numero_de_telephone_Client + '\'' +
-                ", Mail_Client='" + Mail_Client + '\'' +
-                ", Ville='" + Ville + '\'' +
-                ", Adresse='" + Adresse + '\'' +
-                ", Code_Postal_='" + Code_Postal_ + '\'' +
+                "Nom_Client='" + nom_Client + '\'' +
+                ", Prenom_Client='" + prenom_Client + '\'' +
+                ", Date_de_naissance_Client='" + date_de_naissance_Client + '\'' +
+                ", Poids='" + poids + '\'' +
+                ", Genre='" + genre + '\'' +
+                ", Taille='" + taille + '\'' +
+                ", Numero_de_telephone_Client='" + numero_de_telephone_Client + '\'' +
+                ", Mail_Client='" + mail_Client + '\'' +
+                ", Ville='" + ville + '\'' +
+                ", Adresse='" + adresse + '\'' +
+                ", Code_Postal='" + code_Postal + '\'' +
                 '}';
     }
 }

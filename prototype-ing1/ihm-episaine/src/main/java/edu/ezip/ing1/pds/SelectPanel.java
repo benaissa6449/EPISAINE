@@ -63,7 +63,7 @@ public class SelectPanel extends JPanel implements ActionListener {
             defaultTableModel.setRowCount(0);
             
             // nom de chaque colonne
-            String[] tableHeader = {"ID", "Nom", "Prénom", "Date de naissance", "Poids (en kg)", "Genre", "Taille", "Numéro de téléphone", "Mail", "Ville", "Code postal", "Adresse"}; 
+            String[] tableHeader = {"Nom", "Prénom", "Date de naissance", "Poids (en kg)", "Genre", "Taille", "Numéro de téléphone", "Mail", "Ville", "Code postal", "Adresse"}; 
             defaultTableModel.setColumnIdentifiers(tableHeader);
             
             // ajout du contenu de la table ligne par ligne

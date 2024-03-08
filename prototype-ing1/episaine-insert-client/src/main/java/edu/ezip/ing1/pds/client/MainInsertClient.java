@@ -58,9 +58,9 @@ public class MainInsertClient {
             final Client guy = (Client)clientRequest.getInfo();
             logger.debug("Thread {} complete : {} {} {} --> {}",
                                     clientRequest.getThreadName(),
-                                    guy.getNom_Client(), guy.getPrenom_Client(), guy.getDate_de_naissance_Client(), guy.getPoids(), guy.getGenre(),
+                                    guy.getNomClient(), guy.getPrenomClient(), guy.getDateDeNaissanceClient(), guy.getPoids(), guy.getGenre(),
                                     guy.getTaille(), guy.getNumero_de_telephone_Client(), guy.getMail_Client(), guy.getVille(), guy.getAdresse(),
-                                    guy.getCode_Postal_(),
+                                    guy.getCode_Postal(),
                                     clientRequest.getResult());
         }
     }
