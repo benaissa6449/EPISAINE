@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import edu.ezip.ing1.pds.client.InsertIntoYaml;
-import edu.ezip.ing1.pds.client.MainInsertClient;
 
 public class InsertPanel extends JPanel implements ActionListener {
     private JTextField nomTextField;
@@ -29,14 +28,14 @@ public class InsertPanel extends JPanel implements ActionListener {
     private String studentsToBeInserted = "../episaine-insert-client/src/main/resources/clients-to-be-inserted.yaml";
 
     public InsertPanel() {
-        // parametre du panel
+        // panel's settings
         setLayout(new FlowLayout());
         setBackground(Color.WHITE);
 
-        // ajout panel avec les prompt
+        // adding prompts panel
         add(promptPanel());
 
-        // ajout bouton
+        // add buttons
         add(insertButton());
     }
 
@@ -45,101 +44,101 @@ public class InsertPanel extends JPanel implements ActionListener {
         jpanel.setLayout(new GridBagLayout());
         jpanel.setBackground(Color.WHITE);
 
-        // mise en place layout
+        // layout settings
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        // ajout des elements au panel (jlabel et jtextfield)
-        gbc.gridx = 0; // place les elements sur la premiere colonne (ici pour les jlabel)
+        // adding jlabel and jtextfield to the layout (jlabel and jtextfield)
+        gbc.gridx = 0; // first column (jlabel)
 
-        gbc.gridy = 0; // ligne 1
+        gbc.gridy = 0; // line 1
         JLabel nomLabel = new JLabel("Nom :");
         jpanel.add(nomLabel, gbc);
         
-        gbc.gridy = 1; // ligne 2
+        gbc.gridy = 1; // line 2
         JLabel prenomLabel = new JLabel("Prénom :");
         jpanel.add(prenomLabel, gbc);
         
-        gbc.gridy = 2; // ligne 3
+        gbc.gridy = 2; // line 3
         JLabel dateLabel = new JLabel("Date de naissance :");
         jpanel.add(dateLabel, gbc);
         
-        gbc.gridy = 3; // ligne 4
+        gbc.gridy = 3; // line 4
         JLabel poidsLabel = new JLabel("Poids :");
         jpanel.add(poidsLabel, gbc);
 
-        gbc.gridy = 4; // ligne 5
+        gbc.gridy = 4; // line 5
         JLabel genreLabel = new JLabel("Genre :");
         jpanel.add(genreLabel, gbc);
 
-        gbc.gridy = 5; // ligne 6
+        gbc.gridy = 5; // line 6
         JLabel tailleLabel = new JLabel("Taille :");
         jpanel.add(tailleLabel, gbc);
         
-        gbc.gridy = 6; // ligne 7
+        gbc.gridy = 6; // line 7
         JLabel numLabel = new JLabel("Numéro de téléphone :");
         jpanel.add(numLabel, gbc);
         
-        gbc.gridy = 7; // ligne 8
+        gbc.gridy = 7; // line 8
         JLabel mailLabel = new JLabel("Adresse mail :");
         jpanel.add(mailLabel, gbc);
         
-        gbc.gridy = 8; // ligne 9
+        gbc.gridy = 8; // line 9
         JLabel villeLabel = new JLabel("Ville :");
         jpanel.add(villeLabel, gbc);
         
-        gbc.gridy = 9; // ligne 10
+        gbc.gridy = 9; // line 10
         JLabel codePostalLabel = new JLabel("Code postal :");
         jpanel.add(codePostalLabel, gbc);
         
-        gbc.gridy = 10; // ligne 11
+        gbc.gridy = 10; // line 11
         JLabel adressePostaleLabel = new JLabel("Adresse postale :");
         jpanel.add(adressePostaleLabel, gbc);
 
-        gbc.gridx = 1; // place les elements sur la deuxieme colonne (ici pour les jtextfield)
+        gbc.gridx = 1; // second column (jtextfield)
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridy = 0; // ligne 1
+        gbc.gridy = 0; // line 1
         nomTextField = new JTextField(20);
         jpanel.add(nomTextField,gbc);
 
-        gbc.gridy = 1; // ligne 2
+        gbc.gridy = 1; // line 2
         prenomTextField = new JTextField(20);
         jpanel.add(prenomTextField,gbc);
                 
-        gbc.gridy = 2; // ligne 3
+        gbc.gridy = 2; // line 3
         dateTextField = new JTextField(20);
         jpanel.add(dateTextField,gbc);
 
-        gbc.gridy = 3; // ligne 4
+        gbc.gridy = 3; // line 4
         poidsTextField = new JTextField(20);
         jpanel.add(poidsTextField,gbc);
 
-        gbc.gridy = 4; // ligne 5
+        gbc.gridy = 4; // line 5
         genreTextField = new JTextField(20);
         jpanel.add(genreTextField,gbc);
         
-        gbc.gridy = 5; // ligne 6
+        gbc.gridy = 5; // line 6
         tailleTextField = new JTextField(20);
         jpanel.add(tailleTextField,gbc);
         
-        gbc.gridy = 6; // ligne 7
+        gbc.gridy = 6; // line 7
         numTextField = new JTextField(20);
         jpanel.add(numTextField,gbc);
 
-        gbc.gridy = 7; // ligne 8
+        gbc.gridy = 7; // line 8
         mailTextField = new JTextField(20);
         jpanel.add(mailTextField,gbc);
         
-        gbc.gridy = 8; // ligne 9
+        gbc.gridy = 8; // line 9
         villeTextField= new JTextField(20);
         jpanel.add(villeTextField,gbc);
         
-        gbc.gridy = 9; // ligne 10
+        gbc.gridy = 9; // line 10
         codePostalTextField = new JTextField(20);
         jpanel.add(codePostalTextField,gbc);
         
-        gbc.gridy = 10; // ligne 11
+        gbc.gridy = 10; // line 11
         adressePostaleTextField = new JTextField(20);
         jpanel.add(adressePostaleTextField,gbc);
 
@@ -173,7 +172,8 @@ public class InsertPanel extends JPanel implements ActionListener {
             (!codePostalString.isEmpty()) && (!adressePostaleString.isEmpty())) {
                 InsertIntoYaml.writeIntoYaml(nomString, prenomString, dateString, poidsString,
                 genreString, tailleString, numString, mailString, villeString, codePostalString, adressePostaleString, studentsToBeInserted);
-                // Sous windows
+                
+                // Under windows
                 String currentDirectory = getCurrentDirectory();
                 String batFilePath = currentDirectory + "\\src\\main\\resources\\compile.bat";
                 ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start", "/min", batFilePath);
@@ -181,7 +181,7 @@ public class InsertPanel extends JPanel implements ActionListener {
                 process.waitFor();
                 
                 /*
-                // Sous linux
+                // Under linux
                 String currentDirectory = System.getProperty("user.dir");
                 String shellScriptPath = currentDirectory + "/src/main/resources/compile.sh";
                 ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", shellScriptPath);

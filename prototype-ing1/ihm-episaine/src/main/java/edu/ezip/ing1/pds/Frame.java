@@ -26,55 +26,55 @@ public class Frame extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // ajout du panel qui change
+        // adding panel to the frame
         setTransitionPanel();
         add(transitionPanel);
 
-        // TEMPORAIRE : ajout du panel des boutons pour les transitions
+        // TEMPORARY : adding buttons' panel to navigate between pages
         add(panelJButton(), BorderLayout.SOUTH);
     }
 
     private void setTransitionPanel(){
-        // Creation JPanel
+        // creation JPanel
         transitionPanel = new JPanel();
 
-        // Creation CardLayout pour transition entre les jpanels
+        // creation CardLayout to navigate between panels
         cardLayout = new CardLayout();
         transitionPanel.setLayout(cardLayout);
 
-        // Liste de panels
+        // panels list
         ArrayList<JPanel> panelArray = new ArrayList<JPanel>();
 
-        // JPanel qu'on met dans la liste
+        // panels we add to the list
         panelArray.add(new SelectPanel());
         panelArray.add(new InsertPanel());
 
-        // On insere les elements de la liste dans le CardLayout
+        // insert list's componnent to the cardlayout
         for (JPanel jpanel : panelArray) {
             transitionPanel.add(jpanel);
         }
     }
 
-    // TEMPORAIRE : boutons pour naviguer entre les panels
+    // TEMPORAIRE : button's to navigate between panels
     private JPanel panelJButton(){
-        // panel qui regroupe les boutons
+        // panel for every buttons
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
         buttonPanel.setBackground(Color.WHITE);
 
-        // creation des boutons
+        // buttons creation
         next = new JButton("next");
         previous = new JButton("previous");
         first = new JButton("first");
         last = new JButton("last");
 
-        // associe l'ecouteur aux boutons
+        // listener for buttons
         next.addActionListener(this);
         previous.addActionListener(this);
         first.addActionListener(this);
         last.addActionListener(this);
 
-        // panel de boutons
+        // buttons' panel
         buttonPanel.add(next);
         buttonPanel.add(previous);
         buttonPanel.add(first);

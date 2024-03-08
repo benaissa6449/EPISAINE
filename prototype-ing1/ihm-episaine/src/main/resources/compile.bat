@@ -1,4 +1,4 @@
 cd ../episaine-insert-client
-start /wait mvn clean compile
-start mvn exec:java
+call /wait mvn clean compile
+call mvn exec:java
 exit
