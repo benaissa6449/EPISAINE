@@ -25,10 +25,15 @@ public class MainInsertClient {
     private static final String threadName = "inserter-client";
     private static final String requestOrder = "INSERT_CLIENT";
     private static final Deque<ClientRequest> clientRequests = new ArrayDeque<ClientRequest>();
+    private static Client client;
+
+    public static void setClient(Client clientVar) {client = clientVar;}
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
         
-        final Clients guys = ConfigLoader.loadConfig(Clients.class, clientsToBeInserted);
+        //final Clients guys = ConfigLoader.loadConfig(Clients.class, clientsToBeInserted);
+        final Clients guys = new Clients();
+        guys.add(client);
         final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         
         logger.trace("Clients loaded : {}", guys.toString());

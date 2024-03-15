@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import edu.ezip.ing1.pds.business.dto.Client;
 import edu.ezip.ing1.pds.client.InsertIntoYaml;
+import edu.ezip.ing1.pds.client.MainInsertClient;
 
 public class InsertPanel extends JPanel implements ActionListener {
     private JTextField nomTextField;
@@ -153,43 +155,22 @@ public class InsertPanel extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        String nomString = nomTextField.getText();
-        String prenomString = prenomTextField.getText();
-        String dateString = dateTextField.getText();
-        String poidsString = poidsTextField.getText();
-        String genreString = genreTextField.getText();
-        String tailleString = tailleTextField.getText();
-        String numString = numTextField.getText();
-        String mailString = mailTextField.getText();
-        String villeString = villeTextField.getText();
-        String codePostalString = codePostalTextField.getText();
-        String adressePostaleString = adressePostaleTextField.getText();
+        Client client = new Client();
+        client.setnomClient(nomTextField.getText());
+        client.setprenomClient(prenomTextField.getText());
+        client.setdateDeNaissanceClient(dateTextField.getText());
+        client.setPoids(poidsTextField.getText());
+        client.setGenre(genreTextField.getText());
+        client.setTaille(tailleTextField.getText());
+        client.setNumero_de_telephone_Client(numTextField.getText());
+        client.setMail_Client(mailTextField.getText());
+        client.setVille(villeTextField.getText());
+        client.setCode_Postal(codePostalTextField.getText());
+        client.setAdresse(adressePostaleTextField.getText());
 
         try {
-            if ((!nomString.isEmpty()) && (!prenomString.isEmpty()) && (!dateString.isEmpty()) &&
-            (!poidsString.isEmpty()) && (!genreString.isEmpty()) && (!tailleString.isEmpty()) &&
-            (!numString.isEmpty()) && (!mailString.isEmpty()) && (!villeString.isEmpty()) &&
-            (!codePostalString.isEmpty()) && (!adressePostaleString.isEmpty())) {
-                InsertIntoYaml.writeIntoYaml(nomString, prenomString, dateString, poidsString,
-                genreString, tailleString, numString, mailString, villeString, codePostalString, adressePostaleString, studentsToBeInserted);
-                
-                // Under windows
-                String currentDirectory = getCurrentDirectory();
-                String batFilePath = currentDirectory + "\\src\\main\\resources\\compile.bat";
-                ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start", "/min", batFilePath);
-                Process process = builder.start();
-                process.waitFor();
-                
-                /*
-                // Under linux
-                String currentDirectory = System.getProperty("user.dir");
-                String shellScriptPath = currentDirectory + "/src/main/resources/compile.sh";
-                ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", shellScriptPath);
-                processBuilder.directory(new File(currentDirectory));
-                Process process = processBuilder.start();
-                process.waitFor();
-                */
-            }
+            MainInsertClient.setClient(client);
+            MainInsertClient.main(new String[0]);
         }  
         catch(Exception ex){
             ex.printStackTrace();
