@@ -1,4 +1,4 @@
-package edu.ezip.ing1.pds;
+package edu.ezip.ing1.pds.IHM_BDD;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import edu.ezip.ing1.pds.business.dto.Client;
-import edu.ezip.ing1.pds.client.InsertIntoYaml;
 import edu.ezip.ing1.pds.client.MainInsertClient;
 
 public class InsertPanel extends JPanel implements ActionListener {
@@ -26,8 +25,6 @@ public class InsertPanel extends JPanel implements ActionListener {
     private JTextField villeTextField;
     private JTextField codePostalTextField;
     private JTextField adressePostaleTextField;
-
-    private String studentsToBeInserted = "../episaine-insert-client/src/main/resources/clients-to-be-inserted.yaml";
 
     public InsertPanel() {
         // panel's settings
@@ -175,10 +172,5 @@ public class InsertPanel extends JPanel implements ActionListener {
         catch(Exception ex){
             ex.printStackTrace();
         }
-    }
-
-    public static String getCurrentDirectory() {
-        return System.getProperty("user.dir");
-    }
-    
+    }    
 }

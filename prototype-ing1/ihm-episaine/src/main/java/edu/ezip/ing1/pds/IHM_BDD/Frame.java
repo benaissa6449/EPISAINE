@@ -1,4 +1,4 @@
-package edu.ezip.ing1.pds;
+package edu.ezip.ing1.pds.IHM_BDD;
 
 import java.io.IOException;
 import java.sql.SQLException;
