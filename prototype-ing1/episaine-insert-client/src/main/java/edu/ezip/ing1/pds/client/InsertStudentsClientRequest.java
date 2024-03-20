@@ -21,6 +21,7 @@ public class InsertStudentsClientRequest extends ClientRequest<Client, String> {
     @Override
     public String readResult(String body) throws IOException {
         final ObjectMapper mapper = new ObjectMapper();
+        @SuppressWarnings("unchecked")
         final Map<String, Integer> clientIdMap = mapper.readValue(body, Map.class);
         final String result  = clientIdMap.get("id_client").toString();
         return result;

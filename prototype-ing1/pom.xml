@@ -17,5 +17,6 @@
         <module>ihm-episaine</module>
         <module>episaine-select-client</module>
         <module>episaine-insert-client</module>
+        <module>ihm-client</module>
     </modules>
 </project>

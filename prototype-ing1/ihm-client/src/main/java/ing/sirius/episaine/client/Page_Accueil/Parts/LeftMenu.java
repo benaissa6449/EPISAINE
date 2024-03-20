@@ -1,21 +1,28 @@
-package ing.sirius.episaine.client;
+package ing.sirius.episaine.client.Page_Accueil.Parts;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
+import ing.sirius.episaine.client.Page_Accueil.Parts.listener.ButtonChangeState;
+
 public class LeftMenu extends JPanel {
     private JToggleButton accueilButton;
     private JToggleButton settingButton;
     private JToggleButton sunButton;
+
+    private Color darkgray = new Color(55,55,55);
+    private Color lightgray = new Color(210,210,210);
+
+    private ArrayList<JToggleButton> buttonList = new ArrayList<JToggleButton>();
 
     public JToggleButton getAccueilButton() {
         return accueilButton;
@@ -29,21 +36,36 @@ public class LeftMenu extends JPanel {
 
     public LeftMenu(JFrame frame) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setPreferredSize(new Dimension(frame.getWidth()/13, frame.getHeight()));
-        setBackground(Color.WHITE);
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+        setPreferredSize(new Dimension(frame.getWidth()/15, frame.getHeight()));
+        setBackground(lightgray);
 
         accueilButton = new JToggleButton();
         settingButton = new JToggleButton();
         sunButton = new JToggleButton();
 
-        accueilButton.setBorder(BorderFactory.createEmptyBorder());
-        settingButton.setBorder(BorderFactory.createEmptyBorder());
-        sunButton.setBorder(BorderFactory.createEmptyBorder());
+        buttonList.add(accueilButton);
+        buttonList.add(settingButton);
+        buttonList.add(sunButton);
+
+        accueilButton.setBorderPainted(false);
+        settingButton.setBorderPainted(false);
+        sunButton.setBorderPainted(false);
 
         accueilButton.setContentAreaFilled(false);
         settingButton.setContentAreaFilled(false);
         sunButton.setContentAreaFilled(false);
+
+        accueilButton.setOpaque(true);
+        settingButton.setOpaque(true);
+        sunButton.setOpaque(true);
+
+        accueilButton.setBackground(lightgray);
+        settingButton.setBackground(lightgray);
+        sunButton.setBackground(lightgray);
+
+        accueilButton.addMouseListener(new ButtonChangeState());
+        settingButton.addMouseListener(new ButtonChangeState());
+        sunButton.addMouseListener(new ButtonChangeState());
 
         try {
             Image homeImg = ImageIO.read(getClass().getResource("/icons/light_mode_home.png"));
@@ -66,12 +88,16 @@ public class LeftMenu extends JPanel {
 
     public void switchLightLeftMenu(boolean switchVar) {
         if (switchVar) {
-            this.setBackground(Color.BLACK);
-            this.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+            for (JToggleButton button : buttonList) {
+                button.setBackground(darkgray);
+            }
+            this.setBackground(darkgray);
         }
         else {
-            this.setBackground(Color.WHITE);
-            this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+            for (JToggleButton button : buttonList) {
+                button.setBackground(lightgray);
+            }
+            this.setBackground(lightgray);
         }
     }
 }

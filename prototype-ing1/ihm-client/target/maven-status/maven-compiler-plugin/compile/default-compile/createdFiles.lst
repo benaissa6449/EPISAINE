@@ -1,6 +1,6 @@
-ing\sirius\episaine\client\LeftMenu.class
-ing\sirius\episaine\client\Header.class
+ing\sirius\episaine\client\Page_Accueil\Parts\Header.class
+ing\sirius\episaine\client\Page_Accueil\Parts\LeftMenu.class
 ing\sirius\episaine\client\Main.class
-ing\sirius\episaine\client\Fenetre_Accueil.class
 ing\sirius\episaine\client\Fenetre_Accueil$1.class
-ing\sirius\episaine\client\Footer.class
+ing\sirius\episaine\client\Fenetre_Accueil.class
+ing\sirius\episaine\client\Page_Accueil\Parts\Footer.class

@@ -1,5 +1,5 @@
-edu\ezip\ing1\pds\Frame.class
+edu\ezip\ing1\pds\IHM_BDD\Frame.class
+edu\ezip\ing1\pds\IHM_BDD\SelectPanel$1.class
+edu\ezip\ing1\pds\IHM_BDD\SelectPanel.class
+edu\ezip\ing1\pds\IHM_BDD\InsertPanel.class
 edu\ezip\ing1\pds\MainIhmEpisaine.class
-edu\ezip\ing1\pds\InsertPanel.class
-edu\ezip\ing1\pds\SelectPanel$1.class
-edu\ezip\ing1\pds\SelectPanel.class
