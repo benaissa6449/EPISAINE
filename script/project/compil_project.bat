@@ -1,5 +1,5 @@
 @echo off
-cd ../prototype-ing1
+cd ../../prototype-ing1
 call mvn clean compile
 call mvn package
 call mvn install

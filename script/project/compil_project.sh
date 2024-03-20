@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../prototype-ing1
+cd ../../prototype-ing1
 
 mvn clean compile
 mvn package

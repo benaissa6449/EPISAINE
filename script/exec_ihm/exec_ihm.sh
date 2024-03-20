@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../prototype-ing1/ihm-episaine
+cd ../../prototype-ing1/ihm-episaine
 mvn exec:java
 
 if [ $? -eq 0 ]; then
