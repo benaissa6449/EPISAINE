@@ -142,3 +142,21 @@
 │t      │       │0-10  │      │      │      │      │      │      │      │      │
 └───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
 
+2024-03-22 11:00:28.113 [AWT-EventQueue-0] DEBUG S e l e c t - R e c e t t e - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 11:00:28.401 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 11:00:28.403 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 11:00:28.403 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "adf09d63-88bd-42f2-9683-821097e4dd52",
+2024-03-22 11:00:28.403 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_RECETTES"
+2024-03-22 11:00:28.403 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 11:00:28.403 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 11:00:29.059 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='adf09d63-88bd-42f2-9683-821097e4dd52', responseBody='null'}
+2024-03-22 11:00:29.067 [AWT-EventQueue-0] DEBUG S e l e c t - R e c e t t e - Thread client_request★0000 complete.
+2024-03-22 11:21:36.355 [AWT-EventQueue-0] DEBUG S e l e c t - R e c e t t e - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "a4794461-9504-47ae-97e6-af65bec61f51",
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_RECETTES"
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 11:21:36.684 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 11:21:37.347 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='a4794461-9504-47ae-97e6-af65bec61f51', responseBody='null'}
+2024-03-22 11:21:37.363 [AWT-EventQueue-0] DEBUG S e l e c t - R e c e t t e - Thread client_request★0000 complete.

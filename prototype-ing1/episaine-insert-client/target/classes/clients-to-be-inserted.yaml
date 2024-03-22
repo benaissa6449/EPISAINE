@@ -1,0 +1,12 @@
+clients :
+  - nomClient: "TestDeNom"
+    prenomClient: "oi"
+    dateDeNaissanceClient: "2022-11-1&"
+    poids: "42"
+    genre: "Femme"
+    taille: "323"
+    numero_de_telephone_Client: "kfjozd"
+    mail_Client: "jf"
+    ville: "ojk"
+    adresse: "jop"
+    code_Postal: "ojjoo"

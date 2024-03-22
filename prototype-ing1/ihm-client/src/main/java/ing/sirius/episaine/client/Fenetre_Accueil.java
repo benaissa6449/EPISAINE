@@ -12,6 +12,7 @@ import javax.swing.JToggleButton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ing.sirius.episaine.client.Page_Accueil.Parts.CenterPanel;
 import ing.sirius.episaine.client.Page_Accueil.Parts.Footer;
 import ing.sirius.episaine.client.Page_Accueil.Parts.FrameInterface;
 import ing.sirius.episaine.client.Page_Accueil.Parts.Header;
@@ -28,7 +29,8 @@ public class Fenetre_Accueil extends JFrame {
 
     private static boolean switchValue = true;
     private static ArrayList<FrameInterface> panelList = new ArrayList<FrameInterface>();
-    private static CardLayout cardLayout = new CardLayout();
+
+    private final CardLayout cardLayout = new CardLayout();
 
     public Fenetre_Accueil() {
         fenetreLog.info("Lancement de la fenetre principale");
@@ -56,21 +58,22 @@ public class Fenetre_Accueil extends JFrame {
         sunButton = lm.getSunButton(); 
 
         // TODO : first shown panel, cardlayout here
-        JPanel homePanel = new JPanel(); 
-        homePanel.setLayout(cardLayout);
-        homePanel.setBackground(Color.BLUE);
-        mainPanel.add(homePanel, BorderLayout.CENTER);
-
+        JPanel transitionPanel = new JPanel();
+        transitionPanel.setBackground(Color.BLUE);
+        CenterPanel centerPanel = new CenterPanel(transitionPanel, cardLayout);
+        mainPanel.add(centerPanel, BorderLayout.CENTER);
+        
         // light or dark mode
         sunButton.addActionListener(new LightModeButtonListener(homeButton, settingButton, sunButton));
         
         // home button
-        homeButton.addActionListener(new HomeButtonListener(homePanel, cardLayout));
+        homeButton.addActionListener(new HomeButtonListener(transitionPanel, cardLayout));
 
         // add every panel to list
         panelList.add(lm);
         panelList.add(header);
         panelList.add(footer);
+        panelList.add(centerPanel);
     }
 
     // switch light mode in each panel

@@ -1,0 +1,3 @@
+edu\ezip\commons\connectionpool\config\impl\ConnectionPoolImpl.class
+edu\ezip\commons\connectionpool\config\ExperimentConnectionImpl.class
+edu\ezip\commons\connectionpool\config\DatabaseConnectionBasicConfiguration.class

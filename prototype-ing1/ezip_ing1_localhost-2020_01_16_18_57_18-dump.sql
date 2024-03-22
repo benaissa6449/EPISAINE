@@ -4,7 +4,7 @@ CREATE TABLE "episaine-schema".grandeSurface(
    intitule VARCHAR(50) NOT NULL,
    ville VARCHAR(50) NOT NULL,
    adresse_GS VARCHAR(50) NOT NULL,
-   ville_GS VARCHAR(50),
+   ville_GS VARCHAR(50) NOT NULL,
    code_Postal_GS VARCHAR(50) NOT NULL,
    PRIMARY KEY(ID_GS)
 );
@@ -17,8 +17,8 @@ CREATE TABLE "episaine-schema".utilisateurGrandeSurface(
    id_UserGS serial,
    nom_User VARCHAR(50) NOT NULL,
    prenom_User VARCHAR(50) NOT NULL,
-   poste_User VARCHAR(50),
-   id_GS serial NOT NULL,
+   poste_User VARCHAR(50) NOT NULL,
+   id_GS serial,
    dateEmbauche DATE,
    PRIMARY KEY(id_UserGS),
    FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS)
@@ -28,7 +28,7 @@ ALTER TABLE "episaine-schema".utilisateurGrandeSurface OWNER TO episaine;
 
 -- Table Produits
 CREATE TABLE "episaine-schema".produits(
-   iD_Produits serial,
+   iD_Produit serial,
    nom_Produit VARCHAR(50) NOT NULL,
    prix DECIMAL(10,2) NOT NULL,
    regime VARCHAR(50) NOT NULL,
@@ -37,8 +37,8 @@ CREATE TABLE "episaine-schema".produits(
    dateExpiration DATE NOT NULL,
    quantite_Produit INT,
    stock INT,
-   id_GS serial NOT NULL, 
-   PRIMARY KEY(id_Produits),
+   id_GS serial, 
+   PRIMARY KEY(id_Produit),
    FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS) 
 );
 
@@ -46,14 +46,14 @@ ALTER TABLE "episaine-schema".Produits OWNER TO episaine;
 
 -- Relation Vend entre les tables Produits et grandeSurface
 -- Le but est de lier les produits et les grandes surfaces
---CREATE INDEX idx_produits ON Produits(ID_Produits, ID_GS);
+--CREATE INDEX idx_produits ON Produits(ID_Produit, ID_GS);
 
 CREATE TABLE "episaine-schema".vend(
-   id_Produits INT,
-   id_GS INT,
+   id_Produit serial,
+   id_GS serial,
    quantiteVendue INT,
-   PRIMARY KEY(id_Produits, id_GS),  
-   FOREIGN KEY(id_Produits) REFERENCES "episaine-schema".Produits(id_Produits),
+   PRIMARY KEY(id_Produit, id_GS),  
+   FOREIGN KEY(id_Produit) REFERENCES "episaine-schema".Produits(id_Produit),
    FOREIGN KEY(id_GS) REFERENCES "episaine-schema".grandeSurface(id_GS)
 );
 
@@ -63,9 +63,9 @@ ALTER TABLE "episaine-schema".vend OWNER TO episaine;
 CREATE TABLE "episaine-schema".nutritionnistes(
    id_Nutritioniste serial,
    nom_N VARCHAR(50) NOT NULL,
-   prenom_N VARCHAR(50),
-   numero_de_telephone_N VARCHAR(20), -- Changement de INT à VARCHAR(20)
-   mail_N VARCHAR(50),
+   prenom_N VARCHAR(50) NOT NULL,
+   numero_de_telephone_N VARCHAR(20) NOT NULL, -- Changement de INT à VARCHAR(20)
+   mail_N VARCHAR(50) NOT NULL,
    PRIMARY KEY(id_Nutritioniste)
 );
 
@@ -76,10 +76,10 @@ CREATE TABLE "episaine-schema".recettes(
    id_Recette serial,
    nom_Recette VARCHAR(100) NOT NULL, 
    nombre_de_Calories INT NOT NULL,
-   ingredients VARCHAR(255), 
+   ingredients VARCHAR(255),
    instructions VARCHAR(255),
    regimeAlimentaire VARCHAR(50),
-   id_Nutritioniste serial NOT NULL,
+   id_Nutritioniste serial,
    PRIMARY KEY(id_Recette),
    FOREIGN KEY(id_Nutritioniste) REFERENCES "episaine-schema".nutritionnistes(id_Nutritioniste),
    CHECK (regimeAlimentaire IN ('normale', 'cétogène', 'végétarien', 'carnivore', 'pescétarien', 'végétalien', 'sans gluten', 'sans lactose', 'halal', 'cashér', 'paléo', 'sans sucre ajouté', 'régime méditerranéen'))
@@ -89,12 +89,12 @@ ALTER TABLE "episaine-schema".recettes OWNER TO episaine;
 
 -- Relation EstComposéDe entre les tables Produits et Recettes (un produit peut être dans plusieurs recettes)
 CREATE TABLE "episaine-schema".estComposeDe(
-   id_Produits serial,
-   id_Recettes serial,
+   id_Produit serial,
+   id_Recette serial,
    quantite INT,
-   PRIMARY KEY(id_Produits, id_Recettes),
-   FOREIGN KEY(id_Produits) REFERENCES "episaine-schema".produits(id_Produits),
-   FOREIGN KEY(id_Recettes) REFERENCES "episaine-schema".recettes(id_Recettes)
+   PRIMARY KEY(id_Produit, id_Recette),
+   FOREIGN KEY(id_Produit) REFERENCES "episaine-schema".produits(id_Produit),
+   FOREIGN KEY(id_Recette) REFERENCES "episaine-schema".recettes(id_Recette)
 );
 
 ALTER TABLE "episaine-schema".estComposeDe OWNER TO episaine;

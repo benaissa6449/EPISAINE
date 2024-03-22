@@ -12,11 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import edu.ezip.ing1.pds.business.dto.Recette;
-//import edu.ezip.ing1.pds.client.MainInsertClient;
-
-
-
-
+import edu.ezip.ing1.pds.client.MainInsertRecette;
 
 public class InsertPanelRecette extends JPanel implements ActionListener {
     private JTextField nomRecetteTextField;
@@ -24,7 +20,6 @@ public class InsertPanelRecette extends JPanel implements ActionListener {
     private JTextField ingredientsTextField;
     private JTextField instructionsTextField;
     private JTextField regimeAlimentaireTextField;
-    private JTextField idNutritionisteTextField;
 
     public InsertPanelRecette() {
         // panel's settings
@@ -113,8 +108,8 @@ public class InsertPanelRecette extends JPanel implements ActionListener {
         recette.setInstructions(instructionsTextField.getText());
         recette.setRegimeAlimentaire(regimeAlimentaireTextField.getText());
         try {
-          //  MainInsertRecette.setRecette(recette);
-            //MainInsertRecette.main(new String[0]);
+            MainInsertRecette.setRecette(recette);
+            MainInsertRecette.main(new String[0]);
         }  
         catch(Exception ex){
             ex.printStackTrace();

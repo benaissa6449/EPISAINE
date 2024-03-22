@@ -10,7 +10,9 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import edu.ezip.ing1.pds.client.MainSelectClient;
-import edu.ezip.ing1.pds.client.StringAsciiTable;;
+import edu.ezip.ing1.pds.client.StringAsciiTable;
+import ing.sirius.episaine.client.Page_Accueil.Parts.ButtonInterface;
+import ing.sirius.episaine.client.Page_Accueil.Parts.FrameInterface;;
 
 public class SelectPanel extends JPanel implements ActionListener {
     private static DefaultTableModel defaultTableModel;

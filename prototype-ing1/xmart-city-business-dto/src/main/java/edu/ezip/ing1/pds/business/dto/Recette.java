@@ -1,5 +1,6 @@
 package edu.ezip.ing1.pds.business.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.lang.reflect.Field;
@@ -7,22 +8,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@JsonRootName(value = "Recette")
+@JsonRootName(value = "recette")
 public class Recette {
-    private int id_Recette;
     private String nom_Recette;
     private int nombre_de_Calories;
     private String ingredients;
     private String instructions;
     private String regimeAlimentaire;
-    private int id_Nutritioniste;
 
     public Recette() {
     }
 
     public final Recette build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResultSet(resultSet,  "nom_Recette", "nombre_de_Calories", "ingredients", "instructions", "regimeAlimentaire", "id_Nutritioniste");
+        setFieldsFromResultSet(resultSet,  "nom_Recette", "nombre_de_Calories", "ingredients", "instructions", "regimeAlimentaire");
         return this;
     }
 
@@ -42,6 +41,8 @@ public class Recette {
     public String getNom_Recette() {
         return nom_Recette;
     }
+
+    @JsonProperty("nom_Recette")
     public void setNom_Recette(String nom_Recette) {
         this.nom_Recette = nom_Recette;
     }
@@ -50,6 +51,7 @@ public class Recette {
         return nombre_de_Calories;
     }
 
+    @JsonProperty("nombre_de_Calories")
     public void setNombre_de_Calories(int nombre_de_Calories) {
         this.nombre_de_Calories = nombre_de_Calories;
     }
@@ -58,6 +60,7 @@ public class Recette {
         return ingredients;
     }
 
+    @JsonProperty("ingredients")
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
@@ -66,6 +69,7 @@ public class Recette {
         return instructions;
     }
 
+    @JsonProperty("instructions")
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -74,6 +78,7 @@ public class Recette {
         return regimeAlimentaire;
     }
 
+    @JsonProperty("regimeAlimentaire")
     public void setRegimeAlimentaire(String regimeAlimentaire) {
         this.regimeAlimentaire = regimeAlimentaire;
     }
@@ -98,7 +103,7 @@ public class Recette {
     @Override
     public String toString() {
         return "Recette{" +
-                " nom_Recette='" + nom_Recette + '\'' +
+                "nom_Recette='" + nom_Recette + '\'' +
                 ", nombre_de_Calories=" + nombre_de_Calories +
                 ", ingredients='" + ingredients + '\'' +
                 ", instructions='" + instructions + '\'' +

@@ -25,11 +25,11 @@ public class XMartCityService {
         private enum Queries {
         SELECT_ALL_STUDENTS("SELECT t.name, t.firstname, t.group FROM \"ezip-ing1\".students t"),
         SELECT_ALL_CLIENTS("SELECT t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
-        SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regime_alimentaire FROM \"episaine-schema\".recettes t"),
+        SELECT_ALL_RECETTES("SELECT t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire FROM \"episaine-schema\".recettes t"),
 
         INSERT_STUDENT("INSERT into \"ezip-ing1\".students (\"name\", \"firstname\", \"group\") values (?, ?, ?)"),
         INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
-        INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regime_alimentaire\") VALUES (?, ?, ?, ?, ?, ?)");
+        INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritioniste\") VALUES (?, ?, ?, ?, ?, ?)");
 
         private final String query;
 
@@ -155,6 +155,7 @@ public class XMartCityService {
                         pstmt.setString(3, recette.getIngredients());
                         pstmt.setString(4, recette.getInstructions());
                         pstmt.setString(5, recette.getRegimeAlimentaire());
+                        pstmt.setInt(6, 0);
                         rows = pstmt.executeUpdate();
     
                         response = new Response();

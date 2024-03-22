@@ -11,7 +11,7 @@ import java.util.Set;
 public class Recettes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("Recettes")
+    @JsonProperty("recettes")
     private Set<Recette> recettes = new LinkedHashSet<>();
 
     public Set<Recette> getRecettes() {

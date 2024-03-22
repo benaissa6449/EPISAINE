@@ -6,7 +6,7 @@ import de.vandermeer.asciitable.AsciiTable;
 import edu.ezip.commons.LoggingUtils;
 import edu.ezip.ing1.pds.business.dto.Recette;
 import edu.ezip.ing1.pds.business.dto.Recettes;
-import edu.ezip.ing1.pds.client.commons.RecetteRequest;
+import edu.ezip.ing1.pds.client.commons.ClientRequest;
 import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
 import edu.ezip.ing1.pds.commons.Request;
@@ -27,7 +27,7 @@ public class MainSelectRecette {
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
     private static final String requestOrder = "SELECT_ALL_RECETTES";
-    private static final Deque<RecetteRequest> recetteRequests = new ArrayDeque<>();
+    private static final Deque<ClientRequest> recetteRequests = new ArrayDeque<ClientRequest>();
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
 
@@ -51,7 +51,7 @@ public class MainSelectRecette {
         recetteRequests.push(recetteRequest);
 
         while (!recetteRequests.isEmpty()) {
-            final RecetteRequest joinedRecetteRequest = recetteRequests.pop();
+            final ClientRequest joinedRecetteRequest = recetteRequests.pop();
             joinedRecetteRequest.join();
             logger.debug("Thread {} complete.", joinedRecetteRequest.getThreadName());
             try {
@@ -59,12 +59,12 @@ public class MainSelectRecette {
                 final AsciiTable asciiTable = new AsciiTable();
                 ArrayList<String[]> recetteList = new ArrayList<>();
                 for (final Recette recette : recettes.getRecettes()) {
-                    String[] recetteLine = new String[7];
-                    recetteLine[1] = recette.getNom_Recette();
-                    recetteLine[2] = String.valueOf(recette.getNombre_de_Calories());
-                    recetteLine[3] = recette.getIngredients();
-                    recetteLine[4] = recette.getInstructions();
-                    recetteLine[5] = recette.getRegimeAlimentaire();
+                    String[] recetteLine = new String[5];
+                    recetteLine[0] = recette.getNom_Recette();
+                    recetteLine[1] = String.valueOf(recette.getNombre_de_Calories());
+                    recetteLine[2] = recette.getIngredients();
+                    recetteLine[3] = recette.getInstructions();
+                    recetteLine[4] = recette.getRegimeAlimentaire();
                     recetteList.add(recetteLine);
 
                     asciiTable.addRule();
