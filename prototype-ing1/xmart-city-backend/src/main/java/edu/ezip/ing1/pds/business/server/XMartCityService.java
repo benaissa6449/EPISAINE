@@ -5,6 +5,9 @@ import edu.ezip.ing1.pds.business.dto.Student;
 import edu.ezip.ing1.pds.business.dto.Students;
 import edu.ezip.ing1.pds.business.dto.Client;
 import edu.ezip.ing1.pds.business.dto.Clients;
+import edu.ezip.ing1.pds.business.dto.Recette;
+import edu.ezip.ing1.pds.business.dto.Recettes;
+
 import edu.ezip.ing1.pds.commons.Request;
 import edu.ezip.ing1.pds.commons.Response;
 import org.slf4j.Logger;
@@ -19,18 +22,22 @@ public class XMartCityService {
     private final static String LoggingLabel = "B u s i n e s s - S e r v e r";
     private final Logger logger = LoggerFactory.getLogger(LoggingLabel);
 
-    private enum Queries {
+        private enum Queries {
         SELECT_ALL_STUDENTS("SELECT t.name, t.firstname, t.group FROM \"ezip-ing1\".students t"),
         SELECT_ALL_CLIENTS("SELECT t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
+        SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regime_alimentaire FROM \"episaine-schema\".recettes t"),
 
         INSERT_STUDENT("INSERT into \"ezip-ing1\".students (\"name\", \"firstname\", \"group\") values (?, ?, ?)"),
-        INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)");
+        INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
+        INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regime_alimentaire\") VALUES (?, ?, ?, ?, ?, ?)");
+
         private final String query;
 
-        private Queries(final String query) {
+        private Queries(String query) {
             this.query = query;
         }
     }
+
 
     public static XMartCityService inst = null;
     public static final XMartCityService getInstance()  {
@@ -123,6 +130,40 @@ public class XMartCityService {
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody("{\"id_client\": " + rows + " }");
                     break;
+
+                    case "SELECT_ALL_RECETTES" :
+                        stmt = connection.createStatement();
+                        res = stmt.executeQuery(Queries.SELECT_ALL_RECETTES.query);
+                        Recettes recettes = new Recettes();
+                        while (res.next()) {
+                            Recette recette = new Recette().build(res);
+                            recettes.add(recette);
+                        }
+                        mapper = new ObjectMapper();
+
+                        response = new Response();
+                        response.setRequestId(request.getRequestId());
+                        response.setResponseBody(mapper.writeValueAsString(recettes));
+                        break;
+
+                    case "INSERT_RECETTE" :
+                        mapper = new ObjectMapper();
+                        Recette recette = mapper.readValue(request.getRequestBody(), Recette.class);
+                        pstmt = connection.prepareStatement(Queries.INSERT_RECETTE.query);
+                        pstmt.setString(1, recette.getNom_Recette());
+                        pstmt.setInt(2, recette.getNombre_de_Calories());
+                        pstmt.setString(3, recette.getIngredients());
+                        pstmt.setString(4, recette.getInstructions());
+                        pstmt.setString(5, recette.getRegimeAlimentaire());
+                        rows = pstmt.executeUpdate();
+    
+                        response = new Response();
+                        response.setRequestId(request.getRequestId());
+                        response.setResponseBody("{\"id_recette\": " + rows + " }");
+                        break;
+
+
+
 
                 default:
                     break;
