@@ -1,0 +1,365 @@
+2024-03-22 09:21:23.262 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:21:30.872 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:21:52.200 [client_request★0000] ERROR C l i e n t - R e q u e s t - Connection fails, exception tells Connection timed out: connect — class java.net.ConnectException
+2024-03-22 09:21:52.200 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 09:21:52.254 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:27:15.162 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:27:17.927 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:30:14.904 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:30:17.409 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:30:17.721 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 09:30:17.721 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 09:30:17.721 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "2e3bb7c5-abb5-441d-b67b-db0445b73122",
+2024-03-22 09:30:17.721 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 09:30:17.721 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 09:30:17.724 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 09:30:18.097 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='2e3bb7c5-abb5-441d-b67b-db0445b73122', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 09:30:18.120 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 09:30:18.230 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+
+2024-03-22 09:31:42.229 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:31:44.902 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:31:45.183 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 09:31:45.186 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 09:31:45.186 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "daa5dc02-e1dc-45a2-bfc7-ee8a0857d091",
+2024-03-22 09:31:45.186 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 09:31:45.186 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 09:31:45.186 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 09:31:45.840 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='daa5dc02-e1dc-45a2-bfc7-ee8a0857d091', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 09:31:45.863 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 09:31:45.985 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+
+2024-03-22 09:32:06.585 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:32:13.291 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "8fee21b8-0b05-43d0-bdfa-92ead59e9b97",
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 09:32:13.556 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 09:32:13.926 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='8fee21b8-0b05-43d0-bdfa-92ead59e9b97', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 09:32:13.938 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 09:32:14.055 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+
+2024-03-22 09:33:18.722 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:18.748 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:18.748 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:18.748 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:20.238 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:20.252 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:20.252 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:20.252 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:20.760 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:20.774 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:20.774 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:20.774 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:20.926 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:20.936 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:20.936 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:20.936 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:21.064 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:21.077 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:21.077 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:21.077 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:21.187 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:21.207 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:21.207 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:21.207 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:21.346 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:21.358 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:21.358 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:21.358 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:21.470 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:21.486 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:21.486 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:21.486 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:21.585 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:21.614 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:21.614 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:21.614 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:21.744 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:21.763 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:21.763 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:21.767 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:21.903 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:21.938 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:21.938 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:21.938 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:22.044 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:22.068 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:22.070 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:22.070 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:24.590 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:24.602 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:24.602 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:24.602 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:25.617 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:25.633 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:25.633 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:25.633 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:33.266 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Activation mode nuit
+2024-03-22 09:33:33.285 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = true
+2024-03-22 09:33:33.285 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = true
+2024-03-22 09:33:33.285 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = true
+2024-03-22 09:33:33.632 [AWT-EventQueue-0] INFO  L i g h t - M o d e - Desactivation mode nuit
+2024-03-22 09:33:33.642 [AWT-EventQueue-0] INFO  L e f t - M e n u - Mode nuit = false
+2024-03-22 09:33:33.642 [AWT-EventQueue-0] INFO  H e a d e r - Mode nuit = false
+2024-03-22 09:33:33.642 [AWT-EventQueue-0] INFO  F o o t e r - Mode nuit = false
+2024-03-22 09:33:45.323 [AWT-EventQueue-0] INFO  H o m e - B u t t o n - Retour a la page d'accueil
+2024-03-22 09:33:45.538 [AWT-EventQueue-0] INFO  H o m e - B u t t o n - Retour a la page d'accueil
+2024-03-22 09:40:09.788 [ing.sirius.episaine.client.Main.main()] INFO  F e n e t r e - A c c u e i l - Lancement de la fenetre principale
+2024-03-22 09:40:11.961 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 09:40:12.242 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 09:40:12.242 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 09:40:12.242 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "14a910a1-bd0e-413a-bbc7-1e94b3851329",
+2024-03-22 09:40:12.243 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 09:40:12.243 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 09:40:12.243 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 09:40:12.924 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='14a910a1-bd0e-413a-bbc7-1e94b3851329', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 09:40:12.944 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 09:40:13.049 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+
