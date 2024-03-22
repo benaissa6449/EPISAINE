@@ -6,7 +6,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class HomeButtonListener implements ActionListener {
+    private final String homeLabel = "H o m e - B u t t o n";
+    private final Logger homeLog = LoggerFactory.getLogger(homeLabel);
+
     private JPanel panel;
     private CardLayout cardLayout;
 
@@ -16,6 +22,7 @@ public class HomeButtonListener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        homeLog.info("Retour a la page d'accueil");
         cardLayout.first(panel);
     }
 }

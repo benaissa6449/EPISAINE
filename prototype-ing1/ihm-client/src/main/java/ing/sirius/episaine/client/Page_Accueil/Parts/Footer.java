@@ -2,17 +2,20 @@ package ing.sirius.episaine.client.Page_Accueil.Parts;
 
 import javax.swing.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ing.sirius.episaine.client.Page_Accueil.Parts.listener.ButtonChangeState;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Footer extends JPanel {
+public class Footer extends JPanel implements FrameInterface, ButtonInterface {
+    private final String footerLabel = "F o o t e r";
+    private final Logger footerLog = LoggerFactory.getLogger(footerLabel);
+
     private ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private ArrayList<JButton> buttonList = new ArrayList<JButton>();
-
-    private Color darkgray = new Color(55,55,55);
-    private Color lightgray = new Color(210,210,210);
 
     public Footer() {
         JButton FAQ = new JButton("FAQ");
@@ -21,12 +24,10 @@ public class Footer extends JPanel {
         FAQ.setBackground(lightgray);
         FAQ.setOpaque(true);
         FAQ.setBorderPainted(false);
-        FAQ.addMouseListener(new ButtonChangeState());
 
         contactezNous.setBackground(lightgray);
         contactezNous.setOpaque(true);
         contactezNous.setBorderPainted(false);
-        contactezNous.addMouseListener(new ButtonChangeState());
 
         JPanel footerPanel = new JPanel();
         footerPanel.setLayout(new BorderLayout());
@@ -41,10 +42,12 @@ public class Footer extends JPanel {
 
         buttonList.add(FAQ);
         buttonList.add(contactezNous);
+        setStateChanged();
     }
 
-    public void switchLightFooter(boolean switchVar) {
+    public void switchLight(boolean switchVar) {
         if (switchVar) {
+            footerLog.info("Mode nuit = " + switchVar);
             for (JPanel panel : panelList) {
                 panel.setBackground(darkgray);
             }
@@ -54,6 +57,7 @@ public class Footer extends JPanel {
             }
         }
         else {
+            footerLog.info("Mode nuit = " + switchVar);
             for (JPanel panel : panelList) {
                 panel.setBackground(lightgray);
             }
@@ -61,6 +65,12 @@ public class Footer extends JPanel {
                 button.setBackground(lightgray);
                 button.setForeground(Color.BLACK);
             }
+        }
+    }
+
+    public void setStateChanged(){
+        for (JButton button : buttonList) {
+            button.addMouseListener(new ButtonChangeState());
         }
     }
 }

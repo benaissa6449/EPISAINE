@@ -1,6 +1,5 @@
 package ing.sirius.episaine.client.Page_Accueil.Parts;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.util.ArrayList;
@@ -12,15 +11,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ing.sirius.episaine.client.Page_Accueil.Parts.listener.ButtonChangeState;
 
-public class LeftMenu extends JPanel {
+public class LeftMenu extends JPanel implements FrameInterface, ButtonInterface {
+    private final String lmLabel = "L e f t - M e n u";
+    private final Logger lmLog = LoggerFactory.getLogger(lmLabel); 
+    
     private JToggleButton accueilButton;
     private JToggleButton settingButton;
     private JToggleButton sunButton;
-
-    private Color darkgray = new Color(55,55,55);
-    private Color lightgray = new Color(210,210,210);
 
     private ArrayList<JToggleButton> buttonList = new ArrayList<JToggleButton>();
 
@@ -78,7 +80,7 @@ public class LeftMenu extends JPanel {
             sunButton.setIcon(new ImageIcon(sunImg));
         }
         catch (Exception e) {
-            e.printStackTrace();
+            lmLog.error(e.getMessage());
         }
 
         add(accueilButton);    
@@ -86,18 +88,26 @@ public class LeftMenu extends JPanel {
         add(sunButton);
     }
 
-    public void switchLightLeftMenu(boolean switchVar) {
+    public void switchLight(boolean switchVar) {
         if (switchVar) {
+            lmLog.info("Mode nuit = " + switchVar);
             for (JToggleButton button : buttonList) {
                 button.setBackground(darkgray);
             }
             this.setBackground(darkgray);
         }
         else {
+            lmLog.info("Mode nuit = " + switchVar);
             for (JToggleButton button : buttonList) {
                 button.setBackground(lightgray);
             }
             this.setBackground(lightgray);
+        }
+    }
+
+    public void setStateChanged(){
+        for (JToggleButton button : buttonList) {
+            button.addMouseListener(new ButtonChangeState());
         }
     }
 }

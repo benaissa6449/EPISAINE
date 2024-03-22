@@ -1,0 +1,144 @@
+2024-03-22 00:43:16.402 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 00:43:16.564 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 00:43:16.565 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 00:43:16.565 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "8431c2f4-a066-4f92-8055-007b8626b8cc",
+2024-03-22 00:43:16.565 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 00:43:16.565 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 00:43:16.565 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 00:43:16.896 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='8431c2f4-a066-4f92-8055-007b8626b8cc', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 00:43:16.909 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 00:43:16.968 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+
+2024-03-22 00:43:47.994 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Load Network config file : NetworkConfig{ipAddress='172.31.252.163', tcpPort=45065}
+2024-03-22 00:43:48.148 [client_request★0000] DEBUG C l i e n t - R e q u e s t - {
+2024-03-22 00:43:48.149 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   "request" : {
+2024-03-22 00:43:48.149 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_id" : "58a195f2-15f1-43a1-93ad-a83fa195aae1",
+2024-03-22 00:43:48.149 [client_request★0000] DEBUG C l i e n t - R e q u e s t -     "request_order" : "SELECT_ALL_CLIENTS"
+2024-03-22 00:43:48.149 [client_request★0000] DEBUG C l i e n t - R e q u e s t -   }
+2024-03-22 00:43:48.149 [client_request★0000] DEBUG C l i e n t - R e q u e s t - }
+2024-03-22 00:43:48.477 [client_request★0000] DEBUG C l i e n t - R e q u e s t - Response = Response{requestId='58a195f2-15f1-43a1-93ad-a83fa195aae1', responseBody='{"clients":[{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"50.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"numero","Mail_Client":"addrr","Ville":"ville","Adresse":"codepo","Code_Postal":"addresspost","Nom_Client":"nom","Prenom_Client":"prenom","Date_de_naissance_Client":"2003-03-04"},{"Poids":"90.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"jzih","Mail_Client":"jioj","Ville":"jiojoi","Adresse":"jijoi","Code_Postal":"oijio","Nom_Client":"TestNom","Prenom_Client":"TestPrenom","Date_de_naissance_Client":"2024-01-01"},{"Poids":"99.00","Genre":"Homme","Taille":"199","Numero_de_telephone_Client":"h","Mail_Client":"h","Ville":"n","Adresse":"k","Code_Postal":"b","Nom_Client":"a","Prenom_Client":"b","Date_de_naissance_Client":"2023-09-09"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"azertyuio","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Homme","Taille":"90","Numero_de_telephone_Client":"hefzijd","Mail_Client":"vhbj","Ville":"vbn","Adresse":"vb","Code_Postal":"vbn","Nom_Client":"nomNom","Prenom_Client":"zertyuiop","Date_de_naissance_Client":"2022-02-02"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"NOMTESTTEST","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"94.00","Genre":"Homme","Taille":"32","Numero_de_telephone_Client":"fbj","Mail_Client":"hu","Ville":"hui","Adresse":"hui","Code_Postal":"hui","Nom_Client":"123123","Prenom_Client":"zkaho","Date_de_naissance_Client":"2023-03-03"},{"Poids":"50.00","Genre":"Femme","Taille":"90","Numero_de_telephone_Client":"i","Mail_Client":"j","Ville":"ji","Adresse":"n","Code_Postal":"nk","Nom_Client":"NomTTest","Prenom_Client":"hi","Date_de_naissance_Client":"2010-10-10"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"33.00","Genre":"Femme","Taille":"321","Numero_de_telephone_Client":"fje","Mail_Client":"bhi","Ville":"hio","Adresse":"ioi","Code_Postal":"ko","Nom_Client":"adrien","Prenom_Client":"jk","Date_de_naissance_Client":"2022-02-02"},{"Poids":"50.00","Genre":"Femme","Taille":"190","Numero_de_telephone_Client":"z","Mail_Client":"e","Ville":"r","Adresse":"y","Code_Postal":"t","Nom_Client":"Pasnom","Prenom_Client":"a","Date_de_naissance_Client":"2024-03-15"},{"Poids":"75.00","Genre":"Homme","Taille":"190","Numero_de_telephone_Client":"o","Mail_Client":",","Ville":",","Adresse":",","Code_Postal":",","Nom_Client":"Benaissa ","Prenom_Client":"Ismail","Date_de_naissance_Client":"2020-02-02"},{"Poids":"87.00","Genre":"Homme","Taille":"87","Numero_de_telephone_Client":"a","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"A","Prenom_Client":"A","Date_de_naissance_Client":"2001-01-01"},{"Poids":"9.00","Genre":"Homme","Taille":"83","Numero_de_telephone_Client":"eza","Mail_Client":"ee","Ville":"eee","Adresse":"EZA","Code_Postal":"eee","Nom_Client":"APPPPPPPP","Prenom_Client":"ko","Date_de_naissance_Client":"2023-03-03"},{"Poids":"78.00","Genre":"Homme","Taille":"180","Numero_de_telephone_Client":"17","Mail_Client":"a","Ville":"a","Adresse":"a","Code_Postal":"a","Nom_Client":"Benboubakar","Prenom_Client":"Younes  ","Date_de_naissance_Client":"2003-01-01"}]}'}
+2024-03-22 00:43:48.485 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - Thread client_request★0000 complete.
+2024-03-22 00:43:48.546 [AWT-EventQueue-0] DEBUG I n s e r t e r - C l i e n t - 
+┌───────┬───────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│123123 │zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│       │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│A      │A      │2001-0│87.00 │Homme │87    │a     │a     │a     │a     │a     │
+│       │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│APPPPPP│ko     │2023-0│9.00  │Homme │83    │eza   │ee    │eee   │EZA   │eee   │
+│PP     │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│azertyu│zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│io     │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│TestNom│TestPre│2024-0│90.00 │Homme │190   │jzih  │jioj  │jiojoi│jijoi │oijio │
+│       │nom    │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│a      │b      │2023-0│99.00 │Homme │199   │h     │h     │n     │k     │b     │
+│       │       │9-09  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│adrien │jk     │2022-0│33.00 │Femme │321   │fje   │bhi   │hio   │ioi   │ko    │
+│       │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NOMTEST│zkaho  │2023-0│94.00 │Homme │32    │fbj   │hu    │hui   │hui   │hui   │
+│TEST   │       │3-03  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nomNom │zertyui│2022-0│50.00 │Homme │90    │hefzij│vhbj  │vbn   │vb    │vbn   │
+│       │op     │2-02  │      │      │      │d     │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benaiss│Ismail │2020-0│75.00 │Homme │190   │o     │,     │,     │,     │,     │
+│a      │       │2-02  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│nom    │prenom │2003-0│50.00 │Homme │180   │numero│addrr │ville │codepo│addres│
+│       │       │3-04  │      │      │      │      │      │      │      │spost │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Pasnom │a      │2024-0│50.00 │Femme │190   │z     │e     │r     │y     │t     │
+│       │       │3-15  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│Benboub│Younes │2003-0│78.00 │Homme │180   │17    │a     │a     │a     │a     │
+│akar   │       │1-01  │      │      │      │      │      │      │      │      │
+├───────┼───────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│NomTTes│hi     │2010-1│50.00 │Femme │90    │i     │j     │ji    │n     │nk    │
+│t      │       │0-10  │      │      │      │      │      │      │      │      │
+└───────┴───────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+

@@ -1,13 +1,17 @@
 package ing.sirius.episaine.client.Page_Accueil.Parts;
 
 import javax.swing.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.*;
 
-public class Header extends JPanel {
-    private JLabel titre;
+public class Header extends JPanel implements FrameInterface {
+    private final String headerLabel = "H e a d e r";
+    private final Logger headerLog = LoggerFactory.getLogger(headerLabel);
     
-    private Color darkgray = new Color(55,55,55);
-    private Color lightgray = new Color(210,210,210);
+    private JLabel titre;
 
     public Header(String title, JFrame frame) {
         setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()/20));
@@ -20,12 +24,14 @@ public class Header extends JPanel {
         setBackground(lightgray);
     }
 
-    public void switchLightFooter(boolean switchVar) {
+    public void switchLight(boolean switchVar) {
         if (switchVar) {
+            headerLog.info("Mode nuit = " + switchVar);
             this.setBackground(darkgray);
             titre.setForeground(Color.WHITE);
         }
         else {
+            headerLog.info("Mode nuit = " + switchVar);
             this.setBackground(lightgray);
             titre.setForeground(Color.BLACK);
         }

@@ -12,6 +12,7 @@ import java.util.function.Supplier;
 public class LoggingUtils {
 
     private static Map<Level, Method> functions = new LinkedHashMap<>();
+    
     private static void initFunctions () throws NoSuchMethodException {
         functions.put(Level.DEBUG, Logger.class.getMethod("debug", String.class));
         functions.put(Level.INFO, Logger.class.getMethod("info", String.class));
