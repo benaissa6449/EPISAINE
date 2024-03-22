@@ -12,11 +12,14 @@ import javax.swing.table.DefaultTableModel;
 import edu.ezip.ing1.pds.client.MainSelectClient;
 import edu.ezip.ing1.pds.client.StringAsciiTable;
 import ing.sirius.episaine.client.Page_Accueil.Parts.ButtonInterface;
-import ing.sirius.episaine.client.Page_Accueil.Parts.FrameInterface;;
+import ing.sirius.episaine.client.Page_Accueil.Parts.FrameInterface;
+import ing.sirius.episaine.client.Page_Accueil.Parts.listener.ButtonChangeState;;
 
-public class SelectPanel extends JPanel implements ActionListener {
+public class SelectPanel extends JPanel implements ActionListener, ButtonInterface, FrameInterface {
     private static DefaultTableModel defaultTableModel;
     private static JTable table;
+
+    private static JButton selectJButton;
 
     public SelectPanel() {
         // parametre du panel
@@ -52,7 +55,10 @@ public class SelectPanel extends JPanel implements ActionListener {
     // creer le bouton
     private JButton selectButton() {
         // creation jbutton
-        JButton selectJButton = new JButton("SELECT_ALL_CLIENT");
+        selectJButton = new JButton("SELECT_ALL_CLIENT");
+        selectJButton.setBackground(mediumLightGray);
+        selectJButton.setOpaque(true);
+        selectJButton.setBorderPainted(false);
         selectJButton.addActionListener(this);
         return selectJButton;
     }
@@ -90,6 +96,21 @@ public class SelectPanel extends JPanel implements ActionListener {
         }
         catch(Exception ex){
             ex.getMessage();
+        }
+    }
+
+    public void setStateChanged(){
+        selectJButton.addMouseListener(new ButtonChangeState());
+    }
+
+    public void switchLight(boolean switchValue) {
+        if (switchValue) {
+            selectJButton.setBackground(mediumDarkGray);
+            selectJButton.setForeground(Color.WHITE);
+        }
+        else {
+            selectJButton.setBackground(mediumLightGray);
+            selectJButton.setForeground(Color.BLACK);
         }
     }
 }

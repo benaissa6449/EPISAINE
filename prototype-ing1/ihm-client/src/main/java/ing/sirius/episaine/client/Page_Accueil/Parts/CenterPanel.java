@@ -20,7 +20,9 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
 
     private final ArrayList<JPanel> panelList = new ArrayList<JPanel>();
     private final ArrayList<JButton> buttonList = new ArrayList<JButton>();
-    
+
+    private SelectPanel selectPanel;
+    private InsertPanel insertPanel;
 
     // temp
     private final JButton next;
@@ -33,17 +35,24 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
         setLayout(new BorderLayout());
         transitionPanel.setLayout(cardLayout);
 
-        SelectPanel selectPanel = new SelectPanel();
-        InsertPanel insertPanel = new InsertPanel();
+        selectPanel = new SelectPanel();
+        insertPanel = new InsertPanel();
 
         transitionPanel.add(selectPanel);
         transitionPanel.add(insertPanel);
         
         JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.WHITE);
         next = new JButton("Next");
+        next.setOpaque(true);
+        next.setBorderPainted(false);
         next.addActionListener(this);
+        next.setBackground(mediumLightGray);
         previous = new JButton("Previous");
+        previous.setOpaque(true);
+        previous.setBorderPainted(false);
         previous.addActionListener(this);
+        previous.setBackground(mediumLightGray);
         buttonPanel.add(previous);
         buttonPanel.add(next);
 
@@ -74,23 +83,23 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
     public void switchLight(boolean switchValue) {
         if (switchValue) {
             for (JPanel panel : panelList) {
-                panel.setBackground(Color.BLACK);
+                panel.setBackground(mediumLightGray);
             }
             for (JButton button : buttonList) {
-                button.setBackground(Color.BLACK);
+                button.setBackground(mediumDarkGray);
                 button.setForeground(Color.WHITE);
             }
-            this.setBackground(Color.WHITE);
+            selectPanel.switchLight(switchValue);
         }
         else {
             for (JPanel panel : panelList) {
                 panel.setBackground(Color.WHITE);
             }
             for (JButton button : buttonList) {
-                button.setBackground(Color.WHITE);
-                button.setForeground(Color.WHITE);
+                button.setBackground(mediumLightGray);
+                button.setForeground(Color.BLACK);
             }
-            this.setBackground(Color.WHITE);
+            selectPanel.switchLight(switchValue);
         }
     }
 

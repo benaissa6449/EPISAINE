@@ -1,5 +1,5 @@
 @echo off
-cd ../../prototype-ing1/ihm-episaine
+cd ../../prototype-ing1/ihm-client
 call mvn exec:java
 
 if %errorlevel% equ 0 (
