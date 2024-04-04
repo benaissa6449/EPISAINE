@@ -1,7 +1,0 @@
-recettes:
-  - nomRecette: "Tarte aux pommes"
-    nombreDeCalories: '250'
-    ingredients: "Pâte brisée, pommes, sucre, cannelle"
-    instructions: "1. Préchauffer le four à 180°C. 2. Étaler la pâte brisée dans un moule à tarte. 3. Éplucher les pommes, les couper en tranches fines et les disposer sur la pâte. 4. Saupoudrer de sucre et de cannelle. 5. Enfourner pendant 30 minutes. 6. Laisser refroidir avant de servir."
-    regimeAlimentaire: "Normal"
-    idNutritioniste: '12345'
