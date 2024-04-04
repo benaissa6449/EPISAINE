@@ -1,5 +1,6 @@
 package edu.ezip.ing1.pds.business.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -8,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "client")
 public class Client {
     private String nom_Client;
@@ -170,5 +172,10 @@ public class Client {
                 ", Adresse='" + adresse + '\'' +
                 ", Code_Postal='" + code_Postal + '\'' +
                 '}';
+    }
+
+    public String[] getValue() {
+        String [] res = {nom_Client, prenom_Client, date_de_naissance_Client, poids, genre, taille, numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal};
+        return res;
     }
 }
