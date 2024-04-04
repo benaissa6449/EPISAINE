@@ -6,7 +6,7 @@
         <file>${LOGS_DIR}/app.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Define the name of the archived files -->
-            <fileNamePattern>${LOGS_DIR}/archive/app_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOGS_DIR}/../archive/app_%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- Keep 7 days' worth of history -->
             <maxHistory>7</maxHistory>
         </rollingPolicy>
