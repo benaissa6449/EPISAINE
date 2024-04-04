@@ -24,6 +24,7 @@ public class Fenetre_Accueil extends JFrame {
     private final JToggleButton homeButton;
     private final JToggleButton settingButton;
     private final JToggleButton sunButton;
+    
     private final String logLabel = "F e n e t r e - A c c u e i l";
     private final Logger fenetreLog = LoggerFactory.getLogger(logLabel);
 

@@ -68,6 +68,8 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
         // add button to list
         buttonList.add(next);
         buttonList.add(previous);
+
+        setStateChanged();
     }
 
     public void actionPerformed(ActionEvent e) {
