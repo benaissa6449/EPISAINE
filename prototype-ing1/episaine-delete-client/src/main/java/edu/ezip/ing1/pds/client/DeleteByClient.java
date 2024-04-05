@@ -1,5 +1,7 @@
 package edu.ezip.ing1.pds.client;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -12,36 +14,32 @@ import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
 import edu.ezip.ing1.pds.commons.Request;
 
-public class SelectByClient {
-    
-    private final static String LoggingLabel = "S e l e c t - C l i e n t";
+public class DeleteByClient {
+    private final static String LoggingLabel = "D e l e t e - C l i e n t";
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
 
-    public Object getValue(String requestOrder) throws Exception {
-        final NetworkConfig networkConfig = ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
+    public void deleteValue(String requestOrder, Integer id) throws IOException, SQLException, InterruptedException {
+        
+        final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         
         logger.debug("Load Network config file : {}", networkConfig.toString());
-        int birthdate = 0;
-        final ObjectMapper objectMapper = new ObjectMapper();
 
+        int birthdate = 0;
+
+        final ObjectMapper objectMapper = new ObjectMapper();
+        logger.trace("Client to be deleted : {}", id);
         final String requestId = UUID.randomUUID().toString();
         final Request request = new Request();
         request.setRequestId(requestId);
         request.setRequestOrder(requestOrder);
-
-        logger.info("new request : " + request.toString());
-        
+        request.setRequestContent(id.toString());
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         final byte [] requestBytes = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(request);
-        
-        SelectAllClientRequest clientRequest = new SelectAllClientRequest(
-                                                networkConfig, birthdate++, request, null, requestBytes);
-        clientRequest.join();
 
-        Object res = clientRequest.getResult();
-        logger.info("data requested : " + res.toString());
-
-    return res;
+        final DeleteClientRequest deleteClient = new DeleteClientRequest (
+                                                                                networkConfig,
+                                                                                birthdate++, request, id, requestBytes);
+        deleteClient.join();
     }
 }

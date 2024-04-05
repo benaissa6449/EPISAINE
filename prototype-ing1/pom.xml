@@ -14,10 +14,10 @@
         <module>xmart-city-client-commons</module>
         <module>logging-utils</module>
         <module>rdbms-connection-pool</module>
-        <module>ihm-episaine</module>
+        <module>ihm-client</module>
         <module>episaine-select-client</module>
         <module>episaine-insert-client</module>
-        <module>episaine-select-recette</module>
-        <module>episaine-insert-recette</module>
+        <module>episaine-update-client</module>
+        <module>episaine-delete-client</module>
     </modules>
 </project>

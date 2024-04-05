@@ -13,9 +13,7 @@ public class Header extends JPanel implements FrameInterface {
     
     private JLabel titre;
 
-    public Header(String title, JFrame frame) {
-        setPreferredSize(new Dimension(frame.getWidth(), frame.getHeight()/20));
-
+    public Header(String title, JPanel panel) {
         titre = new JLabel(title, SwingConstants.CENTER);
         titre.setFont(new Font("TimesRoman", Font.PLAIN, 20));
         setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));

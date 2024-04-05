@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 @JsonRootName(value = "recette")
 public class Recette {
+    private int id_nutritionniste;
     private String nom_Recette;
     private int nombre_de_Calories;
     private String ingredients;
@@ -30,14 +31,22 @@ public class Recette {
         return buildPreparedStatement(preparedStatement, nom_Recette, nombre_de_Calories, ingredients, instructions, regimeAlimentaire);
     }
 
-    public Recette(String nom_Recette, int nombre_de_Calories, String ingredients, String instructions, String regimeAlimentaire) {
+    public Recette(int id_nutritionniste, String nom_Recette, int nombre_de_Calories, String ingredients, String instructions, String regimeAlimentaire) {
         this.nom_Recette = nom_Recette;
         this.nombre_de_Calories = nombre_de_Calories;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.regimeAlimentaire = regimeAlimentaire;
+        this.id_nutritionniste = id_nutritionniste;
     }
 
+    @JsonProperty("id_nutritionniste")
+    public void setId_nutritionniste(int id_nutritionniste) {
+        this.id_nutritionniste = id_nutritionniste;
+    }
+    public int getId_nutritionniste() {
+        return id_nutritionniste;
+    }
     public String getNom_Recette() {
         return nom_Recette;
     }
@@ -103,7 +112,8 @@ public class Recette {
     @Override
     public String toString() {
         return "Recette{" +
-                "nom_Recette='" + nom_Recette + '\'' +
+                "id_nutritionniste='" + id_nutritionniste + '\'' +
+                ", nom_Recette='" + nom_Recette + '\'' +
                 ", nombre_de_Calories=" + nombre_de_Calories +
                 ", ingredients='" + ingredients + '\'' +
                 ", instructions='" + instructions + '\'' +

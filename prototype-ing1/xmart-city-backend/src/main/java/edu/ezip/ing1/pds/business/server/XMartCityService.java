@@ -3,6 +3,7 @@ package edu.ezip.ing1.pds.business.server;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.ezip.ing1.pds.business.dto.Student;
 import edu.ezip.ing1.pds.business.dto.Students;
+import edu.ezip.ing1.pds.business.dto.Update;
 import edu.ezip.ing1.pds.business.dto.Client;
 import edu.ezip.ing1.pds.business.dto.Clients;
 import edu.ezip.ing1.pds.business.dto.Recette;
@@ -23,14 +24,17 @@ public class XMartCityService {
     private final Logger logger = LoggerFactory.getLogger(LoggingLabel);
 
         private enum Queries {
-        SELECT_ALL_STUDENTS("SELECT t.name, t.firstname, t.group FROM \"ezip-ing1\".students t"),
-        SELECT_ALL_CLIENTS("SELECT t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
-        SELECT_ALL_RECETTES("SELECT t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire FROM \"episaine-schema\".recettes t"),
-
-        INSERT_STUDENT("INSERT into \"ezip-ing1\".students (\"name\", \"firstname\", \"group\") values (?, ?, ?)"),
-        INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
-        INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritioniste\") VALUES (?, ?, ?, ?, ?, ?)");
-
+            SELECT_ALL_CLIENTS("SELECT t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
+            SELECT_ALL_RECETTES("SELECT t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire FROM \"episaine-schema\".recettes t"),
+            SELECT_ALL_INFORMATIONS("SELECT t.id_Client, t.but, t.allergie, t.nbDeRepas FROM \"episaine-schema\".informations t"),
+        
+            INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
+            INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritionniste\") VALUES (?, ?, ?, ?, ?, ?)"),
+            INSERT_INFORMATION("INSERT INTO \"episaine-schema\".informations (\"id_client\",\"but\", \"allergie\", \"nbderepas\") VALUES (?,?,?,?)"),
+        
+            DELETE_CLIENT("DELETE FROM \"episaine-schema\".clients WHERE \"id_client\" = ? "),
+            DELETE_RECETTES("DELETE FROM \"episaine-schema\".recettes WHERE \"id_recettes\" = ?"),
+            DELETE_INFORMATION("DELETE FROM \"episaine-schema\".informations WHERE \"id_info\" = ?");
         private final String query;
 
         private Queries(String query) {
@@ -61,44 +65,68 @@ public class XMartCityService {
         ObjectMapper mapper;
         int rows;
         try {
-            switch (request.getRequestOrder()) {
-                // Premier essai avec la bdd de test, inutile maintenant mais on garde temporairement pour l'exemple
-                case "SELECT_ALL_STUDENTS":
-                    stmt = connection.createStatement();
-                    res = stmt.executeQuery(Queries.SELECT_ALL_STUDENTS.query);
-                    Students students = new Students();
-                    while (res.next()) {
-                        Student student = new Student().build(res);
-                        students.add(student);
+            switch (request.getRequestOrder()) {             
+                case "UPDATE_CLIENT":
+                    mapper = new ObjectMapper();
+                    Update update = (Update)mapper.readValue(request.getRequestBody(), Update.class);
+                    pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".clients SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
+                    switch (update.getNewColumn()) {
+                       case "id_client":
+                          pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
+                          break;
+                       case "Date de naissance":
+                          pstmt.setDate(1, Date.valueOf(update.getNewValue()));
+                          break;
+                       case "Poids (en kg)":
+                          pstmt.setBigDecimal(1, new BigDecimal(update.getNewValue()));
+                          break;
+                       case "Taille":
+                          pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
+                          break;
+                       default:
+                          pstmt.setString(1, update.getNewValue());
+                          break;
                     }
-                    mapper = new ObjectMapper();
-
-                    response = new Response();
-                    response.setRequestId(request.getRequestId());
-                    response.setResponseBody(mapper.writeValueAsString(students));
-                    break;
-
-                case "INSERT_STUDENT" :
-                    mapper = new ObjectMapper();
-                    Student student = mapper.readValue(request.getRequestBody(), Student.class);
-                    pstmt = connection.prepareStatement(Queries.INSERT_STUDENT.query);
-                    pstmt.setString(1, student.getName());
-                    pstmt.setString(2, student.getFirstname());
-                    pstmt.setString(3, student.getGroup());
+     
+                    switch (update.getConditionColumn()) {
+                       case "id_client":
+                          pstmt.setInt(2, Integer.parseInt(update.getConditionValue()));
+                          break;
+                       case "Date de naissance":
+                          pstmt.setDate(2, Date.valueOf(update.getConditionValue()));
+                          break;
+                       case "Poids (en kg)":
+                          pstmt.setBigDecimal(2, new BigDecimal(update.getConditionValue()));
+                          break;
+                       case "Taille":
+                          pstmt.setInt(2, Integer.parseInt(update.getConditionValue()));
+                          break;
+                       default:
+                          pstmt.setString(2, update.getConditionValue());
+                          break;
+                    }
+     
                     rows = pstmt.executeUpdate();
-
                     response = new Response();
                     response.setRequestId(request.getRequestId());
-                    response.setResponseBody("{\"student_id\": " + rows + " }");
+                    response.setResponseBody("{\"update\": " + rows + " }");
                     break;
-                // ------------------
 
+                case "DELETE_CLIENT":
+                    pstmt = connection.prepareStatement(Queries.DELETE_CLIENT.query);
+                    pstmt.setInt(1, Integer.parseInt(request.getRequestBody()));
+                    rows = pstmt.executeUpdate();
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody("{\"delete\": " + rows + " }");
+                    break;
+                 
                 case "SELECT_ALL_CLIENTS" :
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.SELECT_ALL_CLIENTS.query);
                     Clients clients = new Clients();
                     while (res.next()) {
-                    Client client = new Client().build(res);
+                        Client client = new Client().build(res);
                         clients.add(client);
                     }
                     mapper = new ObjectMapper();
@@ -114,11 +142,10 @@ public class XMartCityService {
                     pstmt = connection.prepareStatement(Queries.INSERT_CLIENT.query);
                     pstmt.setString(1, client.getNomClient());
                     pstmt.setString(2, client.getPrenomClient());
-                    Date date = Date.valueOf(client.getDateDeNaissanceClient());
-                    pstmt.setDate(3, date);
-                    pstmt.setBigDecimal(4, new BigDecimal(client.getPoids()));
+                    pstmt.setDate(3, client.getDateDeNaissanceClient());
+                    pstmt.setBigDecimal(4, client.getPoids());
                     pstmt.setString(5, client.getGenre());
-                    pstmt.setInt(6, Integer.parseInt(client.getTaille()));
+                    pstmt.setInt(6, client.getTaille());
                     pstmt.setString(7, client.getNumero_de_telephone_Client());
                     pstmt.setString(8, client.getMail_Client());
                     pstmt.setString(9, client.getVille());
@@ -155,17 +182,13 @@ public class XMartCityService {
                         pstmt.setString(3, recette.getIngredients());
                         pstmt.setString(4, recette.getInstructions());
                         pstmt.setString(5, recette.getRegimeAlimentaire());
-                        pstmt.setInt(6, 0);
+                        pstmt.setInt(6, recette.getId_nutritionniste());
                         rows = pstmt.executeUpdate();
     
                         response = new Response();
                         response.setRequestId(request.getRequestId());
-                        response.setResponseBody("{\"id_recette\": " + rows + " }");
+                        response.setResponseBody("{\"id_client\": " + rows + " }");
                         break;
-
-
-
-
                 default:
                     break;
             }

@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import ing.sirius.episaine.client.IHM_BDD.InsertPanel;
-import ing.sirius.episaine.client.IHM_BDD.SelectPanel;
+import ing.sirius.episaine.client.Page_Accueil.Parts.IHM_BDD.InsertClientPanel;
+import ing.sirius.episaine.client.Page_Accueil.Parts.IHM_BDD.SelectPanel;
 import ing.sirius.episaine.client.Page_Accueil.Parts.listener.ButtonChangeState;
 
 public class CenterPanel extends JPanel implements FrameInterface, ActionListener, ButtonInterface {
@@ -22,7 +22,7 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
     private final ArrayList<JButton> buttonList = new ArrayList<JButton>();
 
     private SelectPanel selectPanel;
-    private InsertPanel insertPanel;
+    private InsertClientPanel insertPanel;
 
     // temp
     private final JButton next;
@@ -36,7 +36,7 @@ public class CenterPanel extends JPanel implements FrameInterface, ActionListene
         transitionPanel.setLayout(cardLayout);
 
         selectPanel = new SelectPanel();
-        insertPanel = new InsertPanel();
+        insertPanel = new InsertClientPanel();
 
         transitionPanel.add(selectPanel);
         transitionPanel.add(insertPanel);

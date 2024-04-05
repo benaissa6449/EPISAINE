@@ -5,19 +5,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "client")
 public class Client {
     private String nom_Client;
     private String prenom_Client;
-    private String date_de_naissance_Client;
-    private String poids;
+    private Date date_de_naissance_Client;
+    private BigDecimal poids;
     private String genre;
-    private String taille;
+    private Integer taille;
     private String numero_de_telephone_Client;
     private String mail_Client;
     private String ville;
@@ -37,7 +41,7 @@ public class Client {
     }
     
 
-    public Client(String nom_Client, String prenom_Client, String date_de_naissance_Client, String poids, String genre, String taille, String numero_de_telephone_Client, String mail_Client, String ville, String adresse, String code_Postal) {
+    public Client(String nom_Client, String prenom_Client, Date date_de_naissance_Client, BigDecimal poids, String genre, Integer taille, String numero_de_telephone_Client, String mail_Client, String ville, String adresse, String code_Postal) {
         this.nom_Client = nom_Client;
         this.prenom_Client = prenom_Client;
         this.date_de_naissance_Client = date_de_naissance_Client;
@@ -59,11 +63,11 @@ public class Client {
         return prenom_Client;
     }
 
-    public String getDateDeNaissanceClient() {
+    public Date getDateDeNaissanceClient() {
         return date_de_naissance_Client;
     }
 
-    public String getPoids() {
+    public BigDecimal getPoids() {
         return poids;
     }
 
@@ -71,7 +75,7 @@ public class Client {
         return genre;
     }
 
-    public String getTaille() {
+    public Integer getTaille() {
         return taille;
     }
 
@@ -104,11 +108,11 @@ public class Client {
         this.prenom_Client = prenom_Client;
     }
     @JsonProperty("Date_de_naissance_Client")
-    public void setdateDeNaissanceClient(String date_de_naissance_Client) {
+    public void setdateDeNaissanceClient(Date date_de_naissance_Client) {
         this.date_de_naissance_Client = date_de_naissance_Client;
     }
     @JsonProperty("Poids")
-    public void setPoids(String poids) {
+    public void setPoids(BigDecimal poids) {
         this.poids = poids;
     }
     @JsonProperty("Genre")
@@ -116,7 +120,7 @@ public class Client {
         this.genre = genre;
     }
     @JsonProperty("Taille")
-    public void setTaille(String taille) {
+    public void setTaille(Integer taille) {
         this.taille = taille;
     }
     @JsonProperty("Numero_de_telephone_Client")
@@ -144,15 +148,15 @@ public class Client {
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         for(final String fieldName : fieldNames ) {
             final Field field = this.getClass().getDeclaredField(fieldName);
-            field.set(this, resultSet.getObject(fieldName).toString());
+            field.set(this, resultSet.getObject(fieldName));
         }
     }
     
-    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final String ... fieldNames)
+    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final Object ... fieldNames)
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         int ix = 0;
-        for(final String fieldName : fieldNames) {
-            preparedStatement.setString(++ix, fieldName);
+        for(final Object fieldName : fieldNames) {
+            preparedStatement.setObject(++ix, fieldName);
         }
         return preparedStatement;
     }
@@ -175,7 +179,9 @@ public class Client {
     }
 
     public String[] getValue() {
-        String [] res = {nom_Client, prenom_Client, date_de_naissance_Client, poids, genre, taille, numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal};
+        DateFormat dateFormat = new SimpleDateFormat("yyyy,mm-dd");
+        String date = dateFormat.format(date_de_naissance_Client);
+        String [] res = {nom_Client, prenom_Client, date, poids.toString(), genre, taille.toString(), numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal};
         return res;
     }
 }

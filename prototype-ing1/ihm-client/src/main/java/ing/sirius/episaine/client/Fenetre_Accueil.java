@@ -43,12 +43,10 @@ public class Fenetre_Accueil extends JFrame {
         setLocationRelativeTo(null);
 
         // panels
-        Header header = new Header("Page d'accueil", this);
         Footer footer = new Footer();
         LeftMenu lm = new LeftMenu(this);
 
         mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(header, BorderLayout.NORTH);
         mainPanel.add(footer, BorderLayout.SOUTH);
 
         add(mainPanel, BorderLayout.CENTER);
@@ -72,7 +70,6 @@ public class Fenetre_Accueil extends JFrame {
 
         // add every panel to list
         panelList.add(lm);
-        panelList.add(header);
         panelList.add(footer);
         panelList.add(centerPanel);
     }
