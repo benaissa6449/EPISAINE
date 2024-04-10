@@ -60,13 +60,13 @@
     <dependencies>
       <dependency>
         <groupId>edu.ezip.ing1.pds.client</groupId>
-        <artifactId>episaine-insert-client</artifactId>
+        <artifactId>episaine-insert-recette</artifactId>
         <version>1.0-SNAPSHOT</version>
       </dependency>
       
       <dependency>
         <groupId>edu.ezip.ing1.pds.client</groupId>
-        <artifactId>episaine-select-client</artifactId>
+        <artifactId>episaine-select-recette</artifactId>
         <version>1.0-SNAPSHOT</version>
       </dependency>
 
