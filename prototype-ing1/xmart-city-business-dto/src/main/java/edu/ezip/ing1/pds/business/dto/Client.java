@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "client")
 public class Client {
+    private Integer id_client;
     private String nom_Client;
     private String prenom_Client;
     private Date date_de_naissance_Client;
@@ -32,16 +33,17 @@ public class Client {
     }
     public final Client build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResulset(resultSet,"nom_Client", "prenom_Client", "date_de_naissance_Client", "poids", "genre", "taille", "numero_de_telephone_Client", "mail_Client", "ville", "adresse", "code_Postal");
+        setFieldsFromResulset(resultSet,"id_client","nom_Client", "prenom_Client", "date_de_naissance_Client", "poids", "genre", "taille", "numero_de_telephone_Client", "mail_Client", "ville", "adresse", "code_Postal");
         return this;
     }
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, nom_Client, prenom_Client, date_de_naissance_Client, poids, genre, taille, numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal);
+        return buildPreparedStatement(preparedStatement, id_client, nom_Client, prenom_Client, date_de_naissance_Client, poids, genre, taille, numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal);
     }
     
 
-    public Client(String nom_Client, String prenom_Client, Date date_de_naissance_Client, BigDecimal poids, String genre, Integer taille, String numero_de_telephone_Client, String mail_Client, String ville, String adresse, String code_Postal) {
+    public Client(Integer id_client, String nom_Client, String prenom_Client, Date date_de_naissance_Client, BigDecimal poids, String genre, Integer taille, String numero_de_telephone_Client, String mail_Client, String ville, String adresse, String code_Postal) {
+        this.id_client = id_client;
         this.nom_Client = nom_Client;
         this.prenom_Client = prenom_Client;
         this.date_de_naissance_Client = date_de_naissance_Client;
@@ -55,6 +57,10 @@ public class Client {
         this.code_Postal = code_Postal;
     }
 
+    public Integer getId_client() {
+        return id_client;
+    }
+
     public String getNomClient() {
         return nom_Client;
     }
@@ -63,7 +69,7 @@ public class Client {
         return prenom_Client;
     }
 
-    public Date getDateDeNaissanceClient() {
+    public Date getDate_de_naissance_Client() {
         return date_de_naissance_Client;
     }
 
@@ -97,6 +103,11 @@ public class Client {
 
     public String getCode_Postal() {
         return code_Postal;
+    }
+
+    @JsonProperty("id_client")
+    public void setId_client(Integer id_client) {
+        this.id_client = id_client;
     }
 
     @JsonProperty("Nom_Client")
@@ -164,7 +175,8 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "Nom_Client='" + nom_Client + '\'' +
+                "ID_Client='" + id_client + '\'' +
+                ", Nom_Client='" + nom_Client + '\'' +
                 ", Prenom_Client='" + prenom_Client + '\'' +
                 ", Date_de_naissance_Client='" + date_de_naissance_Client + '\'' +
                 ", Poids='" + poids + '\'' +
@@ -181,7 +193,7 @@ public class Client {
     public String[] getValue() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy,mm-dd");
         String date = dateFormat.format(date_de_naissance_Client);
-        String [] res = {nom_Client, prenom_Client, date, poids.toString(), genre, taille.toString(), numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal};
+        String [] res = {id_client.toString(), nom_Client, prenom_Client, date, poids.toString(), genre, taille.toString(), numero_de_telephone_Client, mail_Client, ville, adresse, code_Postal};
         return res;
     }
 }

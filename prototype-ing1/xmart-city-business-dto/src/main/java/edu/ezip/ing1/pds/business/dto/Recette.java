@@ -10,9 +10,10 @@ import java.sql.SQLException;
 
 @JsonRootName(value = "recette")
 public class Recette {
-    private int id_nutritionniste;
+    private Integer id_recette;
+    private Integer id_nutritionniste;
     private String nom_Recette;
-    private int nombre_de_Calories;
+    private Integer nombre_de_Calories;
     private String ingredients;
     private String instructions;
     private String regimeAlimentaire;
@@ -22,16 +23,17 @@ public class Recette {
 
     public final Recette build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResultSet(resultSet,  "nom_Recette", "nombre_de_Calories", "ingredients", "instructions", "regimeAlimentaire");
+        setFieldsFromResultSet(resultSet,"id_recette",  "nom_Recette", "nombre_de_Calories", "ingredients", "instructions", "regimeAlimentaire");
         return this;
     }
 
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, nom_Recette, nombre_de_Calories, ingredients, instructions, regimeAlimentaire);
+        return buildPreparedStatement(preparedStatement, id_recette, nom_Recette, nombre_de_Calories, ingredients, instructions, regimeAlimentaire);
     }
 
-    public Recette(int id_nutritionniste, String nom_Recette, int nombre_de_Calories, String ingredients, String instructions, String regimeAlimentaire) {
+    public Recette(Integer id_recette, Integer id_nutritionniste, String nom_Recette, int nombre_de_Calories, String ingredients, String instructions, String regimeAlimentaire) {
+        this.id_recette = id_recette;
         this.nom_Recette = nom_Recette;
         this.nombre_de_Calories = nombre_de_Calories;
         this.ingredients = ingredients;
@@ -41,10 +43,10 @@ public class Recette {
     }
 
     @JsonProperty("id_nutritionniste")
-    public void setId_nutritionniste(int id_nutritionniste) {
+    public void setId_nutritionniste(Integer id_nutritionniste) {
         this.id_nutritionniste = id_nutritionniste;
     }
-    public int getId_nutritionniste() {
+    public Integer getId_nutritionniste() {
         return id_nutritionniste;
     }
     public String getNom_Recette() {
@@ -56,12 +58,12 @@ public class Recette {
         this.nom_Recette = nom_Recette;
     }
 
-    public int getNombre_de_Calories() {
+    public Integer getNombre_de_Calories() {
         return nombre_de_Calories;
     }
 
     @JsonProperty("nombre_de_Calories")
-    public void setNombre_de_Calories(int nombre_de_Calories) {
+    public void setNombre_de_Calories(Integer nombre_de_Calories) {
         this.nombre_de_Calories = nombre_de_Calories;
     }
 

@@ -12,34 +12,43 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "information")
 public class Information {
-    private String id_Client;
+    private Integer id_info;
+    private Integer id_Client;
     private String but;
     private String allergie;
-    private String nbDeRepas;
+    private Integer nbDeRepas;
 
     public Information() {
     }
     public final Information build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResulset(resultSet,"id_Client","but", "allergie", "nbDeRepas");
+        setFieldsFromResulset(resultSet,"id_info","id_Client","but", "allergie", "nbDeRepas");
         return this;
     }
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, id_Client, but, allergie, nbDeRepas);
+        return buildPreparedStatement(preparedStatement,id_info, id_Client, but, allergie, nbDeRepas);
     }
     
-    public Information(String id_Client, String but, String allergie, String nbDeRepas) {
+    public Information(Integer id_info, Integer id_Client, String but, String allergie, Integer nbDeRepas) {
+        this.id_info = id_info;
         this.id_Client = id_Client;
         this.but = but;
         this.allergie = allergie;
         this.nbDeRepas = nbDeRepas;
     }
-    public String getId_Client() {
+    public Integer getId_info() {
+        return id_info;
+    }
+    @JsonProperty("id_info")
+    public void setId_info(Integer id_info) {
+        this.id_info = id_info;
+    }
+    public Integer getId_Client() {
         return id_Client;
     }
     @JsonProperty("id_Client")
-    public void setId_Client(String id_Client) {
+    public void setId_Client(Integer id_Client) {
         this.id_Client = id_Client;
     }
     public String getBut() {
@@ -56,11 +65,11 @@ public class Information {
     public void setAllergie(String allergie) {
         this.allergie = allergie;
     }
-    public String getNbDeRepas() {
+    public Integer getNbDeRepas() {
         return nbDeRepas;
     }
     @JsonProperty("nbDeRepas")
-    public void setNbDeRepas(String nbDeRepas) {
+    public void setNbDeRepas(Integer nbDeRepas) {
         this.nbDeRepas = nbDeRepas;
     }
 
@@ -68,15 +77,15 @@ public class Information {
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         for(final String fieldName : fieldNames ) {
             final Field field = this.getClass().getDeclaredField(fieldName);
-            field.set(this, resultSet.getObject(fieldName).toString());
+            field.set(this, resultSet.getObject(fieldName));
         }
     }
     
-    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final String ... fieldNames)
+    private final PreparedStatement buildPreparedStatement(PreparedStatement preparedStatement, final Object ... fieldNames)
             throws NoSuchFieldException, SQLException, IllegalAccessException {
         int ix = 0;
-        for(final String fieldName : fieldNames) {
-            preparedStatement.setString(++ix, fieldName);
+        for(final Object fieldName : fieldNames) {
+            preparedStatement.setObject(++ix, fieldName);
         }
         return preparedStatement;
     }
@@ -91,8 +100,8 @@ public class Information {
                 '}';
     }
 
-    public String[] getValue() {
-        String [] res = {id_Client, but, allergie, nbDeRepas};
+    public Object[] getValue() {
+        Object [] res = {id_Client, but, allergie, nbDeRepas};
         return res;
     }
 }

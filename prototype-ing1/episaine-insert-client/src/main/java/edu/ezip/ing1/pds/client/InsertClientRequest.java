@@ -20,7 +20,7 @@ public class InsertClientRequest extends ClientRequest<Object, String> {
     public String readResult(String body) throws IOException {
         final ObjectMapper mapper = new ObjectMapper();
         final Map<String, Integer> clientIdMap = mapper.readValue(body, Map.class);
-        final String result  = clientIdMap.get("id_client").toString();
+        final String result  = clientIdMap.get("insert").toString();
         return result;
     }
 }

@@ -14,7 +14,6 @@
         <module>xmart-city-client-commons</module>
         <module>logging-utils</module>
         <module>rdbms-connection-pool</module>
-        <module>ihm-client</module>
         <module>episaine-select-client</module>
         <module>episaine-insert-client</module>
         <module>episaine-update-client</module>

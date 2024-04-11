@@ -1,6 +1,0 @@
-databaseName: "episaine-bdd"
-host: "172.31.249.120"
-port: 5432 
-username: "episaine"
-password: "episaine"
-poolSize: 1
