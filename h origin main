@@ -1,0 +1,329 @@
+[33mcommit 2cc2a7d9b3f6f642bab4dee781ba526f6205a81f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: John <john-wang@hotmail.fr>
+Date:   Wed Mar 20 22:16:43 2024 +0100
+
+    correction dans les scripts
+
+[33mcommit 07fcbe3cc4d54e09552a25b21d596570577777d7[m
+Author: John <john-wang@hotmail.fr>
+Date:   Wed Mar 20 21:04:04 2024 +0100
+
+    modif gitignore
+
+[33mcommit 6e4274e0e11313d639ecbb62e96b7ed71d1fde1f[m
+Author: John <john-wang@hotmail.fr>
+Date:   Wed Mar 20 21:01:50 2024 +0100
+
+    modif readme
+
+[33mcommit c162da691831a228410144a8bfd41c5e2aa56384[m
+Author: John <john-wang@hotmail.fr>
+Date:   Wed Mar 20 20:54:57 2024 +0100
+
+    finalisation des script et modif de certains pom.xml
+
+[33mcommit 7005bc3401f01ec5d3f77e36703a450f1772470f[m
+Author: John <john-wang@hotmail.fr>
+Date:   Wed Mar 20 19:47:49 2024 +0100
+
+    correction et template fenetre
+
+[33mcommit c7099e94dc81248f9ef275fa89965adef0010c8f[m
+Author: John <john-wang@hotmail.fr>
+Date:   Sat Mar 16 01:12:50 2024 +0100
+
+    premiere ebauche fenetre client
+
+[33mcommit 6b06ac5217f10ec534435a493d9802f2c08ea31a[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Mar 15 21:36:17 2024 +0100
+
+    correction insertion
+
+[33mcommit 579f673e46056ced77ab30a03e772ec7e3ab57df[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Mar 15 21:31:23 2024 +0100
+
+    correction insert
+
+[33mcommit 91b53dd2f2fbeb8c762101888b4ce62e61182843[m
+Author: John <john-wang@hotmail.fr>
+Date:   Sat Mar 9 15:06:28 2024 +0100
+
+    modif et correction
+
+[33mcommit ab76c00b944f73a6452e4c7a997fed70bf18c2b6[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Mar 8 17:12:03 2024 +0100
+
+    ajout des scripts
+
+[33mcommit df8bcfcd422dd0b3987e2e49e20a2d443b284917[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Mar 8 14:15:17 2024 +0100
+
+    fonctionnement select/insert avec nouvelle bdd
+
+[33mcommit e5f2cf46d2ad5f8734baef5a9c6761aae46d3160[m
+Author: John <john-wang@hotmail.fr>
+Date:   Tue Mar 5 00:09:38 2024 +0100
+
+    select dans la nvl bdd
+
+[33mcommit 20fca9b18251d59775a2ee3e250e249c70b35739[m
+Merge: 1b21f59 1981f6b
+Author: John <john-wang@hotmail.fr>
+Date:   Sat Feb 17 15:02:33 2024 +0100
+
+    Merge branch 'main' of https://github.com/benaissa6449/SIRIUS-ING-
+
+[33mcommit 1b21f59e73caecb280568f3d36892ba1d40577a1[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Feb 16 17:41:47 2024 +0100
+
+    ajout IHM + fonctionnement select/insert
+
+[33mcommit ac1eecd34cda3feaec03a30f7ee5e9982f17cf13[m
+Merge: 4568e4e a122dc6
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Feb 16 17:36:01 2024 +0100
+
+    Merge branch 'john' of https://github.com/benaissa6449/SIRIUS-ING- into john
+
+[33mcommit 4568e4ee0773d349091ee71d88b78e3d89831cee[m
+Author: John <john-wang@hotmail.fr>
+Date:   Fri Feb 16 17:35:24 2024 +0100
+
+    ajout IHM et fonctionnement select/insert
+
+[33mcommit a122dc6c1f8a91d09bb31bf6847d0f0548b14709[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Tue Feb 13 15:35:39 2024 +0100
+
+    Delete .vscode directory
+
+[33mcommit 1981f6bbdd928f93561d27d9f5e01e7ff75cbfc2[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Tue Feb 13 15:32:03 2024 +0100
+
+    Delete .vscode directory
+
+[33mcommit 40fa3ee670c97b6a82489325a722d73848295ccf[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Tue Feb 13 15:31:41 2024 +0100
+
+    Update .gitignore
+
+[33mcommit 1531ea97af3a95303d1d19b1715baa12398dacd2[m
+Merge: 5a67386 30d75a4
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Mon Feb 12 23:00:50 2024 +0100
+
+    .
+
+[33mcommit 5a673865e7020284289d1812521603db1c19104d[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Mon Feb 12 22:59:50 2024 +0100
+
+    ajout break dans les case
+
+[33mcommit 30d75a4fd7e5f53030cbc49fa7202a6c47e6457d[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Mon Feb 12 22:43:51 2024 +0100
+
+    .
+
+[33mcommit d8f2ab5f838b12485dd89a1662f1c764548a3b80[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Mon Feb 12 22:43:03 2024 +0100
+
+    modif / correction des codes
+
+[33mcommit 4a218af58446bb192f4b2e592cb6257ed946a59b[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Sun Feb 4 21:35:26 2024 +0100
+
+    correction select
+
+[33mcommit 087c112eb4366fef01a2ebe991547b5f30ea454d[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Sun Feb 4 19:59:06 2024 +0100
+
+    correction affichage select
+
+[33mcommit eb17399463635a59ccacd0eaa320b6241faac8e8[m
+Merge: 4ab1c6a f8bc18d
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Sun Feb 4 19:35:40 2024 +0100
+
+    Merge branch 'john'
+
+[33mcommit f8bc18d77ae97e6305a1af930fa6379ff1ffb360[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Sun Feb 4 19:34:01 2024 +0100
+
+    correction select
+
+[33mcommit 4ab1c6ab90e48a05b51825f43fe42e11a4d43de1[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Sun Feb 4 17:48:55 2024 +0100
+
+    Delete prototype-ing1/.vscode directory
+
+[33mcommit c8c2a89004b1968d1b9e78acbda1cbd227d78b98[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Sun Feb 4 17:47:56 2024 +0100
+
+    Delete prototype.bat
+
+[33mcommit 506b672b36c33990f003346c21d2fe7db431d1b0[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Sun Feb 4 17:42:13 2024 +0100
+
+    dernière modif + insert/select fonctionnel
+
+[33mcommit 8a50dc330ce286657c24b5c8c0f9bb1973e3535e[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Wed Jan 24 00:30:49 2024 +0100
+
+    .
+
+[33mcommit 35ecba2c328f9f2218fb0b794a98c46d7a6dfd45[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 19 00:13:26 2024 +0100
+
+    remise en forme
+
+[33mcommit e677106ac3c956cb0afbeeef9c015df921b263e3[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 17:11:20 2024 +0100
+
+    .
+
+[33mcommit a595db56e539dd21de0fc95969be1e97eaa7781b[m
+Merge: 188a7e5 55bb9bd
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 17:10:44 2024 +0100
+
+    Merge branch 'main' of https://github.com/benaissa6449/SIRIUS-ING-
+
+[33mcommit 188a7e520b999aba64cc14c99730bb95765c1560[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 17:10:14 2024 +0100
+
+    .
+
+[33mcommit 55bb9bdf4b190da7e2f7c53b61d29f019562c596[m
+Author: HamzaDamouh <damouhamza11@gmail.com>
+Date:   Fri Jan 12 15:06:12 2024 +0100
+
+    test
+
+[33mcommit 81f2cf2be4f33772b97e52772f4121dbfa3940f8[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:59:00 2024 +0100
+
+    Create README.md
+
+[33mcommit d06537ee8d3bd8a98d0b9383e93cbb2965813616[m
+Merge: 06a74fb 9960a48
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 14:42:40 2024 +0100
+
+    ajout proto
+
+[33mcommit 06a74fb871345efba58a74604e50838e2232c663[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 14:41:45 2024 +0100
+
+    test
+
+[33mcommit 6eddb9bd041c0fdfcb6baab61f0e11368cb8a187[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 14:34:51 2024 +0100
+
+    ajout prototype
+
+[33mcommit 9960a4816cd149294704231af85349feea413102[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:33:39 2024 +0100
+
+    Delete prototype-ing1/prototype-ing1 directory
+
+[33mcommit 0ede45ac60b3a554a0186c9ac42680aa1eb43fba[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 14:32:28 2024 +0100
+
+    ajout prototype
+
+[33mcommit 847230b3fd70b98866adfad391e8a8782e58d091[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:49 2024 +0100
+
+    Delete smart-city-by-ezip.iml
+
+[33mcommit c40ddd44d0bd16e8f987002ace880d05bdd3f59a[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:42 2024 +0100
+
+    Delete pom.xml
+
+[33mcommit f79d751529aca04d168bc92312fd9183db1df8d3[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:35 2024 +0100
+
+    Delete ezip_ing1_localhost-2020_01_16_18_57_18-dump.sql
+
+[33mcommit 1eda5d494a45a982195adc80679fab2b99054f00[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:24 2024 +0100
+
+    Delete xmart-select-client directory
+
+[33mcommit cddadc635b18acc6ec4b5bffb2304285979a7567[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:17 2024 +0100
+
+    Delete xmart-insert-client directory
+
+[33mcommit 8aa53b71c0cd2106b77466c5f6d0a5c4db35c85f[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:30:08 2024 +0100
+
+    Delete xmart-city-commons directory
+
+[33mcommit a1b73f47cc3ceaa6c51b4e86186f1ba2bea338c7[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:28:56 2024 +0100
+
+    Delete xmart-city-client-commons directory
+
+[33mcommit af841020d043fea4704b5e119dc79a1c3e492b26[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:28:44 2024 +0100
+
+    Delete xmart-city-business-dto directory
+
+[33mcommit 2ae776ca9115e2cfd1d57264d0c1cbfb69d2eb74[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:28:24 2024 +0100
+
+    Delete xmart-city-backend directory
+
+[33mcommit 3fa43c4e75e0a4e531600db75234156a670e2380[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:28:10 2024 +0100
+
+    Delete rdbms-connection-pool directory
+
+[33mcommit 22280d8a6ccd9294ebb1b4a47e108504cb43ea0b[m
+Author: Wang0John <92573338+Wang0John@users.noreply.github.com>
+Date:   Fri Jan 12 14:28:01 2024 +0100
+
+    Delete logging-utils directory
+
+[33mcommit 74aad04293a0dc34b5497754093cf74e7e52fa03[m
+Author: Wang0John <john-wang@hotmail.fr>
+Date:   Fri Jan 12 14:22:07 2024 +0100
+
+    Ajout prototype
