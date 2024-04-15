@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #566573;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <top>
+    <HBox prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #E9F7EF;" BorderPane.alignment="CENTER">
+      <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #D5D8DC;" stylesheets="" text="EPISAINE" textAlignment="CENTER" textFill="#315779" textOverrun="WORD_ELLIPSIS">
+                <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+                </font>
+              </Label>
+               </children>
+            </HBox>
+        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" style="-fx-background-radius: 50px; -fx-background-color: #E9F7EF;" HBox.hgrow="ALWAYS">
+          <children>
+            <Label prefHeight="43.0" prefWidth="145.0" text="Ismail Benaissa " HBox.hgrow="SOMETIMES">
+              <font>
+                <Font name="Berlin Sans FB" size="22.0" />
+              </font>
+            </Label>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../img/profile-pic%20(4).png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="204.0" text="John wang">
+                     <font>
+                        <Font name="Berlin Sans FB" size="22.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../img/profile-pic%20(5).png" />
+                     </image>
+                  </ImageView>
+          </children>
+        </HBox>
+
+      </children>
+    </HBox>
+  </top>
+   <left>
+      <VBox fx:id="av" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="550.0" prefWidth="200.0" style="-fx-background-radius: 50px; -fx-background-color: #D5D8DC;" stylesheets="@../../../../../css/style.css">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 50px; -fx-background-color: #BFC9CA;" text="Qui somme nous?" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+   </left>
+
+</BorderPane>

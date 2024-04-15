@@ -18,5 +18,7 @@
         <module>episaine-insert-client</module>
         <module>episaine-update-client</module>
         <module>episaine-delete-client</module>
+        <module>ihm-episaine</module>
+        <module>demo194</module>
     </modules>
 </project>
