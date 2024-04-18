@@ -8,14 +8,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    
     <artifactId>xmart-city-business-dto</artifactId>
-
-    <properties>
-        <java.version>21</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
 
     <dependencies>
          <dependency>

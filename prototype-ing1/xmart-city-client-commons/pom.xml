@@ -12,12 +12,6 @@
     <groupId>edu.ezip.ing1.pds.client.commons</groupId>
     <artifactId>xmart-city-client-commons</artifactId>
 
-    <properties>
-        <java.version>21</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

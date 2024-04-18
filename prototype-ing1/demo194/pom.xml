@@ -16,7 +16,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<junit.version>5.10.0</junit.version>  </properties>
+    <junit.version>5.10.0</junit.version> 
+  </properties>
 
   <dependencies>
     <dependency>
@@ -29,25 +30,27 @@
       <artifactId>javafx-fxml</artifactId>
       <version>22-ea+11</version>
     </dependency>
-<dependency>
+    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-web</artifactId>
       <version>22-ea+11</version>
     </dependency>
-      <dependency>
-        <groupId>org.openjfx</groupId>
-        <artifactId>javafx-swing</artifactId>
-        <version>22-ea+11</version>
-      </dependency>
-<dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-swing</artifactId>
+      <version>22-ea+11</version>
+    </dependency>
+    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
       <version>22-ea+11</version>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>
       <version>11.1.2</version>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>com.dlsc.formsfx</groupId>
       <artifactId>formsfx-core</artifactId>
       <version>11.6.0</version>
@@ -57,7 +60,8 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>net.synedra</groupId>
       <artifactId>validatorfx</artifactId>
       <version>0.4.0</version>
@@ -67,15 +71,18 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>org.kordamp.ikonli</groupId>
       <artifactId>ikonli-javafx</artifactId>
       <version>12.3.1</version>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>org.kordamp.bootstrapfx</groupId>
       <artifactId>bootstrapfx-core</artifactId>
       <version>0.4.0</version>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>eu.hansolo</groupId>
       <artifactId>tilesfx</artifactId>
       <version>11.48</version>
@@ -85,7 +92,8 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+    <dependency>
       <groupId>com.github.almasb</groupId>
       <artifactId>fxgl</artifactId>
       <version>17.3</version>
@@ -96,7 +104,7 @@
         </exclusion>
       </exclusions>
     </dependency>
-<dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
@@ -107,7 +115,34 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
+
+    <dependency>
+        <groupId>edu.ezip.ing1.pds</groupId>
+        <artifactId>xmart-city-business-dto</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.ezip.ing1.pds.client</groupId>
+      <artifactId>episaine-insert-client</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.ezip.ing1.pds.client</groupId>
+      <artifactId>episaine-select-client</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.ezip.ing1.pds.client</groupId>
+      <artifactId>episaine-update-client</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>edu.ezip.ing1.pds.client</groupId>
+      <artifactId>episaine-delete-client</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -116,8 +151,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
         <configuration>
-          <source>21</source>
-          <target>21</target>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
         </configuration>
       </plugin>
       <plugin>
@@ -129,7 +164,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>edu.ezip.ing1.pds.demo194/edu.ezip.ing1.pds.demo194.HelloApplication</mainClass>
+              <mainClass>edu.ezip.ing1.pds.demo194.HelloApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
@@ -139,21 +174,6 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.1</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>edu.ezip.ing1.pds.demo194.HelloApplication</mainClass>
-        </configuration>
       </plugin>
     </plugins>
   </build>
