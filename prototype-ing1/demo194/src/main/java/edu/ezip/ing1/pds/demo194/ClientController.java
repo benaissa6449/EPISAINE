@@ -1,6 +1,5 @@
 package edu.ezip.ing1.pds.demo194;
 
-
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -13,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class ClientController {
+public class ClientController extends HeadController {
     @FXML
     private TextField prenomClient;
 
@@ -100,10 +99,6 @@ public class ClientController {
             alert.setHeaderText("Ne correspond pas à une valeur numérique.");
             alert.showAndWait();
         }
-
-        
-
-
     }
 
     public boolean assertNotNull(String ... values){
@@ -115,5 +110,4 @@ public class ClientController {
         }
         return res;
     }
-
 }

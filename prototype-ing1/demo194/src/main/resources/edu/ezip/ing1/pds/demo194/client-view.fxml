@@ -40,37 +40,37 @@
                         <Font name="Impact" size="16.0" />
                      </font>
                   </Label>
-                  <Button alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Dashboard">
+                  <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Dashboard" onAction="#switchToDashboard">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Client     ">
+                  <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Client     ">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="220.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Information">
+                  <Button fx:id="informationButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="220.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Information" onAction="#switchToInformation">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Recette   ">
+                  <Button fx:id="recetteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Recette   " onAction="#switchToRecette">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Nutritionniste">
+                  <Button fx:id="nutritionnisteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Nutritionniste" onAction="#switchToNutritionniste">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Indicateur ">
+                  <Button fx:id="indicateurButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Indicateur " onAction="#switchToIndicateur">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER_RIGHT" layoutX="35.0" layoutY="590.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
+                  <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="35.0" layoutY="590.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    " onAction="#closeButton">
                      <font>
                         <Font name="Gill Sans MT Bold" size="15.0" />
                      </font>
@@ -142,7 +142,7 @@
                   <TableColumn minWidth="6.0" prefWidth="74.0" text="Poids" />
                   <TableColumn minWidth="0.0" prefWidth="75.0" text="Genre " />
                   <TableColumn prefWidth="85.0" text="Taille" />
-                  <TableColumn prefWidth="111.0" text="N°  téléphone" />
+                  <TableColumn prefWidth="111.0" text="N° téléphone" />
                   <TableColumn prefWidth="101.0" text="Mail " />
                   <TableColumn prefWidth="48.0" text="Ville" />
                   <TableColumn prefWidth="119.0" text="Adresse" />
