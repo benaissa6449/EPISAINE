@@ -134,22 +134,23 @@
                </font>
             </Label>
             <Separator layoutX="1.0" layoutY="300.0" prefHeight="7.0" prefWidth="1005.0" style="-fx-background-radius: 100px; -fx-background-color: #062936;" />
-            <TableView layoutX="14.0" layoutY="315.0" prefHeight="298.0" prefWidth="997.0">
+            <TableView fx:id="clientTableView" layoutX="14.0" layoutY="315.0" prefHeight="298.0" prefWidth="997.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Prénom" />
-                <TableColumn prefWidth="75.0" text="Nom " />
-                  <TableColumn prefWidth="122.0" text="Date de Naissance" />
-                  <TableColumn minWidth="6.0" prefWidth="74.0" text="Poids" />
-                  <TableColumn minWidth="0.0" prefWidth="75.0" text="Genre " />
-                  <TableColumn prefWidth="85.0" text="Taille" />
-                  <TableColumn prefWidth="111.0" text="N° téléphone" />
-                  <TableColumn prefWidth="101.0" text="Mail " />
-                  <TableColumn prefWidth="48.0" text="Ville" />
-                  <TableColumn prefWidth="119.0" text="Adresse" />
-                  <TableColumn prefWidth="110.0" text="Code Postale" />
+                  <TableColumn fx:id="idClientColumn" prefWidth="75.0" text="Id"/>
+                  <TableColumn fx:id="prenomClientColumn" prefWidth="75.0" text="Prénom" />
+                  <TableColumn fx:id="nomClientColumn" prefWidth="75.0" text="Nom " />
+                  <TableColumn fx:id="dateClientColumn" prefWidth="122.0" text="Date de Naissance" />
+                  <TableColumn fx:id="poidsClientColumn" minWidth="6.0" prefWidth="74.0" text="Poids" />
+                  <TableColumn fx:id="genreClientColumn" minWidth="0.0" prefWidth="75.0" text="Genre " />
+                  <TableColumn fx:id="tailleClientColumn" prefWidth="85.0" text="Taille" />
+                  <TableColumn fx:id="telephoneClientColumn" prefWidth="111.0" text="N° téléphone" />
+                  <TableColumn fx:id="mailClientColumn" prefWidth="101.0" text="Mail " />
+                  <TableColumn fx:id="villeClientColumn" prefWidth="48.0" text="Ville" />
+                  <TableColumn fx:id="adresseClientColumn" prefWidth="119.0" text="Adresse" />
+                  <TableColumn fx:id="codePostalClientColumn" prefWidth="110.0" text="Code Postale" />
               </columns>
             </TableView>
-            <Button alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Séléctionner">
+            <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner" onAction="#selectClientData">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -218,7 +219,7 @@
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="650.0" layoutY="170.0" prefHeight="15.0" prefWidth="150.0" text="Code Postale :">
+            <Label layoutX="650.0" layoutY="170.0" prefHeight="15.0" prefWidth="150.0" text="Code Postal :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>

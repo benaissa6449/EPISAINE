@@ -4,13 +4,18 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 import edu.ezip.ing1.pds.business.dto.Client;
+import edu.ezip.ing1.pds.business.dto.Clients;
 import edu.ezip.ing1.pds.client.InsertByClient;
+import edu.ezip.ing1.pds.client.SelectByClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ClientController extends HeadController {
     @FXML
@@ -49,6 +54,38 @@ public class ClientController extends HeadController {
     @FXML
     private Button insertButton;
 
+    @FXML
+    private TableView<Client> clientTableView;
+
+    @FXML
+    private Button selectButton;
+
+    @FXML
+    private TableColumn<String,String> idClientColumn;
+    @FXML
+    private TableColumn<String,String> prenomClientColumn;
+    @FXML
+    private TableColumn<String,String> nomClientColumn;
+    @FXML
+    private TableColumn<String,String> dateClientColumn;
+    @FXML
+    private TableColumn<String,String> poidsClientColumn;
+    @FXML
+    private TableColumn<String,String> genreClientColumn;
+    @FXML
+    private TableColumn<String,String> tailleClientColumn;
+    @FXML
+    private TableColumn<String,String> telephoneClientColumn;
+    @FXML
+    private TableColumn<String,String> mailClientColumn;
+    @FXML
+    private TableColumn<String,String> villeClientColumn;
+    @FXML
+    private TableColumn<String,String> adresseClientColumn;
+    @FXML
+    private TableColumn<String,String> codePostalClientColumn;
+
+
     public void insertClientData(ActionEvent actionEvent) {
         // if true, then insert the value
         Boolean insertBoolean = true;
@@ -76,9 +113,8 @@ public class ClientController extends HeadController {
 
             if (insertBoolean) {
                 Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
-                InsertByClient insertByClient = new InsertByClient();
                 try {
-                    insertByClient.sendValue("INSERT_CLIENT", client);
+                    InsertByClient.sendValue("INSERT_CLIENT", client);
                     alert.setAlertType(Alert.AlertType.CONFIRMATION);
                     alert.setHeaderText("Insertion effectuée.");
                     alert.showAndWait();
@@ -109,5 +145,33 @@ public class ClientController extends HeadController {
             }
         }
         return res;
+    }
+
+    public void selectClientData(ActionEvent actionEvent) {
+        try {
+            Clients clients = SelectByClient.getValue("SELECT_ALL_CLIENTS");
+
+            idClientColumn.setCellValueFactory(new PropertyValueFactory<>("Id_client"));
+            nomClientColumn.setCellValueFactory(new PropertyValueFactory<>("Nom_client"));
+            prenomClientColumn.setCellValueFactory(new PropertyValueFactory<>("Prenom_client"));
+            dateClientColumn.setCellValueFactory(new PropertyValueFactory<>("Date_de_naissance_client"));
+            poidsClientColumn.setCellValueFactory(new PropertyValueFactory<>("Poids"));
+            genreClientColumn.setCellValueFactory(new PropertyValueFactory<>("Genre"));
+            tailleClientColumn.setCellValueFactory(new PropertyValueFactory<>("Taille"));
+            telephoneClientColumn.setCellValueFactory(new PropertyValueFactory<>("Numero_de_telephone_client"));
+            mailClientColumn.setCellValueFactory(new PropertyValueFactory<>("Mail_client"));
+            villeClientColumn.setCellValueFactory(new PropertyValueFactory<>("Ville"));
+            adresseClientColumn.setCellValueFactory(new PropertyValueFactory<>("Adresse"));
+            codePostalClientColumn.setCellValueFactory(new PropertyValueFactory<>("Code_Postal"));
+
+            clientTableView.getItems().clear();
+
+            for (Client client : clients.getClients()) {
+                clientTableView.getItems().add(client);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

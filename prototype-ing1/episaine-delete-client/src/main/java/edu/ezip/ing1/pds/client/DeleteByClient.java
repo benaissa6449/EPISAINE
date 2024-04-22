@@ -19,7 +19,7 @@ public class DeleteByClient {
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
 
-    public void deleteValue(String requestOrder, Integer id) throws IOException, SQLException, InterruptedException {
+    public static void deleteValue(String requestOrder, Integer id) throws IOException, SQLException, InterruptedException {
         
         final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         

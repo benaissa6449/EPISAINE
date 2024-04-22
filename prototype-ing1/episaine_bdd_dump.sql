@@ -17,13 +17,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: episaine-schema; Type: SCHEMA; Schema: -; Owner: postgres
+-- Name: episaine-schema; Type: SCHEMA; Schema: -; Owner: episaine
 --
 
 CREATE SCHEMA "episaine-schema";
 
 
-ALTER SCHEMA "episaine-schema" OWNER TO postgres;
+ALTER SCHEMA "episaine-schema" OWNER TO episaine;
 
 SET default_tablespace = '';
 
@@ -46,7 +46,7 @@ CREATE TABLE "episaine-schema".clients (
     ville character varying(50) NOT NULL,
     adresse character varying(50) NOT NULL,
     code_postal character varying(50),
-    CONSTRAINT clients_genre_check CHECK (((genre)::text = ANY ((ARRAY['Homme'::character varying, 'Femme'::character varying])::text[])))
+    CONSTRAINT clients_genre_check CHECK (((genre)::text = ANY (ARRAY[('Homme'::character varying)::text, ('Femme'::character varying)::text])))
 );
 
 
@@ -170,8 +170,8 @@ CREATE TABLE "episaine-schema".informations (
     but character varying(50) NOT NULL,
     allergie character varying(50) NOT NULL,
     nbderepas integer NOT NULL,
-    CONSTRAINT informations_allergie_check CHECK (((allergie)::text = ANY ((ARRAY['oeuf'::character varying, 'lait'::character varying, 'moutard'::character varying, 'arachide'::character varying, 'mollusque'::character varying, 'crustacé'::character varying, 'poisson'::character varying, 'graine de sesame'::character varying, 'soja'::character varying, 'sulfite'::character varying, 'noix'::character varying, 'blé'::character varying, 'tricicale'::character varying])::text[]))),
-    CONSTRAINT informations_but_check CHECK (((but)::text = ANY ((ARRAY['perte de poids'::character varying, 'gain de poids'::character varying, 'maintien de poids'::character varying])::text[])))
+    CONSTRAINT informations_allergie_check CHECK (((allergie)::text = ANY (ARRAY[('oeuf'::character varying)::text, ('lait'::character varying)::text, ('moutard'::character varying)::text, ('arachide'::character varying)::text, ('mollusque'::character varying)::text, ('crustacé'::character varying)::text, ('poisson'::character varying)::text, ('graine de sesame'::character varying)::text, ('soja'::character varying)::text, ('sulfite'::character varying)::text, ('noix'::character varying)::text, ('blé'::character varying)::text, ('tricicale'::character varying)::text]))),
+    CONSTRAINT informations_but_check CHECK (((but)::text = ANY (ARRAY[('perte de poids'::character varying)::text, ('gain de poids'::character varying)::text, ('maintien de poids'::character varying)::text])))
 );
 
 
@@ -290,7 +290,7 @@ CREATE TABLE "episaine-schema".recettes (
     instructions character varying(255) NOT NULL,
     regimealimentaire character varying(50) NOT NULL,
     id_nutritionniste integer NOT NULL,
-    CONSTRAINT recettes_regimealimentaire_check CHECK (((regimealimentaire)::text = ANY ((ARRAY['normale'::character varying, 'cétogène'::character varying, 'végétarien'::character varying, 'carnivore'::character varying, 'pescétarien'::character varying, 'végétalien'::character varying, 'sans gluten'::character varying, 'sans lactose'::character varying, 'halal'::character varying, 'cashér'::character varying, 'paléo'::character varying, 'sans sucre ajouté'::character varying, 'régime méditerranéen'::character varying])::text[])))
+    CONSTRAINT recettes_regimealimentaire_check CHECK (((regimealimentaire)::text = ANY (ARRAY[('normale'::character varying)::text, ('cétogène'::character varying)::text, ('végétarien'::character varying)::text, ('carnivore'::character varying)::text, ('pescétarien'::character varying)::text, ('végétalien'::character varying)::text, ('sans gluten'::character varying)::text, ('sans lactose'::character varying)::text, ('halal'::character varying)::text, ('cashér'::character varying)::text, ('paléo'::character varying)::text, ('sans sucre ajouté'::character varying)::text, ('régime méditerranéen'::character varying)::text])))
 );
 
 
@@ -430,27 +430,6 @@ ALTER TABLE ONLY "episaine-schema".utilisateurgrandesurface ALTER COLUMN id_user
 --
 
 COPY "episaine-schema".clients (id_client, nom_client, prenom_client, date_de_naissance_client, poids, genre, taille, numero_de_telephone_client, mail_client, ville, adresse, code_postal) FROM stdin;
-2	Smith	Emma	1985-08-25	65.20	Femme	165	0987654321	emma.smith@example.com	London	456 Elm Street	WC1X 0AA
-3	Garcia	Juan	1978-12-10	80.30	Homme	175	0666666666	juan.garcia@example.com	Madrid	789 Calle Mayor	28001
-4	Choi	Seo-Yeon	1995-03-30	55.80	Femme	160	0777777777	seo.yeon@example.com	Seoul	987 Gangnam-gu	06000
-5	Rossi	Giuseppe	1982-06-20	70.00	Homme	170	0333333333	giuseppe.rossi@example.com	Rome	321 Via Veneto	00100
-6	Wong	Ling	1993-11-05	45.50	Femme	155	0555555555	ling.wong@example.com	Hong Kong	654 Nathan Road	\N
-7	Kowalski	Piotr	1970-04-12	90.20	Homme	185	0444444444	piotr.kowalski@example.com	Warsaw	234 Krakowskie Przedmieście	00-001
-8	Müller	Hans	1988-09-08	85.00	Homme	178	0888888888	hans.muller@example.com	Berlin	987 Unter den Linden	10117
-9	Lopez	Maria	1991-02-18	60.70	Femme	163	0999999999	maria.lopez@example.com	Barcelona	123 Rambla de Catalunya	08001
-10	Kim	Min-Ji	1980-07-22	52.30	Femme	158	0111111111	min.ji@example.com	Seoul	456 Myeongdong	06000
-11	Almeida	Carlos	1975-10-14	78.40	Homme	175	0222222222	carlos.almeida@example.com	Lisbon	789 Avenida da Liberdade	1000-001
-12	Nguyen	Thi	1994-01-04	48.90	Femme	150	0888877777	thi.nguyen@example.com	Hanoi	987 Le Loi Street	\N
-13	Sato	Takeshi	1986-08-30	73.80	Homme	172	0999999888	takeshi.sato@example.com	Tokyo	654 Shibuya	100-0001
-14	Fernández	Ana	1987-05-28	62.50	Femme	167	0666666555	ana.fernandez@example.com	Madrid	321 Gran Vía	28001
-15	Mueller	Sophie	1990-03-17	57.20	Femme	162	0333666666	sophie.mueller@example.com	Berlin	654 Friedrichstraße	10117
-16	Silva	João	1973-11-09	82.10	Homme	180	0555777777	joao.silva@example.com	Lisbon	987 Rua Augusta	1000-002
-17	Nakamura	Yuki	1984-09-02	50.60	Femme	155	0999333333	yuki.nakamura@example.com	Tokyo	123 Asakusa	111-0032
-18	Martinez	Manuel	1977-06-25	88.00	Homme	190	0666888888	manuel.martinez@example.com	Barcelona	456 Passeig de Gràcia	08001
-19	Liu	Wei	1996-02-12	59.30	Femme	160	0888555555	wei.liu@example.com	Beijing	789 Wangfujing	\N
-20	Kovács	Gábor	1983-07-18	77.50	Homme	178	0555888888	gabor.kovacs@example.com	Budapest	987 Andrassy út	1061
-21	nom	prenom	2022-03-02	321.00	Homme	32	num	mail	ville	adresss	codepos
-22	nom	prenom	2022-03-02	321.00	Homme	32	num	mail	ville	adresss	codepos
 \.
 
 
@@ -483,7 +462,6 @@ COPY "episaine-schema".grandesurface (id_gs, intitule, ville, adresse_gs, ville_
 --
 
 COPY "episaine-schema".informations (id_info, id_client, but, allergie, nbderepas) FROM stdin;
-1	3	perte de poids	oeuf	2
 \.
 
 
@@ -492,7 +470,6 @@ COPY "episaine-schema".informations (id_info, id_client, but, allergie, nbderepa
 --
 
 COPY "episaine-schema".nutritionnistes (id_nutritionniste, nom_n, prenom_n, numero_de_telephone_n, mail_n) FROM stdin;
-1	nom	prenom	num	mail
 \.
 
 
@@ -509,7 +486,6 @@ COPY "episaine-schema".produits (id_produit, nom_produit, prix, regime, rayon, c
 --
 
 COPY "episaine-schema".recettes (id_recette, nom_recette, nombre_de_calories, ingredients, instructions, regimealimentaire, id_nutritionniste) FROM stdin;
-1	nom	312	ing	ins	normale	1
 \.
 
 
@@ -964,7 +940,7 @@ CREATE INDEX ind_ville_gs ON "episaine-schema".grandesurface USING btree (ville)
 --
 
 ALTER TABLE ONLY "episaine-schema".estcomposede
-    ADD CONSTRAINT estcomposede_id_produit_fkey FOREIGN KEY (id_produit) REFERENCES "episaine-schema".produits(id_produit);
+    ADD CONSTRAINT estcomposede_id_produit_fkey FOREIGN KEY (id_produit) REFERENCES "episaine-schema".produits(id_produit) ON DELETE CASCADE;
 
 
 --
@@ -972,7 +948,7 @@ ALTER TABLE ONLY "episaine-schema".estcomposede
 --
 
 ALTER TABLE ONLY "episaine-schema".estcomposede
-    ADD CONSTRAINT estcomposede_id_recette_fkey FOREIGN KEY (id_recette) REFERENCES "episaine-schema".recettes(id_recette);
+    ADD CONSTRAINT estcomposede_id_recette_fkey FOREIGN KEY (id_recette) REFERENCES "episaine-schema".recettes(id_recette) ON DELETE CASCADE;
 
 
 --
@@ -980,7 +956,7 @@ ALTER TABLE ONLY "episaine-schema".estcomposede
 --
 
 ALTER TABLE ONLY "episaine-schema".genere
-    ADD CONSTRAINT genere_id_client_fkey FOREIGN KEY (id_client) REFERENCES "episaine-schema".clients(id_client);
+    ADD CONSTRAINT genere_id_client_fkey FOREIGN KEY (id_client) REFERENCES "episaine-schema".clients(id_client) ON DELETE CASCADE;
 
 
 --
@@ -988,7 +964,7 @@ ALTER TABLE ONLY "episaine-schema".genere
 --
 
 ALTER TABLE ONLY "episaine-schema".genere
-    ADD CONSTRAINT genere_id_recette_fkey FOREIGN KEY (id_recette) REFERENCES "episaine-schema".recettes(id_recette);
+    ADD CONSTRAINT genere_id_recette_fkey FOREIGN KEY (id_recette) REFERENCES "episaine-schema".recettes(id_recette) ON DELETE CASCADE;
 
 
 --
@@ -996,7 +972,7 @@ ALTER TABLE ONLY "episaine-schema".genere
 --
 
 ALTER TABLE ONLY "episaine-schema".informations
-    ADD CONSTRAINT informations_id_client_fkey FOREIGN KEY (id_client) REFERENCES "episaine-schema".clients(id_client);
+    ADD CONSTRAINT informations_id_client_fkey FOREIGN KEY (id_client) REFERENCES "episaine-schema".clients(id_client) ON DELETE CASCADE;
 
 
 --
@@ -1004,7 +980,7 @@ ALTER TABLE ONLY "episaine-schema".informations
 --
 
 ALTER TABLE ONLY "episaine-schema".produits
-    ADD CONSTRAINT produits_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs);
+    ADD CONSTRAINT produits_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs) ON DELETE CASCADE;
 
 
 --
@@ -1012,7 +988,7 @@ ALTER TABLE ONLY "episaine-schema".produits
 --
 
 ALTER TABLE ONLY "episaine-schema".recettes
-    ADD CONSTRAINT recettes_id_nutritionniste_fkey FOREIGN KEY (id_nutritionniste) REFERENCES "episaine-schema".nutritionnistes(id_nutritionniste);
+    ADD CONSTRAINT recettes_id_nutritionniste_fkey FOREIGN KEY (id_nutritionniste) REFERENCES "episaine-schema".nutritionnistes(id_nutritionniste) ON DELETE CASCADE;
 
 
 --
@@ -1020,7 +996,7 @@ ALTER TABLE ONLY "episaine-schema".recettes
 --
 
 ALTER TABLE ONLY "episaine-schema".utilisateurgrandesurface
-    ADD CONSTRAINT utilisateurgrandesurface_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs);
+    ADD CONSTRAINT utilisateurgrandesurface_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs) ON DELETE CASCADE;
 
 
 --
@@ -1028,7 +1004,7 @@ ALTER TABLE ONLY "episaine-schema".utilisateurgrandesurface
 --
 
 ALTER TABLE ONLY "episaine-schema".vend
-    ADD CONSTRAINT vend_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs);
+    ADD CONSTRAINT vend_id_gs_fkey FOREIGN KEY (id_gs) REFERENCES "episaine-schema".grandesurface(id_gs) ON DELETE CASCADE;
 
 
 --
@@ -1036,14 +1012,7 @@ ALTER TABLE ONLY "episaine-schema".vend
 --
 
 ALTER TABLE ONLY "episaine-schema".vend
-    ADD CONSTRAINT vend_id_produit_fkey FOREIGN KEY (id_produit) REFERENCES "episaine-schema".produits(id_produit);
-
-
---
--- Name: SCHEMA "episaine-schema"; Type: ACL; Schema: -; Owner: postgres
---
-
-GRANT ALL ON SCHEMA "episaine-schema" TO episaine;
+    ADD CONSTRAINT vend_id_produit_fkey FOREIGN KEY (id_produit) REFERENCES "episaine-schema".produits(id_produit) ON DELETE CASCADE;
 
 
 --

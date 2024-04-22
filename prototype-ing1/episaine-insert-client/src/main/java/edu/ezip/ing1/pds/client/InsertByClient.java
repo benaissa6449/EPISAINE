@@ -19,7 +19,7 @@ public class InsertByClient {
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
 
-    public void sendValue(String requestOrder, Object object) throws IOException, SQLException, InterruptedException {
+    public static void sendValue(String requestOrder, Object object) throws IOException, SQLException, InterruptedException {
         
         final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         

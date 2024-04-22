@@ -20,7 +20,7 @@ public class UpdateByClient {
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
 
-    public void updateValue(String requestOrder, Update update) throws IOException, SQLException, InterruptedException {
+    public static void updateValue(String requestOrder, Update update) throws IOException, SQLException, InterruptedException {
         
         final NetworkConfig networkConfig =  ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
         

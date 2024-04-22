@@ -8,14 +8,14 @@ import java.util.Set;
 public class Clients {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("clients")
+    @JsonProperty("\"clients\"")
     private Set<Client> clients = new LinkedHashSet<Client>();
 
     public Set<Client> getClients() {
         return clients;
     }
 
-    @JsonProperty("clients")
+    @JsonProperty("\"clients\"")
     public void setClients(Set<Client> clients) {
         this.clients = clients;
     }
@@ -28,7 +28,7 @@ public class Clients {
     @Override
     public String toString() {
         return "Clients{" +
-                "clients=" + clients +
+                "\"clients\"=" + clients +
                 '}';
     }
 }
