@@ -37,7 +37,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/client%20(1).png" />
+                              <Image url="@../../../../../../img/Client%20(2).png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -49,7 +49,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/bouton-dinformation.png" />
+                              <Image url="@../../../../../../img/information.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -61,7 +61,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/cuisine.png" />
+                              <Image url="@../../../../../../img/Recette.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -73,7 +73,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/medecin.png" />
+                              <Image url="@../../../../../../img/Nutritionniste.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -85,7 +85,7 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/entreprise.png" />
+                              <Image url="@../../../../../../img/Indicateur.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -97,14 +97,14 @@
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../../../../Downloads/se-deconnecter.png" />
+                              <Image url="@../../../../../../img/Quitter.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/page-daccueil.png" />
+                        <Image url="@../../../../../../img/Dashboard.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="indicateurButton1" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select client ">

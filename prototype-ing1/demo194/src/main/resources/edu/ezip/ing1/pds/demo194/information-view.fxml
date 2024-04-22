@@ -68,7 +68,7 @@
                   </ImageView>
                   <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/client%20(1).png" />
+                        <Image/>
                      </image>
                   </ImageView>
                   <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
@@ -148,7 +148,7 @@
                   </Label>
                   <TextField fx:id="prenomClient" layoutX="215.0" layoutY="111.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre prénom" />
                   <TextField fx:id="nomClient" layoutX="215.0" layoutY="151.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
-                  <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="44.0" layoutY="580.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+                  <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="44.0" layoutY="580.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
                      <font>
                         <Font name="Gill Sans MT" size="15.0" />
                      </font>
