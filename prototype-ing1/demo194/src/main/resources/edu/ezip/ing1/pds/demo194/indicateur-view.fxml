@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="" maxHeight="-Infinity"
-                     maxWidth="-Infinity" 
-                     minHeight="-Infinity" 
-                     minWidth="-Infinity" 
-                     prefHeight="700.0" 
-                     prefWidth="1200.0" 
-                     style="-fx-background-color: #D4EFDF;" 
-                     stylesheets="" 
-                     xmlns="http://javafx.com/javafx/21" 
-                     xmlns:fx="http://javafx.com/fxml/1"
-                     fx:controller="edu.ezip.ing1.pds.demo194.IndicateurController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.DashboardController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="602.0" prefWidth="192.0">
+            <AnchorPane prefHeight="697.0" prefWidth="192.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="35.0" prefHeight="38.0" prefWidth="119.0" text="WELCOME TO" textFill="#f8f3f3">
                      <font>
@@ -40,79 +21,122 @@
                         <Font name="Impact" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Dashboard" onAction="#switchToDashboard">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Client     " onAction="#switchToClient">
-                     <font>
-                        <Font name="Gill Sans MT" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="informationButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="220.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Information" onAction="#switchToInformation">
-                     <font>
-                        <Font name="Gill Sans MT" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="recetteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Recette   " onAction ="#switchToRecette">
-                     <font>
-                        <Font name="Gill Sans MT" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="nutritionnisteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Nutritionniste" onAction="#switchToNutritionniste">
-                     <font>
-                        <Font name="Gill Sans MT" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="indicateurButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Indicateur ">
-                     <font>
-                        <Font name="Gill Sans MT" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="35.0" layoutY="590.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    " onAction="#closeButton">
+                  <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Dashboard">
                      <font>
                         <Font name="Gill Sans MT Bold" size="15.0" />
                      </font>
                   </Button>
+                  <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToClient" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Client     ">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/Client%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="informationButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="220.0" mnemonicParsing="false" onAction="#switchToInformation" prefHeight="41.0" prefWidth="128.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Information">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/information.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="recetteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchToRecette" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Recette   ">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/Recette.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="nutritionnisteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToNutritionniste" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Nutritionniste">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/Nutritionniste.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="indicateurButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Indicateur ">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/Indicateur.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/Quitter.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                   <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/page-daccueil.png" />
+                        <Image url="@../../../../../../img/Dashboard.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/client%20(1).png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/bouton-dinformation.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/cuisine.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="42.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/medecin.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/entreprise.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="42.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../../../../../../../Downloads/se-deconnecter.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="indicateurButton1" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select client ">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="indicateurButton11" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="470.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Information">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="indicateurButton111" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Recette">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="indicateurButton1111" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="570.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Nutritionniste">
+                     <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
       </VBox>
    </left>
+   <center>
+      <AnchorPane prefHeight="651.0" prefWidth="975.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="371.0" layoutY="240.0" prefHeight="102.0" prefWidth="226.0" text="KPI EN COURS ">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

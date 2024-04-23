@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane prefHeight="602.0" prefWidth="192.0">
+                <AnchorPane prefHeight="671.0" prefWidth="192.0">
                     <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="35.0" prefHeight="38.0" prefWidth="119.0" text="WELCOME TO" textFill="#f8f3f3">
                             <font>
@@ -32,7 +32,7 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Button>
-                        <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Client     ">
+                        <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="170.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Client     ">
                             <font>
                                 <Font name="Gill Sans MT" size="15.0" />
                             </font>
@@ -57,7 +57,7 @@
                                 <Font name="Gill Sans MT" size="15.0" />
                             </font>
                         </Button>
-                        <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="35.0" layoutY="590.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
+                        <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
                             <font>
                                 <Font name="Gill Sans MT Bold" size="15.0" />
                             </font>
@@ -97,6 +97,26 @@
                                 <Image url="@../../../../../../../../../../../../../Downloads/se-deconnecter.png" />
                             </image>
                         </ImageView>
+                        <Button fx:id="indicateurButton1" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Client">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="indicateurButton11" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="470.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Information">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="indicateurButton111" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Recette">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="indicateurButton1111" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="570.0" mnemonicParsing="false" onAction="#switchToIndicateur" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Select Nutritionniste">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
                     </children>
                 </AnchorPane>
             </children>
@@ -105,7 +125,7 @@
     <center>
         <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="33.0" layoutY="25.0" prefHeight="61.0" prefWidth="292.0" text="Inscrivez vous ! ">
+                <Label layoutX="33.0" layoutY="25.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Clients">
                     <font>
                         <Font name="Book Antiqua" size="28.0" />
                     </font>
@@ -115,20 +135,20 @@
                         <Image url="@../../../../../../../../../../../Template/PNG/main-logo-transparent.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="clientTableView" layoutX="18.0" layoutY="109.0" prefHeight="418.0" prefWidth="978.0">
+                <TableView fx:id="clientTableView" layoutX="9.0" layoutY="126.0" prefHeight="400.0" prefWidth="1097.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465; -fx-border-radius: 7px;">
                     <columns>
-                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" text="Id" />
-                        <TableColumn fx:id="prenomClientColumn" prefWidth="75.0" text="Prénom" />
-                        <TableColumn fx:id="nomClientColumn" prefWidth="75.0" text="Nom " />
-                        <TableColumn fx:id="dateClientColumn" prefWidth="122.0" text="Date de Naissance" />
-                        <TableColumn fx:id="poidsClientColumn" minWidth="6.0" prefWidth="74.0" text="Poids" />
-                        <TableColumn fx:id="genreClientColumn" minWidth="0.0" prefWidth="75.0" text="Genre " />
-                        <TableColumn fx:id="tailleClientColumn" prefWidth="85.0" text="Taille" />
-                        <TableColumn fx:id="telephoneClientColumn" prefWidth="111.0" text="N° téléphone" />
-                        <TableColumn fx:id="mailClientColumn" prefWidth="65.0" text="Mail " />
-                        <TableColumn fx:id="villeClientColumn" prefWidth="84.0" text="Ville" />
-                        <TableColumn fx:id="adresseClientColumn" prefWidth="68.0" text="Adresse" />
-                        <TableColumn fx:id="codePostalClientColumn" prefWidth="161.0" text="Code Postale" />
+                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Client" />
+                        <TableColumn fx:id="prenomClientColumn" minWidth="0.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
+                        <TableColumn fx:id="nomClientColumn" prefWidth="82.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Prénom" />
+                        <TableColumn fx:id="nomClientColumn1" prefWidth="121.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Date de naissance" />
+                        <TableColumn fx:id="nomClientColumn11" prefWidth="72.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Poids" />
+                        <TableColumn fx:id="nomClientColumn111" prefWidth="79.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Genre" />
+                        <TableColumn fx:id="nomClientColumn1111" prefWidth="83.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Taille" />
+                  <TableColumn fx:id="nomClientColumn11111" prefWidth="141.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Numéro de téléphone" />
+                  <TableColumn fx:id="nomClientColumn11112" prefWidth="95.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Mail" />
+                  <TableColumn fx:id="nomClientColumn11113" prefWidth="96.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ville" />
+                  <TableColumn fx:id="nomClientColumn111131" prefWidth="72.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse" />
+                  <TableColumn fx:id="nomClientColumn1111311" prefWidth="99.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Code Postal" />
                     </columns>
                 </TableView>
                 <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectClientData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
