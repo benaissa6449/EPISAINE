@@ -68,6 +68,11 @@
                      </ImageView>
                   </children>
                </Pane>
+               <Label alignment="CENTER" layoutX="627.0" layoutY="232.0" prefHeight="37.0" prefWidth="33.0" style="-fx-background-color: #467AA8; -fx-text-fill: #C3F4A8;" text="Ou">
+                  <font>
+                     <Font name="Impact" size="18.0" />
+                  </font>
+               </Label>
             </children>
          </AnchorPane>
       </bottom>

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd ../../prototype-ing1/ihm-client
-mvn exec:java
+cd ../../prototype-ing1/demo194
+mvn javafx:run
 
 if [ $? -eq 0 ]; then
     echo "Exec went successfully."
