@@ -81,16 +81,16 @@ public class ClientInsertController extends ClientHeadController {
         }
 
         // check code postal
-        boolean postaleBoolean = true;
-        String postalPattern = "/^(?:0[1-9]|[1-8]\\d|9[0-8])\\d{3}$/";
+        boolean postalBoolean = true;
+        String postalPattern = "[0-8][0-9]{4}|9[0-8][0-9]{3}";
         if (!codePostal.matches(postalPattern)) {
-            postaleBoolean = false;
+            postalBoolean = false;
             alert.setHeaderText("Format de code postal incorrect");
             alert.showAndWait();
         }
 
         // if every value is correct then insert
-        if (genreBoolean && mailBoolean && numberBoolean && postaleBoolean) {
+        if (genreBoolean && mailBoolean && numberBoolean && postalBoolean) {
             Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
             try {
                 InsertByClient.sendValue("INSERT_CLIENT", client);

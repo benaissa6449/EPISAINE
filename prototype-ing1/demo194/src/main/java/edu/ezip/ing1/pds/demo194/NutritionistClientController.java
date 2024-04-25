@@ -23,7 +23,7 @@ public class NutritionistClientController extends NutritionistHeadController {
     @FXML
     private void selectClientData(ActionEvent actionEvent) {
         try {
-            Clients clients = SelectClient.getValue("SELECT_ALL_CLIENTS");
+            Clients clients = (Clients) SelectClient.getValue("SELECT_ALL_CLIENTS");
 
             idClientColumn.setCellValueFactory(new PropertyValueFactory<>("Id_client"));
             nomClientColumn.setCellValueFactory(new PropertyValueFactory<>("Nom_client"));
