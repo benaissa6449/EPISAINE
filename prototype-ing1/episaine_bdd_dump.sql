@@ -128,8 +128,7 @@ ALTER SEQUENCE "episaine-schema".genere_id_gen_seq OWNED BY "episaine-schema".ge
 
 CREATE TABLE "episaine-schema".grandesurface (
     id_gs integer NOT NULL,
-    intitule character varying(50) NOT NULL,
-    ville character varying(50) NOT NULL,
+    intitule character varying(50) NOT NULL,cd de
     adresse_gs character varying(50) NOT NULL,
     ville_gs character varying(50) NOT NULL,
     code_postal_gs character varying(50) NOT NULL

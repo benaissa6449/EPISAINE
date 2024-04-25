@@ -31,7 +31,7 @@
                </Label>
                <ImageView fitHeight="190.0" fitWidth="208.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../../../../../../../../../../../../../Downloads/a26651c033d94c6ca4eb950f36f043cf__1_-removebg-preview.png" />
+                     <Image url="@/img/logo.png" />
                   </image>
                </ImageView>
             </children>
@@ -49,7 +49,7 @@
                      </Button>
                      <ImageView fitHeight="188.0" fitWidth="209.0" layoutX="23.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../../../img/Nutritionniste%20Acceuil.png" />
+                           <Image url="@/img/Nutritionniste Acceuil.png" />
                         </image>
                      </ImageView>
                   </children>
@@ -63,7 +63,7 @@
                      </Button>
                      <ImageView fitHeight="177.0" fitWidth="190.0" layoutX="12.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../../../img/Clients.png" />
+                           <Image url="@/img/Clients.png" />
                         </image>
                      </ImageView>
                   </children>

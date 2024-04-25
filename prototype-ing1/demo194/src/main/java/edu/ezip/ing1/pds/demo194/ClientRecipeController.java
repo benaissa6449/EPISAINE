@@ -1,13 +1,12 @@
 package edu.ezip.ing1.pds.demo194;
 
-import edu.ezip.ing1.pds.business.dto.Nutritionniste;
-import edu.ezip.ing1.pds.business.dto.Nutritionnistes;
+
 import edu.ezip.ing1.pds.business.dto.Recette;
 import edu.ezip.ing1.pds.business.dto.Recettes;
-import edu.ezip.ing1.pds.client.SelectNutritionist;
 import edu.ezip.ing1.pds.client.SelectRecipe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,7 +15,7 @@ import java.awt.*;
 
 public class ClientRecipeController extends ClientHeadController {
     @FXML
-    private Button selectNutritionistData;
+    private Button selectButton;
 
     @FXML
     private TableView<Recette> recipeTableView;

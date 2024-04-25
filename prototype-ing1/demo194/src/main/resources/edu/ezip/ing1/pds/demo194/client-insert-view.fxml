@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.collections.FXCollections?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInsertController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
@@ -189,7 +190,14 @@
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
             </Button>
-            <ComboBox fx:id="genreClient" layoutX="171.0" layoutY="391.0" prefWidth="150.0" promptText="Saisir votre genre" />
+            <ComboBox fx:id="genreClient" layoutX="171.0" layoutY="391.0" prefWidth="150.0" value="Saisir votre genre">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Homme"/>
+                     <String fx:value="Femme"/>
+                  </FXCollections>
+               </items>
+            </ComboBox>
          </children>
       </AnchorPane>
    </center>

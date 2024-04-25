@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonRootName(value = "information")
 public class Information {
     private Integer id_info;
-    private Integer id_Client;
+    private Integer id_client;
     private String but;
     private String allergie;
     private Integer nbDeRepas;
@@ -22,17 +22,17 @@ public class Information {
     }
     public final Information build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResulset(resultSet,"id_info","id_Client","but", "allergie", "nbDeRepas");
+        setFieldsFromResulset(resultSet,"id_info","id_client","but", "allergie", "nbDeRepas");
         return this;
     }
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement,id_info, id_Client, but, allergie, nbDeRepas);
+        return buildPreparedStatement(preparedStatement,id_info, id_client, but, allergie, nbDeRepas);
     }
     
-    public Information(Integer id_info, Integer id_Client, String but, String allergie, Integer nbDeRepas) {
+    public Information(Integer id_info, Integer id_client, String but, String allergie, Integer nbDeRepas) {
         this.id_info = id_info;
-        this.id_Client = id_Client;
+        this.id_client = id_client;
         this.but = but;
         this.allergie = allergie;
         this.nbDeRepas = nbDeRepas;
@@ -40,35 +40,35 @@ public class Information {
     public Integer getId_info() {
         return id_info;
     }
-    @JsonProperty("id_info")
+    @JsonProperty("Id_info")
     public void setId_info(Integer id_info) {
         this.id_info = id_info;
     }
     public Integer getId_Client() {
-        return id_Client;
+        return id_client;
     }
-    @JsonProperty("id_Client")
-    public void setId_Client(Integer id_Client) {
-        this.id_Client = id_Client;
+    @JsonProperty("Id_client")
+    public void setId_Client(Integer id_client) {
+        this.id_client = id_client;
     }
     public String getBut() {
         return but;
     }
-    @JsonProperty("but")
+    @JsonProperty("But")
     public void setBut(String but) {
         this.but = but;
     }
     public String getAllergie() {
         return allergie;
     }
-    @JsonProperty("allergie")
+    @JsonProperty("Allergie")
     public void setAllergie(String allergie) {
         this.allergie = allergie;
     }
     public Integer getNbDeRepas() {
         return nbDeRepas;
     }
-    @JsonProperty("nbDeRepas")
+    @JsonProperty("NbDeRepas")
     public void setNbDeRepas(Integer nbDeRepas) {
         this.nbDeRepas = nbDeRepas;
     }
@@ -93,15 +93,11 @@ public class Information {
     @Override
     public String toString() {
         return "Information{" +
-                "ID_ Clients='" + id_Client + '\'' +
+                "ID_Info='" + id_info + '\'' +
+                ", ID_Clients='" + id_client + '\'' +
                 ", But='" + but + '\'' +
                 ", Allergie='" + allergie + '\'' +
                 ", Nombre de repas='" + nbDeRepas +
                 '}';
-    }
-
-    public Object[] getValue() {
-        Object [] res = {id_Client, but, allergie, nbDeRepas};
-        return res;
     }
 }

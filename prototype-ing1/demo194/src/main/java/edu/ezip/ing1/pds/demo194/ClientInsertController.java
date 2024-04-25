@@ -23,56 +23,87 @@ public class ClientInsertController extends ClientHeadController {
     private Button insertButton;
 
     public void insertClientData(ActionEvent actionEvent) {
-        // if true, then insert the value
-        Boolean insertBoolean = true;
         Alert alert = new Alert(Alert.AlertType.ERROR);
-
         // to make sure each parameter is not empty or null
         try {
-            String prenom = prenomClient.getText();
-            String nom = nomClient.getText();
+            String nom = nomClient.getText().trim();
+            String prenom = prenomClient.getText().trim();
             Date date = Date.valueOf(dateClient.getValue());
             BigDecimal poids = new BigDecimal(Integer.parseInt(poidsClient.getText()));
-            String genre = genreClient.getValue();
-            Integer taille = Integer.parseInt(tailleClient.getText());
-            String numero = numClient.getText();
-            String mail = mailClient.getText();
-            String ville = villeClient.getText();
-            String adresse = adresseClient.getText();
-            String codePostal = codePostalClient.getText();
+            String genre = genreClient.getValue().trim();
+            Integer taille = Integer.parseInt(tailleClient.getText().trim());
+            String numero = numClient.getText().trim();
+            String mail = mailClient.getText().trim();
+            String ville = villeClient.getText().trim();
+            String adresse = adresseClient.getText().trim();
+            String codePostal = codePostalClient.getText().trim();
 
-            if (!genre.toLowerCase().equals("homme") && !genre.toUpperCase().equals("femme")) {
-                insertBoolean = false;
-                alert.setHeaderText("Genre incorrect");
-                alert.showAndWait();
-            }
-
-            if (insertBoolean) {
-                Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
-                try {
-                    InsertByClient.sendValue("INSERT_CLIENT", client);
-                    alert.setAlertType(Alert.AlertType.CONFIRMATION);
-                    alert.setHeaderText("Insertion effectuée.");
-                    alert.showAndWait();
-                }
-                catch (Exception e) {
-                    alert.setHeaderText("Erreur système !\nVeuillez contacter un administrateur.");
-                    alert.showAndWait();
-                }
-            }
+            insertClientIntoTable(nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
         }
         catch (NullPointerException npe) {
-            insertBoolean = false;
             alert.setHeaderText("Les champs ne doivent pas être vides.");
             alert.showAndWait();
         }
         catch (NumberFormatException nfe) {
-            insertBoolean = false;
             alert.setHeaderText("Ne correspond pas à une valeur numérique.");
             alert.showAndWait();
         }
     }
 
+    public void insertClientIntoTable(String nom, String prenom, Date date, BigDecimal poids, String genre, Integer taille, String numero, String mail, String ville, String adresse, String codePostal) {
+        // if true, then insert the value
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+
+        // check genre
+        boolean genreBoolean = true;
+        if (!genre.equals("Homme") && !genre.equals("Femme")) {
+            genreBoolean = false;
+            alert.setHeaderText("Genre incorrect");
+            alert.showAndWait();
+        }
+
+        // check mail
+        boolean mailBoolean = true;
+        String mailPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+        if (!mail.matches(mailPattern)) {
+            mailBoolean = false;
+            alert.setHeaderText("Format de mail incorrect");
+            alert.showAndWait();
+        }
+
+        // check phone number
+        boolean numberBoolean = true;
+        String numberPattern = "(0|\\\\+33|0033)[1-9][0-9]{8}";
+        if (!numero.matches(numberPattern)) {
+            numberBoolean = false;
+            alert.setHeaderText("Format de numéro de téléphone incorrect");
+            alert.showAndWait();
+        }
+
+        // check code postal
+        boolean postaleBoolean = true;
+        String postalPattern = "/^(?:0[1-9]|[1-8]\\d|9[0-8])\\d{3}$/";
+        if (!codePostal.matches(postalPattern)) {
+            postaleBoolean = false;
+            alert.setHeaderText("Format de code postal incorrect");
+            alert.showAndWait();
+        }
+
+        // if every value is correct then insert
+        if (genreBoolean && mailBoolean && numberBoolean && postaleBoolean) {
+            Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
+            try {
+                InsertByClient.sendValue("INSERT_CLIENT", client);
+                alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                alert.setHeaderText("Insertion effectuée.");
+                alert.showAndWait();
+            }
+            catch (Exception e) {
+                alert.setHeaderText("Erreur système !\nVeuillez contacter un administrateur.");
+                alert.showAndWait();
+            }
+        }
+    }
     public boolean assertNotNull(String ... values) {
         boolean res = true;
         for (String value : values) {
