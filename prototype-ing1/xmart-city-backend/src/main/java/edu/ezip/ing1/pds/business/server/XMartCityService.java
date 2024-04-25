@@ -27,7 +27,7 @@ public class XMartCityService {
 
         private enum Queries {
             SELECT_ALL_CLIENTS("SELECT t.id_client, t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
-            SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire FROM \"episaine-schema\".recettes t"),
+            SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t"),
             SELECT_ALL_INFORMATIONS("SELECT t.id_info, t.id_client, t.but, t.allergie, t.nbderepas FROM \"episaine-schema\".informations t"),
             SELECT_ALL_NUTRITIONNISTES("SELECT t.id_nutritionniste, t.nom_n, t.prenom_n, t.numero_de_telephone_n, t.mail_n FROM \"episaine-schema\".nutritionnistes t"),
             
@@ -176,8 +176,8 @@ public class XMartCityService {
                     mapper = new ObjectMapper();
                     Recette recette = (Recette) mapper.readValue(request.getRequestBody(), Recette.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_RECETTE.query);
-                    pstmt.setString(1, recette.getNom_Recette());
-                    pstmt.setInt(2, recette.getNombre_de_Calories());
+                    pstmt.setString(1, recette.getNom_recette());
+                    pstmt.setInt(2, recette.getNombre_de_calories());
                     pstmt.setString(3, recette.getIngredients());
                     pstmt.setString(4, recette.getInstructions());
                     pstmt.setString(5, recette.getRegimeAlimentaire());
@@ -247,10 +247,10 @@ public class XMartCityService {
                     mapper = new ObjectMapper();
                     Nutritionniste nutritionniste = (Nutritionniste) mapper.readValue(request.getRequestBody(), Nutritionniste.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_NUTRITIONNISTE.query);
-                    pstmt.setString(1, nutritionniste.getnom_N());
-                    pstmt.setString(2, nutritionniste.getprenom_N());
-                    pstmt.setString(3, nutritionniste.getnumero_de_telephone_N());
-                    pstmt.setString(4, nutritionniste.getmail_N());
+                    pstmt.setString(1, nutritionniste.getNom_N());
+                    pstmt.setString(2, nutritionniste.getPrenom_N());
+                    pstmt.setString(3, nutritionniste.getNumero_de_telephone_N());
+                    pstmt.setString(4, nutritionniste.getMail_N());
                     rows = pstmt.executeUpdate();
                     logger.info(request.getRequestOrder() + " : precessing done");
                     response = new Response();

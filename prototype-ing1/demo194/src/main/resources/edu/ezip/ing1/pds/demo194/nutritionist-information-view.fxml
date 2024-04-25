@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistInformationController">
+    <left>
+        <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="697.0" prefWidth="192.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="35.0" prefHeight="38.0" prefWidth="119.0" text="WELCOME TO" textFill="#f8f3f3">
+                            <font>
+                                <Font name="Impact" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="37.0" layoutY="54.0" prefHeight="38.0" prefWidth="119.0" text="EPISAINE" textFill="#a2e97a">
+                            <font>
+                                <Font name="Impact" size="16.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToDashboardView" prefHeight="35.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Dashboard">
+                            <font>
+                                <Font name="Gill Sans MT Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="clientButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToClientView" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Client     ">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="informationButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="220.0" mnemonicParsing="false" onAction="#switchToInformationView" prefHeight="41.0" prefWidth="128.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Information">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/img/information.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="recetteButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchToRecetteView" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Recette   ">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="nutritionistButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToNutritionistView" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Nutritionniste">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="indicateurButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToIndicateurView" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Indicateur ">
+                            <font>
+                                <Font name="Gill Sans MT" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
+                            <font>
+                                <Font name="Gill Sans MT Bold" size="15.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@/img/Quitter.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/img/Dashboard.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/img/Client.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/img/Recette.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="42.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/img/Nutritionniste.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="51.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@/img/Indicateur.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="105.0" layoutY="26.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Informations">
+                    <font>
+                        <Font name="Book Antiqua" size="28.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/img/logo.png" />
+                    </image>
+                </ImageView>
+                <TableView fx:id="clientTableView" layoutX="9.0" layoutY="126.0" prefHeight="400.0" prefWidth="1090.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                    <columns>
+                        <TableColumn fx:id="idClientColumn" prefWidth="182.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Information" />
+                        <TableColumn fx:id="prenomClientColumn" minWidth="0.0" prefWidth="203.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Client" />
+                        <TableColumn fx:id="nomClientColumn" prefWidth="215.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="But" />
+                        <TableColumn fx:id="nomClientColumn1" prefWidth="235.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Allergie" />
+                  <TableColumn fx:id="nomClientColumn11" prefWidth="250.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Nombre de repas" />
+                    </columns>
+                </TableView>
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+                    <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
+                    <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                    </font>
+                </Button>
+                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+                    <font>
+                        <Font name="Gill Sans MT" size="15.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/img/selectionner.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="201.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/img/Modifier.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="349.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/img/supprimer.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

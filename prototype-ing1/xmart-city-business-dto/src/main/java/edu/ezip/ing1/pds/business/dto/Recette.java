@@ -1,5 +1,6 @@
 package edu.ezip.ing1.pds.business.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -8,12 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonRootName(value = "recette")
 public class Recette {
     private Integer id_recette;
     private Integer id_nutritionniste;
-    private String nom_Recette;
-    private Integer nombre_de_Calories;
+    private String nom_recette;
+    private Integer nombre_de_calories;
     private String ingredients;
     private String instructions;
     private String regimeAlimentaire;
@@ -23,55 +25,64 @@ public class Recette {
 
     public final Recette build(final ResultSet resultSet)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        setFieldsFromResultSet(resultSet,"id_recette",  "nom_Recette", "nombre_de_Calories", "ingredients", "instructions", "regimeAlimentaire");
+        setFieldsFromResultSet(resultSet,"id_recette",  "nom_recette", "nombre_de_calories", "ingredients", "instructions", "regimeAlimentaire", "id_nutritionniste");
         return this;
     }
 
     public final PreparedStatement build(PreparedStatement preparedStatement)
             throws SQLException, NoSuchFieldException, IllegalAccessException {
-        return buildPreparedStatement(preparedStatement, id_recette, nom_Recette, nombre_de_Calories, ingredients, instructions, regimeAlimentaire);
+        return buildPreparedStatement(preparedStatement, id_recette, nom_recette, nombre_de_calories, ingredients, instructions, regimeAlimentaire);
     }
 
-    public Recette(Integer id_recette, Integer id_nutritionniste, String nom_Recette, int nombre_de_Calories, String ingredients, String instructions, String regimeAlimentaire) {
+    public Recette(Integer id_recette, Integer id_nutritionniste, String nom_recette, Integer nombre_de_calories, String ingredients, String instructions, String regimeAlimentaire) {
         this.id_recette = id_recette;
-        this.nom_Recette = nom_Recette;
-        this.nombre_de_Calories = nombre_de_Calories;
+        this.nom_recette = nom_recette;
+        this.nombre_de_calories = nombre_de_calories;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.regimeAlimentaire = regimeAlimentaire;
         this.id_nutritionniste = id_nutritionniste;
     }
 
-    @JsonProperty("id_nutritionniste")
+    public Integer getId_recette() {
+        return id_recette;
+    }
+
+    public void setId_recette(Integer id_recette) {
+        this.id_recette = id_recette;
+    }
+
+    @JsonProperty("Nom_recette")
+    public void setNom_recette(String nom_recette) {
+        this.nom_recette = nom_recette;
+    }
+    public String getNom_recette() {
+        return nom_recette;
+    }
+
+
+    @JsonProperty("Id_nutritionniste")
     public void setId_nutritionniste(Integer id_nutritionniste) {
         this.id_nutritionniste = id_nutritionniste;
     }
     public Integer getId_nutritionniste() {
         return id_nutritionniste;
     }
-    public String getNom_Recette() {
-        return nom_Recette;
-    }
 
-    @JsonProperty("nom_Recette")
-    public void setNom_Recette(String nom_Recette) {
-        this.nom_Recette = nom_Recette;
-    }
 
-    public Integer getNombre_de_Calories() {
-        return nombre_de_Calories;
+    @JsonProperty("Nombre_de_calories")
+    public void setNombre_de_calories(Integer nombre_de_calories) {
+        this.nombre_de_calories = nombre_de_calories;
     }
-
-    @JsonProperty("nombre_de_Calories")
-    public void setNombre_de_Calories(Integer nombre_de_Calories) {
-        this.nombre_de_Calories = nombre_de_Calories;
+    public Integer getNombre_de_calories() {
+        return nombre_de_calories;
     }
 
     public String getIngredients() {
         return ingredients;
     }
 
-    @JsonProperty("ingredients")
+    @JsonProperty("Ingredients")
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
@@ -80,7 +91,7 @@ public class Recette {
         return instructions;
     }
 
-    @JsonProperty("instructions")
+    @JsonProperty("Instructions")
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -89,7 +100,7 @@ public class Recette {
         return regimeAlimentaire;
     }
 
-    @JsonProperty("regimeAlimentaire")
+    @JsonProperty("RegimeAlimentaire")
     public void setRegimeAlimentaire(String regimeAlimentaire) {
         this.regimeAlimentaire = regimeAlimentaire;
     }
@@ -114,12 +125,12 @@ public class Recette {
     @Override
     public String toString() {
         return "Recette{" +
-                "id_nutritionniste='" + id_nutritionniste + '\'' +
-                ", nom_Recette='" + nom_Recette + '\'' +
-                ", nombre_de_Calories=" + nombre_de_Calories +
-                ", ingredients='" + ingredients + '\'' +
-                ", instructions='" + instructions + '\'' +
-                ", regimeAlimentaire='" + regimeAlimentaire + '\'' +
+                "Id_nutritionniste='" + id_nutritionniste + '\'' +
+                ", Nom_Recette='" + nom_recette + '\'' +
+                ", Nombre_de_calories=" + nombre_de_calories +
+                ", Ingredients='" + ingredients + '\'' +
+                ", Instructions='" + instructions + '\'' +
+                ", RegimeAlimentaire='" + regimeAlimentaire + '\'' +
                 '}';
     }
 }

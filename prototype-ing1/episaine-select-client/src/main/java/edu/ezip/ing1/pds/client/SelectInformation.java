@@ -3,6 +3,7 @@ package edu.ezip.ing1.pds.client;
 import java.io.IOException;
 import java.util.UUID;
 
+import edu.ezip.ing1.pds.business.dto.Informations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,14 +15,14 @@ import edu.ezip.ing1.pds.client.commons.ConfigLoader;
 import edu.ezip.ing1.pds.client.commons.NetworkConfig;
 import edu.ezip.ing1.pds.commons.Request;
 
-public class SelectByClient {
-    
-    private final static String LoggingLabel = "S e l e c t - C l i e n t";
+public class SelectInformation {
+
+    private final static String LoggingLabel = "S e l e c t - I n f o r m a t i o n";
     private final static Logger logger = LoggerFactory.getLogger(LoggingLabel);
     private final static String networkConfigFile = "network.yaml";
 
-    public static Clients getValue(String requestOrder) {
-        Clients clients = new Clients();
+    public static Informations getValue(String requestOrder) {
+        Informations informations = new Informations();
         try {
             final NetworkConfig networkConfig = ConfigLoader.loadConfig(NetworkConfig.class, networkConfigFile);
 
@@ -43,11 +44,11 @@ public class SelectByClient {
                     networkConfig, birthdate++, request, null, requestBytes);
             clientRequest.join();
 
-            clients = objectMapper.convertValue(clientRequest.getResult(), Clients.class);
-            logger.info("data requested : " + clients.toString());
+            informations = objectMapper.convertValue(clientRequest.getResult(), Informations.class);
+            logger.info("data requested : " + informations.toString());
         } catch (IOException | InterruptedException ioe) {
             logger.warn(ioe.getMessage());
         }
-        return clients;
+        return informations;
     }
 }

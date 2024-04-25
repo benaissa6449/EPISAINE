@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #D4EFDF;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ConnectionController">
+   <children>
+      <Button fx:id="clientButton" layoutX="371.0" layoutY="329.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" text="Client" onAction="#switchToClientView"/>
+      <Button fx:id="nutritionistButton" layoutX="782.0" layoutY="329.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" text="Nutritionniste" onAction="#switchToNutritionistView"/>
+   </children>
+   <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@/img/logo.png" />
+      </image>
+   </ImageView>
+</AnchorPane>
