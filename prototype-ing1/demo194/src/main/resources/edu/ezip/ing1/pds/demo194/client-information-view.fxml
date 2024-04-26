@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInsertController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInformationController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
@@ -119,7 +116,7 @@
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="399.0" layoutY="285.0" prefHeight="15.0" prefWidth="150.0" text="Allergie  :">
+            <Label layoutX="399.0" layoutY="285.0" prefHeight="15.0" prefWidth="150.0" text="Allergies  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
@@ -129,8 +126,8 @@
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="poidsClient" layoutX="559.0" layoutY="326.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir le nombre de repas que vous sauhaitez" />
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="227.0" layoutY="618.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+            <TextField fx:id="nbDeRepasTextField" layoutX="559.0" layoutY="326.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir le nombre de repas que vous sauhaitez" />
+            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="227.0" layoutY="618.0" mnemonicParsing="false" onAction="#insertInformationData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -149,7 +146,7 @@
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/vider%20formulaire.png" />
+                        <Image url="@/img/vider formulaire.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -164,14 +161,64 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="561.0" layoutY="248.0" prefHeight="25.0" prefWidth="259.0" />
-            <ChoiceBox layoutX="560.0" layoutY="288.0" prefHeight="25.0" prefWidth="259.0" />
             <Label layoutX="399.0" layoutY="207.0" prefHeight="15.0" prefWidth="150.0" text="Id Client  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="poidsClient1" layoutX="561.0" layoutY="207.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir votre Id" />
+            <TextField fx:id="idTextField" layoutX="561.0" layoutY="207.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir votre Id" />
+            <ComboBox fx:id="butComboBox" layoutX="561.0" layoutY="249.0" prefHeight="25.0" prefWidth="260.0" promptText="Saisir votre but">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="perte de poids" />
+                     <String fx:value="gain de poids" />
+                     <String fx:value="maintien de poids"/>
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <CheckComboBox fx:id="allergieCheckComboBox" layoutX="561.0" layoutY="288.0" prefHeight="25.0" prefWidth="260.0" >
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="oeuf" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="lait" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="moutarde" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="arachide" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="mollusque" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="crustacé" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="poisson" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="graine de sesame" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="soja" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="sulfite" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="noix" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="blé" />
+                  </FXCollections>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="trucicale" />
+                  </FXCollections>
+               </items>
+            </CheckComboBox>
          </children>
       </AnchorPane>
    </center>

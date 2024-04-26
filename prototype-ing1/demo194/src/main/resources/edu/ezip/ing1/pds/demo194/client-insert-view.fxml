@@ -206,7 +206,7 @@
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/vider%20formulaire.png" />
+                        <Image url="@/img/vider formulaire.png" />
                      </image>
                   </ImageView>
                </graphic>

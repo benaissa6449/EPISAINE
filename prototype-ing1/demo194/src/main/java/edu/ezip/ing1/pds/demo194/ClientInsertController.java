@@ -54,6 +54,9 @@ public class ClientInsertController extends ClientHeadController {
         // if true, then insert the value
         Alert alert = new Alert(Alert.AlertType.ERROR);
 
+        // check not null
+        boolean notNullBoolean = assertNotNull(nom, prenom, genre, numero, mail, ville, adresse, codePostal);
+
         // check genre
         boolean genreBoolean = true;
         if (!genre.equals("Homme") && !genre.equals("Femme")) {
@@ -90,11 +93,11 @@ public class ClientInsertController extends ClientHeadController {
         }
 
         // if every value is correct then insert
-        if (genreBoolean && mailBoolean && numberBoolean && postalBoolean) {
+        if (genreBoolean && mailBoolean && numberBoolean && postalBoolean && notNullBoolean) {
             Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
             try {
                 InsertByClient.sendValue("INSERT_CLIENT", client);
-                alert.setAlertType(Alert.AlertType.CONFIRMATION);
+                alert.setAlertType(Alert.AlertType.INFORMATION);
                 alert.setHeaderText("Insertion effectuée.");
                 alert.showAndWait();
             }

@@ -128,7 +128,7 @@ ALTER SEQUENCE "episaine-schema".genere_id_gen_seq OWNED BY "episaine-schema".ge
 
 CREATE TABLE "episaine-schema".grandesurface (
     id_gs integer NOT NULL,
-    intitule character varying(50) NOT NULL,cd de
+    intitule character varying(50) NOT NULL,
     adresse_gs character varying(50) NOT NULL,
     ville_gs character varying(50) NOT NULL,
     code_postal_gs character varying(50) NOT NULL
@@ -169,7 +169,6 @@ CREATE TABLE "episaine-schema".informations (
     but character varying(50) NOT NULL,
     allergie character varying(50) NOT NULL,
     nbderepas integer NOT NULL,
-    CONSTRAINT informations_allergie_check CHECK (((allergie)::text = ANY (ARRAY[('oeuf'::character varying)::text, ('lait'::character varying)::text, ('moutard'::character varying)::text, ('arachide'::character varying)::text, ('mollusque'::character varying)::text, ('crustacé'::character varying)::text, ('poisson'::character varying)::text, ('graine de sesame'::character varying)::text, ('soja'::character varying)::text, ('sulfite'::character varying)::text, ('noix'::character varying)::text, ('blé'::character varying)::text, ('tricicale'::character varying)::text]))),
     CONSTRAINT informations_but_check CHECK (((but)::text = ANY (ARRAY[('perte de poids'::character varying)::text, ('gain de poids'::character varying)::text, ('maintien de poids'::character varying)::text])))
 );
 
@@ -285,11 +284,11 @@ CREATE TABLE "episaine-schema".recettes (
     id_recette integer NOT NULL,
     nom_recette character varying(100) NOT NULL,
     nombre_de_calories integer NOT NULL,
-    ingredients character varying(255) NOT NULL,
-    instructions character varying(255) NOT NULL,
+    ingredients character varying(550) NOT NULL,
+    instructions character varying(550) NOT NULL,
     regimealimentaire character varying(50) NOT NULL,
     id_nutritionniste integer NOT NULL,
-    CONSTRAINT recettes_regimealimentaire_check CHECK (((regimealimentaire)::text = ANY (ARRAY[('normale'::character varying)::text, ('cétogène'::character varying)::text, ('végétarien'::character varying)::text, ('carnivore'::character varying)::text, ('pescétarien'::character varying)::text, ('végétalien'::character varying)::text, ('sans gluten'::character varying)::text, ('sans lactose'::character varying)::text, ('halal'::character varying)::text, ('cashér'::character varying)::text, ('paléo'::character varying)::text, ('sans sucre ajouté'::character varying)::text, ('régime méditerranéen'::character varying)::text])))
+    CONSTRAINT recettes_regimealimentaire_check CHECK (((regimealimentaire)::text = ANY (ARRAY[('normal'::character varying)::text, ('cétogène'::character varying)::text, ('végétarien'::character varying)::text, ('carnivore'::character varying)::text, ('pescétarien'::character varying)::text, ('végétalien'::character varying)::text, ('sans gluten'::character varying)::text, ('sans lactose'::character varying)::text, ('halal'::character varying)::text, ('cashér'::character varying)::text, ('paléo'::character varying)::text, ('sans sucre ajouté'::character varying)::text, ('régime méditerranéen'::character varying)::text])))
 );
 
 
@@ -452,7 +451,7 @@ COPY "episaine-schema".genere (id_gen, id_client, id_recette) FROM stdin;
 -- Data for Name: grandesurface; Type: TABLE DATA; Schema: episaine-schema; Owner: episaine
 --
 
-COPY "episaine-schema".grandesurface (id_gs, intitule, ville, adresse_gs, ville_gs, code_postal_gs) FROM stdin;
+COPY "episaine-schema".grandesurface (id_gs, intitule, adresse_gs, ville_gs, code_postal_gs) FROM stdin;
 \.
 
 
@@ -508,7 +507,7 @@ COPY "episaine-schema".vend (id_produit, id_gs, quantitevendue) FROM stdin;
 -- Name: clients_id_client_seq; Type: SEQUENCE SET; Schema: episaine-schema; Owner: episaine
 --
 
-SELECT pg_catalog.setval('"episaine-schema".clients_id_client_seq', 22, true);
+SELECT pg_catalog.setval('"episaine-schema".clients_id_client_seq', 1, true);
 
 
 --
@@ -925,13 +924,6 @@ CREATE INDEX ind_vil_c ON "episaine-schema".clients USING btree (ville);
 --
 
 CREATE INDEX ind_vil_gs ON "episaine-schema".grandesurface USING btree (ville_gs);
-
-
---
--- Name: ind_ville_gs; Type: INDEX; Schema: episaine-schema; Owner: episaine
---
-
-CREATE INDEX ind_ville_gs ON "episaine-schema".grandesurface USING btree (ville);
 
 
 --

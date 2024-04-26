@@ -16,7 +16,6 @@ UPDATE "episaine-schema".grandesurface SET code_postal_gs = TRIM(code_postal_gs)
 
 UPDATE "episaine-schema".informations SET but = TRIM(but);
 UPDATE "episaine-schema".informations SET allergie = TRIM(allergie);
-UPDATE "episaine-schema".informations SET nbderepas = TRIM(nbderepas);
 
 
 UPDATE "episaine-schema".nutritionnistes SET nom_n = TRIM(nom_n);
