@@ -174,16 +174,20 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
-            <Pane layoutX="453.0" layoutY="112.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
+            <Pane layoutX="441.0" layoutY="127.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
                <children>
                   <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
                      <children>
                         <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
-                        <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../img/chercher.png" />
-                           </image>
-                        </ImageView>
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="32.0" style="-fx-background-color: #D4EFDF;">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/chercher.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </HBox>
                </children>

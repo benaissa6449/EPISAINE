@@ -156,20 +156,6 @@
                         <Image url="@/img/supprimer.png" />
                     </image>
                 </ImageView>
-            <Pane layoutX="410.0" layoutY="112.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
-               <children>
-                  <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
-                     <children>
-                        <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
-                        <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../img/chercher.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
-            </Pane>
             <Label layoutX="187.0" layoutY="40.0" prefHeight="35.0" prefWidth="703.0" text="À la recherche d'un nutritionniste pour vous aider à atteindre vos objectifs de santé ? " textFill="#245161">
                <font>
                   <Font name="Impact" size="20.0" />
@@ -180,6 +166,24 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
+            <Pane layoutX="410.0" layoutY="125.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
+               <children>
+                  <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
+                     <children>
+                        <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="32.0" style="-fx-background-color: #D4EFDF;">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../img/chercher.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
             </children>
         </AnchorPane>
     </center>
