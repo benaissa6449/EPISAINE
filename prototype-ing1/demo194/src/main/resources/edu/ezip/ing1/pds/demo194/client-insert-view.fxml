@@ -112,7 +112,7 @@
    <center>
       <AnchorPane prefHeight="700.0" prefWidth="1141.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="381.0" layoutY="41.0" prefHeight="31.0" prefWidth="424.0" text="Prêt à explorer de délicieuses recettes saines ?" textFill="#245161">
+            <Label layoutX="381.0" layoutY="41.0" prefHeight="35.0" prefWidth="450.0" text="Prêt à explorer de délicieuses recettes saines ?" textFill="#245161">
                <font>
                   <Font name="Impact" size="20.0" />
                </font>
@@ -219,7 +219,7 @@
                   </FXCollections>
                </items>
             </ComboBox>
-            <Label layoutX="223.0" layoutY="72.0" prefHeight="31.0" prefWidth="963.0" text="Complétez les détails ci-dessous pour commencer à découvrir une nouvelle façon de manger sainement et savoureusement !" textFill="#245161">
+            <Label layoutX="223.0" layoutY="72.0" prefHeight="35.0" prefWidth="960.0" text="Complétez les détails ci-dessous pour commencer à découvrir une nouvelle façon de manger sainement et savoureusement !" textFill="#245161">
                <font>
                   <Font name="Impact" size="14.0" />
                </font>
