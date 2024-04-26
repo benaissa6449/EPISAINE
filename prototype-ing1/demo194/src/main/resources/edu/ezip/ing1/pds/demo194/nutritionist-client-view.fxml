@@ -103,17 +103,12 @@
     <center>
         <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="105.0" layoutY="26.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Clients">
-                    <font>
-                        <Font name="Book Antiqua" size="28.0" />
-                    </font>
-                </Label>
                 <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="clientTableView" layoutX="9.0" layoutY="126.0" prefHeight="400.0" prefWidth="1097.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465; -fx-border-radius: 7px;">
+                <TableView fx:id="clientTableView" layoutX="14.0" layoutY="185.0" prefHeight="400.0" prefWidth="1097.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465; -fx-border-radius: 7px;">
                     <columns>
                         <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Client" />
                         <TableColumn fx:id="prenomClientColumn" minWidth="0.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
@@ -129,7 +124,7 @@
                   <TableColumn fx:id="codePostalClientColumn" prefWidth="99.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Code Postal" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner" onAction="#selectClientData">
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectClientData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
@@ -159,6 +154,30 @@
                         <Image url="@/img/supprimer.png" />
                     </image>
                 </ImageView>
+            <Pane layoutX="392.0" layoutY="125.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
+               <children>
+                  <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
+                     <children>
+                        <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
+                        <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../img/chercher.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Label layoutX="127.0" layoutY="39.0" prefHeight="35.0" prefWidth="929.0" text="Explorez notre galerie de clients ! Découvrez les profils de ceux qui ont choisi de faire de leur santé une priorité. " textFill="#245161">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="267.0" layoutY="68.0" prefHeight="35.0" prefWidth="650.0" text="Trouvez l'inspiration et la motivation en apprenant davantage sur leurs objectifs, leurs défis et leurs succès." textFill="#245161">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </center>

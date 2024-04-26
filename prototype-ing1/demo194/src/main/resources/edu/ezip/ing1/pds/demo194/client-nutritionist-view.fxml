@@ -4,10 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -109,17 +112,12 @@
     <center>
         <AnchorPane prefHeight="700.0" prefWidth="1077.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="112.0" layoutY="26.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Nutritionnistes">
-                    <font>
-                        <Font name="Book Antiqua" size="28.0" />
-                    </font>
-                </Label>
                 <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="nutritionistTableView" layoutX="1.0" layoutY="126.0" prefHeight="400.0" prefWidth="1048.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                <TableView fx:id="nutritionistTableView" layoutX="14.0" layoutY="183.0" prefHeight="400.0" prefWidth="1048.0" style="-fx-background-color: #EAECEE;">
                     <columns>
                         <TableColumn fx:id="idNutritionistColumn" prefWidth="192.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Nutritionniste" />
                         <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="220.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
@@ -158,6 +156,30 @@
                         <Image url="@/img/supprimer.png" />
                     </image>
                 </ImageView>
+            <Pane layoutX="410.0" layoutY="112.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
+               <children>
+                  <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
+                     <children>
+                        <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
+                        <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../img/chercher.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Label layoutX="187.0" layoutY="40.0" prefHeight="35.0" prefWidth="703.0" text="À la recherche d'un nutritionniste pour vous aider à atteindre vos objectifs de santé ? " textFill="#245161">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="235.0" layoutY="58.0" prefHeight="35.0" prefWidth="700.0" text=" Découvrez notre liste de professionnels qualifiés et trouvez celui qui correspond le mieux à vos besoins" textFill="#245161">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </center>
