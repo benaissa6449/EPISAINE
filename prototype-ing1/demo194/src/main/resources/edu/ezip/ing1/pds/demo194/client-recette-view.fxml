@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientRecipeController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientRecipeController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
@@ -103,11 +109,6 @@
     <center>
         <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="112.0" layoutY="26.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Recettes">
-                    <font>
-                        <Font name="Book Antiqua" size="28.0" />
-                    </font>
-                </Label>
                 <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/logo.png" />
@@ -124,36 +125,52 @@
                   <TableColumn fx:id="idNutritionistColumn" prefWidth="165.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Id Nutritionniste" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner" onAction="#selectRecipeData">
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/selectionner.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
+                <Button alignment="CENTER_RIGHT" layoutX="329.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/supprimer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+                <Button alignment="CENTER_RIGHT" layoutX="199.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/Modifier.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/selectionner.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="201.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/Modifier.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="349.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/supprimer.png" />
-                    </image>
-                </ImageView>
+            <Label layoutX="329.0" layoutY="21.0" prefHeight="35.0" prefWidth="497.0" text="&quot;Explorez notre sélection de recettes saines et délicieuses !" textFill="#245161">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="297.0" layoutY="48.0" prefHeight="35.0" prefWidth="600.0" text="Trouvez l'inspiration pour des repas équilibrés et savoureux en remplissant les détails ci-dessous." textFill="#245161">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </center>

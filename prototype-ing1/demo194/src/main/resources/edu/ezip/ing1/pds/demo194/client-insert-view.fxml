@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
+<?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInsertController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInsertController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
@@ -23,7 +30,7 @@
                         <Font name="Impact" size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Dashboard" onAction="#switchToDashboardView">
+                  <Button fx:id="dashboardButton" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToDashboardView" prefHeight="35.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Dashboard">
                      <font>
                         <Font name="Gill Sans MT Bold" size="15.0" />
                      </font>
@@ -103,11 +110,11 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="1141.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="213.0" layoutY="42.0" prefHeight="61.0" prefWidth="292.0" text="Inscrivez vous ! ">
+            <Label layoutX="381.0" layoutY="41.0" prefHeight="31.0" prefWidth="424.0" text="Prêt à explorer de délicieuses recettes saines ?" textFill="#245161">
                <font>
-                  <Font name="Book Antiqua" size="28.0" />
+                  <Font name="Impact" size="20.0" />
                </font>
             </Label>
             <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
@@ -115,89 +122,108 @@
                   <Image url="@/img/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="11.0" layoutY="228.0" prefHeight="15.0" prefWidth="150.0" text="Prénom  :">
+            <Label layoutX="199.0" layoutY="211.0" prefHeight="15.0" prefWidth="150.0" text="Prénom  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="268.0" prefHeight="15.0" prefWidth="150.0" text="Nom  :">
+            <Label layoutX="199.0" layoutY="251.0" prefHeight="15.0" prefWidth="150.0" text="Nom  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="308.0" prefHeight="15.0" prefWidth="150.0" text="Date de Naissance :">
+            <Label layoutX="199.0" layoutY="291.0" prefHeight="15.0" prefWidth="150.0" text="Date de Naissance :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="prenomClient" layoutX="171.0" layoutY="228.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre prénom" />
-            <TextField fx:id="nomClient" layoutX="171.0" layoutY="268.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
-            <Label layoutX="11.0" layoutY="348.0" prefHeight="15.0" prefWidth="150.0" text="Poids : ">
+            <TextField fx:id="prenomClient" layoutX="359.0" layoutY="211.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Prénom" />
+            <TextField fx:id="nomClient" layoutX="359.0" layoutY="251.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Nom" style="-fx-border-color: ;" />
+            <Label layoutX="199.0" layoutY="331.0" prefHeight="15.0" prefWidth="150.0" text="Poids : ">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="poidsClient" layoutX="171.0" layoutY="348.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre poids" />
-            <DatePicker fx:id="dateClient" layoutX="171.0" layoutY="308.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir" />
-            <Label layoutX="11.0" layoutY="388.0" prefHeight="15.0" prefWidth="150.0" text="Genre :">
+            <TextField fx:id="poidsClient" layoutX="359.0" layoutY="331.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Poids" />
+            <DatePicker fx:id="dateClient" layoutX="359.0" layoutY="291.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre date de naissance" />
+            <Label layoutX="199.0" layoutY="371.0" prefHeight="15.0" prefWidth="150.0" text="Genre :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="428.0" prefHeight="15.0" prefWidth="150.0" text="Taille :">
+            <Label layoutX="199.0" layoutY="411.0" prefHeight="15.0" prefWidth="150.0" text="Taille :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="445.0" layoutY="228.0" prefHeight="30.0" prefWidth="150.0" text="N°  téléphone :">
+            <Label layoutX="633.0" layoutY="211.0" prefHeight="30.0" prefWidth="150.0" text="N°  Téléphone :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="445.0" layoutY="268.0" prefHeight="15.0" prefWidth="150.0" text="Mail  : ">
+            <Label layoutX="633.0" layoutY="251.0" prefHeight="30.0" prefWidth="150.0" text="Mail  : ">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="tailleClient" layoutX="171.0" layoutY="428.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre taille" />
-            <TextField fx:id="numClient" layoutX="605.0" layoutY="228.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre numéro" />
-            <TextField fx:id="mailClient" layoutX="605.0" layoutY="268.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre mail" />
-            <Label layoutX="450.0" layoutY="308.0" prefHeight="15.0" prefWidth="150.0" text="Ville :">
+            <TextField fx:id="tailleClient" layoutX="359.0" layoutY="411.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Taille" />
+            <TextField fx:id="numClient" layoutX="793.0" layoutY="211.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre numéro" />
+            <TextField fx:id="mailClient" layoutX="793.0" layoutY="251.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre mail" />
+            <Label layoutX="633.0" layoutY="291.0" prefHeight="31.0" prefWidth="155.0" text="Ville :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="villeClient" layoutX="605.0" layoutY="308.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre ville" />
-            <Label layoutX="450.0" layoutY="348.0" prefHeight="15.0" prefWidth="150.0" text="Adresse :">
+            <TextField fx:id="villeClient" layoutX="793.0" layoutY="291.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre ville" />
+            <Label layoutX="632.0" layoutY="331.0" prefHeight="31.0" prefWidth="156.0" text="Adresse :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="450.0" layoutY="388.0" prefHeight="15.0" prefWidth="150.0" text="Code Postal :">
+            <Label layoutX="631.0" layoutY="371.0" prefHeight="31.0" prefWidth="146.0" text="Code Postal :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="adresseClient" layoutX="605.0" layoutY="348.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre adresse" />
-            <TextField fx:id="codePostalClient" layoutX="605.0" layoutY="388.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre code postal" />
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+            <TextField fx:id="adresseClient" layoutX="793.0" layoutY="331.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre adresse" />
+            <TextField fx:id="codePostalClient" layoutX="793.0" layoutY="371.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre code postal" />
+            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="198.0" layoutY="619.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/sauvegarder.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="191.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+            <Button alignment="CENTER_RIGHT" layoutX="349.0" layoutY="619.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/vider%20formulaire.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <ComboBox fx:id="genreClient" layoutX="171.0" layoutY="391.0" prefWidth="150.0" value="Saisir votre genre">
+            <ComboBox fx:id="genreClient" layoutX="359.0" layoutY="374.0" prefWidth="150.0" value="Saisir votre genre">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Homme"/>
-                     <String fx:value="Femme"/>
+                     <String fx:value="Homme" />
+                     <String fx:value="Femme" />
                   </FXCollections>
                </items>
             </ComboBox>
+            <Label layoutX="223.0" layoutY="72.0" prefHeight="31.0" prefWidth="963.0" text="Complétez les détails ci-dessous pour commencer à découvrir une nouvelle façon de manger sainement et savoureusement !" textFill="#245161">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

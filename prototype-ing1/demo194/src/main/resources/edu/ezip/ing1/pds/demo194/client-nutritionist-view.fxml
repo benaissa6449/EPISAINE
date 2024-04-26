@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientNutritionistController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientNutritionistController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
@@ -101,7 +107,7 @@
         </VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="700.0" prefWidth="1077.0" BorderPane.alignment="CENTER">
             <children>
                 <Label layoutX="112.0" layoutY="26.0" prefHeight="61.0" prefWidth="489.0" text="Liste des Nutritionnistes">
                     <font>
@@ -113,13 +119,13 @@
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="nutritionistTableView" layoutX="9.0" layoutY="126.0" prefHeight="400.0" prefWidth="1090.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                <TableView fx:id="nutritionistTableView" layoutX="1.0" layoutY="126.0" prefHeight="400.0" prefWidth="1048.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
                     <columns>
                         <TableColumn fx:id="idNutritionistColumn" prefWidth="192.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Nutritionniste" />
                         <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="220.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
                         <TableColumn fx:id="prenomColumn" prefWidth="225.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Prénom" />
-                        <TableColumn fx:id="telephoneColumn" prefWidth="249.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Numéro de téléphone" />
-                        <TableColumn fx:id="mailColumn" prefWidth="203.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse mail" />
+                        <TableColumn fx:id="telephoneColumn" prefWidth="217.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Numéro de téléphone" />
+                        <TableColumn fx:id="mailColumn" prefWidth="190.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse mail" />
                     </columns>
                 </TableView>
                 <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectNutritionistData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
