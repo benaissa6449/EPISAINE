@@ -163,7 +163,7 @@
                         <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
                         <ImageView fitHeight="34.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../img/chercher.png" />
+                              <Image url="@/img/chercher.png" />
                            </image>
                         </ImageView>
                      </children>
