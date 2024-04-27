@@ -30,7 +30,11 @@ public class XMartCityService {
             SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t"),
             SELECT_ALL_INFORMATIONS("SELECT t.id_info, t.id_client, t.but, t.allergie, t.nbderepas FROM \"episaine-schema\".informations t"),
             SELECT_ALL_NUTRITIONNISTES("SELECT t.id_nutritionniste, t.nom_n, t.prenom_n, t.numero_de_telephone_n, t.mail_n FROM \"episaine-schema\".nutritionnistes t"),
-            
+
+            COUNT_CLIENTS("SELECT count(*) FROM \"episaine-schema\".clients"),
+            COUNT_RECETTES("SELECT count(*) FROM \"episaine-schema\".recettes"),
+            COUNT_NUTRITIONIST("SELECT count(*) FROM \"episaine-schema\".nutritionnistes"),
+            COUNT_INFORMATIONS("SELECT count(*) FROM \"episaine-schema\".informations"),
             INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
             INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritionniste\") VALUES (?, ?, ?, ?, ?, ?)"),
             INSERT_INFORMATION("INSERT INTO \"episaine-schema\".informations (\"id_client\", \"but\", \"allergie\", \"nbderepas\") VALUES (?,?,?,?)"),
@@ -69,7 +73,7 @@ public class XMartCityService {
         PreparedStatement pstmt;
         Statement stmt;
         ResultSet res;
-        ObjectMapper mapper;
+        ObjectMapper mapper = new ObjectMapper();;
         int rows;
         Update update;
 
@@ -86,15 +90,23 @@ public class XMartCityService {
                         clients.add(client);
                     }
                     logger.info(request.getRequestOrder() + " : precessing done");
-                    mapper = new ObjectMapper();
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(clients));
                     break;
 
+                case "COUNT_CLIENTS" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_CLIENTS.query);
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
                 case "INSERT_CLIENT" : 
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     Client client = (Client) mapper.readValue(request.getRequestBody(), Client.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_CLIENT.query);
                     pstmt.setString(1, client.getNom_client());
@@ -117,7 +129,6 @@ public class XMartCityService {
 
                 case "UPDATE_CLIENT":
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".clients SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
@@ -165,15 +176,23 @@ public class XMartCityService {
                         recettes.add(recette);
                     }
                     logger.info(request.getRequestOrder() + " : precessing done");
-                    mapper = new ObjectMapper();
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(recettes));
                     break;
 
+                case "COUNT_RECETTES" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_RECETTES.query);
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
                 case "INSERT_RECETTE" :
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     Recette recette = (Recette) mapper.readValue(request.getRequestBody(), Recette.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_RECETTE.query);
                     pstmt.setString(1, recette.getNom_recette());
@@ -191,7 +210,6 @@ public class XMartCityService {
                 
                 case "UPDATE_RECETTE" :
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".recettes SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
@@ -236,15 +254,23 @@ public class XMartCityService {
                         nutritionnistes.add(nutritionniste);
                     }
                     logger.info(request.getRequestOrder() + " : precessing done");
-                    mapper = new ObjectMapper();
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(nutritionnistes));
                     break;
 
+                case "COUNT_NUTRITIONIST" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_NUTRITIONIST.query);
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
                 case "INSERT_NUTRITIONNISTE" : 
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     Nutritionniste nutritionniste = (Nutritionniste) mapper.readValue(request.getRequestBody(), Nutritionniste.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_NUTRITIONNISTE.query);
                     pstmt.setString(1, nutritionniste.getNom_N());
@@ -260,7 +286,6 @@ public class XMartCityService {
 
                 case "UPDATE_NUTRITIONNISTE" :
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".nutritionnistes SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     pstmt.setString(1, update.getNewValue());
@@ -295,15 +320,23 @@ public class XMartCityService {
                         informations.add(information);
                     }
                     logger.info(request.getRequestOrder() + " : precessing done");
-                    mapper = new ObjectMapper();
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(informations));
                     break;
 
+                case "COUNT_INFORMATIONS" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_INFORMATIONS.query);
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
                 case "INSERT_INFORMATION" : 
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     Information information = (Information) mapper.readValue(request.getRequestBody(), Information.class);
                     pstmt = connection.prepareStatement(Queries.INSERT_INFORMATION.query);
                     pstmt.setInt(1, information.getId_Client());
@@ -319,7 +352,6 @@ public class XMartCityService {
 
                 case "UPDATE_INFORMATION":
                 logger.info("requestOrder : " + request.getRequestOrder());
-                    mapper = new ObjectMapper();
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".informations SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
@@ -357,7 +389,7 @@ public class XMartCityService {
             }
         }
         catch(Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
         return response;
     }
