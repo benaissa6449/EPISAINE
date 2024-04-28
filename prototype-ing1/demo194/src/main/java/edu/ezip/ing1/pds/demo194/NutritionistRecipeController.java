@@ -13,7 +13,7 @@ import org.controlsfx.control.CheckComboBox;
 
 import java.util.List;
 
-public class NutritionistRecipeController extends ClientHeadController {
+public class NutritionistRecipeController extends NutritionistHeadController {
     @FXML
     private Button insertButton;
 

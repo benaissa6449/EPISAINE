@@ -18,7 +18,7 @@ public class NutritionistHeadController {
     @FXML
     void switchToDashboardView(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("nutritionist-dashboard-view.fxml"));
-        Stage stage = (Stage) informationButton.getScene().getWindow();
+        Stage stage = (Stage) dashboardButton.getScene().getWindow();
         stage.setScene(new Scene(root, 1280, 720));
     }
     @FXML

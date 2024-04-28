@@ -19,7 +19,7 @@ public class ClientHeadController {
     @FXML
     void switchToDashboardView(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("client-dashboard-view.fxml"));
-        Stage stage = (Stage) informationButton.getScene().getWindow();
+        Stage stage = (Stage) dashboardButton.getScene().getWindow();
         stage.setScene(new Scene(root, 1280, 720));
     }
     @FXML
@@ -52,7 +52,7 @@ public class ClientHeadController {
     @FXML
     void switchToIndicateurView(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("client-indicateur-view.fxml"));
-        Stage stage = (Stage) informationButton.getScene().getWindow();
+        Stage stage = (Stage) indicateurButton.getScene().getWindow();
         stage.setScene(new Scene(root, 1280, 720));
     }
 
