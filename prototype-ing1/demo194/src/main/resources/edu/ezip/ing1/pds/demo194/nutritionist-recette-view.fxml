@@ -108,40 +108,35 @@
    <center>
       <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="213.0" layoutY="42.0" prefHeight="61.0" prefWidth="292.0" text="La saisie de la recette ">
-               <font>
-                  <Font name="Book Antiqua" size="28.0" />
-               </font>
-            </Label>
-            <Label layoutX="11.0" layoutY="228.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette  :">
+            <Label layoutX="390.0" layoutY="202.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="268.0" prefHeight="31.0" prefWidth="170.0" text="Nombre de calories  :">
+            <Label layoutX="390.0" layoutY="242.0" prefHeight="31.0" prefWidth="170.0" text="Nombre de calories  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="308.0" prefHeight="31.0" prefWidth="170.0" text="Ingrédient :">
+            <Label layoutX="390.0" layoutY="282.0" prefHeight="31.0" prefWidth="170.0" text="Ingrédient :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="prenomClient" layoutX="190.0" layoutY="229.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Nom Recette " />
-            <TextField fx:id="nomClient" layoutX="190.0" layoutY="268.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir nombre de calories " />
-            <Label layoutX="11.0" layoutY="348.0" prefHeight="31.0" prefWidth="170.0" text="Instructions : ">
+            <TextField fx:id="prenomClient" layoutX="569.0" layoutY="203.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Nom Recette " />
+            <TextField fx:id="nomClient" layoutX="569.0" layoutY="242.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir nombre de calories " />
+            <Label layoutX="390.0" layoutY="322.0" prefHeight="31.0" prefWidth="170.0" text="Instructions : ">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="poidsClient" layoutX="190.0" layoutY="349.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Instructions" />
-            <Label layoutX="11.0" layoutY="388.0" prefHeight="31.0" prefWidth="170.0" text="Régime Alimentaire :">
+            <TextField fx:id="poidsClient" layoutX="569.0" layoutY="323.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Instructions" />
+            <Label layoutX="390.0" layoutY="362.0" prefHeight="31.0" prefWidth="170.0" text="Régime Alimentaire :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="regimeTextField" layoutX="190.0" layoutY="389.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Régime Alimentaire" />
+            <TextField fx:id="regimeTextField" layoutX="569.0" layoutY="363.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Régime Alimentaire" />
             <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
@@ -152,12 +147,22 @@
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="nomClient1" layoutX="190.0" layoutY="309.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Ingrédient" />
+            <TextField fx:id="nomClient1" layoutX="569.0" layoutY="283.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Ingrédient" />
             <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/img/logo.png" />
                </image>
             </ImageView>
+            <Label layoutX="403.0" layoutY="21.0" prefHeight="35.0" prefWidth="350.0" text="Partagez votre recette avec le monde ! " textFill="#245161">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="378.0" layoutY="47.0" prefHeight="35.0" prefWidth="400.0" text=" Inspirez les autres avec vos idées de repas sains et savoureux.&quot;" textFill="#245161">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
