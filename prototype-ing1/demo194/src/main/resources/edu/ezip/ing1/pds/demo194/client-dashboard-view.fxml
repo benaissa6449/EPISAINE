@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientDashboardController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
@@ -124,7 +131,14 @@
                         </children>
                      </HBox>
                   </top>
-                  <left>
+                  <bottom>
+                     <Label alignment="CENTER" prefHeight="39.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG" BorderPane.alignment="BOTTOM_LEFT">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Label>
+                  </bottom>
+                  <right>
                      <AnchorPane prefHeight="614.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                         <children>
                            <Label layoutX="34.0" layoutY="26.0" style="-fx-font-weight: bold; -fx-text-fill: #5094AE;" text="Avec EPISAINE, manger sainement n'a jamais été aussi simple ! ">
@@ -232,51 +246,86 @@
                                  <Font size="14.0" />
                               </font>
                            </Label>
-                           <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="28.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../../../img/Auchan.png" />
-                              </image>
-                           </ImageView>
-                           <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="193.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../../../img/Leclerc.png" />
-                              </image>
-                           </ImageView>
-                           <ImageView fitHeight="53.0" fitWidth="158.0" layoutX="354.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@/img/casino_supermarche_logo.png" />
-                              </image>
-                           </ImageView>
-                           <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="521.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@/img/intermarche.png" />
-                              </image>
-                           </ImageView>
-                           <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="685.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@/img/Super-U.png" />
-                              </image>
-                           </ImageView>
-                           <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="835.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@/img/franprix.png" />
-                              </image>
-                           </ImageView>
                            <Label layoutX="14.0" layoutY="450.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Un grand merci à nos sponsors qui ont rendu possible la création de cette application exceptionnelle." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                               <font>
                                  <Font size="14.0" />
                               </font>
                            </Label>
+                           <Button fx:id="quitterButton1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="75.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #D4EFDF;">
+                                    <image>
+                                       <Image url="@../../../../../img/Auchan.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton11" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../../img/Leclerc.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton111" alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="53.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../../img/casino_supermarche_logo.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton1111" alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="49.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../../img/intermarche.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton11111" alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="54.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../../img/Super-U.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton111111" alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                 <ImageView fitHeight="59.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../../img/franprix.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                           </Button>
                         </children>
                      </AnchorPane>
-                  </left>
-                  <bottom>
-                     <Label alignment="CENTER" prefHeight="39.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés." BorderPane.alignment="BOTTOM_LEFT">
-                        <font>
-                           <Font name="System Bold" size="12.0" />
-                        </font>
-                     </Label>
-                  </bottom>
+                  </right>
                </BorderPane>
             </children>
          </AnchorPane>

@@ -239,41 +239,83 @@
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
-                                    <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="28.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/Auchan.png" />
-                                        </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="193.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/Leclerc.png" />
-                                        </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="53.0" fitWidth="158.0" layoutX="354.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/casino_supermarche_logo.png" />
-                                        </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="521.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/intermarche.png" />
-                                        </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="685.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/Super-U.png" />
-                                        </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="835.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../../img/franprix.png" />
-                                        </image>
-                                    </ImageView>
-                                    <Label layoutX="14.0" layoutY="450.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Un grand merci à nos sponsors qui ont rendu possible la création de cette application exceptionnelle." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
+                                    <Label layoutX="14.0" layoutY="459.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Un grand merci à nos sponsors qui ont rendu possible la création de cette application exceptionnelle." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                                         <font>
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
+                           <Button fx:id="quitterButton1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="375.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="75.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #D4EFDF;">
+                                              <image>
+                                                  <Image url="@../../../../../img/Auchan.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton11" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="376.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/Leclerc.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton111" alignment="CENTER_RIGHT" layoutX="347.0" layoutY="375.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="53.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/casino_supermarche_logo.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton1111" alignment="CENTER_RIGHT" layoutX="523.0" layoutY="377.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="49.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/intermarche.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton11111" alignment="CENTER_RIGHT" layoutX="696.0" layoutY="375.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="54.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/Super-U.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="quitterButton111111" alignment="CENTER_RIGHT" layoutX="853.0" layoutY="377.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="59.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/franprix.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
                                 </children>
                             </AnchorPane>
                         </left>
