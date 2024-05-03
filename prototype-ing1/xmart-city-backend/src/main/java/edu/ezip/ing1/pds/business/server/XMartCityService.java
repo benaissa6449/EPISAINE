@@ -32,9 +32,12 @@ public class XMartCityService {
             SELECT_ALL_NUTRITIONNISTES("SELECT t.id_nutritionniste, t.nom_n, t.prenom_n, t.numero_de_telephone_n, t.mail_n FROM \"episaine-schema\".nutritionnistes t"),
 
             COUNT_CLIENTS("SELECT count(*) FROM \"episaine-schema\".clients"),
+            COUNT_WOMEN("SELECT count(*) FROM \"episaine-schema\".clients where genre = 'Femme'"),
+            COUNT_MEN("SELECT count(*) FROM \"episaine-schema\".clients where genre = 'Homme'"),
             COUNT_RECETTES("SELECT count(*) FROM \"episaine-schema\".recettes"),
-            COUNT_NUTRITIONIST("SELECT count(*) FROM \"episaine-schema\".nutritionnistes"),
+            COUNT_NUTRITIONNISTES("SELECT count(*) FROM \"episaine-schema\".nutritionnistes"),
             COUNT_INFORMATIONS("SELECT count(*) FROM \"episaine-schema\".informations"),
+
             INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
             INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritionniste\") VALUES (?, ?, ?, ?, ?, ?)"),
             INSERT_INFORMATION("INSERT INTO \"episaine-schema\".informations (\"id_client\", \"but\", \"allergie\", \"nbderepas\") VALUES (?,?,?,?)"),
@@ -99,11 +102,35 @@ public class XMartCityService {
                     logger.info("requestOrder : " + request.getRequestOrder());
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.COUNT_CLIENTS.query);
+                    res.next();
                     logger.info(request.getRequestOrder() + " : processing done");
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
                     break;
+
+                case "COUNT_WOMEN" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_WOMEN.query);
+                    res.next();
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
+                case "COUNT_MEN" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_MEN.query);
+                    res.next();
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getInt(1)));
+                    break;
+
 
                 case "INSERT_CLIENT" : 
                 logger.info("requestOrder : " + request.getRequestOrder());
@@ -185,6 +212,7 @@ public class XMartCityService {
                     logger.info("requestOrder : " + request.getRequestOrder());
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.COUNT_RECETTES.query);
+                    res.next();
                     logger.info(request.getRequestOrder() + " : processing done");
                     response = new Response();
                     response.setRequestId(request.getRequestId());
@@ -259,10 +287,11 @@ public class XMartCityService {
                     response.setResponseBody(mapper.writeValueAsString(nutritionnistes));
                     break;
 
-                case "COUNT_NUTRITIONIST" :
+                case "COUNT_NUTRITIONNISTES" :
                     logger.info("requestOrder : " + request.getRequestOrder());
                     stmt = connection.createStatement();
-                    res = stmt.executeQuery(Queries.COUNT_NUTRITIONIST.query);
+                    res = stmt.executeQuery(Queries.COUNT_NUTRITIONNISTES.query);
+                    res.next();
                     logger.info(request.getRequestOrder() + " : processing done");
                     response = new Response();
                     response.setRequestId(request.getRequestId());
@@ -329,6 +358,7 @@ public class XMartCityService {
                     logger.info("requestOrder : " + request.getRequestOrder());
                     stmt = connection.createStatement();
                     res = stmt.executeQuery(Queries.COUNT_INFORMATIONS.query);
+                    res.next();
                     logger.info(request.getRequestOrder() + " : processing done");
                     response = new Response();
                     response.setRequestId(request.getRequestId());
