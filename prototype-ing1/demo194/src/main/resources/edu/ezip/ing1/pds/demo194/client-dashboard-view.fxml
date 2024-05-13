@@ -114,15 +114,7 @@
             <children>
                <BorderPane prefHeight="700.0" prefWidth="1109.0">
                   <top>
-                     <HBox prefHeight="103.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
-                        <children>
-                           <ImageView fitHeight="106.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@/img/LOGO EPISAINE.png" />
-                              </image>
-                           </ImageView>
-                        </children>
-                     </HBox>
+                     <HBox prefHeight="103.0" prefWidth="1110.0" BorderPane.alignment="CENTER" />
                   </top>
                   <bottom>
                      <Label alignment="CENTER" prefHeight="39.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG" BorderPane.alignment="BOTTOM_LEFT">
@@ -256,19 +248,19 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="quitterButton11" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button fx:id="leclerc" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
                               <graphic>
-                                 <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                                 <ImageView fx:id="leclerc" fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                        <Image url="@../../../../../img/Leclerc.png" />
                                     </image>
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="quitterButton111" alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button fx:id="casino" alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -280,7 +272,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="quitterButton1111" alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button fx:id="intermarche" alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -292,7 +284,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="quitterButton11111" alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button fx:id="superu" alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -304,7 +296,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="quitterButton111111" alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button fx:id="franprix" alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>

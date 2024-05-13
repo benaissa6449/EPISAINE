@@ -177,12 +177,12 @@
                <children>
                   <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
                      <children>
-                        <TextField prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
+                        <TextField fx:id="searchTextField" prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
                         <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="32.0" style="-fx-background-color: #D4EFDF;">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../img/chercher.png" />
+                                    <Image url="@/img/chercher.png" />
                                  </image>
                               </ImageView>
                            </graphic>

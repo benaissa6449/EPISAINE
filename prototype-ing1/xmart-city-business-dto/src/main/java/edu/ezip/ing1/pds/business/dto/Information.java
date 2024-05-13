@@ -94,7 +94,7 @@ public class Information {
     public String toString() {
         return "Information{" +
                 "ID_Info='" + id_info + '\'' +
-                ", ID_Clients='" + id_client + '\'' +
+                ", ID_Client='" + id_client + '\'' +
                 ", But='" + but + '\'' +
                 ", Allergie='" + allergie + '\'' +
                 ", Nombre de repas='" + nbDeRepas +

@@ -15,9 +15,6 @@ import java.util.List;
 
 public class NutritionistRecipeController extends NutritionistHeadController {
     @FXML
-    private Button insertButton;
-
-    @FXML
     private TextField nomTextField, calorieTextField, instructionsTextField, ingredientsTextField, idNutritionistTextField;
 
     @FXML
@@ -78,5 +75,14 @@ public class NutritionistRecipeController extends NutritionistHeadController {
             }
         }
         return res;
+    }
+
+    public void cleanFields(ActionEvent actionEvent) {
+        idNutritionistTextField.clear();
+        nomTextField.clear();
+        calorieTextField.clear();
+        instructionsTextField.clear();
+        ingredientsTextField.clear();
+        regimeComboBox.getSelectionModel().clearSelection();
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ClientInformationController extends ClientHeadController {
     @FXML
-    private Button insertButton;
+    private Button insertButton, cleanButton;
 
     @FXML
     private TextField nbDeRepasTextField, idTextField;
@@ -24,6 +24,7 @@ public class ClientInformationController extends ClientHeadController {
 
     @FXML
     private CheckComboBox<String> allergieCheckComboBox;
+
     public void insertInformationData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {
@@ -64,5 +65,12 @@ public class ClientInformationController extends ClientHeadController {
             alert.setHeaderText("Erreur système !\nVeuillez contacter un administrateur.");
             alert.showAndWait();
         }
+    }
+
+    public void cleanFields(ActionEvent actionEvent) {
+        nbDeRepasTextField.clear();
+        idTextField.clear();
+        allergieCheckComboBox.getCheckModel().clearChecks();
+        butComboBox.getSelectionModel().clearSelection();
     }
 }

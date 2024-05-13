@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistRecipeController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistRecipeController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
@@ -108,46 +105,70 @@
    <center>
       <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="390.0" layoutY="202.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette  :">
+            <Label layoutX="390.0" layoutY="164.0" prefHeight="31.0" prefWidth="170.0" text="ID Nutritionniste :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
+            <TextField fx:id="idNutritionistTextField" layoutX="569.0" layoutY="165.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir l'id du nutritionniste" />
+            <Label layoutX="390.0" layoutY="202.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette :">
+               <font>
+                  <Font name="Gill Sans MT Condensed" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nomTextField" layoutX="569.0" layoutY="203.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nom de recette " />
             <Label layoutX="390.0" layoutY="242.0" prefHeight="31.0" prefWidth="170.0" text="Nombre de calories  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
+            <TextField fx:id="calorieTextField" layoutX="569.0" layoutY="242.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nombre de calories " />
             <Label layoutX="390.0" layoutY="282.0" prefHeight="31.0" prefWidth="170.0" text="Ingrédient :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="prenomClient" layoutX="569.0" layoutY="203.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Nom Recette " />
-            <TextField fx:id="nomClient" layoutX="569.0" layoutY="242.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir nombre de calories " />
+            <TextField fx:id="ingredientsTextField" layoutX="569.0" layoutY="283.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les ingrédient" />
             <Label layoutX="390.0" layoutY="322.0" prefHeight="31.0" prefWidth="170.0" text="Instructions : ">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="poidsClient" layoutX="569.0" layoutY="323.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Instructions" />
+            <TextField fx:id="instructionsTextField" layoutX="569.0" layoutY="323.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les instructions" />
             <Label layoutX="390.0" layoutY="362.0" prefHeight="31.0" prefWidth="170.0" text="Régime Alimentaire :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="regimeTextField" layoutX="569.0" layoutY="363.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Régime Alimentaire" />
+            <ComboBox fx:id="regimeComboBox" layoutX="569.0" layoutY="363.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le régime alimentaire">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="normal" />
+                     <String fx:value="cétogène" />
+                     <String fx:value="végétarien" />
+                     <String fx:value="carnivore" />
+                     <String fx:value="pescétarien" />
+                     <String fx:value="végétalien" />
+                     <String fx:value="sans gluten" />
+                     <String fx:value="sans lactose" />
+                     <String fx:value="halal" />
+                     <String fx:value="cashér" />
+                     <String fx:value="paléo" />
+                     <String fx:value="sans sucre ajouté" />
+                     <String fx:value="régime méditerranéeen" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
             <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="191.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+            <Button alignment="CENTER_RIGHT" layoutX="191.0" layoutY="620.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="nomClient1" layoutX="569.0" layoutY="283.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir Ingrédient" />
             <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/img/logo.png" />
@@ -163,6 +184,16 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="621.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/sauvegarder.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="198.0" layoutY="621.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/supprimer.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

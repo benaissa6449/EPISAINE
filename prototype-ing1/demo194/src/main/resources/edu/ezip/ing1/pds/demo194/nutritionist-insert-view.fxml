@@ -123,15 +123,16 @@
                         <Font name="Gill Sans MT Condensed" size="25.0" />
                     </font>
                 </Label>
-                <TextField fx:id="prenomClient" layoutX="559.0" layoutY="210.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre prénom" />
-                <TextField fx:id="nomClient" layoutX="559.0" layoutY="250.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
+                <TextField fx:id="prenomTextField" layoutX="559.0" layoutY="210.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre prénom" />
+                <TextField fx:id="nomTextField" layoutX="559.0" layoutY="250.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
+                <TextField fx:id="numeroTextField" layoutX="559.0" layoutY="290.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre numéro" />
+                <TextField fx:id="mailTextField" layoutX="559.0" layoutY="330.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre mail" />
                 <Label layoutX="399.0" layoutY="330.0" prefHeight="15.0" prefWidth="150.0" text="Mail">
                     <font>
                         <Font name="Gill Sans MT Condensed" size="25.0" />
                     </font>
                 </Label>
-                <TextField fx:id="poidsClient" layoutX="559.0" layoutY="330.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre poids" />
-                <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+                <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer" onAction="#insertNutritionistData">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
@@ -141,7 +142,7 @@
                         <Image url="@/img/sauvegarder.png" />
                     </image>
                 </ImageView>
-                <Button alignment="CENTER_RIGHT" layoutX="191.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+                <Button alignment="CENTER_RIGHT" layoutX="191.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire" onAction="#cleanFields">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
@@ -151,7 +152,6 @@
                         <Image url="@/img/supprimer.png" />
                     </image>
                 </ImageView>
-            <TextField fx:id="nomClient1" layoutX="559.0" layoutY="290.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
             <Label layoutX="362.0" layoutY="39.0" prefHeight="35.0" prefWidth="450.0" text="Prêt à rejoindre notre équipe de nutritionnistes ? " textFill="#245161">
                <font>
                   <Font name="Impact" size="20.0" />

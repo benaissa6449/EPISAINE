@@ -116,4 +116,18 @@ public class ClientInsertController extends ClientHeadController {
         }
         return res;
     }
+
+    public void cleanFields(ActionEvent actionEvent) {
+        prenomClient.clear();
+        nomClient.clear();
+        dateClient.getEditor().clear();
+        poidsClient.clear();
+        genreClient.getSelectionModel().clearSelection();
+        tailleClient.clear();
+        numClient.clear();
+        mailClient.clear();
+        villeClient.clear();
+        adresseClient.clear();
+        codePostalClient.clear();
+    }
 }
