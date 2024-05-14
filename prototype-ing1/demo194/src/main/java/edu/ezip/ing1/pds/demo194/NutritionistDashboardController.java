@@ -15,55 +15,30 @@ public class NutritionistDashboardController extends NutritionistHeadController 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Text NA = new Text("N/A");
         try {
             Integer nbC = CountTableRow.getRow("COUNT_CLIENTS");
+            Integer nbW = CountTableRow.getRow("COUNT_WOMEN");
+            Integer nbM = CountTableRow.getRow("COUNT_MEN");
+            Integer nbN = CountTableRow.getRow("COUNT_NUTRITIONNISTES");
+            Integer nbR = CountTableRow.getRow("COUNT_RECETTES");
+
             nbClients.getChildren().clear();
             nbClients.getChildren().add(new Text(String.valueOf(nbC)));
-        }
-        catch (Exception e) {
-            nbClients.getChildren().clear();
-            nbClients.getChildren().add(NA);
-        }
 
-        try{
-            Integer nbW = CountTableRow.getRow("COUNT_WOMEN");
             nbWomen.getChildren().clear();
             nbWomen.getChildren().add(new Text(String.valueOf(nbW)));
-        }
-        catch (Exception e) {
-            nbWomen.getChildren().clear();
-            nbWomen.getChildren().add(NA);
-        }
 
-        try {
-            Integer nbM = CountTableRow.getRow("COUNT_MEN");
             nbMen.getChildren().clear();
             nbMen.getChildren().add(new Text(String.valueOf(nbM)));
-        }
-        catch (Exception e) {
-            nbMen.getChildren().clear();
-            nbMen.getChildren().add(NA);
-        }
 
-        try{
-            Integer nbN = CountTableRow.getRow("COUNT_NUTRITIONNISTES");
             nbNutritionists.getChildren().clear();
             nbNutritionists.getChildren().add(new Text(String.valueOf(nbN)));
-        }
-        catch (Exception e) {
-            nbNutritionists.getChildren().clear();
-            nbNutritionists.getChildren().add(NA);
-        }
 
-        try {
-            Integer nbR = CountTableRow.getRow("COUNT_RECETTES");
             nbRecipes.getChildren().clear();
             nbRecipes.getChildren().add(new Text(String.valueOf(nbR)));
         }
         catch (Exception e) {
-            nbRecipes.getChildren().clear();
-            nbRecipes.getChildren().add(NA);
+            System.out.println("Erreur");
         }
     }
 }

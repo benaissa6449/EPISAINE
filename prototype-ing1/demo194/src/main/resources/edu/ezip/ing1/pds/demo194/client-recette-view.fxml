@@ -119,16 +119,16 @@
                 </ImageView>
                 <TableView fx:id="recipeTableView" layoutX="9.0" layoutY="173.0" prefHeight="400.0" prefWidth="1090.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
                     <columns>
-                        <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Recette" />
+                        <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Recette" />
                         <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="162.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom de Recette" />
                         <TableColumn fx:id="caloriesColumn" prefWidth="156.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nombre de calories" />
                         <TableColumn fx:id="ingredientsColumn" prefWidth="142.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ingredients" />
                         <TableColumn fx:id="instructionsColumn" prefWidth="115.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Instructions" />
                   <TableColumn fx:id="regimeColumn" prefWidth="236.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Regime Alimentaire" />
-                  <TableColumn fx:id="idNutritionistColumn" prefWidth="165.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Id Nutritionniste" />
+                  <TableColumn fx:id="idNutritionistColumn" prefWidth="165.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="ID Nutritionniste" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+                <Button alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
@@ -140,7 +140,7 @@
                   </ImageView>
                </graphic>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="329.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
+                <Button alignment="CENTER_RIGHT" layoutX="329.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer" onAction="#deleteValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
@@ -152,7 +152,7 @@
                   </ImageView>
                </graphic>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="199.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+                <Button alignment="CENTER_RIGHT" layoutX="199.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier" onAction="#updateValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>

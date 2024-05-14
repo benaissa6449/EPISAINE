@@ -131,12 +131,12 @@
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
+                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer" onAction="#deleteValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier" onAction="#updateValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>

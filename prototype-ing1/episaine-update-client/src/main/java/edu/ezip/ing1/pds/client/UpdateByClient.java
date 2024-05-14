@@ -39,9 +39,9 @@ public class UpdateByClient {
         objectMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
         final byte [] requestBytes = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsBytes(request);
 
-        final UpdateClientRequest deleteClient = new UpdateClientRequest(
+        final UpdateClientRequest updateClient = new UpdateClientRequest(
                                                     networkConfig,
                                                     birthdate++, request, update, requestBytes);
-        deleteClient.join();
+        updateClient.join();
     }
 }

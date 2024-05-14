@@ -4,7 +4,10 @@ package edu.ezip.ing1.pds.demo194;
 import edu.ezip.ing1.pds.business.dto.Client;
 import edu.ezip.ing1.pds.business.dto.Recette;
 import edu.ezip.ing1.pds.business.dto.Recettes;
+import edu.ezip.ing1.pds.business.dto.Update;
+import edu.ezip.ing1.pds.client.DeleteByClient;
 import edu.ezip.ing1.pds.client.SelectRecipe;
+import edu.ezip.ing1.pds.client.UpdateByClient;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -18,11 +21,10 @@ import javafx.scene.input.MouseEvent;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class ClientRecipeController extends ClientHeadController implements Initializable {
-    @FXML
-    private Button selectButton;
+public class ClientRecipeController extends ClientHeadController {
     @FXML
     private TableView<Recette> recipeTableView;
     @FXML
@@ -32,26 +34,25 @@ public class ClientRecipeController extends ClientHeadController implements Init
     @FXML
     private TextField searchTextField;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        recipeTableView.getSelectionModel().setCellSelectionEnabled(true);
-        recipeTableView.setOnMouseClicked((MouseEvent event) -> {
-            TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();
-            int row = tablePosition.getRow();
-
-            Recette recette = recipeTableView.getItems().get(row);
-            TableColumn tableColumn = tablePosition.getTableColumn();
-
-            String data = tableColumn.getCellObservableValue(recette).getValue().toString();
-
-            alert.setHeaderText(data);
-            alert.showAndWait();
-        });
-    }
-
     public void selectRecipeData(ActionEvent actionEvent) {
         try {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            recipeTableView.getSelectionModel().setCellSelectionEnabled(true);
+            recipeTableView.setOnMouseClicked((MouseEvent event) -> {
+                TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();
+                int row = tablePosition.getRow();
+
+                Recette recette = recipeTableView.getItems().get(row);
+                TableColumn tableColumn = tablePosition.getTableColumn();
+
+                String data = tableColumn.getCellObservableValue(recette).getValue().toString();
+
+                alert.setHeaderText(tableColumn.getText() + " : " + data);
+                alert.showAndWait();
+            });
+
+            recipeTableView.getItems().clear();
+
             Recettes recettes = SelectRecipe.getValue("SELECT_ALL_RECETTES");
             idRecetteColumn.setCellValueFactory(new PropertyValueFactory<>("Id_recette"));
             idNutritionistColumn.setCellValueFactory(new PropertyValueFactory<>("Id_nutritionniste"));
@@ -61,7 +62,6 @@ public class ClientRecipeController extends ClientHeadController implements Init
             instructionsColumn.setCellValueFactory(new PropertyValueFactory<>("Instructions"));
             regimeColumn.setCellValueFactory(new PropertyValueFactory<>("RegimeAlimentaire"));
 
-            recipeTableView.getItems().clear();
 
             for (Recette recette : recettes.getRecettes()) {
                 recipeTableView.getItems().add(recette);
@@ -107,7 +107,132 @@ public class ClientRecipeController extends ClientHeadController implements Init
             recipeTableView.setItems(sortedList);
         }
         catch (Exception e) {
-            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Veuillez raffraichir la page.");
+            alert.showAndWait();
+        }
+    }
+
+    public void updateValue(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();
+
+        int row = tablePosition.getRow();
+
+        Recette recette = recipeTableView.getItems().get(row);
+
+        TableColumn tableColumn = tablePosition.getTableColumn();
+
+        String data = tableColumn.getCellObservableValue(recette).getValue().toString();
+
+        TextInputDialog textInputDialog = new TextInputDialog("Nouvelle valeur :");
+        textInputDialog.setHeaderText("Ancienne valeur : " + data);
+        textInputDialog.setTitle("Modifier");
+        textInputDialog.showAndWait();
+
+        String columnName = tableColumn.getText();
+
+        Update update;
+        try {
+            switch (columnName) {
+                case "Nom de Recette":
+                    update = new Update();
+                    update.setNewColumn("nom_recette");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Nombre de calories":
+                    update = new Update();
+                    update.setNewColumn("nombre_de_calories");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Ingrédients":
+                    update = new Update();
+                    update.setNewColumn("ingredients");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Instructions":
+                    update = new Update();
+                    update.setNewColumn("instructions");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Régime alimentaire":
+                    update = new Update();
+                    update.setNewColumn("regimealimentaire");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "ID Nutritionniste":
+                    update = new Update();
+                    update.setNewColumn("id_nutritionniste");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_recette");
+                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                default:
+                    alert.setAlertType(Alert.AlertType.ERROR);
+                    alert.setHeaderText("Valeur non modifiable.");
+                    break;
+            }
+        }
+        catch (Exception e) {
+            System.out.println("...");
+        }
+    }
+
+    public void deleteValue(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();
+
+        int row = tablePosition.getRow();
+
+        Recette recette = recipeTableView.getItems().get(row);
+
+        TableColumn tableColumn = tablePosition.getTableColumn();
+
+        String data = tableColumn.getCellObservableValue(recette).getValue().toString();
+
+        alert.setHeaderText("Etes-vous sûr de vouloir supprimer cette recette ?");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+            try {
+                DeleteByClient.deleteValue("DELETE_RECETTE", recette.getId_recette());
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Suppression effectuée.");
+                alert.showAndWait();
+            }
+            catch (Exception e) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setHeaderText("Erreur de suppression.");
+                alert.showAndWait();
+            }
         }
     }
 }

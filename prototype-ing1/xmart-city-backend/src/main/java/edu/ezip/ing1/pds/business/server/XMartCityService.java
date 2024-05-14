@@ -44,9 +44,9 @@ public class XMartCityService {
             INSERT_NUTRITIONNISTE("INSERT INTO \"episaine-schema\".nutritionnistes (\"nom_n\", \"prenom_n\", \"numero_de_telephone_n\", \"mail_n\") VALUES (?,?,?,?)"),
 
             DELETE_CLIENT("DELETE FROM \"episaine-schema\".clients WHERE \"id_client\" = ? "),
-            DELETE_RECETTE("DELETE FROM \"episaine-schema\".recettes WHERE \"id_recettes\" = ?"),
+            DELETE_RECETTE("DELETE FROM \"episaine-schema\".recettes WHERE \"id_recette\" = ?"),
             DELETE_INFORMATION("DELETE FROM \"episaine-schema\".informations WHERE \"id_info\" = ?"),
-            DELETE_NUTRITIONNISTE("DELETE FROM \"episaine-schema\".nutritionnistes WHERE \"id_nitritionniste\" = ? "),
+            DELETE_NUTRITIONNISTE("DELETE FROM \"episaine-schema\".nutritionnistes WHERE \"id_nutritionniste\" = ? "),
             ;
         
             private final String query;
@@ -159,13 +159,13 @@ public class XMartCityService {
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".clients SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
-                       case "Date de naissance":
+                       case "date_de_naissance_client":
                           pstmt.setDate(1, Date.valueOf(update.getNewValue()));
                           break;
-                       case "Poids (en kg)":
+                       case "poids":
                           pstmt.setBigDecimal(1, new BigDecimal(update.getNewValue()));
                           break;
-                       case "Taille":
+                       case "taille":
                           pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
                           break;
                        default:
@@ -241,10 +241,10 @@ public class XMartCityService {
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".recettes SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
-                    case "Nombre de calories" :
+                    case "nombre_de_calories" :
                         pstmt.setInt(1,Integer.parseInt(update.getNewValue()));
                         break;
-                    case "ID Nutritionniste":
+                    case "id_nutritionniste":
                         pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
                         break;
                     default:
@@ -385,10 +385,10 @@ public class XMartCityService {
                     update = (Update) mapper.readValue(request.getRequestBody(), Update.class);
                     pstmt = connection.prepareStatement("UPDATE \"episaine-schema\".informations SET " + update.getNewColumn() + "= ? WHERE " + update.getConditionColumn() + "= ?");
                     switch (update.getNewColumn()) {
-                       case "ID Client":
+                       case "id_client":
                           pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
                           break;
-                       case "Nombre de repas":
+                       case "nbderepas":
                           pstmt.setInt(1, Integer.parseInt(update.getNewValue()));
                           break;
                        default:

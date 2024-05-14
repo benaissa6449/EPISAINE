@@ -1,9 +1,9 @@
 package edu.ezip.ing1.pds.demo194;
 
-import edu.ezip.ing1.pds.business.dto.Client;
-import edu.ezip.ing1.pds.business.dto.Clients;
-import edu.ezip.ing1.pds.business.dto.Nutritionniste;
+import edu.ezip.ing1.pds.business.dto.*;
+import edu.ezip.ing1.pds.client.DeleteByClient;
 import edu.ezip.ing1.pds.client.SelectClient;
+import edu.ezip.ing1.pds.client.UpdateByClient;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -14,9 +14,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class NutritionistClientController extends NutritionistHeadController implements Initializable {
+public class NutritionistClientController extends NutritionistHeadController {
     @FXML
     private Button selectButton;
     @FXML
@@ -26,27 +27,24 @@ public class NutritionistClientController extends NutritionistHeadController imp
     @FXML
     private TextField searchTextField;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        clientTableView.getSelectionModel().setCellSelectionEnabled(true);
-        clientTableView.setOnMouseClicked((MouseEvent event) -> {
-            TablePosition tablePosition = clientTableView.getSelectionModel().getSelectedCells().getFirst();
-            int row = tablePosition.getRow();
-
-            Client client = clientTableView.getItems().get(row);
-            TableColumn tableColumn = tablePosition.getTableColumn();
-
-            String data = tableColumn.getCellObservableValue(client).getValue().toString();
-
-            alert.setHeaderText(data);
-            alert.showAndWait();
-        });
-    }
-
     @FXML
     private void selectClientData(ActionEvent actionEvent) {
         try {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            clientTableView.getSelectionModel().setCellSelectionEnabled(true);
+            clientTableView.setOnMouseClicked((MouseEvent event) -> {
+                TablePosition tablePosition = clientTableView.getSelectionModel().getSelectedCells().getFirst();
+                int row = tablePosition.getRow();
+
+                Client client = clientTableView.getItems().get(row);
+                TableColumn tableColumn = tablePosition.getTableColumn();
+
+                String data = tableColumn.getCellObservableValue(client).getValue().toString();
+
+                alert.setHeaderText(tableColumn.getText() + " : " + data);
+                alert.showAndWait();
+            });
+
             Clients clients = (Clients) SelectClient.getValue("SELECT_ALL_CLIENTS");
 
             idClientColumn.setCellValueFactory(new PropertyValueFactory<>("Id_client"));
@@ -121,6 +119,179 @@ public class NutritionistClientController extends NutritionistHeadController imp
         }
         catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void updateValue(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        TablePosition tablePosition = clientTableView.getSelectionModel().getSelectedCells().getFirst();
+
+        int row = tablePosition.getRow();
+
+        Client client = clientTableView.getItems().get(row);
+
+        TableColumn tableColumn = tablePosition.getTableColumn();
+
+        String data = tableColumn.getCellObservableValue(client).getValue().toString();
+
+        TextInputDialog textInputDialog = new TextInputDialog("Nouvelle valeur :");
+        textInputDialog.setHeaderText("Ancienne valeur : " + data);
+        textInputDialog.setTitle("Modifier");
+        textInputDialog.showAndWait();
+
+        String columnName = tableColumn.getText();
+
+        Update update;
+        try {
+            switch (columnName) {
+                case "Nom":
+                    update = new Update();
+                    update.setNewColumn("nom_client");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Prénom":
+                    update = new Update();
+                    update.setNewColumn("prenom_client");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Date de naissance":
+                    update = new Update();
+                    update.setNewColumn("date_de_naissance_client");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Poids":
+                    update = new Update();
+                    update.setNewColumn("poids");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Genre":
+                    update = new Update();
+                    update.setNewColumn("genre");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Taille":
+                    update = new Update();
+                    update.setNewColumn("taille");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Numéro de téléphone":
+                    update = new Update();
+                    update.setNewColumn("numero_de_telephone_client");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Mail":
+                    update = new Update();
+                    update.setNewColumn("mail_client");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Ville":
+                    update = new Update();
+                    update.setNewColumn("ville");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Adresse":
+                    update = new Update();
+                    update.setNewColumn("adresse");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                case "Code Postal":
+                    update = new Update();
+                    update.setNewColumn("code_postal");
+                    update.setNewValue(textInputDialog.getEditor().getText());
+                    update.setConditionColumn("id_client");
+                    update.setConditionValue(String.valueOf(client.getId_client()));
+                    UpdateByClient.updateValue("UPDATE_CLIENT", update);
+                    alert.setHeaderText("Modification effectuée.");
+                    alert.showAndWait();
+                    break;
+                default:
+                    alert.setAlertType(Alert.AlertType.ERROR);
+                    alert.setHeaderText("Valeur non modifiable.");
+                    break;
+            }
+        }
+        catch (Exception e) {
+            System.out.println("...");
+        }
+    }
+
+    public void deleteValue(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        TablePosition tablePosition = clientTableView.getSelectionModel().getSelectedCells().getFirst();
+
+        int row = tablePosition.getRow();
+
+        Client client = clientTableView.getItems().get(row);
+
+        TableColumn tableColumn = tablePosition.getTableColumn();
+
+        String data = tableColumn.getCellObservableValue(client).getValue().toString();
+
+        alert.setHeaderText("Etes-vous sûr de vouloir supprimer ce client ?");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.get() == ButtonType.OK) {
+            try {
+                DeleteByClient.deleteValue("DELETE_CLIENT", client.getId_client());
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Suppression effectuée.");
+                alert.showAndWait();
+            }
+            catch (Exception e) {
+                alert.setAlertType(Alert.AlertType.ERROR);
+                alert.setHeaderText("Erreur de suppression.");
+                alert.showAndWait();
+            }
         }
     }
 }

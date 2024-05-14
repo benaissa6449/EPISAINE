@@ -119,7 +119,7 @@
                 </ImageView>
                 <TableView fx:id="clientTableView" layoutX="14.0" layoutY="185.0" prefHeight="400.0" prefWidth="1097.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465; -fx-border-radius: 7px;">
                     <columns>
-                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Client" />
+                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Client" />
                         <TableColumn fx:id="prenomClientColumn" minWidth="0.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
                         <TableColumn fx:id="nomClientColumn" prefWidth="82.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Prénom" />
                         <TableColumn fx:id="dateClientColumn" prefWidth="121.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Date de naissance" />
@@ -138,12 +138,12 @@
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
+                <Button alignment="CENTER_RIGHT" layoutX="336.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer" onAction="#deleteValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+                <Button alignment="CENTER_RIGHT" layoutX="193.0" layoutY="625.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier" onAction="#updateValue">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
