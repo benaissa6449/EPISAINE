@@ -117,10 +117,10 @@
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="recipeTableView" layoutX="9.0" layoutY="173.0" prefHeight="400.0" prefWidth="1090.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                <TableView fx:id="recipeTableView" layoutX="9.0" layoutY="173.0" prefHeight="400.0" prefWidth="1090.0" style="-fx-background-color: transparent; -fx-border-color: #467AA8;">
                     <columns>
-                        <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Recette" />
-                        <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="162.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom de Recette" />
+                        <TableColumn fx:id="idRecetteColumn" prefWidth="124.0" style="-fx-border-color: #467AA8; -fx-border-radius: 8px; -fx-background-color: #467AA8;" text="Id Recette" />
+                        <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="147.0" style="-fx-border-color: #467AA8; -fx-border-radius: 8px;" text="Nom de Recette" />
                         <TableColumn fx:id="caloriesColumn" prefWidth="156.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nombre de calories" />
                         <TableColumn fx:id="ingredientsColumn" prefWidth="142.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ingredients" />
                         <TableColumn fx:id="instructionsColumn" prefWidth="115.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Instructions" />
