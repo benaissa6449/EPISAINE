@@ -146,7 +146,7 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbRecipes" layoutX="28.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a;" />
+                                            <TextFlow fx:id="nbRecipes" layoutX="28.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-alignment: center; -fx-font-size: 65;" />
                                         </children>
                                     </Pane>
                                     <Pane layoutX="220.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
@@ -161,7 +161,7 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbClients" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a;" />
+                                            <TextFlow fx:id="nbClients" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center;" />
                                         </children>
                                     </Pane>
                                     <Pane layoutX="400.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
@@ -176,7 +176,7 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbWomen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a;" />
+                                            <TextFlow fx:id="nbWomen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center;" />
                                         </children>
                                     </Pane>
                                     <Pane layoutX="580.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
@@ -191,7 +191,7 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbMen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a;" />
+                                            <TextFlow fx:id="nbMen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center;" />
                                         </children>
                                     </Pane>
                                     <Pane layoutX="760.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
@@ -211,7 +211,7 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbNutritionists" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a;" />
+                                            <TextFlow fx:id="nbNutritionists" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center;" />
                                         </children>
                                     </Pane>
                                     <Label layoutX="14.0" layoutY="326.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Retrouvez EPISAINE dans toutes les grandes surfaces de la région IDF et profitez de nos recettes saines et inspirantes," textFill="#245161" textOverrun="LEADING_ELLIPSIS">
