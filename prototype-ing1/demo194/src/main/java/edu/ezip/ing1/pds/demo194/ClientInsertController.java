@@ -12,15 +12,10 @@ import javafx.scene.control.*;
 public class ClientInsertController extends ClientHeadController {
     @FXML
     private TextField prenomClient, nomClient, poidsClient, tailleClient, numClient, mailClient, villeClient, adresseClient, codePostalClient;
-
     @FXML
     private ComboBox<String> genreClient;
-
     @FXML
     private DatePicker dateClient;
-
-    @FXML
-    private Button insertButton;
 
     public void insertClientData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -13,9 +13,6 @@ public class NutritionistInsertController extends NutritionistHeadController {
     @FXML
     private TextField prenomTextField, nomTextField, numeroTextField, mailTextField;
 
-    @FXML
-    private Button insertButton;
-
     public void insertNutritionistData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {

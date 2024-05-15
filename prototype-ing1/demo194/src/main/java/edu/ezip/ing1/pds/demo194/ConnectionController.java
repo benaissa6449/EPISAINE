@@ -1,6 +1,5 @@
 package edu.ezip.ing1.pds.demo194;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

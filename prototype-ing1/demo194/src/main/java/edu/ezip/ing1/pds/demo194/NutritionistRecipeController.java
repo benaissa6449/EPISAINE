@@ -23,10 +23,8 @@ import java.util.Optional;
 public class NutritionistRecipeController extends NutritionistHeadController {
     @FXML
     private TextField nomTextField, calorieTextField, instructionsTextField, ingredientsTextField, idNutritionistTextField;
-
     @FXML
     private ComboBox<String> regimeComboBox;
-
     @FXML
     private TableView<Recette> recipeTableView;
     @FXML
@@ -197,81 +195,82 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         TextInputDialog textInputDialog = new TextInputDialog("Nouvelle valeur :");
         textInputDialog.setHeaderText("Ancienne valeur : " + data);
         textInputDialog.setTitle("Modifier");
-        textInputDialog.showAndWait();
+        Optional<String> result = textInputDialog.showAndWait();
 
-        String columnName = tableColumn.getText();
+        if (result.isPresent()) {
+            String columnName = tableColumn.getText();
 
-        Update update;
-        try {
-            switch (columnName) {
-                case "Nom de Recette":
-                    update = new Update();
-                    update.setNewColumn("nom_recette");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Nombre de calories":
-                    update = new Update();
-                    update.setNewColumn("nombre_de_calories");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Ingrédients":
-                    update = new Update();
-                    update.setNewColumn("ingredients");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Instructions":
-                    update = new Update();
-                    update.setNewColumn("instructions");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Régime alimentaire":
-                    update = new Update();
-                    update.setNewColumn("regimealimentaire");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "ID Nutritionniste":
-                    update = new Update();
-                    update.setNewColumn("id_nutritionniste");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_recette");
-                    update.setConditionValue(String.valueOf(recette.getId_recette()));
-                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                default:
-                    alert.setAlertType(Alert.AlertType.ERROR);
-                    alert.setHeaderText("Valeur non modifiable.");
-                    break;
+            Update update;
+            try {
+                switch (columnName) {
+                    case "Nom de Recette":
+                        update = new Update();
+                        update.setNewColumn("nom_recette");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    case "Nombre de calories":
+                        update = new Update();
+                        update.setNewColumn("nombre_de_calories");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    case "Ingrédients":
+                        update = new Update();
+                        update.setNewColumn("ingredients");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    case "Instructions":
+                        update = new Update();
+                        update.setNewColumn("instructions");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    case "Régime alimentaire":
+                        update = new Update();
+                        update.setNewColumn("regimealimentaire");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    case "ID Nutritionniste":
+                        update = new Update();
+                        update.setNewColumn("id_nutritionniste");
+                        update.setNewValue(textInputDialog.getEditor().getText());
+                        update.setConditionColumn("id_recette");
+                        update.setConditionValue(String.valueOf(recette.getId_recette()));
+                        UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                        alert.setHeaderText("Modification effectuée.");
+                        alert.showAndWait();
+                        break;
+                    default:
+                        alert.setAlertType(Alert.AlertType.ERROR);
+                        alert.setHeaderText("Valeur non modifiable.");
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("...");
             }
-        }
-        catch (Exception e) {
-            System.out.println("...");
         }
     }
 

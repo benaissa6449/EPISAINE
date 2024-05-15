@@ -22,8 +22,6 @@ import java.util.ResourceBundle;
 
 public class NutritionistInformationController extends NutritionistHeadController {
     @FXML
-    private Button selectButton;
-    @FXML
     private TextField searchTextField;
     @FXML
     private TableView<Information> informationTableView;

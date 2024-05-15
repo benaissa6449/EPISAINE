@@ -120,7 +120,7 @@
          </ImageView>
          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="404.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../../../../../img/en%20cours.png" />
+               <Image url="@/img/en cours.png" />
             </image>
          </ImageView>
       </AnchorPane>

@@ -19,8 +19,6 @@ import java.util.ResourceBundle;
 
 public class NutritionistClientController extends NutritionistHeadController {
     @FXML
-    private Button selectButton;
-    @FXML
     private TableColumn<String,String> idClientColumn, prenomClientColumn, nomClientColumn, dateClientColumn, poidsClientColumn, genreClientColumn, tailleClientColumn, telephoneClientColumn, mailClientColumn, villeClientColumn, adresseClientColumn, codePostalClientColumn;
     @FXML
     private TableView<Client> clientTableView;
