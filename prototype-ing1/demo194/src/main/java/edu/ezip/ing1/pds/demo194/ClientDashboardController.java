@@ -3,6 +3,7 @@ package edu.ezip.ing1.pds.demo194;
 import edu.ezip.ing1.pds.client.CountTableRow;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -12,6 +13,8 @@ import java.util.ResourceBundle;
 public class ClientDashboardController extends ClientHeadController implements Initializable {
     @FXML
     private TextFlow nbClients, nbWomen, nbMen, nbNutritionists, nbRecipes;
+    @FXML
+    private Button leclerc, superu, franprix, auchan, intermarche, casino;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

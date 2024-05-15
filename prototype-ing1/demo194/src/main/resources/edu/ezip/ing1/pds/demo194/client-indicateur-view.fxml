@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientIndicateurController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientIndicateurController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
          <children>
@@ -120,9 +116,14 @@
          </ImageView>
          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="404.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../../../../../img/en%20cours.png" />
+               <Image url="@/img/en cours.png" />
             </image>
          </ImageView>
+         <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
       </AnchorPane>
    </center>
 </BorderPane>

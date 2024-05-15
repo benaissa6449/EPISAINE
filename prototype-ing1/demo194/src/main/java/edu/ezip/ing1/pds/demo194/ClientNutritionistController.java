@@ -20,8 +20,6 @@ import java.util.ResourceBundle;
 
 public class ClientNutritionistController extends ClientHeadController {
     @FXML
-    private Button selectButton;
-    @FXML
     private TextField searchTextField;
     @FXML
     private TableView<Nutritionniste> nutritionistTableView;
@@ -97,109 +95,6 @@ public class ClientNutritionistController extends ClientHeadController {
         }
         catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    public void updateValue(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        TablePosition tablePosition = nutritionistTableView.getSelectionModel().getSelectedCells().getFirst();
-
-        int row = tablePosition.getRow();
-
-        Nutritionniste nutritionniste = nutritionistTableView.getItems().get(row);
-
-        TableColumn tableColumn = tablePosition.getTableColumn();
-
-        String data = tableColumn.getCellObservableValue(nutritionniste).getValue().toString();
-
-        TextInputDialog textInputDialog = new TextInputDialog("Nouvelle valeur :");
-        textInputDialog.setHeaderText("Ancienne valeur : " + data);
-        textInputDialog.setTitle("Modifier");
-        textInputDialog.showAndWait();
-
-        String columnName = tableColumn.getText();
-
-        Update update;
-        try {
-            switch (columnName) {
-                case "Nom":
-                    update = new Update();
-                    update.setNewColumn("nom_n");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_nutritionniste");
-                    update.setConditionValue(String.valueOf(nutritionniste.getId_nutritionniste()));
-                    UpdateByClient.updateValue("UPDATE_NUTRITIONNISTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Prénom":
-                    update = new Update();
-                    update.setNewColumn("prenom_n");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_nutritionniste");
-                    update.setConditionValue(String.valueOf(nutritionniste.getId_nutritionniste()));
-                    UpdateByClient.updateValue("UPDATE_NUTRITIONNISTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Numéro de téléphone":
-                    update = new Update();
-                    update.setNewColumn("numero_de_telephone_n");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_nutritionniste");
-                    update.setConditionValue(String.valueOf(nutritionniste.getId_nutritionniste()));
-                    UpdateByClient.updateValue("UPDATE_NUTRITIONNISTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                case "Adresse mail":
-                    update = new Update();
-                    update.setNewColumn("mail_n");
-                    update.setNewValue(textInputDialog.getEditor().getText());
-                    update.setConditionColumn("id_nutritionniste");
-                    update.setConditionValue(String.valueOf(nutritionniste.getId_nutritionniste()));
-                    UpdateByClient.updateValue("UPDATE_NUTRITIONNISTE", update);
-                    alert.setHeaderText("Modification effectuée.");
-                    alert.showAndWait();
-                    break;
-                default:
-                    alert.setAlertType(Alert.AlertType.ERROR);
-                    alert.setHeaderText("Valeur non modifiable.");
-                    break;
-            }
-        }
-        catch (Exception e) {
-            System.out.println("...");
-        }
-    }
-
-    public void deleteValue(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        TablePosition tablePosition = nutritionistTableView.getSelectionModel().getSelectedCells().getFirst();
-
-        int row = tablePosition.getRow();
-
-        Nutritionniste nutritionniste = nutritionistTableView.getItems().get(row);
-
-        TableColumn tableColumn = tablePosition.getTableColumn();
-
-        String data = tableColumn.getCellObservableValue(nutritionniste).getValue().toString();
-
-        alert.setHeaderText("Etes-vous sûr de vouloir supprimer cet nutritionniste ?");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.get() == ButtonType.OK) {
-            try {
-                DeleteByClient.deleteValue("DELETE_NUTRITIONNISTE", nutritionniste.getId_nutritionniste());
-                alert.setAlertType(Alert.AlertType.INFORMATION);
-                alert.setHeaderText("Suppression effectuée.");
-                alert.showAndWait();
-            }
-            catch (Exception e) {
-                alert.setAlertType(Alert.AlertType.ERROR);
-                alert.setHeaderText("Erreur de suppression.");
-                alert.showAndWait();
-            }
         }
     }
 }

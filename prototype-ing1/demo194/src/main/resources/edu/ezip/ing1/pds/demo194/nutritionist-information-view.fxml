@@ -117,12 +117,12 @@
                   <TableColumn fx:id="repasColumn" prefWidth="250.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Nombre de repas" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectInformationData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="610.0" mnemonicParsing="false" onAction="#selectInformationData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/selectionner.png" />
                     </image>
@@ -155,6 +155,11 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
+                <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
             </children>
         </AnchorPane>
     </center>

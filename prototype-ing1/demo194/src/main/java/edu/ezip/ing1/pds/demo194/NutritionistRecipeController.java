@@ -23,10 +23,8 @@ import java.util.Optional;
 public class NutritionistRecipeController extends NutritionistHeadController {
     @FXML
     private TextField nomTextField, calorieTextField, instructionsTextField, ingredientsTextField, idNutritionistTextField;
-
     @FXML
     private ComboBox<String> regimeComboBox;
-
     @FXML
     private TableView<Recette> recipeTableView;
     @FXML
@@ -199,9 +197,9 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         textInputDialog.setTitle("Modifier");
         Optional<String> result = textInputDialog.showAndWait();
 
-        String columnName = tableColumn.getText();
-
         if (result.isPresent()) {
+            String columnName = tableColumn.getText();
+
             Update update;
             try {
                 switch (columnName) {
@@ -270,8 +268,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
                         alert.setHeaderText("Valeur non modifiable.");
                         break;
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("...");
             }
         }

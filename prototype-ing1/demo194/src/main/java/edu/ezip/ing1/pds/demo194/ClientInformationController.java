@@ -14,14 +14,9 @@ import java.util.List;
 
 public class ClientInformationController extends ClientHeadController {
     @FXML
-    private Button insertButton, cleanButton;
-
-    @FXML
     private TextField nbDeRepasTextField, idTextField;
-
     @FXML
     private ComboBox<String> butComboBox;
-
     @FXML
     private CheckComboBox<String> allergieCheckComboBox;
 

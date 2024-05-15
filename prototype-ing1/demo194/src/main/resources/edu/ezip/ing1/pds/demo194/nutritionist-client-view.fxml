@@ -124,12 +124,12 @@
                   <TableColumn fx:id="codePostalClientColumn" prefWidth="99.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Code Postal" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="625.0" mnemonicParsing="false" onAction="#selectClientData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="48.0" layoutY="616.0" mnemonicParsing="false" onAction="#selectClientData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="56.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/selectionner.png" />
                     </image>
@@ -162,6 +162,11 @@
                   </HBox>
                </children>
             </Pane>
+                <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
             </children>
         </AnchorPane>
     </center>
