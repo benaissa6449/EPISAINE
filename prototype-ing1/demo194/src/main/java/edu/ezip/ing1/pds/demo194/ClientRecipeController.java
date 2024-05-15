@@ -23,6 +23,7 @@ public class ClientRecipeController extends ClientHeadController {
     private TextField searchTextField;
 
     public void selectRecipeData(ActionEvent actionEvent) {
+        // this method select the recipes from the database and display them on the panel
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             recipeTableView.getSelectionModel().setCellSelectionEnabled(true);
@@ -50,11 +51,12 @@ public class ClientRecipeController extends ClientHeadController {
             instructionsColumn.setCellValueFactory(new PropertyValueFactory<>("Instructions"));
             regimeColumn.setCellValueFactory(new PropertyValueFactory<>("RegimeAlimentaire"));
 
-
+            // display every recipe on the tableview
             for (Recette recette : recettes.getRecettes()) {
                 recipeTableView.getItems().add(recette);
             }
 
+            // this part is used to filter the tableview with the search bar
             FilteredList<Recette> filteredList = new FilteredList<>(recipeTableView.getItems(), p->true);
 
             searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {

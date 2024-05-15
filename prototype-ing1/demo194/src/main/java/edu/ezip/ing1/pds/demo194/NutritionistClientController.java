@@ -24,6 +24,7 @@ public class NutritionistClientController extends NutritionistHeadController {
 
     @FXML
     private void selectClientData(ActionEvent actionEvent) {
+        // select clients data and display them on the panel
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             clientTableView.getSelectionModel().setCellSelectionEnabled(true);
@@ -57,10 +58,12 @@ public class NutritionistClientController extends NutritionistHeadController {
 
             clientTableView.getItems().clear();
 
+            // display every client on the tableview
             for (Client client : clients.getClients()) {
                 clientTableView.getItems().add(client);
             }
 
+            // this part is used to filter the tableview content with the search bar
             FilteredList<Client> filteredList = new FilteredList<>(clientTableView.getItems(), p->true);
 
             searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {

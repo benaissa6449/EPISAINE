@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 public class ClientInsertController extends ClientHeadController {
+    // this class is related to insert the client into the sql table
+
     @FXML
     private TextField prenomClient, nomClient, poidsClient, tailleClient, numClient, mailClient, villeClient, adresseClient, codePostalClient;
     @FXML
@@ -17,9 +19,9 @@ public class ClientInsertController extends ClientHeadController {
     @FXML
     private DatePicker dateClient;
 
+    // this method check if every field content is correct, then call the insert method
     public void insertClientData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        // to make sure each parameter is not empty or null
         try {
             String nom = nomClient.getText().trim();
             String prenom = prenomClient.getText().trim();
@@ -44,7 +46,7 @@ public class ClientInsertController extends ClientHeadController {
             alert.showAndWait();
         }
     }
-
+    // this method insert the client into the sql table
     public void insertClientIntoTable(String nom, String prenom, Date date, BigDecimal poids, String genre, Integer taille, String numero, String mail, String ville, String adresse, String codePostal) {
         // if true, then insert the value
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -102,6 +104,8 @@ public class ClientInsertController extends ClientHeadController {
             }
         }
     }
+
+    // check if every string is not empty or not defined
     public boolean assertNotNull(String ... values) {
         boolean res = true;
         for (String value : values) {
@@ -112,6 +116,7 @@ public class ClientInsertController extends ClientHeadController {
         return res;
     }
 
+    // empty every field
     public void cleanFields(ActionEvent actionEvent) {
         prenomClient.clear();
         nomClient.clear();

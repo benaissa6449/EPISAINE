@@ -31,6 +31,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
     @FXML
     private TextField searchTextField;
 
+    // insert recipe into the database
     public void insertRecipeData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {
@@ -88,6 +89,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         return res;
     }
 
+    // clean every field
     public void cleanFields(ActionEvent actionEvent) {
         idNutritionistTextField.clear();
         nomTextField.clear();
@@ -97,6 +99,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         regimeComboBox.getSelectionModel().clearSelection();
     }
 
+    // select recipe data from the database and display them on the tableview
     public void selectRecipeData(ActionEvent actionEvent) {
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -177,6 +180,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         }
     }
 
+    // update the database's table directly from the tableview
     public void updateValue(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();
@@ -271,6 +275,7 @@ public class NutritionistRecipeController extends NutritionistHeadController {
         }
     }
 
+    // delete an object from the database
     public void deleteValue(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         TablePosition tablePosition = recipeTableView.getSelectionModel().getSelectedCells().getFirst();

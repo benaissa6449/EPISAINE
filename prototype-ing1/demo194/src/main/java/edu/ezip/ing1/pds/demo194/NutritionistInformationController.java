@@ -26,6 +26,7 @@ public class NutritionistInformationController extends NutritionistHeadControlle
     private  TableColumn<Information, String> butColumn, allergieColumn;
 
     public void selectInformationData(ActionEvent actionEvent) {
+    // select the client's information from the database and display it on the panel
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             informationTableView.getSelectionModel().setCellSelectionEnabled(true);
@@ -92,7 +93,7 @@ public class NutritionistInformationController extends NutritionistHeadControlle
         }
     }
 
-
+    // this method allows us to update the content of the database table from the tableview
     public void updateValue(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         TablePosition tablePosition = informationTableView.getSelectionModel().getSelectedCells().getFirst();
@@ -166,6 +167,7 @@ public class NutritionistInformationController extends NutritionistHeadControlle
         }
     }
 
+    // this method allows us to delete a value in the database table from the tableview
     public void deleteValue(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         TablePosition tablePosition = informationTableView.getSelectionModel().getSelectedCells().getFirst();

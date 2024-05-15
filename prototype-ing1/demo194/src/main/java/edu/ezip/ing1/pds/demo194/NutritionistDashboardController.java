@@ -23,6 +23,7 @@ public class NutritionistDashboardController extends NutritionistHeadController 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // initialize the values shown in each box, related to the information about the application's user
         try {
             Integer nbC = CountTableRow.getRow("COUNT_CLIENTS");
             Integer nbW = CountTableRow.getRow("COUNT_WOMEN");
@@ -50,6 +51,7 @@ public class NutritionistDashboardController extends NutritionistHeadController 
         }
     }
 
+    // methods to open the hyperlink related to the button's icon
     public void leclercHyperlink(ActionEvent actionEvent) {
         try {
             URI url = new URI("https://www.e.leclerc");

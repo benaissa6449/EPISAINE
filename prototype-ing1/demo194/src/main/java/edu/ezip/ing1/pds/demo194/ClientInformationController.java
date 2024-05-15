@@ -12,6 +12,7 @@ import org.controlsfx.control.CheckComboBox;
 import java.util.List;
 
 public class ClientInformationController extends ClientHeadController {
+    // this class is related to insert the client's information
     @FXML
     private TextField nbDeRepasTextField, idTextField;
     @FXML
@@ -19,6 +20,7 @@ public class ClientInformationController extends ClientHeadController {
     @FXML
     private CheckComboBox<String> allergieCheckComboBox;
 
+    // this method check if every field content is correct, then call the insert method
     public void insertInformationData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {
@@ -39,6 +41,7 @@ public class ClientInformationController extends ClientHeadController {
         }
     }
 
+    // this method insert the information into the sql table
     public void insertInformationIntoTable(Integer nbDeRepas, Integer idClient, String but, List<String> allergies) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {
@@ -61,6 +64,7 @@ public class ClientInformationController extends ClientHeadController {
         }
     }
 
+    // empty every field
     public void cleanFields(ActionEvent actionEvent) {
         nbDeRepasTextField.clear();
         idTextField.clear();

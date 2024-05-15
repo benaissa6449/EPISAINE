@@ -22,6 +22,7 @@ public class ClientNutritionistController extends ClientHeadController {
 
     @FXML
     private void selectNutritionistData(ActionEvent actionEvent) {
+        // this method select the nutritionists from the database and display them on the panel
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             nutritionistTableView.getSelectionModel().setCellSelectionEnabled(true);
@@ -48,10 +49,12 @@ public class ClientNutritionistController extends ClientHeadController {
 
             nutritionistTableView.getItems().clear();
 
+            // insert every value from the database into the tableview object
             for (Nutritionniste nutritionniste : nutritionnistes.getNutritionnistes()) {
                 nutritionistTableView.getItems().add(nutritionniste);
             }
 
+            // this part is used to filter the table with the search bar
             FilteredList<Nutritionniste> filteredList = new FilteredList<>(nutritionistTableView.getItems(), p->true);
 
             searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class NutritionistHeadController {
+    // this is the head class of the nutritionist view, it defines the controller of each button in the left part menu, to switch between each panel
 
     @FXML
     Button dashboardButton, clientButton, informationButton, recetteButton, nutritionistButton, indicateurButton, quitterButton;

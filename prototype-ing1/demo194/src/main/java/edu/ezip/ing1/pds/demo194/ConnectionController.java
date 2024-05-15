@@ -16,6 +16,7 @@ public class ConnectionController {
 
     @FXML
     void switchToClientView(ActionEvent actionEvent) throws IOException {
+        // switch to the client view of the application
         Parent root = FXMLLoader.load(getClass().getResource("client-dashboard-view.fxml"));
         Stage stage = (Stage) clientButton.getScene().getWindow();
         stage.setScene(new Scene(root, 1280, 720));
@@ -23,6 +24,7 @@ public class ConnectionController {
 
     @FXML
     void switchToNutritionistView(ActionEvent actionEvent) throws IOException {
+        // switch to the nutritionist view of the application
         Parent root = FXMLLoader.load(getClass().getResource("nutritionist-dashboard-view.fxml"));
         Stage stage = (Stage) nutritionistButton.getScene().getWindow();
         stage.setScene(new Scene(root, 1280, 720));

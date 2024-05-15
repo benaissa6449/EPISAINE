@@ -11,6 +11,7 @@ public class NutritionistInsertController extends NutritionistHeadController {
     @FXML
     private TextField prenomTextField, nomTextField, numeroTextField, mailTextField;
 
+    // insert the nutritionist data into the database
     public void insertNutritionistData(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         try {
@@ -66,6 +67,7 @@ public class NutritionistInsertController extends NutritionistHeadController {
         return res;
     }
 
+    // clean every field
     public void cleanFields(ActionEvent actionEvent) {
         prenomTextField.clear();
         nomTextField.clear();
