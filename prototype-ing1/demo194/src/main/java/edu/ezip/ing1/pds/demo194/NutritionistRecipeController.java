@@ -1,6 +1,5 @@
 package edu.ezip.ing1.pds.demo194;
 
-import edu.ezip.ing1.pds.business.dto.Information;
 import edu.ezip.ing1.pds.business.dto.Recette;
 import edu.ezip.ing1.pds.business.dto.Recettes;
 import edu.ezip.ing1.pds.business.dto.Update;
@@ -15,9 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import org.controlsfx.control.CheckComboBox;
 
-import java.util.List;
 import java.util.Optional;
 
 public class NutritionistRecipeController extends NutritionistHeadController {

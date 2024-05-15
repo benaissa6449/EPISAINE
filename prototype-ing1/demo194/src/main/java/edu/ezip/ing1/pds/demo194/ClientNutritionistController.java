@@ -1,22 +1,14 @@
 package edu.ezip.ing1.pds.demo194;
 
 import edu.ezip.ing1.pds.business.dto.*;
-import edu.ezip.ing1.pds.client.DeleteByClient;
-import edu.ezip.ing1.pds.client.SelectClient;
 import edu.ezip.ing1.pds.client.SelectNutritionist;
-import edu.ezip.ing1.pds.client.UpdateByClient;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-
-import java.net.URL;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
 public class ClientNutritionistController extends ClientHeadController {
     @FXML

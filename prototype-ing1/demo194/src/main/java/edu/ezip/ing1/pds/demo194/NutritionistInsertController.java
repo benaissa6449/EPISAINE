@@ -1,12 +1,10 @@
 package edu.ezip.ing1.pds.demo194;
 
 import edu.ezip.ing1.pds.business.dto.Nutritionniste;
-import edu.ezip.ing1.pds.business.dto.Recette;
 import edu.ezip.ing1.pds.client.InsertByClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class NutritionistInsertController extends NutritionistHeadController {

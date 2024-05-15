@@ -159,7 +159,7 @@
                   </FXCollections>
                </items>
             </ComboBox>
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+            <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer" onAction="#insertRecipeData">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
