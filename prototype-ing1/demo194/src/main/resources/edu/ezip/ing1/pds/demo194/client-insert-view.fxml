@@ -224,7 +224,7 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="4.0" layoutY="657.0" prefHeight="36.0" prefWidth="1100.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
+            <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
