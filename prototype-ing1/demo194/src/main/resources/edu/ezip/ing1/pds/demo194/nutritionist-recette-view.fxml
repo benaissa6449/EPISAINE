@@ -105,42 +105,42 @@
    <center>
       <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="27.0" layoutY="155.0" prefHeight="31.0" prefWidth="170.0" text="ID Nutritionniste :">
+            <Label layoutX="27.0" layoutY="109.0" prefHeight="31.0" prefWidth="170.0" text="ID Nutritionniste :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="idNutritionistTextField" layoutX="206.0" layoutY="156.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir l'id du nutritionniste" />
-            <Label layoutX="27.0" layoutY="193.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette :">
+            <TextField fx:id="idNutritionistTextField" layoutX="206.0" layoutY="109.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir l'id du nutritionniste" />
+            <Label layoutX="27.0" layoutY="145.0" prefHeight="31.0" prefWidth="170.0" text="Nom Recette :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="nomTextField" layoutX="206.0" layoutY="194.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nom de recette" />
-            <Label layoutX="27.0" layoutY="233.0" prefHeight="31.0" prefWidth="170.0" text="Nombre de calories  :">
+            <TextField fx:id="nomTextField" layoutX="206.0" layoutY="146.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nom de recette" />
+            <Label layoutX="27.0" layoutY="179.0" prefHeight="31.0" prefWidth="170.0" text="Nombre de calories  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="calorieTextField" layoutX="206.0" layoutY="233.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nombre de calories" />
-            <Label layoutX="423.0" layoutY="153.0" prefHeight="31.0" prefWidth="170.0" text="Ingrédient :">
+            <TextField fx:id="calorieTextField" layoutX="206.0" layoutY="184.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le nombre de calories" />
+            <Label layoutX="423.0" layoutY="109.0" prefHeight="31.0" prefWidth="170.0" text="Ingrédient :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="ingredientsTextField" layoutX="602.0" layoutY="154.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les ingrédient" />
-            <Label layoutX="423.0" layoutY="193.0" prefHeight="31.0" prefWidth="170.0" text="Instructions : ">
+            <TextField fx:id="ingredientsTextField" layoutX="602.0" layoutY="110.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les ingrédient" />
+            <Label layoutX="423.0" layoutY="146.0" prefHeight="31.0" prefWidth="170.0" text="Instructions : ">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="instructionsTextField" layoutX="602.0" layoutY="194.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les instructions" />
-            <Label layoutX="423.0" layoutY="233.0" prefHeight="31.0" prefWidth="170.0" text="Régime Alimentaire :">
+            <TextField fx:id="instructionsTextField" layoutX="602.0" layoutY="147.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir les instructions" />
+            <Label layoutX="423.0" layoutY="184.0" prefHeight="31.0" prefWidth="170.0" text="Régime Alimentaire :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <ComboBox fx:id="regimeComboBox" layoutX="602.0" layoutY="234.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le régime alimentaire">
+            <ComboBox fx:id="regimeComboBox" layoutX="602.0" layoutY="185.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir le régime alimentaire">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="normal" />
@@ -205,8 +205,8 @@
                   <TableColumn fx:id="idNutritionistColumn" prefWidth="165.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Id Nutritionniste" />
                </columns>
             </TableView>
-            <Separator layoutX="15.0" layoutY="275.0" prefHeight="3.0" prefWidth="1065.0" />
-            <Button alignment="CENTER_RIGHT" layoutX="548.0" layoutY="622.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="107.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier">
+            <Separator layoutX="16.0" layoutY="229.0" prefHeight="3.0" prefWidth="1065.0" />
+            <Button alignment="CENTER_RIGHT" layoutX="548.0" layoutY="622.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="107.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Modifier" onAction="#updateValue">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -228,7 +228,7 @@
                   <Image url="@/img/Modifier.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER_RIGHT" layoutX="685.0" layoutY="622.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="113.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer" onAction="#deleteValue">
+            <Button alignment="CENTER_RIGHT" layoutX="685.0" layoutY="622.0" mnemonicParsing="false" onAction="#deleteValue" prefHeight="44.0" prefWidth="113.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Supprimer">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -236,6 +236,13 @@
             <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="693.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/img/supprimer.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="searchTextField" layoutX="16.0" layoutY="238.0" prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="32.0" style="-fx-background-color: #D4EFDF;" />
+            <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="277.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img/chercher.png" />
                </image>
             </ImageView>
          </children>
