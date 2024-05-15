@@ -236,7 +236,7 @@
                                  <Font size="14.0" />
                               </font>
                            </Label>
-                           <Button fx:id="auchan" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#auchanHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -248,7 +248,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="leclerc" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#leclercHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -260,7 +260,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="casino" alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#casinoHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -272,7 +272,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="intermarche" alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#intermarcheHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -284,7 +284,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="superu" alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#superuHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>
@@ -296,7 +296,7 @@
                                  </ImageView>
                               </graphic>
                            </Button>
-                           <Button fx:id="franprix" alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                           <Button alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#franprixHyperlink" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
                               <font>
                                  <Font name="Gill Sans MT Bold" size="15.0" />
                               </font>

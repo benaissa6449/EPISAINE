@@ -1,20 +1,25 @@
 package edu.ezip.ing1.pds.demo194;
 
 import edu.ezip.ing1.pds.client.CountTableRow;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ClientDashboardController extends ClientHeadController implements Initializable {
     @FXML
     private TextFlow nbClients, nbWomen, nbMen, nbNutritionists, nbRecipes;
-    @FXML
-    private Button leclerc, superu, franprix, auchan, intermarche, casino;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,6 +47,114 @@ public class ClientDashboardController extends ClientHeadController implements I
         }
         catch (Exception e) {
             System.out.println("Erreur");
+        }
+    }
+
+    public void leclercHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.e.leclerc");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
+        }
+    }
+
+    public void superuHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.magasins-u.com");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
+        }
+    }
+
+    public void intermarcheHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.intermarche.com");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
+        }
+    }
+
+    public void auchanHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.auchan.fr");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
+        }
+    }
+
+    public void franprixHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.franprix.fr");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
+        }
+    }
+
+    public void casinoHyperlink(ActionEvent actionEvent) {
+        try {
+            URI url = new URI("https://www.supercasino.fr");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Voulez-vous ouvrir la page " + url.toString());
+            Optional<ButtonType> res = alert.showAndWait();
+            if (res.get() == ButtonType.OK) {
+                Desktop.getDesktop().browse(url);
+            }
+        }
+        catch (URISyntaxException | IOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur système");
+            alert.setHeaderText("Veuillez contacter un administrateur.");
         }
     }
 }
