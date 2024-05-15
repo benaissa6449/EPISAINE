@@ -138,19 +138,19 @@
             </Label>
             <CheckComboBox fx:id="allergieCheckComboBox" layoutX="561.0" layoutY="288.0" prefHeight="25.0" prefWidth="260.0" >
                <items>
-                     <String fx:value="oeuf" />
-                     <String fx:value="lait" />
-                     <String fx:value="moutarde" />
-                     <String fx:value="arachide" />
-                     <String fx:value="mollusque" />
-                     <String fx:value="crustacé" />
-                     <String fx:value="poisson" />
-                     <String fx:value="graine de sesame" />
-                     <String fx:value="soja" />
-                     <String fx:value="sulfite" />
-                     <String fx:value="noix" />
-                     <String fx:value="blé" />
-                     <String fx:value="trucicale" />
+                  <String fx:value="oeuf" />
+                  <String fx:value="lait" />
+                  <String fx:value="moutarde" />
+                  <String fx:value="arachide" />
+                  <String fx:value="mollusque" />
+                  <String fx:value="crustacé" />
+                  <String fx:value="poisson" />
+                  <String fx:value="graine de sesame" />
+                  <String fx:value="soja" />
+                  <String fx:value="sulfite" />
+                  <String fx:value="noix" />
+                  <String fx:value="blé" />
+                  <String fx:value="trucicale" />
                </items>
             </CheckComboBox>
             <Label layoutX="399.0" layoutY="325.0" prefHeight="15.0" prefWidth="150.0" text="Nombre de repas :">
