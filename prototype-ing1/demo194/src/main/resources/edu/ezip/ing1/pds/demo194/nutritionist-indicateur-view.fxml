@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" type="BorderPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistInformationController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistIndicateurController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
@@ -140,4 +140,4 @@
             </children>
         </AnchorPane>
     </center>
-</fx:root>
+</BorderPane>

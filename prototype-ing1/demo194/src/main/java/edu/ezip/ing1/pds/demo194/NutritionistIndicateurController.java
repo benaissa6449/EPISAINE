@@ -1,18 +1,19 @@
 package edu.ezip.ing1.pds.demo194;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NutritionistIndicateurController extends NutritionistHeadController {
+public class NutritionistIndicateurController extends NutritionistHeadController implements Initializable {
 
     @FXML
     private LineChart<?, ?> lineChart;
 
-    @FXML // Ajout de l'annotation @FXML
+    @Override // Ajout de l'annotation @FXML
     public void initialize(URL location, ResourceBundle resources) {
         initLineChart();
     }
