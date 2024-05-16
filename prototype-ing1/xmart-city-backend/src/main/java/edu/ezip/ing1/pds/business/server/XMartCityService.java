@@ -27,9 +27,13 @@ public class XMartCityService {
 
         private enum Queries {
             SELECT_ALL_CLIENTS("SELECT t.id_client, t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t"),
+            SELECT_SPECIFIC_CLIENT("SELECT t.id_client, t.nom_client, t.prenom_client, t.date_de_naissance_client, t.poids, t.genre, t.taille, t.numero_de_telephone_client, t.mail_client, t.ville, t.adresse, t.code_postal FROM \"episaine-schema\".clients t WHERE t.id_client = ?"),
             SELECT_ALL_RECETTES("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t"),
             SELECT_ALL_INFORMATIONS("SELECT t.id_info, t.id_client, t.but, t.allergie, t.nbderepas FROM \"episaine-schema\".informations t"),
             SELECT_ALL_NUTRITIONNISTES("SELECT t.id_nutritionniste, t.nom_n, t.prenom_n, t.numero_de_telephone_n, t.mail_n FROM \"episaine-schema\".nutritionnistes t"),
+            SELECT_SPECIFIC_RECIPES_NOT_ABOVE("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t WHERE t.nombre_de_calories < ?"),
+            SELECT_SPECIFIC_RECIPES_NOT_BELOW("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t WHERE t.nombre_de_calories > ?"),
+            SELECT_SPECIFIC_RECIPES_BETWEEN  ("SELECT t.id_recette, t.nom_recette, t.nombre_de_calories, t.ingredients, t.instructions, t.regimealimentaire, t.id_nutritionniste FROM \"episaine-schema\".recettes t WHERE t.nombre_de_calories > ? AND t.nombre_de_calories < ?"),
 
             COUNT_CLIENTS("SELECT count(*) FROM \"episaine-schema\".clients"),
             COUNT_WOMEN("SELECT count(*) FROM \"episaine-schema\".clients where genre = 'Femme'"),
@@ -96,6 +100,22 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(clients));
+                    break;
+
+                case "SELECT_SPECIFIC_CLIENT" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    String requestConditions = request.getRequestBody();
+                    pstmt = connection.prepareStatement(Queries.SELECT_SPECIFIC_CLIENT.query);
+                    pstmt.setInt(1, Integer.parseInt(requestConditions));
+                    res = pstmt.executeQuery();
+                    Client specificClient = new Client();
+                    if (res.next()) {
+                        specificClient = new Client().build(res);
+                    }
+                    logger.info(request.getRequestOrder() + " : precessing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(specificClient));
                     break;
 
                 case "COUNT_CLIENTS" :
@@ -206,6 +226,59 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(recettes));
+                    break;
+
+                case "SELECT_SPECIFIC_RECIPES_NOT_ABOVE" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    String requestConditionsAbove = request.getRequestBody();
+                    pstmt = connection.prepareStatement(Queries.SELECT_SPECIFIC_RECIPES_NOT_ABOVE.query);
+                    pstmt.setInt(1, Integer.parseInt(requestConditionsAbove));
+                    res = pstmt.executeQuery();
+                    Recettes recettesAbove = new Recettes();
+                    while (res.next()) {
+                        Recette recetteAbove = new Recette().build(res);
+                        recettesAbove.add(recetteAbove);
+                    }
+                    logger.info(request.getRequestOrder() + " : precessing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(recettesAbove));
+                    break;
+
+                case "SELECT_SPECIFIC_RECIPES_BETWEEN" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    String requestConditionsBetween = request.getRequestBody();
+                    String[] requestConditionsValueBetween = requestConditionsBetween.split(",");
+                    pstmt = connection.prepareStatement(Queries.SELECT_SPECIFIC_RECIPES_BETWEEN.query);
+                    pstmt.setInt(1, Integer.parseInt(requestConditionsValueBetween[0].substring(1)));
+                    pstmt.setInt(2, Integer.parseInt(requestConditionsValueBetween[1].substring(0, requestConditionsValueBetween[1].length()-1)));
+                    res = pstmt.executeQuery();
+                    Recettes recettesBetween = new Recettes();
+                    while (res.next()) {
+                        Recette recetteBetween = new Recette().build(res);
+                        recettesBetween.add(recetteBetween);
+                    }
+                    logger.info(request.getRequestOrder() + " : precessing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(recettesBetween));
+                    break;
+
+                case "SELECT_SPECIFIC_RECIPES_NOT_BELOW" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    String requestConditionsBelow = request.getRequestBody();
+                    pstmt = connection.prepareStatement(Queries.SELECT_SPECIFIC_RECIPES_NOT_BELOW.query);
+                    pstmt.setInt(1, Integer.parseInt(requestConditionsBelow));
+                    res = pstmt.executeQuery();
+                    Recettes recettesBelow = new Recettes();
+                    while (res.next()) {
+                        Recette recetteBelow = new Recette().build(res);
+                        recettesBelow.add(recetteBelow);
+                    }
+                    logger.info(request.getRequestOrder() + " : precessing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(recettesBelow));
                     break;
 
                 case "COUNT_RECETTES" :

@@ -42,7 +42,7 @@ public class ClientRecipeController extends ClientHeadController {
 
             recipeTableView.getItems().clear();
 
-            Recettes recettes = SelectRecipe.getValue("SELECT_ALL_RECETTES");
+            Recettes recettes = SelectRecipe.getValue("SELECT_ALL_RECETTES", null);
             idRecetteColumn.setCellValueFactory(new PropertyValueFactory<>("Id_recette"));
             idNutritionistColumn.setCellValueFactory(new PropertyValueFactory<>("Id_nutritionniste"));
             nomColumn.setCellValueFactory(new PropertyValueFactory<>("Nom_recette"));
