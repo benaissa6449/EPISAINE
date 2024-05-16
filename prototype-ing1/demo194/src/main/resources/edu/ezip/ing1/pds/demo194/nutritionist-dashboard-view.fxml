@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistDashboardController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
@@ -38,7 +38,7 @@
                             <graphic>
                                 <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@/img/information.png" />
+                                        <Image url="@../../../../../img/information.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -116,36 +116,29 @@
                         <top>
                             <HBox prefHeight="103.0" prefWidth="1110.0" BorderPane.alignment="CENTER" />
                         </top>
-                        <bottom>
-                            <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
-                                <font>
-                                    <Font name="System Bold" size="12.0" />
-                                </font>
-                            </Label>
-                        </bottom>
-                        <right>
+                        <left>
                             <AnchorPane prefHeight="614.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                                 <children>
-                                    <Label layoutX="34.0" layoutY="26.0" style="-fx-font-weight: bold; -fx-text-fill: #5094AE;" text="Avec EPISAINE, manger sainement n'a jamais été aussi simple ! ">
+                                    <Label layoutX="172.0" layoutY="33.0" style="-fx-font-weight: bold; -fx-text-fill: #5094AE;" text="Avec EPISAINE, manger sainement n'a jamais été aussi simple ! ">
                                         <font>
                                             <Font name="Century Gothic Bold" size="20.0" />
                                         </font>
                                     </Label>
-                                    <Label layoutX="34.0" layoutY="68.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Explorez notre sélection de recettes nutritives et savoureuses directement depuis notre Application." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
+                                    <Label layoutX="142.0" layoutY="69.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Explorez notre sélection de recettes nutritives et savoureuses directement depuis notre Application." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                                         <font>
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
                                     <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="696.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../../../img/pizza.png" />
+                                            <Image url="@/img/pizza.png" />
                                         </image>
                                     </ImageView>
-                                    <Pane layoutX="40.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
+                                    <Pane layoutX="62.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 20px;">
                                         <children>
-                                            <Label layoutX="-1.0" layoutY="14.0" prefHeight="39.0" prefWidth="141.0" text="Nombre des Recettes" textFill="#a2e97a">
+                                            <Label layoutX="5.0" layoutY="14.0" prefHeight="39.0" prefWidth="141.0" text="Nombre des Recettes" textFill="#a2e97a">
                                                 <font>
-                                                    <Font name="Impact" size="16.0" />
+                                                    <Font name="Impact" size="15.0" />
                                                 </font>
                                             </Label>
                                             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="34.0" prefHeight="39.0" prefWidth="134.0" text="existante " textFill="#a2e97a">
@@ -153,10 +146,10 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbRecipes" layoutX="28.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-alignment: center; -fx-font-size: 65;" textAlignment="CENTER" />
+                                            <TextFlow fx:id="nbRecipes" layoutX="28.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center; -fx-border-color: #000000; -fx-border-radius: 20px; -fx-background-radius: 20px;" />
                                         </children>
                                     </Pane>
-                                    <Pane layoutX="220.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
+                                    <Pane layoutX="242.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 20px;">
                                         <children>
                                             <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="39.0" prefWidth="134.0" text="Nombre de Clients" textFill="#a2e97a">
                                                 <font>
@@ -168,149 +161,156 @@
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbClients" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-alignment: center; -fx-font-size: 65;" textAlignment="CENTER" />
+                                            <TextFlow fx:id="nbClients" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center; -fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
                                         </children>
                                     </Pane>
-                                    <Pane layoutX="400.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
+                                    <Pane layoutX="422.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 20px;">
                                         <children>
-                                            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="39.0" prefWidth="134.0" text="Nombre de femmes" textFill="#a2e97a">
+                                            <Label alignment="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="39.0" prefWidth="134.0" text="Nombre des femme" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="34.0" prefHeight="39.0" prefWidth="134.0" text="présentes" textFill="#a2e97a">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="34.0" prefHeight="39.0" prefWidth="134.0" text="Présentes" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbWomen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-alignment: center; -fx-font-size: 65;" textAlignment="CENTER" />
+                                            <TextFlow fx:id="nbWomen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center; -fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
                                         </children>
                                     </Pane>
-                                    <Pane layoutX="580.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
+                                    <Pane layoutX="602.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 20px;">
                                         <children>
-                                            <Label layoutX="14.0" layoutY="15.0" prefHeight="39.0" prefWidth="139.0" text="Nombre d'hommes" textFill="#a2e97a">
+                                            <Label layoutX="1.0" layoutY="15.0" prefHeight="39.0" prefWidth="139.0" text="Nombre des hommes" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="34.0" prefHeight="39.0" prefWidth="135.0" text="présents" textFill="#a2e97a">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="34.0" prefHeight="39.0" prefWidth="135.0" text="Présents" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbMen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-alignment: center; -fx-font-size: 65;" textAlignment="CENTER" />
+                                            <TextFlow fx:id="nbMen" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center; -fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
                                         </children>
                                     </Pane>
-                                    <Pane layoutX="760.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px;">
+                                    <Pane layoutX="782.0" layoutY="110.0" prefHeight="200.0" prefWidth="140.0" style="-fx-background-color: #467AA8; -fx-background-radius: 20px; -fx-border-color: #000000; -fx-border-radius: 20px;">
                                         <children>
-                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="40.0" prefWidth="134.0" text="Nombre de" textFill="#a2e97a">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="14.0" prefHeight="40.0" prefWidth="134.0" text="Nombre des " textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="35.0" prefHeight="39.0" prefWidth="134.0" text="nutritionnistes" textFill="#a2e97a">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="35.0" prefHeight="39.0" prefWidth="134.0" text="Nutritionnistes" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="55.0" prefHeight="39.0" prefWidth="134.0" text="présents" textFill="#a2e97a">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="55.0" prefHeight="39.0" prefWidth="134.0" text="Présents" textFill="#a2e97a">
                                                 <font>
                                                     <Font name="Impact" size="16.0" />
                                                 </font>
                                             </Label>
-                                            <TextFlow fx:id="nbNutritionists" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center;" textAlignment="CENTER" />
+                                            <TextFlow fx:id="nbNutritionists" layoutX="25.0" layoutY="90.0" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #a2e97a; -fx-font-size: 65; -fx-alignment: center; -fx-border-color: #000000; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
                                         </children>
                                     </Pane>
-                                    <Label layoutX="14.0" layoutY="326.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Retrouvez EPISAINE dans toutes les grandes surfaces de la région IDF et profitez de nos recettes saines et inspirantes," textFill="#245161" textOverrun="LEADING_ELLIPSIS">
+                                    <Label contentDisplay="CENTER" layoutX="84.0" layoutY="336.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Retrouvez EPISAINE dans toutes les grandes surfaces de la région IDF et profitez de nos recettes saines et inspirantes," textAlignment="CENTER" textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                                         <font>
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
-                                    <Label layoutX="14.0" layoutY="346.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="en partenariat avec les leaders de l'alimentation saine." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
+                                    <Label contentDisplay="CENTER" layoutX="292.0" layoutY="357.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="en partenariat avec les leaders de l'alimentation saine." textAlignment="CENTER" textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                                         <font>
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
-                                    <Label layoutX="14.0" layoutY="450.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-font-weight: Bold;" text="Un grand merci à nos sponsors qui ont rendu possible la création de cette application exceptionnelle." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
+                                    <Label layoutX="206.0" layoutY="502.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="20.0" prefWidth="667.0" style="-fx-font-weight: Bold;" text="Un grand merci à nos sponsors qui ont rendu possible la création de cette application exceptionnelle." textFill="#245161" textOverrun="LEADING_ELLIPSIS">
                                         <font>
                                             <Font size="14.0" />
                                         </font>
                                     </Label>
-                                    <Button alignment="CENTER_RIGHT" layoutX="14.0" layoutY="367.0" mnemonicParsing="false" onAction="#auchanHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="75.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #D4EFDF;">
-                                                <image>
-                                                    <Image url="@/img/Auchan.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button alignment="CENTER_RIGHT" layoutX="180.0" layoutY="367.0" mnemonicParsing="false" onAction="#leclercHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@/img/Leclerc.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button alignment="CENTER_RIGHT" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#casinoHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="53.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@/img/casino_supermarche_logo.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button alignment="CENTER_RIGHT" layoutX="523.0" layoutY="369.0" mnemonicParsing="false" onAction="#intermarcheHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="49.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@/img/intermarche.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button alignment="CENTER_RIGHT" layoutX="696.0" layoutY="369.0" mnemonicParsing="false" onAction="#superuHyperlink" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="54.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@/img/Super-U.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button alignment="CENTER_RIGHT" layoutX="862.0" layoutY="369.0" mnemonicParsing="false" onAction="#franprixHyperlink" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
-                                        <font>
-                                            <Font name="Gill Sans MT Bold" size="15.0" />
-                                        </font>
-                                        <graphic>
-                                            <ImageView fitHeight="59.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                                                <image>
-                                                    <Image url="@/img/franprix.png" />
-                                                </image>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
+                           <Button fx:id="auchan" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="404.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="75.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #D4EFDF;">
+                                              <image>
+                                                  <Image url="@/img/Auchan.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="leclerc" alignment="CENTER_RIGHT" layoutX="206.0" layoutY="405.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@/img/Leclerc.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="casino" alignment="CENTER_RIGHT" layoutX="373.0" layoutY="404.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="53.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@/img/casino_supermarche_logo.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="intermarche" alignment="CENTER_RIGHT" layoutX="549.0" layoutY="406.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="49.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../../../img/intermarche.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="superu" alignment="CENTER_RIGHT" layoutX="722.0" layoutY="404.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="54.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@/img/Super-U.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
+                           <Button fx:id="franprix" alignment="CENTER_RIGHT" layoutX="879.0" layoutY="406.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #D4EFDF; -fx-border-color: #000000; -fx-border-radius: 15;">
+                              <font>
+                                 <Font name="Gill Sans MT Bold" size="15.0" />
+                              </font>
+                              <graphic>
+                                          <ImageView fitHeight="59.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@/img/franprix.png" />
+                                              </image>
+                                          </ImageView>
+                              </graphic>
+                           </Button>
                                 </children>
                             </AnchorPane>
-                        </right>
+                        </left>
+                        <bottom>
+                            <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Label>
+                        </bottom>
                     </BorderPane>
                 </children>
             </AnchorPane>
