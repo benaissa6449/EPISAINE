@@ -110,32 +110,34 @@
         </VBox>
     </left>
     <center>
-        <AnchorPane prefHeight="700.0" prefWidth="1077.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="400.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="112.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="nutritionistTableView" layoutX="14.0" layoutY="183.0" prefHeight="400.0" prefWidth="1048.0" style="-fx-background-color: #EAECEE;">
+                <TableView fx:id="nutritionistTableView" layoutX="9.0" layoutY="185.0" prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
                     <columns>
                         <TableColumn fx:id="idNutritionistColumn" prefWidth="192.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Nutritionniste" />
                         <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="220.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
                         <TableColumn fx:id="prenomColumn" prefWidth="225.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Prénom" />
                         <TableColumn fx:id="telephoneColumn" prefWidth="217.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Numéro de téléphone" />
-                        <TableColumn fx:id="mailColumn" prefWidth="190.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse mail" />
+                        <TableColumn fx:id="mailColumn" prefWidth="244.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse mail" />
                     </columns>
                 </TableView>
-                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="610.0" mnemonicParsing="false" onAction="#selectNutritionistData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+                <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectNutritionistData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/selectionner.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="48.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/selectionner.png" />
-                    </image>
-                </ImageView>
             <Label layoutX="187.0" layoutY="40.0" prefHeight="35.0" prefWidth="703.0" text="À la recherche d'un nutritionniste pour vous aider à atteindre vos objectifs de santé ? " textFill="#245161">
                <font>
                   <Font name="Impact" size="20.0" />
@@ -146,7 +148,7 @@
                   <Font name="Impact" size="14.0" />
                </font>
             </Label>
-            <Pane layoutX="410.0" layoutY="125.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
+            <Pane layoutX="420.0" layoutY="125.0" prefHeight="34.0" prefWidth="289.0" style="-fx-background-color: #D4EFDF;">
                <children>
                   <HBox layoutY="-2.0" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: #D4EFDF;">
                      <children>

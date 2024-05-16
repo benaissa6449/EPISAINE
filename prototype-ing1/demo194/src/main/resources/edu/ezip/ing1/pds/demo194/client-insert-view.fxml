@@ -195,7 +195,7 @@
                </font>
             </Label>
             <TextField fx:id="codePostalClient" layoutX="793.0" layoutY="371.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre code postal" />
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="188.0" layoutY="592.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer ">
+            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#insertClientData" prefHeight="39.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Enregistrer ">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -207,7 +207,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="339.0" layoutY="592.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+            <Button alignment="CENTER_RIGHT" layoutX="190.0" layoutY="620.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Vider le formulaire">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>

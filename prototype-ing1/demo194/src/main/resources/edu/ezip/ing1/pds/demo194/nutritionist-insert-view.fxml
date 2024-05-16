@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistInsertController">
+<BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.NutritionistInsertController">
     <left>
         <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
             <children>
@@ -58,7 +63,7 @@
                                 <Font name="Gill Sans MT" size="15.0" />
                             </font>
                         </Button>
-                        <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="41.0" layoutY="602.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
+                        <Button fx:id="quitterButton" alignment="CENTER_RIGHT" layoutX="41.0" layoutY="620.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Quitter    ">
                             <font>
                                 <Font name="Gill Sans MT Bold" size="15.0" />
                             </font>
@@ -123,35 +128,39 @@
                         <Font name="Gill Sans MT Condensed" size="25.0" />
                     </font>
                 </Label>
-                <TextField fx:id="prenomTextField" layoutX="559.0" layoutY="210.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre prénom" />
-                <TextField fx:id="nomTextField" layoutX="559.0" layoutY="250.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre nom" />
-                <TextField fx:id="numeroTextField" layoutX="559.0" layoutY="290.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre numéro" />
-                <TextField fx:id="mailTextField" layoutX="559.0" layoutY="330.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre mail" />
+                <TextField fx:id="prenomTextField" layoutX="559.0" layoutY="210.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Prénom" />
+                <TextField fx:id="nomTextField" layoutX="559.0" layoutY="250.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Nom" />
+                <TextField fx:id="numeroTextField" layoutX="559.0" layoutY="290.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Numéro" />
+                <TextField fx:id="mailTextField" layoutX="559.0" layoutY="330.0" prefHeight="30.0" prefWidth="150.0" promptText="Saisir votre Mail" />
                 <Label layoutX="399.0" layoutY="330.0" prefHeight="15.0" prefWidth="150.0" text="Mail">
                     <font>
                         <Font name="Gill Sans MT Condensed" size="25.0" />
                     </font>
                 </Label>
-                <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="605.0" mnemonicParsing="false" onAction="#insertNutritionistData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer">
+                <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#insertNutritionistData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Enregistrer">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/sauvegarder.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="49.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/sauvegarder.png" />
-                    </image>
-                </ImageView>
-                <Button alignment="CENTER_RIGHT" layoutX="188.0" layoutY="605.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+                <Button alignment="CENTER_RIGHT" layoutX="190.0" layoutY="620.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="41.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-color: #000000; -fx-border-radius: 12px;" text="Vider le formulaire">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../img/vider%20formulaire.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="200.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@/img/supprimer.png" />
-                    </image>
-                </ImageView>
             <Label layoutX="362.0" layoutY="39.0" prefHeight="35.0" prefWidth="450.0" text="Prêt à rejoindre notre équipe de nutritionnistes ? " textFill="#245161">
                <font>
                   <Font name="Impact" size="20.0" />
