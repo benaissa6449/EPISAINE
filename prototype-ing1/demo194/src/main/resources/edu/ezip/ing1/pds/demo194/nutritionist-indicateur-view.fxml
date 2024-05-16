@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -185,19 +185,19 @@
                            </children>
                         </AnchorPane>
                      </children></HBox>
-                        <HBox layoutX="50.0" layoutY="320.0" prefHeight="321.0" prefWidth="448.0" style="-fx-background-color: #467AA8; -fx-background-radius: 10; -fx-effect: innershadow;">
+                        <HBox layoutX="50.0" layoutY="320.0" prefHeight="321.0" prefWidth="448.0" style="-fx-background-radius: 10; -fx-effect: innershadow;">
                             <children>
                                 <AnchorPane prefHeight="308.0" prefWidth="452.0">
-                                    <children>
-                                        <LineChart fx:id="LineChart" layoutX="4.0" layoutY="24.0" prefHeight="313.0" prefWidth="448.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;" title="Intervalle d'âge de nos chers clients.">
-                                            <xAxis>
-                                                <CategoryAxis side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                                <NumberAxis side="LEFT" />
-                                            </yAxis>
-                                        </LineChart>
-                                    </children>
+                           <children>
+                              <BarChart fx:id="barChart" barGap="8.0" layoutX="6.0" layoutY="19.0" prefHeight="284.0" prefWidth="448.0" style="-fx-table-cell-border-color: transparent; -fx-alternative-column-fill-visible: true; -fx-alternate-column-fill: transparent;" title="Intervalle d'âge de nos chers clients." AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="19.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" style="-fx-text-fill: transparent;" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
                                 </AnchorPane>
                             </children>
                         </HBox>

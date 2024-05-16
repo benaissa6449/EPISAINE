@@ -8,23 +8,25 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class NutritionistIndicateurController extends NutritionistHeadController {
+/*
+    @FXML
+    private BarChart<?, ?> barChart;
 
     @FXML
-    private LineChart<?, ?> lineChart;
-
-    @FXML // Ajout de l'annotation @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        /*initLineChart();*/
+        initLineChart();
     }
 
     private void initLineChart() {
-        XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("[Jeunes]", 10));
-        series.getData().add(new XYChart.Data("[AZD]", 20));
-        series.getData().add(new XYChart.Data("[JeuZARnes]", 30));
-        series.getData().add(new XYChart.Data("[JeuZRnes]", 40));
-        series.getData().add(new XYChart.Data("[JeuZRAnes]", 50));
-        series.getData().add(new XYChart.Data("[JeunAZRes]", 60));
-        lineChart.getData().addAll(series);
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.getData().add(new XYChart.Data<>("[Jeunes]", 10));
+        series.getData().add(new XYChart.Data<>("[AZD]", 20));
+        series.getData().add(new XYChart.Data<>("[JeuZARnes]", 30));
+        series.getData().add(new XYChart.Data<>("[JeuZRnes]", 40));
+        series.getData().add(new XYChart.Data<>("[JeuZRAnes]", 50));
+        series.getData().add(new XYChart.Data<>("[JeunAZRes]", 60));
+        lineChart.getData().add(series);
     }
+ */
 }
+
