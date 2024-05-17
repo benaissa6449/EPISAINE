@@ -111,7 +111,7 @@
    <center>
       <AnchorPane prefHeight="651.0" prefWidth="975.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="700.0" prefWidth="1110.0">
+            <AnchorPane layoutX="4.0" prefHeight="700.0" prefWidth="1110.0">
                <children>
                   <HBox layoutX="49.0" layoutY="51.0" prefHeight="190.0" prefWidth="1020.0" style="-fx-background-color: #467AA8; -fx-background-radius: 10; -fx-effect: innershadow;">
                      <children>
@@ -119,10 +119,10 @@
                            <children>
                               <Pane layoutX="62.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow layoutX="-2.0" layoutY="-1.0" prefHeight="61.0" prefWidth="129.0" />
+                                    <TextFlow fx:id="regimeTextFlow" layoutX="-2.0" layoutY="-1.0" prefHeight="61.0" prefWidth="129.0" />
                                     <ImageView fitHeight="59.0" fitWidth="67.0" layoutX="131.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../img/spaghetti.png" />
+                                          <Image url="@/img/spaghetti.png" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -134,32 +134,32 @@
                                  </font>
                               </Label>
                               <Separator layoutX="678.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="207.0" prefWidth="8.0" style="-fx-background-color: #a2e97a;" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="409.0" layoutY="25.0" prefHeight="52.0" prefWidth="205.0" text="Le pourcentage " textFill="#a2e97a">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="409.0" layoutY="25.0" prefHeight="52.0" prefWidth="205.0" text="Le pourcentage de" textFill="#a2e97a">
                                  <font>
                                     <Font name="Impact" size="18.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="411.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow layoutX="2.0" layoutY="-1.0" prefHeight="60.0" prefWidth="125.0" />
+                                    <TextFlow fx:id="allergieTextFlow" layoutX="2.0" layoutY="-1.0" prefHeight="60.0" prefWidth="125.0" />
                                     <ImageView fitHeight="59.0" fitWidth="56.0" layoutX="136.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../img/eternuement.png" />
+                                          <Image url="@/img/eternuement.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
                               <Pane layoutX="753.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow layoutX="2.0" layoutY="1.0" prefHeight="55.0" prefWidth="125.0" />
+                                    <TextFlow fx:id="calorieTextFlow" layoutX="2.0" layoutY="1.0" prefHeight="55.0" prefWidth="125.0" />
                                     <ImageView fitHeight="64.0" fitWidth="70.0" layoutX="127.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../img/calculateur-de-calories.png" />
+                                          <Image url="@/img/calculateur-de-calories.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="714.0" layoutY="15.0" prefHeight="73.0" prefWidth="278.0" text=" La moyenne de calories par portion " textFill="#a2e97a">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="714.0" layoutY="15.0" prefHeight="73.0" prefWidth="278.0" text=" La moyenne de calories sur" textFill="#a2e97a">
                                  <font>
                                     <Font name="Impact" size="18.0" />
                                  </font>
@@ -169,27 +169,22 @@
                                     <Font name="Impact" size="18.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="409.0" layoutY="51.0" prefHeight="52.0" prefWidth="205.0" text="Client par Alérgie" textFill="#a2e97a">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="409.0" layoutY="51.0" prefHeight="52.0" prefWidth="205.0" text="l'allergie le plus présent" textFill="#a2e97a">
                                  <font>
                                     <Font name="Impact" size="18.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="57.0" prefHeight="40.0" prefWidth="226.0" text="pour chaque recette" textFill="#a2e97a">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="57.0" prefHeight="40.0" prefWidth="226.0" text=" l'ensemble des recettes" textFill="#a2e97a">
                                  <font>
                                     <Font name="Impact" size="18.0" />
                                  </font>
                               </Label>
                            </children>
                         </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="413.0" layoutY="324.0" prefHeight="321.0" prefWidth="289.0" style="-fx-background-color: #467AA8; -fx-background-radius: 10; -fx-effect: innershadow;">
+                     </children></HBox>
+                  <HBox layoutX="50.0" layoutY="320.0" prefHeight="321.0" prefWidth="448.0" style="-fx-background-radius: 10; -fx-effect: innershadow;">
                      <children>
-                        <ImageView fitHeight="316.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../img/LOGO%20EPISAINE.png" />
-                           </image>
-                        </ImageView>
+                        <AnchorPane prefHeight="308.0" prefWidth="452.0" />
                      </children>
                   </HBox>
                   <Label alignment="CENTER" layoutX="4.0" layoutY="662.0" prefHeight="28.0" prefWidth="1110.0" text="© 2024 - EPISAINE. Tous droits réservés.  ISMAIL BENAISSA &amp; JOHN WANG">
@@ -197,6 +192,11 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="316.0" fitWidth="398.0" layoutX="399.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/img/LOGO EPISAINE.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

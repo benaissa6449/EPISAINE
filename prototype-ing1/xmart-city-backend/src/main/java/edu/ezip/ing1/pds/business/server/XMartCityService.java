@@ -41,6 +41,9 @@ public class XMartCityService {
             COUNT_RECETTES("SELECT count(*) FROM \"episaine-schema\".recettes"),
             COUNT_NUTRITIONNISTES("SELECT count(*) FROM \"episaine-schema\".nutritionnistes"),
             COUNT_INFORMATIONS("SELECT count(*) FROM \"episaine-schema\".informations"),
+            COUNT_REGIME("SELECT regimealimentaire, count(*) FROM \"episaine-schema\".recettes GROUP BY regimealimentaire ORDER BY COUNT(*) DESC LIMIT 1"),
+            AVG_CALORIE("SELECT AVG(nombre_de_calories) AS moyenne_calories_par_recette FROM \"episaine-schema\".recettes"),
+            AVG_ALLERGIE("SELECT allergie, COUNT(*) AS nombre_total, (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM \"episaine-schema\".informations)) AS pourcentage FROM \"episaine-schema\".informations GROUP BY allergie ORDER BY COUNT(*) DESC LIMIT 1"),
 
             INSERT_CLIENT("INSERT into \"episaine-schema\".clients (\"nom_client\", \"prenom_client\", \"date_de_naissance_client\", \"poids\", \"genre\", \"taille\", \"numero_de_telephone_client\", \"mail_client\", \"ville\", \"adresse\", \"code_postal\") values (?,?,?,?,?,?,?,?,?,?,?)"),
             INSERT_RECETTE("INSERT INTO \"episaine-schema\".recettes (\"nom_recette\", \"nombre_de_calories\", \"ingredients\", \"instructions\", \"regimealimentaire\", \"id_nutritionniste\") VALUES (?, ?, ?, ?, ?, ?)"),
@@ -116,6 +119,39 @@ public class XMartCityService {
                     response = new Response();
                     response.setRequestId(request.getRequestId());
                     response.setResponseBody(mapper.writeValueAsString(specificClient));
+                    break;
+
+                case "COUNT_REGIME" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.COUNT_REGIME.query);
+                    res.next();
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getString(1) + "," + res.getInt(2)));
+                    break;
+
+                case "AVG_CALORIE" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.AVG_CALORIE.query);
+                    res.next();
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getBigDecimal(1)));
+                    break;
+
+                case "AVG_ALLERGIE" :
+                    logger.info("requestOrder : " + request.getRequestOrder());
+                    stmt = connection.createStatement();
+                    res = stmt.executeQuery(Queries.AVG_ALLERGIE.query);
+                    res.next();
+                    logger.info(request.getRequestOrder() + " : processing done");
+                    response = new Response();
+                    response.setRequestId(request.getRequestId());
+                    response.setResponseBody(mapper.writeValueAsString(res.getString(1) + "," + res.getBigDecimal(3)));
                     break;
 
                 case "COUNT_CLIENTS" :

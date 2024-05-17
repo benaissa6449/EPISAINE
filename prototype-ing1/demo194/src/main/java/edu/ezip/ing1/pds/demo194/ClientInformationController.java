@@ -19,7 +19,6 @@ import org.controlsfx.control.CheckComboBox;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.time.Year;
 import java.util.Calendar;
 import java.util.List;

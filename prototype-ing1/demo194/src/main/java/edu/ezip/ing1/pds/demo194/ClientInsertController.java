@@ -2,6 +2,8 @@ package edu.ezip.ing1.pds.demo194;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.Year;
+import java.util.Calendar;
 
 import edu.ezip.ing1.pds.business.dto.Client;
 import edu.ezip.ing1.pds.client.InsertByClient;
@@ -50,10 +52,22 @@ public class ClientInsertController extends ClientHeadController {
     public void insertClientIntoTable(String nom, String prenom, Date date, BigDecimal poids, String genre, Integer taille, String numero, String mail, String ville, String adresse, String codePostal) {
         // if true, then insert the value
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur");
 
         // check not null
         boolean notNullBoolean = assertNotNull(nom, prenom, genre, numero, mail, ville, adresse, codePostal);
 
+        // check date de naissance
+        boolean naissanceBoolean = true;
+        int yearNow = Year.now().getValue();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int naissance = calendar.get(Calendar.YEAR);
+        if (yearNow - naissance < 0) {
+            naissanceBoolean = false;
+            alert.setHeaderText("Date de naissance incorrect");
+            alert.showAndWait();
+        }
         // check genre
         boolean genreBoolean = true;
         if (!genre.equals("Homme") && !genre.equals("Femme")) {
