@@ -117,18 +117,18 @@
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="recipeTableView" layoutX="9.0" layoutY="185.0" prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                <TableView fx:id="recipeTableView" layoutX="150.0" layoutY="184.0" prefHeight="400.0" prefWidth="815.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
                     <columns>
-                        <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Recette" />
+                        <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Recette" visible="false" />
                         <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="162.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom de Recette" />
                         <TableColumn fx:id="caloriesColumn" prefWidth="156.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nombre de calories" />
                         <TableColumn fx:id="ingredientsColumn" prefWidth="142.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ingredients" />
                         <TableColumn fx:id="instructionsColumn" prefWidth="115.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Instructions" />
                   <TableColumn fx:id="regimeColumn" prefWidth="236.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Regime Alimentaire" />
-                  <TableColumn fx:id="idNutritionistColumn" prefWidth="175.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="ID Nutritionniste" />
+                  <TableColumn fx:id="idNutritionistColumn" prefWidth="175.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="ID Nutritionniste" visible="false" />
                     </columns>
                 </TableView>
-                <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
+                <Button alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="45.0" prefWidth="135.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
                     <font>
                         <Font name="Gill Sans MT" size="15.0" />
                     </font>
