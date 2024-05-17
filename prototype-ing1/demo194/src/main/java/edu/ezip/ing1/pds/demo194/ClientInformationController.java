@@ -115,9 +115,7 @@ public class ClientInformationController extends ClientHeadController {
             String id = idTextField.getText();
             Recettes recettes = new Recettes();
             if (!id.isEmpty()) {
-                System.out.println(id);
                 Client client = SelectSpecificClient.getValue("SELECT_SPECIFIC_CLIENT", id);
-                System.out.println(client.toString());
 
                 String genre = client.getGenre();
                 Date date = client.getDate_de_naissance_client();
@@ -132,11 +130,9 @@ public class ClientInformationController extends ClientHeadController {
                 int kcal;
                 if (genre.toLowerCase().equals("homme")) {
                     kcal = (int) (poids.intValue() * 10 + taille * 6.25 - age * 5 + 5);
-                    System.out.println(kcal);
                 }
                 else {
                     kcal = (int) (poids.intValue() * 10 + taille * 6.25 - age * 5 - 161);
-                    System.out.println(kcal);
                 }
 
                 switch (butComboBox.getValue()) {
@@ -174,16 +170,26 @@ public class ClientInformationController extends ClientHeadController {
             for (Recette recette : recettes.getRecettes()) {
                 ObservableList<String> allergies = allergieCheckComboBox.getCheckModel().getCheckedItems();
                 Boolean isSafe = true;
+
+                String regime = regimeComboBox.getValue();
+
+                try {
+                    if (!regime.isEmpty()) {
+                        if (!recette.getRegimeAlimentaire().equals(regime)) {
+                            isSafe = false;
+                        }
+                    }
+                }
+                catch (Exception e) {
+                    isSafe = true;
+                }
+
+
                 for (String allergie : allergies) {
                     if (recette.getIngredients().toLowerCase().contains(allergie.toLowerCase())) {
                         isSafe = false;
                         break;
                     }
-                }
-
-                String regime = regimeComboBox.getValue();
-                if (!recette.getRegimeAlimentaire().equals(regime)) {
-                    isSafe = false;
                 }
 
                 if (isSafe) {
