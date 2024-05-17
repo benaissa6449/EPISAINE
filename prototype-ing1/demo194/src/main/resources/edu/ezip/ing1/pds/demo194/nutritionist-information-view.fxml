@@ -117,9 +117,9 @@
                         <Image url="@/img/logo.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="informationTableView" layoutX="9.0" layoutY="185.0" prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
+                <TableView fx:id="informationTableView" layoutX="100.0" layoutY="185.0" prefHeight="400.0" prefWidth="917.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
                     <columns>
-                        <TableColumn fx:id="idInformationColumn" prefWidth="182.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Information" />
+                        <TableColumn fx:id="idInformationColumn" prefWidth="182.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Information" visible="false" />
                         <TableColumn fx:id="idClientColumn" minWidth="0.0" prefWidth="203.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Client" />
                         <TableColumn fx:id="butColumn" prefWidth="215.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="But" />
                         <TableColumn fx:id="allergieColumn" prefWidth="235.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Allergies" />

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import org.controlsfx.control.*?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <BorderPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #D4EFDF;" stylesheets="" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.demo194.ClientInformationController">
    <left>
       <VBox prefHeight="600.0" prefWidth="192.0" style="-fx-background-radius: 50; -fx-background-color: #467AA8;" BorderPane.alignment="CENTER">
@@ -111,55 +111,55 @@
                   <Image url="@/img/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="71.0" layoutY="93.0" prefHeight="15.0" prefWidth="150.0" text="ID Client  :">
+            <Label layoutX="399.0" layoutY="207.0" prefHeight="15.0" prefWidth="150.0" text="ID Client  :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="idTextField" layoutX="233.0" layoutY="93.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir votre Id" />
-            <Label layoutX="71.0" layoutY="131.0" prefHeight="15.0" prefWidth="150.0" text="But :">
+            <TextField fx:id="idTextField" layoutX="561.0" layoutY="207.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir votre Id" />
+            <Label layoutX="399.0" layoutY="245.0" prefHeight="15.0" prefWidth="150.0" text="But :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <ComboBox fx:id="butComboBox" layoutX="233.0" layoutY="135.0" prefHeight="25.0" prefWidth="260.0" promptText="Saisir votre but">
+            <ComboBox fx:id="butComboBox" layoutX="561.0" layoutY="249.0" prefHeight="25.0" prefWidth="260.0" promptText="Saisir votre but">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="perte de poids" />
                      <String fx:value="gain de poids" />
-                     <String fx:value="maintien de poids" />
+                     <String fx:value="maintien de poids"/>
                   </FXCollections>
                </items>
             </ComboBox>
-            <Label layoutX="71.0" layoutY="171.0" prefHeight="15.0" prefWidth="150.0" text="Allergies :">
+            <Label layoutX="399.0" layoutY="285.0" prefHeight="15.0" prefWidth="150.0" text="Allergies :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <CheckComboBox fx:id="allergieCheckComboBox" layoutX="233.0" layoutY="174.0" prefHeight="25.0" prefWidth="260.0">
+            <CheckComboBox fx:id="allergieCheckComboBox" layoutX="561.0" layoutY="288.0" prefHeight="25.0" prefWidth="260.0" >
                <items>
-                  <String fx:value="oeuf" />
-                  <String fx:value="lait" />
-                  <String fx:value="moutarde" />
-                  <String fx:value="arachide" />
-                  <String fx:value="mollusque" />
-                  <String fx:value="crustacé" />
-                  <String fx:value="poisson" />
-                  <String fx:value="graine de sesame" />
-                  <String fx:value="soja" />
-                  <String fx:value="sulfite" />
-                  <String fx:value="noix" />
-                  <String fx:value="blé" />
-                  <String fx:value="trucicale" />
+                     <String fx:value="oeuf" />
+                     <String fx:value="lait" />
+                     <String fx:value="moutarde" />
+                     <String fx:value="arachide" />
+                     <String fx:value="mollusque" />
+                     <String fx:value="crustacé" />
+                     <String fx:value="poisson" />
+                     <String fx:value="graine de sesame" />
+                     <String fx:value="soja" />
+                     <String fx:value="sulfite" />
+                     <String fx:value="noix" />
+                     <String fx:value="blé" />
+                     <String fx:value="trucicale" />
                </items>
             </CheckComboBox>
-            <Label layoutX="71.0" layoutY="209.0" prefHeight="15.0" prefWidth="150.0" text="Nombre de repas :">
+            <Label layoutX="399.0" layoutY="325.0" prefHeight="15.0" prefWidth="150.0" text="Nombre de repas :">
                <font>
                   <Font name="Gill Sans MT Condensed" size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="nbDeRepasTextField" layoutX="233.0" layoutY="210.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir le nombre de repas que vous sauhaitez" />
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="617.0" mnemonicParsing="false" onAction="#insertInformationData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer">
+            <TextField fx:id="nbDeRepasTextField" layoutX="559.0" layoutY="326.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir le nombre de repas que vous sauhaitez" />
+            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="227.0" layoutY="618.0" mnemonicParsing="false" onAction="#insertInformationData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -171,7 +171,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="222.0" layoutY="617.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+            <Button alignment="CENTER_RIGHT" layoutX="378.0" layoutY="618.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire" onAction="#cleanFields">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -193,59 +193,6 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TableView fx:id="recipeTableView" layoutX="17.0" layoutY="265.0" prefHeight="327.0" prefWidth="1067.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465;">
-               <columns>
-                  <TableColumn fx:id="idRecetteColumn" prefWidth="109.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Id Recette" visible="false" />
-                  <TableColumn fx:id="nomColumn" minWidth="0.0" prefWidth="150.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom de Recette" />
-                  <TableColumn fx:id="caloriesColumn" prefWidth="131.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nombre de calories" />
-                  <TableColumn fx:id="ingredientsColumn" prefWidth="297.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ingredients" />
-                  <TableColumn fx:id="instructionsColumn" prefWidth="320.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Instructions" />
-                  <TableColumn fx:id="regimeColumn" prefWidth="166.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Regime Alimentaire" />
-                  <TableColumn fx:id="idNutritionistColumn" minWidth="9.0" prefWidth="12.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Id Nutritionniste" visible="false" />
-               </columns>
-            </TableView>
-            <Button alignment="CENTER_RIGHT" layoutX="400.0" layoutY="615.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
-               <font>
-                  <Font name="Gill Sans MT" size="15.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@/img/selectionner.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <TextField fx:id="searchTextField" layoutX="631.0" layoutY="207.0" prefHeight="35.0" prefWidth="251.0" promptText="Chercher" style="-fx-background-color: #EAECEE; -fx-border-radius: 10px; -fx-border-color: #000000;" />
-                     <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="892.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@/img/chercher.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="574.0" layoutY="129.0" prefHeight="31.0" prefWidth="164.0" text="Régime alimentaire :">
-               <font>
-                  <Font name="Gill Sans MT Condensed" size="25.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="regimeComboBox" layoutX="744.0" layoutY="135.0" prefHeight="25.0" prefWidth="260.0" promptText="Saisir un régime alimentaire">
-               <items>
-                  <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="normal" />
-                     <String fx:value="cétogène" />
-                     <String fx:value="végétarien" />
-                     <String fx:value="carnivore" />
-                     <String fx:value="pescétarien" />
-                     <String fx:value="végétalien" />
-                     <String fx:value="sans gluten" />
-                     <String fx:value="sans lactose" />
-                     <String fx:value="halal" />
-                     <String fx:value="cashér" />
-                     <String fx:value="paléo" />
-                     <String fx:value="sans sucre ajouté" />
-                     <String fx:value="régime méditerranéeen" />
-                  </FXCollections>
-               </items>
-            </ComboBox>
          </children>
       </AnchorPane>
    </center>

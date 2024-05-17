@@ -119,7 +119,7 @@
                 </ImageView>
                 <TableView fx:id="clientTableView" layoutX="9.0" layoutY="185.0" prefHeight="400.0" prefWidth="1100.0" style="-fx-background-color: #EAECEE; -fx-border-color: #44A465; -fx-border-radius: 7px;">
                     <columns>
-                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Client" />
+                        <TableColumn fx:id="idClientColumn" prefWidth="75.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="ID Client" visible="false" />
                         <TableColumn fx:id="prenomClientColumn" minWidth="0.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Nom" />
                         <TableColumn fx:id="nomClientColumn" prefWidth="82.0" style="-fx-border-color: #0CA03E; -fx-border-radius: 8px;" text="Prénom" />
                         <TableColumn fx:id="dateClientColumn" prefWidth="121.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Date de naissance" />
@@ -127,10 +127,10 @@
                         <TableColumn fx:id="genreClientColumn" prefWidth="79.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Genre" />
                         <TableColumn fx:id="tailleClientColumn" prefWidth="83.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Taille" />
                   <TableColumn fx:id="telephoneClientColumn" prefWidth="141.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Numéro de téléphone" />
-                  <TableColumn fx:id="mailClientColumn" prefWidth="95.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Mail" />
+                  <TableColumn fx:id="mailClientColumn" prefWidth="123.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Mail" />
                   <TableColumn fx:id="villeClientColumn" prefWidth="96.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Ville" />
-                  <TableColumn fx:id="adresseClientColumn" prefWidth="72.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse" />
-                  <TableColumn fx:id="codePostalClientColumn" prefWidth="99.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Code Postal" />
+                  <TableColumn fx:id="adresseClientColumn" prefWidth="112.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Adresse" />
+                  <TableColumn fx:id="codePostalClientColumn" prefWidth="107.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Code Postal" />
                     </columns>
                 </TableView>
                 <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectClientData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
