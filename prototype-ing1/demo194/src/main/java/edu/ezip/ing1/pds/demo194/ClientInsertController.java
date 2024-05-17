@@ -2,7 +2,9 @@ package edu.ezip.ing1.pds.demo194;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.time.Year;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 import edu.ezip.ing1.pds.business.dto.Client;
@@ -59,11 +61,10 @@ public class ClientInsertController extends ClientHeadController {
 
         // check date de naissance
         boolean naissanceBoolean = true;
-        int yearNow = Year.now().getValue();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        int naissance = calendar.get(Calendar.YEAR);
-        if (yearNow - naissance < 0) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+
+        if (now.isBefore(date.toLocalDate().atStartOfDay())) {
             naissanceBoolean = false;
             alert.setHeaderText("Date de naissance incorrect");
             alert.showAndWait();
@@ -104,7 +105,7 @@ public class ClientInsertController extends ClientHeadController {
         }
 
         // if every value is correct then insert
-        if (genreBoolean && mailBoolean && numberBoolean && postalBoolean && notNullBoolean) {
+        if (genreBoolean && mailBoolean && numberBoolean && postalBoolean && notNullBoolean && naissanceBoolean) {
             Client client = new Client(-1, nom, prenom, date, poids, genre, taille, numero, mail, ville, adresse, codePostal);
             try {
                 InsertByClient.sendValue("INSERT_CLIENT", client);

@@ -69,6 +69,7 @@ public class ClientInformationController extends ClientHeadController {
             InsertByClient.sendValue("INSERT_INFORMATION", information);
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insertion effectuée.");
+            alert.showAndWait();
         }
         catch (NullPointerException npe) {
             alert.setHeaderText("Les champs ne doivent pas être vides.");

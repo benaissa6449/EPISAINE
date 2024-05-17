@@ -169,14 +169,14 @@
                   </FXCollections>
                </items>
             </ComboBox>
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-color: #000000; -fx-border-radius: 12px;" text="Enregistrer ">
+            <Button onAction="#insertRecipeData" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-color: #000000; -fx-border-radius: 12px;" text="Enregistrer">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/sauvegarder.png" />
+                        <Image url="@/img/sauvegarder.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -188,7 +188,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/vider%20formulaire.png" />
+                        <Image url="@/img/vider formulaire.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -227,12 +227,12 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/Modifier.png" />
+                        <Image url="@/img/Modifier.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="selectButton" alignment="CENTER_RIGHT" layoutX="390.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="43.0" prefWidth="141.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
+            <Button alignment="CENTER_RIGHT" layoutX="390.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="43.0" prefWidth="141.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
@@ -265,7 +265,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../img/supprimer.png" />
+                        <Image url="@/img/supprimer.png" />
                      </image>
                   </ImageView>
                </graphic>

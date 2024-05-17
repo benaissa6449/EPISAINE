@@ -60,8 +60,16 @@ public class NutritionistRecipeController extends NutritionistHeadController {
     public void insertRecipeIntoTable(String nom, Integer calorie, String instructions, String ingredients, String regime, Integer idNutritionist) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Insertion");
+
+        boolean calorieBoolean = true;
+        if (calorie < 0) {
+            calorieBoolean = false;
+            alert.setHeaderText("Veuillez insérer une valeur positive");
+            alert.showAndWait();
+        }
+
         try {
-            if (assertNotNull(nom, instructions, ingredients, regime)) {
+            if (assertNotNull(nom, instructions, ingredients, regime) && calorieBoolean) {
                 try {
                     Recette recette = new Recette(-1, idNutritionist, nom, calorie, ingredients, instructions, regime);
                     InsertByClient.sendValue("INSERT_RECETTE", recette);
@@ -232,20 +240,26 @@ public class NutritionistRecipeController extends NutritionistHeadController {
                         break;
                     case "Nombre de calories":
                         if (!textInputDialog.getEditor().getText().trim().isEmpty()) {
-                            try {
-                                int nbCalorie = Integer.parseInt(textInputDialog.getEditor().getText());
-                                update = new Update();
-                                update.setNewColumn("nombre_de_calories");
-                                update.setNewValue(textInputDialog.getEditor().getText());
-                                update.setConditionColumn("id_recette");
-                                update.setConditionValue(String.valueOf(recette.getId_recette()));
-                                UpdateByClient.updateValue("UPDATE_RECETTE", update);
-                                alert.setHeaderText("Modification effectuée.");
-                                alert.showAndWait();
+                            if (Integer.parseInt(textInputDialog.getEditor().getText()) >= 0) {
+                                try {
+                                    int nbCalorie = Integer.parseInt(textInputDialog.getEditor().getText());
+                                    update = new Update();
+                                    update.setNewColumn("nombre_de_calories");
+                                    update.setNewValue(textInputDialog.getEditor().getText());
+                                    update.setConditionColumn("id_recette");
+                                    update.setConditionValue(String.valueOf(recette.getId_recette()));
+                                    UpdateByClient.updateValue("UPDATE_RECETTE", update);
+                                    alert.setHeaderText("Modification effectuée.");
+                                    alert.showAndWait();
+                                } catch (NumberFormatException e) {
+                                    alert.setAlertType(Alert.AlertType.WARNING);
+                                    alert.setHeaderText("Le champs doit contenir une valeur numérique");
+                                    alert.showAndWait();
+                                }
                             }
-                            catch (NumberFormatException e) {
+                            else {
                                 alert.setAlertType(Alert.AlertType.WARNING);
-                                alert.setHeaderText("Le champs doit contenir une valeur numérique");
+                                alert.setHeaderText("Le champs doit contenir une valeur numérique positive");
                                 alert.showAndWait();
                             }
                         } else {

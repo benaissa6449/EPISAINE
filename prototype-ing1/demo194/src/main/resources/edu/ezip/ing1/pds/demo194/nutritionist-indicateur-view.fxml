@@ -119,7 +119,7 @@
                            <children>
                               <Pane layoutX="62.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow fx:id="regimeTextFlow" layoutX="-2.0" layoutY="-1.0" prefHeight="61.0" prefWidth="129.0" />
+                                    <TextFlow fx:id="regimeTextFlow" layoutX="-2.0" layoutY="-1.0" prefHeight="61.0" prefWidth="129.0" style="-fx-font-size: 25; -fx-text-alignment: CENTER;" />
                                     <ImageView fitHeight="59.0" fitWidth="67.0" layoutX="131.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@/img/spaghetti.png" />
@@ -141,7 +141,7 @@
                               </Label>
                               <Pane layoutX="411.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow fx:id="allergieTextFlow" layoutX="2.0" layoutY="-1.0" prefHeight="60.0" prefWidth="125.0" />
+                                    <TextFlow fx:id="allergieTextFlow" layoutX="2.0" layoutY="-1.0" prefHeight="60.0" prefWidth="125.0" style="-fx-text-alignment: CENTER; -fx-font-size: 25;" />
                                     <ImageView fitHeight="59.0" fitWidth="56.0" layoutX="136.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@/img/eternuement.png" />
@@ -151,7 +151,7 @@
                               </Pane>
                               <Pane layoutX="753.0" layoutY="109.0" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #C3F4A8;">
                                  <children>
-                                    <TextFlow fx:id="calorieTextFlow" layoutX="2.0" layoutY="1.0" prefHeight="55.0" prefWidth="125.0" />
+                                    <TextFlow fx:id="calorieTextFlow" layoutX="2.0" layoutY="1.0" prefHeight="55.0" prefWidth="125.0" style="-fx-font-size: 30; -fx-text-alignment: CENTER;" />
                                     <ImageView fitHeight="64.0" fitWidth="70.0" layoutX="127.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@/img/calculateur-de-calories.png" />
