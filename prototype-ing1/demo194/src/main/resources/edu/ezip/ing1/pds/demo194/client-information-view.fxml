@@ -159,24 +159,24 @@
                </font>
             </Label>
             <TextField fx:id="nbDeRepasTextField" layoutX="233.0" layoutY="210.0" prefHeight="30.0" prefWidth="260.0" promptText="Saisir le nombre de repas que vous sauhaitez" />
-            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="617.0" mnemonicParsing="false" onAction="#insertInformationData" prefHeight="33.0" prefWidth="126.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #229954;" text="Enregistrer">
+            <Button fx:id="insertButton" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#insertInformationData" prefHeight="39.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Enregistrer">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@/img/sauvegarder.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER_RIGHT" layoutX="222.0" layoutY="617.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="33.0" prefWidth="171.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Vider le formulaire">
+            <Button alignment="CENTER_RIGHT" layoutX="190.0" layoutY="620.0" mnemonicParsing="false" onAction="#cleanFields" prefHeight="40.0" prefWidth="180.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Vider le formulaire">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@/img/vider formulaire.png" />
                      </image>
@@ -204,12 +204,12 @@
                   <TableColumn fx:id="idNutritionistColumn" minWidth="9.0" prefWidth="12.0" style="-fx-border-radius: 8px; -fx-border-color: #0CA03E;" text="Id Nutritionniste" visible="false" />
                </columns>
             </TableView>
-            <Button alignment="CENTER_RIGHT" layoutX="400.0" layoutY="615.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="133.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8;" text="Sélectionner">
+            <Button alignment="CENTER_RIGHT" layoutX="400.0" layoutY="620.0" mnemonicParsing="false" onAction="#selectRecipeData" prefHeight="33.0" prefWidth="135.0" style="-fx-background-position: 20px; -fx-background-radius: 12px; -fx-background-color: #C3F4A8; -fx-border-radius: 12px; -fx-border-color: #000000;" text="Sélectionner">
                <font>
                   <Font name="Gill Sans MT" size="15.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@/img/selectionner.png" />
                      </image>
