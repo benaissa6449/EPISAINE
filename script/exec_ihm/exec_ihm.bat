@@ -1,4 +1,4 @@
-@echo off
+@echo
 cd ../../prototype-ing1/demo194
 call mvn javafx:run
 
