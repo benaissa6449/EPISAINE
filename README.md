@@ -3,13 +3,15 @@
 Episaine est une application de bureau développée pour offrir des recettes saines aux clients, en particulier installée sur des machines locales dans les grandes surfaces. Les recettes proposées sont élaborées par des nutritionnistes, garantissant des options alimentaires équilibrées et nutritives.
 
 # Auteurs
-- Ismail Benaissa
+- Ismail Benaissa 
 - John Wang
 
 # Fonctionnalités
 - Recettes Saines : Propose des recettes élaborées par des nutritionnistes.
+![image](https://github.com/benaissa6449/EPISAINE-/assets/119406636/31a39a36-e9b7-486b-a825-8d38c10d6e5e)
 
 - Détails des Recettes : Chaque recette inclut une liste d'ingrédients, des instructions détaillées et des informations nutritionnelles.
+![image](https://github.com/benaissa6449/EPISAINE-/assets/119406636/c363d075-6ac2-47ae-a595-698d0a04fbb6)
 
 -Interface Utilisateur : Conçue pour être intuitive et facile à utiliser, même pour les utilisateurs non techniques.
 
